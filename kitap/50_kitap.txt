@@ -1,0 +1,54 @@
+mr.porter sitesine gore okunmasi gereken 50 kitap
+=================================================
+
+
+1. great expectations - charles dickens 
+2. crime and punishment - fyodor dostoyevsky
+3. the magic mountain - thomas mann
+4. robinson crusoe - daniel defoe
+5. cotters' england - christina stead
+6. a fine balance - rohinton mistry
+7. the periodic table - primo levi
+8. jane eyre - charlotte bronte
+9. sense and sensibility - jane austen
+10. gravity's rainbow - thomas pynchon
+11. le grand meaulnes - alain-fournier
+12. to kill a mockingbird - harper lee
+13. the odyssey - homer
+14. silence - shusaku endo
+15. maus - art spiegelman
+16. red cavalry - isaac babel
+17. moby-dick - herman melville
+18. things fall apart - chinua achebe
+19. anna karenina - tolstoy
+20. the yellow wallpaper - charlotte perkins gilman
+21. frankenstein: or, the new prometheus - mary shelley
+22. don quixote - miguel de cervantes
+23. the leopard - guiseppe tomasi di lampedusa
+24. madame bovary - gustave flaubert
+25. middlemarch - george eliot
+26. the posthumous memoirs of bras cubas - joaquim maria machado de assis
+27. the portrait of a lady - henry james
+28. ulysses - james joyce
+29. the great gatsby - scott fitzgerald
+30. 1984 - george orwell
+31. the master and margarita - mikhail bulgakov
+32. paradise lost - john milton
+33. if on a winter's night a traveller - italo calvino
+34. slaughterhouse-five - kurt vonnegut
+35. the secret agent - joseph conrad
+36. the cairo trilogy - naguib mahfouz
+37. the life and opinions of tristram shandy - laurence sterne
+38. the code of the woosters - sir pg wodehouse
+39. the hearing trumpet - leonora carrington
+40. alice's adventures in wonderland - lewis carroll
+41. wide sargasso sea - jean rhys
+42. brave new world - aldous huxley
+43. white noise - don delillo
+44. the rings of saturn - wg sebald
+45. one day in the life of ivan denisovich - alexander solzhenitsyn
+46. blindness - jose saramago
+47. the czar's madman - jaan kross
+48. w, or the memory of childhood - georges perec
+49. the private memoirs and confessions of a justified sinner - james hogg
+50. a piece of my heart - richard ford

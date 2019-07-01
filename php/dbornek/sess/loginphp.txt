@@ -1,0 +1,28 @@
+<?php
+
+include("dbbaglan.php");
+
+$kadi = $_POST['kadi'];
+$sifre = $_POST['sifre'];
+
+
+$stmt = $pdo->prepare("select * from user where kadi = ?");
+$stmt->execute([$kadi]);
+$cikti = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+if($sifre == $cikti['sifre']) {
+	echo "dogru";
+	session_start();
+	$_SESSION['kadi'] = $kadi;
+	echo "<a href='yeni_ekle.php'>yeni yazi yaz</a>";
+	echo "<br><a href='index.php'>tum yazilar</a>";
+	
+}
+else {
+	echo "yanlis";
+}
+
+
+
+?>

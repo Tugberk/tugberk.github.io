@@ -1,0 +1,51 @@
+PDO baglantisi;
+--------------
+
+$host = '127.0.0.1'; //localhost
+$db = 'okul';
+$user = 'root';
+$pass = '';
+$charset = 'utf8';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+$pdo = new PDO($dsn, $user, $pass);
+
+
+//burada dikkat edilmesi gereken sey su. gelistirme asamasinda wamp kullanirken
+root geliyor ve sifre gelmiyor. bu iyi degil ama bu simdilik boyle kabul gorecek.
+host bolumu kendi makinemiz (kendi makinemizde wamp)
+$db ismi, baglanacagimiz db nin ismi.
+-----
+
+
+
+select kodu:
+$stmt = $pdo->prepare("select * from liste where id = ?");
+$stmt->execute([$id]);
+$cikti = $stmt->fetch(PDO::FETCH_ASSOC);
+
+//? varsa bu kullanılacak (eger spesifik bir select kullaniyorsak bu daha dogru)
+
+
+select kodu: (genel bir liste cekeceksek bu sekilde kullanabiliriz)
+$stmt = $pdo->query('select * from liste');
+foreach ($stmt as $satir) {
+  //islemleri yap mesela;
+  echo $satir['ad'];
+  }
+
+insert kodu: (eklemek icin - yeni kayit)
+$sql = "insert into liste(ad,soyad,cinsiyet,aldigi_not) values (?,?,?,?)";
+$pdo->prepare($sql)->execute([$ad, $soyad, $cins, $not]);
+
+
+delete kodu: (silme kodu)
+$sql = "delete from liste where id=?";
+$pdo->prepare($sql)->execute([$id]);
+
+update kodu: (guncelleme, degistirme kodu)
+$sql = "update liste set ad = ?, soyad = ?, cinsiyet = ?, aldigi_not = ? where id = ?";
+$pdo->prepare($sql)->execute([$ad, $soyad, $cins, $not, $id]);
+
+

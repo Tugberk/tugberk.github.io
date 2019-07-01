@@ -1,0 +1,149 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+	<style>
+	body {
+	font-size: 32px;}
+	</style>
+	
+</head>
+
+
+
+<body>
+
+<main role="main" class="container">
+	<div class="starter-template">
+
+		
+		<div id="soru">
+			
+		</div>
+		<button id="sonucButon">sonucu goster</button>
+
+		<br><br>
+		<div id="cevap">
+			
+		</div>
+	
+		<button id="bildimButon">bildim</button> <button id="bilemedimButon">bilemedim</button>
+
+	</div>	
+
+
+</main>
+
+</body>
+
+
+<script>
+//document.getElementById("cevap").style.visibility = "hidden";
+
+
+//sorular olacak arraylar icerisinde
+
+
+sorular = ["what is biological psychology?", "what do biopsychologists try to do?", "what are the 4 types of biological explanations of behavior?", "what is physiological explanation?", "what is ontogenetic explanation?", "what is evolutionary explanation?", "what is functional explanation?", "birdsong example", "what is dualism?", "what is monism?", "what are different categories of monism?", "explain materialsm (a category of monism)", "explain mentalism (a category of monism)", "explain identity position (a category of monism)", "why is dualism rejected by philosophers and scientist?",  "what is solipsism?", "what are easy problems?", "what is a hard problem?", "what is mind-body / mind-brain problem?"]; 
+
+cevaplar = ["study of the physiological evolutionary and developmental mechanisms of behavior and experience. Goal is to relate biology to issues of psychology.",
+"they try to answer four types of questions about a given behavior.",
+"physiological- ontogenetic- evolutionary and functional",
+"tries to undersstand how does a behavior related to the physiology of the brain and other organs",
+"describes how a structure or behavior develops, including the influence of genes, nutrition, experiences",
+"tries to learn how did this capacity for the behavior evolved? (eg. Frightened people get goose bumps - useful for mammals)",
+"tries to understand why this capacity for the behavior evolve? ",
+"<img src='1.png'>",
+"belief that mind and body are different and exist independently.",
+"alternative to dualism. Believes that the universe consists of only one kind of substance.",
+"materialism, mentalism, identity position",
+"the view that everything that exists is material or physical",
+"the view that only mind really exists and physical world does not exist unless there is a mind aware of it",
+"the view that mental and certain kinds of brain processes are the same things described differently. Universe has only one kind of substance, which includes both material and mental aspects.",
+"it contradicts with the law of conservation of matter and energy. ",
+"coined from solus and ipse (alone and self). I alone exist. Other people are like robots or characters in a dream. ",
+"easy problems are questions like difference between sleep and wakefulness.",
+"hard problem is why the mind is involved in physical world. Why is there a consciousness and how does it relate to brain activity?",
+"the question of what is the relationship between the mind and the brain." ];
+
+
+//var randomSayi = randomOlustur(sorular.length);
+document.getElementById("soru").innerHTML = sorular[0];
+
+document.getElementById("bildimButon").disabled = true;
+document.getElementById("bilemedimButon").disabled = true;
+
+
+
+document.getElementById("sonucButon").onclick = function() {
+	//document.getElementById("cevap").style.visibility = "visible";
+	document.getElementById("cevap").innerHTML = cevaplar[0];
+	document.getElementById("bildimButon").disabled = false;
+	document.getElementById("bilemedimButon").disabled = false;
+}
+
+var bildim = 0;
+var bilemedim = 0;
+
+document.getElementById("bildimButon").onclick = function() {
+	//bildim 
+	//burada soru ve cevap array inden o sorulari kaldiricaz.
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	bildim = bildim + 1;
+	//tekrar getir
+	check();
+	//var randomSayi = randomOlustur(sorular.length);
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+
+}
+
+document.getElementById("bilemedimButon").onclick = function() {
+	//bilemedim
+	//array den kaldirmayacagiz -- array in sonuna atacagiz
+	
+	bilemedim = bilemedim + 1;
+
+	sorular.push(sorular[0]);
+	cevaplar.push(cevaplar[0]);
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+}
+
+
+
+function check() {
+	if(sorular.length == "0"){
+		alert("sorular bitti");
+		alert("bilinen: " + bildim + "-bilinemeyen: "+  bilemedim);
+		window.reload();
+	}
+}
+
+
+//hazir fonksiyonlar
+
+function randomOlustur(sayi){
+	var rand_sayi = Math.floor(Math.random() * sayi);
+	//alert(rand_sayi);
+	console.log(rand_sayi);
+	return rand_sayi;
+}
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<?php
+	session_start();
+?>
+
+<?php
+
+if(isset($_SESSION['kadi'])) {
+	
+	$formhtml = "<form action='ekle.php' method='post'>Baslik:<br><input type='text' name='baslik'><br>Yazi:<br><textarea name='post' cols='50' rows='20'></textarea><br><input type='submit'></form>";
+	
+	echo $formhtml;
+	
+	
+}
+else {
+	echo "lutfen giris yapiniz";
+}
+
+?>
+</body>
+</html>

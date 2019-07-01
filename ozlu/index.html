@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+	<title>Blog / Apps</title>
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+
+
+<br>
+
+<div id="myDiv"></div>
+
+
+</body>
+
+
+
+
+
+<script>
+
+var quotes = [
+"Do not raise your voice, improve your argument instead.",
+"Knowledge is knowing that a tomato is a fruit. Wisdom is not putting it into a fruit salad. -Miles Kington",
+"By all means, marry. If you get a good wife, you’ll become happy; if you get a bad one, you’ll become a philosopher. -Socrates",
+"Do not argue with an idiot. He will drag you down to his level and beat you with experience. -Greg King",
+"The end is in the beginning and yet you go on. -Samuel Beckett",
+"Words are the clothes thoughts wear. -Samuel Beckett",
+"It only ends once. Anything that happens before is just progress.",
+"Zen means no point of view.",
+"Hell is not punishment, it is training.",
+"What you cannot avoid, welcome.",
+"You want no one to know? Don't do it.",
+"Never answer a question when you are angry.",
+"It's not whether you get knocked down, it is whether you get up. -Lombardi",
+"A bad workman blames his tools.",
+"Be the change you want to see in the world. -Gandhi",
+"A stone covered with dust will show no colors.",
+"Conflict breeds creativity.",
+"Saint is the man who controls ego, sage is the man who destroys it.",
+"Losing is just a step towards victory as long as we keep fighting.",
+"Darda kaldim diye umutsuz olma, yok iken dunyayi var eden vardir.",
+"Wisdom begins in wonder. -Socrates",
+"The problem is not enjoyment, it is attachment.",
+"Don't cry because its over, smile because it happened.",
+"Everyone thinks of changing the world, but no one thinks of changing himself. -Tolstoy",
+"If you can't explain it simply, you don't understand it well enough. -Einstein",
+"The journey of a thousand miles begins with a single step. -Lao tzu",
+"Every artist were first an amateur. -R.W.Emerson",
+"Try not to become a man of success, but a man of value. -Einstein",
+"Although gold dust is precious, it clouds vision.",
+"And there is no good or bad, but thinking makes it so. Human beings are perhaps never more dangerous than when they are convinced without a doubt that they are right. -Felon",
+"Time you enjoy wasting is not wasted. -Lennon",
+"Knowing is not enough, we must apply. Willing is not enough, we must do.",
+"See how we cause ourselves to suffer by resisting what is.",
+"If you don't let the leaf fall, the tree will rise.",
+"There is no Buddha outside your heart.",
+"Wise men talk because they have something to say; fools, because they have to say something. -plato",
+"You can discover more about a person in an hour of play than in a year of conversation. -plato",
+"The heaviest penalty for declining to rule is to be ruled by someone inferior to yourself. ",
+"He who is not a good servant will not be a good master. – Plato"
+
+
+];
+
+
+
+shuffle(quotes);
+
+var myText = quotes[0];
+
+for(i=0;i<quotes.length;i++){
+	document.getElementById("myDiv")	.innerHTML += quotes[i] + "<br><br>";
+}
+
+
+
+
+/*
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext('2d');
+ctx.font = "30px Arial";
+ctx.fillText(myText,10,50); 
+
+
+
+
+*/
+
+//shuffle fonksiyonu
+function shuffle(o){
+	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	return o;
+}
+
+</script>
+
+</html>

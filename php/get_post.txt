@@ -1,0 +1,98 @@
+FORM etiketi
+
+Form etiketi, kullanıcıya veri girmesi için alan oluşturan bir HTML etiketidir.
+Belirli bir URL ye veri gönderebilmek için kullanılır.
+
+Bizler dinamik web siteleri yaptığımız için, PHP sayfalarımıza bilgiyi
+FORM etiketi kullanarak göndereceğiz. Şimdi, çok basit bir örnek olarak
+bir tane input koyalım ve bu input içerisine yazdığımız bilgiyi bir PHP
+sayfasına gönderelim.
+
+Ancak bunu yapabilmemiz için, form etiketinin nasıl kullanıldığını görmemiz
+gerekiyor. Form etiketini şu şekilde kullanıyoruz:
+
+<form action="" method="">
+</form>
+
+Action ve method ların içerisini boş bıraktım. Action yazan yere, verilerin gitmesini
+istediğimiz sayfayı yazıyoruz. Örneğin, "oku.php".
+
+Method içerisine ise iki farklı şey yazabiliriz. Get ve POST.
+Bunlar, veri göndermek için metodlarımız.
+
+Öncelikle, GET metodunu kullanarak gönderelim ve ne olduğuna bakalım.
+
+<form action="oku.php" method="get">
+	<input type="text" name="metin">
+	<input type="submit">
+</form>
+
+Öncesinde gelecek HTML kodlarını yazmadım buraya örnek olduğu için.
+Bildiğimiz gibi input un type ile tipini, name ile de adını belirtiyoruz. Adını
+belirtmemizin nedeni, bunu PHP dosyasında tanımlamak için. Aksi takdirde,
+tipi "text" (metin) olan 3 tane input u birbirinden ayırt edemezdik.
+
+Şimdi bu kodu "index.html" olarak kaydedelim ve çalıştıralım. HTML kodunu
+çalıştırmak için bir webserver a ihtiyacımız olmadığı için sorunsuz 
+çalışacaktır.
+
+Bu HTML dosyasını tarayıcı ile açıp, inputu doldurup gönder tuşuna bastığımızda,
+"Sayfa bulunamadı" ya da "Dosya bulunamadı" gibi bir uyarı mesajı gelecek. Bunun nedeni,
+henüz "oku.php" isminde bir dosya yazmamamız. Ancak burada şimdilik, dikkat etmemiz
+gereken şey bu değil. 
+
+Bunun yerine, tarayıcımızın adres çubuğunda yazan şeye bakalım.
+file:///C:/Users/bilg_adi/Desktop/oku.php?metin=aa
+
+Eğer bir internet sitesinde değil de, kendi bilgisayarınızda çalıştırıyorsanız böyle
+bir şey yazmasını bekliyoruz. Bizi ilgilendiren son bölüm.
+
+Gördüğünüz gibi, ben "aa" yazıp onayladım, o yüzden tarayıcının adres bölümünde aa yazıyor.
+Siz başka bir şey yazdığınızda da, o gözükecek.
+
+Şimdi ise başka bir şey yapalım.
+Form kodumuzda, GET yazan yere POST yazalım, kaydedelim ve tekrar
+çalıştıralım.
+
+Bu sefer, aynı hata gelecek ancak farklı bir şey gözükecek.
+file:///C:/Users/bilg_adi/Desktop/oku.php
+
+Bu sefer, yazdığımız şey gözükmüyor. GET kullandığımızda, hangi input a
+ne yazdığımız açık şekilde ortadaydı. POST kullandığımızda ise bunun önüne 
+geçiyoruz.
+
+Buraya bakarak, her zaman POST kullanmalıyız diye düşünmek doğru olmaz. İkisinin de
+kullanıldığı yerler var, ancak bu şekilde authentication ya da kullanıcı girişi 
+yapıyorsak, özetle; yazdığımız verilerin aleni şekilde adres çubuğunda gözükmesini
+istemiyorsak, o zaman POST metodunu kullanmalıyız.
+
+--
+
+Şimdi, "oku.php" dosyasını yazalım. Form içeren kodumuz POST olarak kalsın.
+
+Bildiğimiz gibi, PHP sayfalarını yazarken <?php ?> etiketlerinin içerisine yazıyoruz.
+
+İçerisinde de PHP kodlarımız yer alacak. 
+Bizim amacımız, bu POST metodu ile gönderilmiş olan verileri (birden fazla olabilir)
+almak, ve bir değişkene bağlamak. Bu aşamada şunu yapıyoruz:
+
+<?php
+	$gelen_veri = $_POST['metin'];
+?>
+
+Bu kodda, gelen_veri adında bir değişken yarattık. Sonra da $_POST kodunu kullanarak,
+"metin" ismini taşıyan (hatırlarsak input un name='metin' idi) şeyi almasını istedik.
+
+Bu kodun altına, echo $gelen_veri; 
+yazıp çalıştırırsak, kutu içerisine yazdığımız yazı ekrana gelecektir.
+
+Bu basit bir uygulama örneği olsa bile, önemli olan POST ya da GET ile gelen verileri
+bu sayfa içerisinde dinamik olarak çalıştırabilmekti.
+
+Peki, eğer HTML kodu içerisinde POST degil de GET metodu kullanılırsa?
+O zaman, PHP kodu içerisinde $_POST yazdığımız yere $_GET yazıyoruz.
+
+Eğer, POST ya da GET metodlarından hangisinin kullanıldığını da bilmiyorsak,
+$_REQUEST komutunu kullanıyoruz.
+
+Bu yukarıdaki bilgiler ile, çok basit bir login sistemi tasarlayabilmelisiniz.

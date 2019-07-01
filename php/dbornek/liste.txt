@@ -1,0 +1,35 @@
+-- php kodu --
+
+<?php
+
+//dbye baglan
+
+$host = '127.0.0.1'; //localhost
+$db = 'okul';
+$user = 'root';
+$pass = '';
+$charset = 'utf8';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+$pdo = new PDO($dsn, $user, $pass);
+
+
+//listele ve ekrana cikti ver (burada yanında onu editleyebilmemiz icin bi tus olsun - ve silmemiz icin)
+
+
+echo "<table border='1'><tr><th>Ad</th><th>Soyad</th><th>Cinsiyet</th><th>Not</th><th></th></tr>";
+
+
+$stmt = $pdo->query('select * from liste');
+foreach ($stmt as $satir) {
+	echo "<tr><td>".$satir['ad']."</td>";
+	echo "<td>".$satir['soyad']."</td>";
+	echo "<td>".$satir['cinsiyet']."</td>";
+	echo "<td>".$satir['aldigi_not']."</td>";
+	echo "<td><a href='degistir.php?id=".$satir['id']."'>Değiştir</a> <a href='sil.php?id=".$satir['id']."'>Sil</a>";
+}
+
+//silme ve degistirme icin ihtiyacimiz olan sey id. cunku unique
+
+?>

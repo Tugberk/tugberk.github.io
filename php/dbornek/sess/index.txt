@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>Tüm Yazılar</h2><a href="login.html">Giris yap</a> <a href="yeni_ekle.php">Yeni Yazı Ekle</a>
+<hr>
+<?php
+
+include("dbbaglan.php");
+
+$stmt = $pdo->prepare("select * from yazilar");
+$stmt->execute([]);
+
+//$cikti = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+foreach ($stmt as $cikti) {
+  echo "<a href='oku.php?id=".$cikti['id']."'>";
+  echo $cikti['baslik'];
+  echo "</a> <span style='font-size: 12px'>";
+  echo $cikti['tarih'];
+  echo " tarihinde yazılmıştır</span><br>";
+  
+  }
+
+?>
+</body>
+</html>

@@ -1,0 +1,51 @@
+body{
+margin:40px auto;
+max-width:650px;
+line-height:1.6;
+text-align: justify;
+font-size:16px;
+color:#444;
+padding:0 10px
+
+}
+h1,h2,h3{line-height:1.2}
+
+footer {
+font-size: 12px;
+}
+
+ /* unvisited link */
+a:link {
+    color: navy;
+}
+
+/* visited link */
+a:visited {
+    color: navy;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+}
+
+/* selected link */
+a:active {
+    color: green;
+} 
+
+span {
+font-size: 12px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

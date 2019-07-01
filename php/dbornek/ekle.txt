@@ -1,0 +1,33 @@
+-- php kodu --
+
+<?php
+
+$ad = $_POST["ad"];
+$soyad = $_POST["soyad"];
+$cins = $_POST["cins"];
+$not = $_POST["not"];
+
+//db ye baglan
+
+$host = '127.0.0.1'; //localhost
+$db = 'okul';
+$user = 'root';
+$pass = '';
+$charset = 'utf8';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+$pdo = new PDO($dsn, $user, $pass);
+
+//eklemeyi yap
+
+	$sql = "insert into liste(ad,soyad,cinsiyet,aldigi_not) values (?,?,?,?)";
+	$pdo->prepare($sql)->execute([$ad, $soyad, $cins, $not]);
+
+//ust satir ile ekledik. 
+
+header("location: ogr_ekle.php"); //bu sayfayi yukle
+
+
+
+?>

@@ -1,0 +1,76 @@
+temel mysql komutları (konsol)
+----------------------
+show databases; //hali hazırda olan veritabanlarını gosterir.
+
+use database; //o veritabanına girer
+
+show tables; // veritabanının icindeki tabloları gosterir
+
+show columns from tablo; //sutunları gosterir
+
+create database dbadi; //yeni vtabanı yaratır
+
+drop database dbadi; //db yi siler
+
+create table ogrenciler (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, ad VARCHAR(20), soyad VARCHAR(20), yas INT);
+
+describe tablo1; //tablonun ozelliklerini gosteriyor
+
+insert into tablo (ad,soyad,yas) values ('cenk','erdem',18); //ekleme yapiyor - yas bolumu int oldugu icin '' koymaya gerek yok
+
+update tablo1 set ad = 'mehmet' where tablo1.soyad = 'erdem'; //degistiriyoruz bir degeri
+
+alter table tablo1 add eposta VARCHAR(40) after yas; //yas sutunundan sonra yeni sutun ekledik
+
+alter table tablo1 drop eposta; //sutunu siliyoruz
+
+delete from tablo1 where ad = 'mehmet'; //dikkatli kullanmak gerekiyor siler satiri
+
+
+
+---
+
+
+mysql data tipleri
+------------------
+
+int -> 	-2147483648 to 2147483647 ya da 0 to 4294967295 -- 11 karaktere kdr secebiliriz
+
+tinyint -> 4 karaktere kdr sınırlama gelebilir ve -128 ile 127 ya da 0 ile 255 arasında deger alır
+
+smallint -> 5 karaktere kdr. -32768 den 32767 ye kadar. ya da 0 - 65535
+
+mediumint -> 9 karaktere kdr. -8388608 to 8388607 ; 0 to 16777215
+
+bigint -> 20 karaktere kadar.
+
+float(m,d) -> m: gorunus d: decimal -> default olarak 10,2 olur bi şey belirtmezsek. 2 decimal 10 da decimallerle birlikte 
+toplam karakter. 
+
+double var;
+
+decimal
+bu ucu arasında fark basamak sayisi. 23 - 53 - 65
+---
+
+date -> YYYY-MM-DD 
+datetime -> YYYY-MM-DD HH:MM:SS 
+timestamp -> YYYYMMDDHHMMSS
+time -> HH:MM:SS
+year(m) -> default olarak 4. 2 de denebilir. o zaman 67-70 gibi olur.
+
+--
+
+char(m) -> m karakter. bir sey belirtmezsek 1 olur.
+varchar(m) -> 1 ile 255 karakter arası. m belirtmek zorundayız. 
+BLOB ya da TEXT -> 65535 karakter. BLOB -> resim vb. kaydetmek icin. BLOB case sensitive
+TINYBLOB - TINYTEXT -> 255 kar. ustteki ile beraber bunlarda kendimiz ayarlayamiyoruz
+MEDIUM -> 16777215  kara.
+LONG-> 4294967295  kar.
+ENUM -> liste olarak belirtiyorzu. mesela enum('a','b','c') dersek sadece bu 3 karakter yada null girebilir içeri
+
+
+
+
+=================================
+

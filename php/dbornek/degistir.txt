@@ -1,0 +1,52 @@
+-- php kodu --
+
+<?php
+
+$id = $_GET['id'];
+
+//db ye baglan
+$host = '127.0.0.1'; //localhost
+$db = 'okul';
+$user = 'root';
+$pass = '';
+$charset = 'utf8';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+$pdo = new PDO($dsn, $user, $pass);
+
+
+//once select ile bi cagiralim
+
+$stmt = $pdo->prepare("select * from liste where id = ?");
+$stmt->execute([$id]);
+$cikti = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
+
+?>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Değiştir</title>
+</head>
+<body>
+
+<form action="degis.php?id=<?php echo $id; ?>" method="post">
+	Ad:<br>
+	<input type="text" name="ad" value="<?php echo $cikti['ad']; ?>"><br>
+	Soyad:<br>
+	<input type="text" name="soyad" value="<?php echo $cikti['soyad']; ?>"><br>
+	Cinsiyet:<br>
+	<input type="text" name="cins" value="<?php echo $cikti['cinsiyet'];?>"><br>
+	Not:<br>
+	<input type="number" name="not" value="<?php echo $cikti['aldigi_not']; ?>"><br>
+	<input type="submit" value="Güncelle">
+	</form>
+
+<!-- burada inputlarin icerisini dolduruyoruz cunku o bilgiler gelmez ise guncelleyemeyiz -->
+
+</body>
+</html>

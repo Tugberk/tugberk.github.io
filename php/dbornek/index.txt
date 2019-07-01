@@ -1,0 +1,18 @@
+
+<!-- bu seride session ya da cookie kullanilmadi. guvenlik unsuru yok. belirli hatalar mevcut -->
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Öğrenci Listesi</title>
+</head>
+<body>
+
+<a href="liste.php">Ogrenci Listesi</a>
+<br>
+<a href="ogr_ekle.php">Yeni Öğrenci Ekle</a>
+
+</body>
+
+</html>

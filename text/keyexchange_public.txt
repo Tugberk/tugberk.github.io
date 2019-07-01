@@ -1,0 +1,45 @@
+tarih: 30.12.2017
+baslik: asimetrik sifreleme ile key exchange 
+
+
+# asimetrik sifreleme ile key exchange
+
+asimetrik sifreleme, yavas olmasi nedeniyle buyuk metinler sifrelemede ya da haberlesme icin kullanilmiyor. bu isler icin
+genellikle simetrik sifreleme metodlari (aes) kullaniliyor. cunku bunlar daha hizli. ancak, uzakta olan biriyle haberlesmek
+icin bu asimetrik anahtari kararlastirmaniz-paylasmaniz gerekiyor. peki bunu nasi yapacaksiniz?
+
+2 yolu var;
+1- diffie hellman key exchange protocol/algorithm
+2- public key encryption ile (asimetrik sifreleme)
+
+bu yazida public key ornegini verecegiz.
+simdi, bildigimiz gibi public key encryption larda public/private (secret) key pairler var. bunlari ayri bi yazida anlatiriz. 
+genellikle public key piyasaya verilir. private key ise sizde kalir. 
+piyasaya yani disari verirsiniz, cunku birisi size mesaj gondermek isterse, mesajini sizin public key iniz ile sifreler, ve
+size gonderir. boylelikle, siz kendi private key iniz ile acip mesaji gorebilirsiniz. arada bu sifreli metni alan olursa da
+cozemez, cunku public key ile sifrelenmis sey private key ile acilir yalnizca. ayni sekilde, private key ile sifrelenmis bir
+metin de, ancak public key ile acilabilir.
+
+biz aslinda burada bundan yararlaniyoruz.
+simdi en temel sekilde bi ornek dusunelim:
+
+bir simetrik key imiz var, biz bu key i karsi tarafa gondermek istiyoruz.
+o key i, karsi tarafin public key i ile sifreleriz. boylelikle, sadece o kisi bu sifrelenmis seyi acip, icindeki
+simetrik anahtari bulabilir. bunu bulduktan sonra karsimizdaki, bizim public keyimizi kullanarak sifreleyip, bize geri gonderir.
+biz de bunu acip, kendi sifremizi gorursek eger; dogru bir transfer yaptigimizi anlariz.
+
+burada 3 tane transfer yaptik. bunu kisaltabilir miyiz?
+
+su sekilde yapabiliriz mesela. 
+biz once bu simetrik anahtari, kendi private key imiz ile sifreleriz. (aslinda bu imzalamis olmaktir)
+ondan sonra, bu sifreli metni de, (yani private key imiz ile sifreledikten sonra) karsi tarafin public key i ile sifreleriz.
+ve gondeririz.
+
+1- karsi taraf bu attigimiz seyi kendi private keyini kullanarak acar. baska kimse acamaz.
+2- simdi elinde olan sey, benim kendi private key imle sifreledigim sey. bunu da acabilmek icin benim public key imi kullanacak.
+benim public keyim den baska hicbir sey acamaz bunu. dolayisiyla, actiginda da benim yazdigim sifreyi gorecek. 
+
+burada 3. bi transfere gerek kalmadan sifrenin karsi tarafa gittiginden (degismeden) emin olabiliyoruz.
+
+-end-
+t.k.

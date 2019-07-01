@@ -1,0 +1,31 @@
+-- php kodu --
+<?php
+
+
+$ad = $_POST["ad"];
+$soyad = $_POST["soyad"];
+$cins = $_POST["cins"];
+$not = $_POST["not"];
+
+$id = $_GET["id"];
+
+$host = '127.0.0.1'; //localhost
+$db = 'okul';
+$user = 'root';
+$pass = '';
+$charset = 'utf8';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+$pdo = new PDO($dsn, $user, $pass);
+
+
+$sql = "update liste set ad = ?, soyad = ?, cinsiyet = ?, aldigi_not = ? where id = ?";
+$pdo->prepare($sql)->execute([$ad, $soyad, $cins, $not, $id]);
+
+
+
+header("location: liste.php");
+
+
+?>

@@ -1,0 +1,24 @@
+<?php
+	session_start();
+?>
+
+<?php
+
+if(isset($_SESSION['kadi'])){
+	
+	include("dbbaglan.php");
+	$baslik = $_POST['baslik'];
+	$icerik = $_POST['post'];
+	$yazar = $_SESSION['kadi'];
+	$tarih = date("Y-m-d H:i:s");
+	
+	$sql = "insert into yazilar(baslik, icerik, yazar, tarih) values (?,?,?,?)";
+	$pdo->prepare($sql)->execute([$baslik, $icerik, $yazar, $tarih]);
+	
+	header("Location: index.php");
+}
+else {
+	echo "giris yapin";
+}
+
+?>

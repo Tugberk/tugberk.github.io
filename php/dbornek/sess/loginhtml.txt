@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<form action="login.php" method="post">
+		K.adi: <input type="text" name="kadi"><br>
+		Sifre: <input type="password" name="sifre"><br><input type="submit">
+	</form>
+
+
+</body>
+</html>

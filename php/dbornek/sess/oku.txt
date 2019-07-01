@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	
+</head>
+<body>
+<?php
+
+
+$id = $_GET['id'];
+
+include("dbbaglan.php");
+
+$stmt = $pdo->prepare("select * from yazilar where id = ?");
+$stmt->execute([$id]);
+$cikti = $stmt->fetch(PDO::FETCH_ASSOC);
+
+echo "<h2>".$cikti['baslik']."</h2>";
+echo "<br>";
+echo $cikti['icerik'];
+echo "<hr>";
+echo $cikti['yazar'] . " tarafından ". $cikti['tarih']." tarihinde yazılmıştır.";
+
+
+?>
+</body>
+</html>

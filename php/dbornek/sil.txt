@@ -1,0 +1,24 @@
+-- php kodu --
+
+<?php
+
+$id = $_GET['id'];
+
+//db ye baglan
+$host = '127.0.0.1'; //localhost
+$db = 'okul';
+$user = 'root';
+$pass = '';
+$charset = 'utf8';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+$pdo = new PDO($dsn, $user, $pass);
+
+
+$sql = "delete from liste where id=?";
+$pdo->prepare($sql)->execute([$id]);
+
+header("location:liste.php"); 
+
+?>

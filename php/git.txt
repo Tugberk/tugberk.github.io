@@ -1,0 +1,174 @@
+Git
+
+Git, bir sürüm kontrol sistemidir. Linus Torvalds ve ekibi Linux çekirdeğini kodlarken Bitkeeper ile çalışıyordu. Ancak, bazı sorunlar 
+yaşamaları nedeniyle, Bitkeeper ı bıraktılar ve yeni bir sürüm kontrol sistemi yazmaya başladılar. Sonuç olarak, piyasada bulunan diğer 
+sistemlerden daha hızlı çalışan bir sürüm kontrol sistemi kodlandı: git.
+
+Git, burada basit anlatılacak ancak üzerinde uzun bir ders yapılabilecek bir konudur. C dili ile kodlanmış olup, 
+günümüzde belki de en yaygın kullanılan SKS'dir. Diğer SKS lerden teknik olarak bazı özellikleriyle ayrılır ve bu 
+yüzden daha hızlı çalışmaktadır. Örneğin, Git, değiştirilmeyen dosyaların bir "bellek kopyasını" tutar, diğerlerinin 
+tuttuğu değişim listesine karşılık olarak.
+
+Örneğin, aklımıza günlük hayatımızda yazdığımız raporlar gelsin. Biz bu raporları değiştirdiğimizde, aynı dosyayı 
+korkudan Farklı kaydet yaparız ve ismini değiştirerek kaydederiz. Git ve benzeri SKS ler bu olayın önüne geçiyor ve 
+her seferinde bunları kendi içerisinde tutuyor. Git, adeta bir dosya sistemi gibi çalışmakta. Yani, Git yalnızca kod 
+programları için kullanılmıyor, aynı zamanda üstünde değişim yapılan her tür dosya için uygulanabilir.
+
+SKS lerin başka avantajları da var. Örneğin bir kod geliştiriyorsunuz ve bu kod işyerinizde duruyor. Bu durumda 
+işyerine bağlanıp bu kod üzerinde çalışmanız bekleniyor. Git sayesinde, bu kodları kendi bilgisayarınıza alıp, 
+çevrimdışı olarak kendi makinenizde çalışabilirsiniz. Aynı zamanda, grup çalışmalarını da daha kolay hale getirir, 
+çünkü herkes kendi bilgisayarında geliştirme yapabilir.
+
+Bu ders içerisinde, basit git komutlarını kullanacağız, birkaç örnek ile de pekiştireceğiz. Git, daha önce de 
+belirttiğim gibi çok derin bir konu. Ancak ihtiyacınız olduğunda detaylı şekilde öğrenebilirsiniz. 
+Git hakkında türkçe çok güzel bir kaynak için: 
+https://git-scm.com/book/tr/v1
+
+========================
+
+İlk olarak git i bilgisayarımıza kuralım ve ondan sonra örnekler üzerinden devam edelim.
+
+Şimdi, diyelim ki yeni bir projeye başlıyoruz. Yani boş bir klasörümüz olacak. 
+O klasörü oluşturduktan sonra içine girelim ve bir adet "benioku.txt" dosyası oluşturalım.
+Bu klasörün içerisindeyken fare ile sağ tıkladığımızda "Git bash here" tarzı bir şey yazacak. Buna bastığımızda ise, bir terminal açılacak.
+
+Bu terminalin içerisine yazıyoruz git komutlarımızı.
+Öncelikle, bir yerde git sistemini oluşturmak için ilk komutumuz:
+git init
+
+init, initialize kelimesinden geliyor. initialize, ilk kullanıma hazırlamak anlamına geliyor.
+Bu komutu yazdıktan sonra, burada .git isimli bir dosya oluşacak. Sonra ise, durumu görmek için kullandığımız
+başka bir komut var:
+git status
+
+Şimdi, "git init" yaptıktan sonra, "git status" yazalım ve bakalım.
+Şöyle bir karşılık gelecek:
+
+On branch master
+
+Initial commit
+
+Untracked files:
+	(use "git add <file>..." to include in what will be committed)
+	
+		benioku.txt
+		
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+
+Burada, "untracked files" derken, git bize aslında benim takip etmediğim dosyalar var burada diyor.
+Bunları takip etmesi için, "git add" komutunu kullanmamız gerekli. Bu komut ile, bu dosyayı git
+e ekleyeceğiz, böylelikle git de kontrol edecek bunları.
+
+Ara bir bilgi verelim. Amacımız, commit etmek. Commit, işlemek manasına geliyor. Biz;
+klasörde "git" i çalıştırıyoruz, ardından dosyaları git e ekliyor ve işliyoruz. Ancak;
+dosyaları işlememiz için önce "eklememiz" gerekiyor.
+
+Bu aşamada; "git add benioku.txt" diyelim. Bir hata gelmeyeceği için ekrana bir şey bastırmıyor.
+Ardından "git status" komutunu çalıştıralım.
+
+Bu sefer, bir öncekinden farklı şekilde, 
+
+Changes to be committed:
+	new file: benioku.txt
+	
+yazacak. Bu, işlenecek dosyalar, yeni dosya : benioku.txt olarak çevriliyor. Yani şimdi, 
+eklediğimiz için bu dosyayı commit edebilirsin, işleyebilirsin diyor.
+
+"git commit -m 'mesaj' "  diyerek artık ekleyebiliriz. Bu komutu çalıştırdığımızda,
+ekleme işlemi tamamlanmış olacak.
+
+Bu aşamada "git status" dersek, "nothing to commit" (işlenecek bir şey yok) karşılığını
+göreceğiz.
+
+Pekala, şimdi bir kod dosyası oluşturalım. kod.php olsun adı; ve içeriği basit olsun:
+
+<?php
+	echo "merhaba";
+?>
+
+Bu kodu ekledikten sonra, yine durumu kontrol etmek için "git status" yapalım.
+Bu sefer, en başta olan şey olacak yine.
+
+Untracked files:
+	kod.php
+
+
+yazacak. Bu aşamada artık yapacağımızı biliyoruz, git add komutu ile ekleyeceğiz ve commit
+edeceğiz. Commit ederken bir mesaj yazmak, bu commit i neden yaptığımızı ve neyi değiştirdiğimizi
+kendimize hatırlatmak için yararlıdır.
+
+Kullanışlı olan bir kod daha var. "git diff"
+
+diff, difference ın kısaltılmışı ve bu da "fark" manasına geliyor. Böylelikle, değiştirdiğimiz
+bir dosyada neyi değiştirdiğimizi kontrol ediyoruz.
+
+Şimdi kodumuzu değiştirelim, bu sefer bir echo satırı daha ekleyelim.
+<?php
+	echo "merhaba";
+	echo "a";
+?>
+
+Bu dosyayı değiştirdikten sonra, git status çalıştıralım. Farklı bir şekilde;
+
+modified: kod.php
+
+diye bir şey göreceksiniz. Bu, kod.php değişti manasına geliyor.
+Bu aşamada "git diff" yazıp çalıştırırsak;
+
++ ve - ile, neyin çıkarılıp neyin eklendiğini gösterecek.
+Burada dikkat ederseniz değiştirdikten sonra add ya da commit yapmadık. 
+Eğer commit yaparsak;
+
+Changes not staged for commit:
+	modified: kod.php
+	
+diyecektir. Burada, "add" yapmadığımız için, commit işleminde bir değişiklik olmadığını söylüyor. Yani,
+biz kod.php yi değiştirdik; ancak bu değiştirme işlemini kendi sabit diskimiz üzerinde yaptık. Git sisteminde
+bu değişiklik olmadı. Bunun için, yine bu dosyayı "git add" ile ekleyip, öyle commit etmemiz gerekiyor. 
+
+Bu işlemden sonra geçerli hale gelecektir.
+
+
+Özetle;
+- Git yoksa eğer, "git init" ilk kodumuz olmalı. Bu olmadan hiçbir işlem yapamıyoruz.
+- Ardından, git sistemine eklemek istediğimiz dosyalar için "git add" komutu kullanıyoruz.
+- Değişimleri işlemek istiyorsak eğer, "git commit" komutu kullanılıyor.
+- Git status komutu ile, durumu kontrol ediyoruz. (yeni dosya var mı? değişen dosya var mı?)
+- Git diff komutu ile değişim yapılan kodlara bakıyoruz.
+- Git clone komutu ile, hazır olan bir git reposunu (havuz) direkt olarak bilgisayarımıza indiriyoruz.
+
+
+Ek;
+Dikkat ettiyseniz, commit komutundan önce her zaman add komutunu girmek zorundayız.
+Bunu, commit komutunu -am şeklide kullanarak aşabiliriz.
+git commit -am 'mesaj' dersek eğer, her şeyi ekleyecek ve sonra commit edecektir.
+
+
+Git sistemini kendi bilgisayarınıza kurup kullanabilirsiniz. Aynı zamanda, internet üzerinde
+bu hizmetleri veren siteler de bulunmaktadır. Bunlardan en yaygını "Github"dır. 
+http://www.github.com
+
+Burada kendinize bir repo oluşturabilir (kodlar açık oluyor), ve kodlarınızı burada depolayabilirsiniz.
+Hiç git bilmeden de kullanabileceğiniz bir site, ancak basit git komutları ile aşina olmanız ve
+duruma göre kendinizi bu alanda geliştirmeniz önerilmektedir. İleride iş başvurularında, burada
+olan bilgiden daha fazlasına ihtiyaç duyacaksınız.
+
+
+
+Soru 1:
+Bir git reposu (havuzu) oluşturmak için hangi komut yazılmalıdır?
+
+Soru 2:
+Değiştirilen dosyaların arasındaki farkı görmek için hangi komut yazılmalıdır?
+
+Soru 3:
+Değiştirilen dosyayı işlemek için ne(ler) yapılmalıdır? (dosya adı: kod.c)
+
+Soru 4:
+Git hangi dilde yazılmıştır?
+
+Soru 5:
+Uzakta bulunan bir repoyu, kendi bilgisayarımıza hangi komut ile kurarız?
+

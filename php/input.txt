@@ -1,0 +1,75 @@
+php ile form kullanarak login işlemleri
+----------------------------------------
+
+temel php bilginiz olduğunu varsayarak devam ediyorum. php içerisinde html kodları gömebiliyoruz,
+html içerisinde de aynı şekilde <?php ?> etiketleri içerisinde php kodu yazabiliyoruz.
+
+burada amacımız şu;
+bir adet kullanıcı adı ve şifre giriş yeri olacak. buraya girilen kullanıcı adı doğru ise,
+doğru olduğunu belirten bir sayfaya gidecek. eğer kullanıcı adı yanlış ise, yanlış olduğunu belirtecek 
+ve geriye dönen bir link koyacak.
+
+şimdi öncelikle bunun için bir sayfa oluşturuyoruz. bu sayfanın adını istediğimiz bir isim seçebiliriz.
+ve bu aşamada, bu sayfanın php olması için bir neden yok. yani düz html sayfası yazabiliriz.
+
+html sayfasının başlangıç etiketlerini falan yazmıyorum. bunları da hali hazırda aklınıza yazmış olmalısınız.
+
+<form action="kontrol.php" method="post">
+	kullanıcı adı:<br>
+	<input type="text" name="kadi"><br>
+	sifre:<br>
+	<input type="password" name="sifre"><br>
+	<input type="submit">
+</form>
+
+bu formu gönderdiğimizde, kontrol.php ye gidecek. post metodu kullanıyoruz.
+input koyarken ise, name kullandık. bu name, o inputun adı aslında. yani bu adı
+kullanarak biz php kodunda hangi inputun neyi taşıdığını anlayacağız.
+
+şifre bölümünde ise type="password" yazdık, çünkü yanımızda biri varsa ekranda
+şifremizi görmesini istemiyoruz.
+
+şimdi, kontrol.php yi yazalım.
+amacımız, öncelikle bir önceki sayfadan, formdan gelen bilgileri almak.
+
+bunu $_POST komutu ile alacağız. post metodu değil de get metodu kullansaydık, $_GET kullanacaktık.
+eğer kullanılan metodu da bilmiyorsak, $_REQUEST kullanabiliriz.
+
+<?php
+$kadi = $_POST["kadi"];
+$sifre = $_POST["sifre"];
+
+echo $kadi;
+echo "<br>";
+echo $sifre;
+?>
+
+bu yukarıda gördüğümüz kod, kullanıcı adı ve şifre bölümüne girilen verileri ekrana yazdırıyor.
+şu an bir kontrol mekanizması mevcut değil. $kadi ve $sifre diye iki tane değişken yaratıyoruz,
+ve bunların içerisine de inputlardaki verileri koyuyoruz. $_POST[] un içine dikkat ettiyseniz,
+inputların "name" ini, yani adını yazdık. 
+
+bunun bir sonraki aşaması ise, bu aldığımız kullanıcı adı ve şifresini acaba doğru mu diye kontrol etmek.
+bunu normalde bir veritabanına bağlanarak yapıyoruz ancak burada kolaylık olması açısından, daha önce yazdığımız
+kullanıcı adı ve şifre ile karşılaştıracağız.
+
+şimdi burada bir koşul durumu ortaya çıkıyor. bu koşul durumunu ise "if" komutu ile deneyeceğiz;
+
+if($kadi == "admin" && $sifre == "123456"){
+	echo "giriş başarılı";
+}
+else {
+	echo "giriş başarısız";
+}
+
+bu yukarıdaki kodu, ana php kodumuza eklersek eğer, kullanıcı adı ve şifremizi admin ve 123456 ile karşılaştırıyoruz.
+eğer yazdıklarımız uyarsa, giriş başarılı diye bir yazı geliyor. eğer değilse, başarısız olduğunu gösteren bir yazı geliyor.
+bunun yanına istersek ana ekrana döndürecek bir link yazabiliriz:
+echo "<a href='index.html'>geri dön</a>";
+şeklinde.
+
+burada, eğer kullanıcı doğru giriş yaptıysa, onun görmesini istediğimiz şeyleri gidip if in içine yazıyoruz.
+yanlış giriş yaptığında göstermek istediğimiz şeyleri ise else içerisine yazıyoruz.
+
+bu ciddi bir uygulama için yetersizdir, birden fazla kullanıcı için de adapte edilebilir ancak bu doğru bir
+yaklaşım olmaz. ciddi uygulamalar için cookie ve session kullanmalıyız.
