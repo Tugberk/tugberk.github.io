@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+<title>Yazı Tura</title>
+</head>
+
+<body>
+<h1>yazi mi tura mı</h1>
+
+</body>
+
+
+<script>
+
+//uc veri attim cunku 1 ile 2 arasi geliyordu random sayilar
+var my_array = ["","yazi","tura"];
+var yazi = 0;
+var tura = 0;
+
+//for dondurelim 100 tane -- random veri secsin - eger yazi gelirse yaziyi 1 arttirsin - tura ise turayi
+
+//var my_rand = Math.floor(Math.random() * 2) + 1;
+
+for(var i =0 ; i < 10000 ; i++) {
+
+	var my_rand = Math.floor(Math.random() * 2) + 1;
+	console.log(my_array[my_rand]);
+	
+	if (my_array[my_rand] == "yazi") {
+		yazi = yazi + 1;
+	}
+	else {
+		tura = tura + 1;
+	}
+	
+}
+if(tura > yazi){
+	alert("TURA");
+}
+else {
+	alert("YAZI");
+}
+	
+document.write("10000 deneme sonucunda, " + yazi + " adet yazi; " + tura + " adet tura geldi.")
+
+
+</script>
+
+
+</html>

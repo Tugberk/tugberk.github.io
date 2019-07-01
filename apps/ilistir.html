@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+	<title>ni tiytili yi</title>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+	<center>
+		<div>
+			<h2> sesli harfleri i ye cevir </h2>
+			<input type='text' id='input' placeholder='buraya yaz'/>
+			<br><button onclick='run()'>ilistir</button>
+		</div>
+		<br>
+		<hr>
+		<h2> ters cevir </h2>
+		<div>
+			<input type='text' id='input_iki' placeholder='buraya yaz'/>
+			<br><button onclick='ters()'>gonder</button>
+		</div>
+		
+		
+		<div id='output'></div>
+</center>
+</body>
+
+
+<script>
+
+function run() {
+	var input = document.getElementById('input').value;
+	var output = document.getElementById('output');
+
+	output.innerHTML = "";
+	var rep = 'i';
+
+	//burada gelen text i incelicez. eger icerisinde bu harflerden biri var ise onu i ile replace edicez
+
+	
+
+	var i;
+	for(i=0; i < input.length; i++)
+	{
+		if (input[i] == 'a' | input[i] == 'e' | input[i] == 'o' | input[i] == 'u' | input[i] == 'ü' | input[i] == 'ö') {
+			output.innerHTML = output.innerHTML + 'i'; //burayi duzeltelim. oncekini yazmasini bekliyorum
+		}
+		else {
+		output.innerHTML = output.innerHTML + input[i];
+		}
+	}
+
+}
+	
+	
+function ters() {
+	
+	
+	var input = document.getElementById('input_iki').value;
+	var output = document.getElementById('output');
+	
+	//alert(input);
+	
+	var dizi = [];
+	var yeni_dizi = [];
+	
+	for(i=0;i<input.length;i++){
+			dizi[i] = input[i];
+			yeni_dizi[i] = "";
+	}
+	//alert(dizi);
+	
+	//alert(yeni_dizi);
+	
+	for(i=1; i<dizi.length+1;i++) 
+	{
+	
+		yeni_dizi[yeni_dizi.length - i] = dizi[i-1];
+	}
+	
+	var yeni_dizi_str = yeni_dizi.join("");
+	output.innerHTML = yeni_dizi_str;
+	
+
+}
+</script>
+
+</html>

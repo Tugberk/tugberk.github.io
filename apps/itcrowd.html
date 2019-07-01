@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>the it crowd Rastgele Bolum Secici</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body>
+	<center>
+	<h1><div id="output"></div></h1>
+	<img src='https://mediamass.net/jdd/public/documents/entries/4665.jpg'>
+</center>
+</body>
+<script>
+var output = document.getElementById("output");
+
+var dizilistesi=[
+"s01e1-yesterdays jam",
+"s01e2-calamity jen",
+"s01e3-50 50",
+"s01e4-the red door",
+"s01e5-the haunting of bill crouse",
+"s01e6-aunt irma visits",
+"s02e1-the work outing",
+"s02e2-return of the golden child",
+"s02e3-moss and the german",
+"s02e4-the dinner party",
+"s02e5-smoke and mirrors",
+"s02e6-men without women",
+"s03e1-from hell",
+"s03e2-are we not men",
+"s03e3-tramps like us",
+"s03e4-speech",
+"s03e5-friendface",
+"s03e6-calendar geeks",
+"s04e1-jen the fredo",
+"s04e2-the final countdown",
+"s04e3-something happened",
+"s04e4-italian for beginners",
+"s04e5-bad boys",
+"s04e6-reynholm vs reynholm"];
+
+shuffle(dizilistesi);
+var bolum = dizilistesi[0];
+output.innerHTML = bolum;
+//shuffle fonksiyonu
+function shuffle(o){
+	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	return o;
+}
+</script>
+</html>

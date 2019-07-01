@@ -1,0 +1,75 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>kdv hesaplayici</title>
+</head>
+<body>
+
+<center>
+
+	<input type="number" placeholder="tutar" id="kdvtext" -required>
+	<p><button onclick="hesapla();">kdv ekle</button></p>
+	<p><button onclick="kdvsiz();">kdv cikar</button></p>
+
+
+
+<div id="output1"></div>
+<div id="output2"></div>
+<div id="output3"></div>
+
+</body>
+
+<script>
+
+var kdv_text = document.getElementById("kdvtext");
+kdv_text.focus();
+var output1 = document.getElementById("output1");
+var output2 = document.getElementById("output2");
+var output3 = document.getElementById("output3");
+
+
+
+
+function hesapla() 
+{
+	
+	var kdvsiz = parseFloat(document.getElementById("kdvtext").value);
+	
+	
+	
+	
+	//parseint yapmak zorunda kaldim - cunku string olarak goruyordu nedense
+	var toplam = parseFloat(kdvsiz) + (kdvsiz * 18 / 100);
+	
+	output1.innerHTML = "Toplam: " + kdvsiz;
+	output2.innerHTML = "Kdv: " + (kdvsiz * (18 / 100)).toFixed(2);
+	output3.innerHTML = "Genel Toplam: " + toplam;
+	kdv_text.focus();
+}
+
+function kdvsiz() {
+
+	var a;
+	a = parseFloat(a);
+	var deger = document.getElementById("kdvtext").value;
+	
+	deger = parseFloat(deger);
+	
+	a = deger * (100/118);
+	
+	output1.innerHTML = "Toplam: " + a.toFixed(2);
+	output2.innerHTML = "Kdv: " + (a*(18/100)).toFixed(2) ;
+	output3.innerHTML = "Genel Toplam: " + (a + a*(18/100)).toFixed(2);
+	kdv_text.focus();
+
+}
+
+
+</script>
+<style>
+
+</style>
+</html>

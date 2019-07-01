@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+	body{margin:40px
+auto;max-width:650px;line-height:1.6;font-size:22px;color:#444;padding:0
+10px}h1,h2,h3{line-height:1.2}
+	</style>
+	
+</head>
+<body>
+
+<div id="score"></div>
+<hr>
+<div id="output"></div>
+
+
+
+<br><br>
+
+<div id="inputdiv">
+<input type="text" id="input"><button id="bas" onclick="fonk()">enter!</button>
+</div>
+</body>
+<script>
+
+document.getElementById("input").focus();
+//30 saniyemiz olsun -- hata bunu da ayarlanabilir yapabiliriz
+
+
+//burada kelime listesini random olusturucaz tum kelimeler icinden aslinda. bir kelime wordlist i lazim
+//ya da bir txt dokumanı onun icinden random alacagiz.
+
+var kelimeler = ["kelime","harf","evet","hayır","ben","durum","kadar","sahip","şey","öyle","son","bulmak","yemek","hal","aynı","hep","atmak","böyle","gelmek","ses","kişi","göz","siz","şimdi","önemli","bile","diğer","orta","iyi","yani","ürün","söz","Niue",
+"Ürdün",
+"Hollanda",
+"Andorra",
+"Türkiye",
+"Madagaskar",
+"Samoa",
+"Türkmenistan",
+"Eritre",
+"Kazakistan",
+"Paraguay",
+"Yunanistan",
+"Cook Adaları",
+"Irak",
+"Azerbaycan",
+"Mali",
+"Brunei",
+"Tayland",
+"Lübnan",
+"Kırgızistan",
+"Kolombiya",
+"Brezilya",
+"Slovakya",
+"Barbados",
+"Macaristan",
+"Arjantin",
+"Burundi",
+"Belçika",
+"Romanya",
+"Endonezya",
+"Avustralya",
+"Venezuela"];
+
+for(j=0;j<kelimeler.length;j++){
+	kelimeler[j] = kelimeler[j].toLowerCase();
+}
+
+
+
+var variableForTimer = 0;
+var output = document.getElementById("output");
+
+//var my_rand = Math.floor(Math.random() * kelimeler.length);
+
+shuffle(kelimeler);
+
+output.innerHTML = kelimeler[0];
+skor = 0;
+score.innerHTML = "Skor: "+"0";
+
+
+
+function fonk() {
+
+	if (variableForTimer == 0){
+			var id = setTimeout(exit, 30000);
+			
+		}
+		
+	var score = document.getElementById("score");
+	var input = document.getElementById("input");
+	score.innerHTML = "Skor: ";
+
+	for(var i=0;i < kelimeler.length;i++) {
+		
+		
+		if(input.value == kelimeler[i]) {
+			skor = skor + 1;
+			kelimeler.splice(i, 1); //buldugum kelimeyi siliyorum
+			output.innerHTML = kelimeler[i]; 
+			score.innerHTML +=  skor;
+			if(kelimeler.length == 0){
+				document.write("Tebrikler! Kelimeler bitti. Skorunuz: " + skor);
+			}
+		}
+		
+		
+		
+	}
+
+	//kontrolden sonra text bitsin yeni kelimeye hazirlansin ve direk focuslansin
+	input.value = "";
+	input.focus();
+	variableForTimer = 1;
+}
+
+//enter tusuna baglamak icin
+document.getElementById("input")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode == 13) {
+        document.getElementById("bas").click();
+    }
+});
+
+//shuffle
+function shuffle(o){
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+}
+
+function exit() {
+	
+	document.write("30 sn doldu. 30 sn içinde skorun: " + skor);
+}
+
+
+
+
+
+</script>
+
+
+</html>
+

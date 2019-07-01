@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+	<title>us army - yag orani hesaplayici</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+</head>
+
+<body align="center">
+	<div id="giris">
+		<h1>Cinsiyetiniz?</h1>
+
+		<h2><a class="button-success pure-button" href="#" id="erkeklink">Erkek</a>
+		<p>
+		<a class="button-success pure-button" href="#" id="kadinlink">Kadin</a>	
+		</p></h2>
+	</div>
+
+	
+	<div id="erkek">
+		<h2>Yağ Oranı Hesapla - Erkek için</h2>
+		<form class="pure-form pure-form-aligned">
+			<fieldset>
+				<div class="pure-control-group">
+					<label for="name">Boy (cm)</label>
+					<input id="boy_e" type="text">
+				</div>
+
+				<div class="pure-control-group">
+					<label for="kg">Kilo (kg)</label>
+					<input id="kilo_e" type="number">
+				</div>
+
+				<div class="pure-control-group">
+					<label for="email">Boyun Ölçüsü (cm)</label>
+					<input id="boyun_olcusu_e" type="number" placeholder="En ince yerden">
+				</div>
+				
+				<div class="pure-control-group">
+					<label for="gobek">Göbek Ölçüsü (cm)</label>
+					<input id="gobek_olcusu_e" type="number" placeholder="Göbek deliğinin çevresi">
+				</div>
+
+				<div class="pure-controls">
+				   <!-- <button id="erkek_buton" type="submit" class="pure-button pure-button-primary">Yağ Oranı Hesapla</button> -->
+				   <a class="pure-button" href="#" id="erkek_buton">Yağ Oranı Hesapla</a>
+				</div>
+			</fieldset>
+		</form>
+
+
+</div>
+
+<div id="kadin">
+	<h2>Yağ Oranı Hesapla - Kadın için</h2>
+	<form class="pure-form pure-form-aligned">
+			<fieldset>
+				<div class="pure-control-group">
+					<label for="name">Boy (cm)</label>
+					<input id="boy" type="number">
+				</div>
+
+				<div class="pure-control-group">
+					<label for="kg">Kilo (kg)</label>
+					<input id="kilo" type="number">
+				</div>
+
+				<div class="pure-control-group">
+					<label for="email">Boyun Ölçüsü (cm)</label>
+					<input id="boyun_olcusu" type="number" placeholder="En ince yerden">
+				</div>
+				
+				<div class="pure-control-group">
+					<label for="kalca">Kalça Ölçüsü (cm)</label>
+					<input id="kalca_olcusu" type="number" placeholder="En kalın yerden">
+				</div>
+
+				<div class="pure-control-group">
+					<label for="gobek">Göbek Ölçüsü (cm)</label>
+					<input id="gobek_olcusu" type="number" placeholder="Göbek deliğinin çevresi">
+				</div>
+
+				<div class="pure-controls">
+				   <!--<button id="kadin_buton" type="submit" class="pure-button pure-button-primary">Yağ Oranı Hesapla</button>-->
+				    <a class="pure-button" href="#" id="kadin_buton">Yağ Oranı Hesapla</a>
+				</div>
+			</fieldset>
+		</form>
+
+
+</div>
+
+
+<div id="output" align="center">
+
+
+<table class="pure-table">
+<thead>
+	<tr>
+	<th>Yağ Oranı</th>
+	<th>Yağ Kütlesi</th>
+	<th>Yağsız Kütle (Lean Mass)</th>
+	</tr>
+</thead>
+	<tr>
+		<td id="yagorani"></td>
+		<td id="yagkutlesi"></td>
+		<td id="yagsizkutle"></td>
+		
+	</tr>
+
+</div>
+
+
+</body>
+
+
+
+<script>
+$(document).ready(function() {
+
+	//declarations here
+	var erkek_div = $('#erkek');
+	var kadin_div = $('#kadin');
+	erkek_div.hide();
+	kadin_div.hide();
+	var erkek_link = $('#erkeklink');
+	var kadin_link = $('#kadinlink');
+	var giris = $('#giris');
+	var buton_e = $('#erkek_buton');
+	var buton_k = $('#kadin_buton');
+	var output = $('#output');
+	
+	
+	var yagorani = $('#yagorani');
+	var yagkutlesi = $('#yagkutlesi');
+	var yagsizkutle = $('#yagsizkutle');
+	output.hide();
+	
+
+	
+	//all clicks here
+	erkek_link.click(function() {
+
+		giris.hide();
+		kadin_div.hide();
+		erkek_div.fadeIn();
+		
+
+	});
+
+
+	kadin_link.click(function() {
+		giris.hide();
+		erkek_div.hide();
+		kadin_div.fadeIn();
+
+	});
+	
+	function scroll_to(){
+	$('html, body').animate({
+		scrollTop: $("#output").offset().top
+	},1000);
+}
+	
+	buton_e.click(function() {
+	
+	//value yazdıralım
+	
+		var boy_e = $('#boy_e').val();
+		var kilo_e = $('#kilo_e').val();
+		var boyun_e = $('#boyun_olcusu_e').val();
+		var gobek_e = $('#gobek_olcusu_e').val();
+			
+		var yag_orani_e = (495 / (1.0324 - 0.19077 * Math.log10(gobek_e - boyun_e) + 0.15456 * Math.log10(boy_e)) - 450);
+		
+		yagorani.html("%" + yag_orani_e.toFixed(2));
+		yagkutlesi.html((kilo_e * yag_orani_e / 100).toFixed(2) + " kg");
+		yagsizkutle.html((kilo_e - (kilo_e * yag_orani_e / 100)).toFixed(2) + " kg");
+		output.fadeIn();
+		scroll_to();
+
+	});
+
+
+	
+	buton_k.click(function() {
+	
+		var output = $('#output');
+		
+		var boy = $('#boy').val();
+		var kilo = $('#kilo').val();
+		var boyun = $('#boyun_olcusu').val();
+		var gobek = $('#gobek_olcusu').val();
+		var kalca = $('#kalca_olcusu').val();
+			
+		//bunu yapmazsak nedense sacmaliyor
+		gobek = parseInt(gobek);
+		kalca = parseInt(kalca);
+		boyun = parseInt(boyun);
+		
+		var yag_orani = (495 / (1.29579 - 0.35004 * Math.log10(gobek + kalca - boyun) + 0.22100 * Math.log10(boy)) - 450);
+		
+		
+		yagorani.html("%" + yag_orani.toFixed(2));
+		yagkutlesi.html((kilo * yag_orani / 100).toFixed(2) + " kg");
+		yagsizkutle.html((kilo - (kilo * yag_orani / 100)).toFixed(2) + " kg");
+		output.fadeIn();
+		scroll_to();
+	});
+
+})
+
+
+</script>
+</html>

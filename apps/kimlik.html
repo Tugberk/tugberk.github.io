@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+<title>kimlik_no_kontrol</title>
+<style type="text/css">body{margin:40px
+auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+10px}h1,h2,h3{line-height:1.2}</style>
+	
+</head>
+<body>
+
+<h2>TC Kimlik No Kontrol</h2>
+<span>Yazılan kimlik no kaydedilmemektedir. Uygulama javascript ile yazılmıştır, kaynak koduna bakarak herhangi bir analytics e atıf olmadığı görülebilir.</span>
+<div id="uyari"></div>
+<br>
+<input type="number" id="girdi" placeholder="Kimlik no girin">
+<br>
+<button onclick="kontrol()">kontrol et</button>
+
+<hr>
+<div id="output"></div>
+
+</body>
+<script>
+
+function kontrol() {
+
+  var kimlik_no = document.getElementById("girdi").value;
+  var count = 0;
+
+  if(kimlik_no.length != 11) {
+    document.getElementById("uyari").innerHTML = "Kimlik no 11 karakterden az olamaz.";
+    document.getElementById("girdi").value = "";
+    document.getElementById("girdi").focus();
+  }
+
+  else {
+    for(var i =0;i<kimlik_no.length-1;i++) {
+        count = count + parseInt(kimlik_no[i]);
+    }
+
+  count = count % 10;
+  if(count == kimlik_no[kimlik_no.length-1]){
+    console.log("dogru");
+    document.getElementById("output").innerHTML = "Bu geçerli bir kimlik numarasıdır.";
+  }
+  else {
+  console.log("hatali");
+  document.getElementById("output").innerHTML = "Bu kimlik numarası geçersizdir."
+  }
+  }
+  }
+</script>
+</html>

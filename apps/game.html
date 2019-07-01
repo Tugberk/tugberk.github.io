@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+</head>
+<body>
+<center>
+
+<a href="#" id="link" onclick="letsgo();">oyunu baslat</a>
+<div id="output"></div>
+<hr><br><br><br>
+<div id="debug"></div>
+<div id="writehere"></div>
+</center>
+</body>
+
+<script>
+var writehere = document.getElementById("writehere");
+document.getElementById("link").onclick = letsgo;
+var output = document.getElementById("output");
+var debug = document.getElementById("debug");
+
+var cumleler = ["Looking into a precious mirror. Form and reflection beholding each other. You are not it, it is you.",
+	"See how we cause ourselves to suffer, by resisting what is. -Buddha",
+	"If you don't let the leaf fall, the tree will rise.",
+	"Zen means no point of view.",
+	"Anlam, ışık kadar hızla evreni gezerken, gözlerime değdiği anı özenle saklıyorum. -Onur Senpai",
+	"Things do not happen 'for' something, they happen 'because of'.",
+	"A stone covered with dust will show no colors.",
+	"Leaves are there, leaves were not. The trunk is always hard as rock.",
+	"Conflict breeds creativity.",
+	"Saint is the man who controls ego, sage is the man who destroys it.",
+	"It only ends once, anything before that is just progress.",
+	"Losing is just a step towards victory as long as you keep fighting.",
+	"In theory, there is no difference between theory and practice. In practice, there is.",
+	"Hell is not punishment, it is training.", 
+	"Because your own strength is unequal to the task, do not assume that it is beyond the powers of man. But if anything is within the powers and province of man, believe that it is within your own compass also. -Marcus Aurelius",
+	"Knowing is not enough, we must apply; willing is not enough, we must do. -Bruce Lee",
+	"Dont walk behind me, I may not lead; dont walk in front of me, I may not follow; just walk beside me and be my friend. -Albert Camus",
+	"Life is what happens to you when you are busy making other plans. -John Lennon",
+	"If you want to know what a man is like, take a good look at how he treats his inferiors, not his equals -J.K. Rowling",
+	"Yesterday is history, tomorrow is a mystery, today is a gift of God, and thats why we call it a present. -Bill Keane",
+	"For every minute you are angry, you lose 60 seconds of your happiness. -Ralph Waldo Emerson",
+	"The question is not who is going to let me, the question is who is going to stop me. -Ayn Rand",
+	"Be yourself, everyone else is already taken. -Oscar Wilde",
+	"Everything in life is about sex, except sex. Sex is about power. -Oscar Wilde",
+	"You can only get stronger by playing a stronger opponent.",
+	"And there is no good or bad, but thinking makes it so. Human beings are perhaps never more dangerous than when they are convinced without a doubt that they are right.",
+	"Although gold dust is precious, it clouds vision.",
+	"No one is special, some were patient.",
+	"Try not to become a man of success, but a man of value. -Albert Einstein",
+	"Every artist were first an amateur. -Ralph Waldo Emerson",
+	"The journey of a thousand miles begins with a single step. -Lao Tzu",
+	"Life is like a game of card. The hand dealt is determinism, what you play is free will. -Jawaharal Nehra",
+	"If you cant explain it simply, you dont understand it well enough. -Albert Einstein",
+	"A successful man is one who can lay a firm foundation with the bricks others have thrown at him. -David Brinkley",
+	"Do not go where the path may lead, go instead where there is no path and leave a trail. -Emerson",
+	"Wisdom begins in wonder. -Sokrates",
+	"The problem is not enjoyment, it is attachment.",
+	"Dont cry because its over, smile because it happened. -Dr Seuss",
+	"I have not failed, I just found 10000 other ways that dont work. -Thomas Edison",
+	"Everybody is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid. -Albert Einstein",
+	"Nothing happens until something moves. -Albert Einstein",
+	"Everyone thinks of changing the world, but no one thinks of changing himself. -Leo Tolstoy"];
+
+
+//replace kullanarak virgulu kaldirdik--ortalik karismasin diye -- bi de kücük harf yapalim hepsini
+for(var i=0;i<cumleler.length; i++) 
+{
+	cumleler[i] = cumleler[i].replace(',','').toLowerCase();
+}
+
+
+//debug.innerHTML = cumleler;
+
+
+function letsgo(){
+document.getElementById("link").style.display = 'none';
+//burada random eleman seciyoruz ve ekrana yazdiriyoruz. -- ve o sectigimizi array den cikaricaz -- cikardik
+random_num = Math.floor(Math.random()*cumleler.length);
+var item = cumleler[random_num];
+cumleler.splice(random_num,1);
+
+//debug
+//debug.innerHTML = cumleler;
+
+
+
+//sectigimiz item in kelimelerini tek tek ayirdik; bunu kopyaladik ve shuffle ettik. orjinalini tutuyoruz cünkü dogru mu yanlis mi bakmamiz gerekiyor.
+new_item = item.split(' ');
+//output.innerHTML = new_item;
+item_temp = [];
+
+//deneme yapalim
+for(var i=0; i<new_item.length; i++) {
+item_temp[i] = new_item[i];
+}
+
+
+//simdi new_item_temp i shuffle etmeliyiz
+
+shuffle(item_temp);
+
+
+//burada this.id diyerek kendi id mizi aldik bastigimiz
+for(var i=0; i<item_temp.length; i++) 
+{
+output.innerHTML = output.innerHTML + " " + '<a href="#" onclick="deneme(this.id)" id="' +i+'">' + item_temp[i] + '</a>'; 
+}
+}
+
+
+//shuffle fonksiyonu
+function shuffle(o){
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+}
+
+var count = -1;
+
+
+function deneme(clicked_id) {
+	//debug.innerHTML = item_temp[clicked_id];
+	//debug.innerHTML = new_item;
+	
+
+	
+	
+	if (item_temp[clicked_id] === new_item[count + 1]){
+		debug.innerHTML = "DOGRU";
+		count++;
+		writehere.innerHTML = writehere.innerHTML +  " " + item_temp[clicked_id];
+		item_temp.splice(clicked_id, 1);
+		if (item_temp.length == 0) {
+			debug.innerHTML = "DOGRU SIRALAMA";
+			}
+		
+		//ust tarafi yeniden yazdiriyoruz
+		output.innerHTML = "";
+		for(var j = 0; j < item_temp.length; j++) 
+				{
+				output.innerHTML = output.innerHTML + " " + '<a href="#" onclick="deneme(this.id)" id="' + j + '">' + item_temp[j] + '</a>'; 
+				}
+		
+		
+				
+		}
+	
+}
+</script>
+
+<style>
+body {
+
+font-size: 25px;}
+</style>
+
+</html>

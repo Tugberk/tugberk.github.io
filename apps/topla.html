@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<center>
+	<div id='optiondiv'>Level Sec:  <select id="optionlist">
+		  <option value="10" selected='selecteds'>Level 1</option>
+		  <option value="20">Level 2</option>
+		  <option value="30">Level 3</option>
+		  <option value="40">Level 4</option>
+		  <option value="50">Level 5</option>
+	</select></div>
+	<h1><div id='output'></div></h1>
+	<hr>
+	<input type='number' id='myinput' onkeydown="if (event.keyCode == 13) document.getElementById('mybutton').click()" ></input>
+	<br>
+	<a href='#' onclick=program() id='mybutton' class='mybutton'><span>topla</span></a>
+	<div id='cevap'></div>
+	
+</center>	
+</body>
+
+
+<script>
+var output = document.getElementById('output');
+var sonuc = document.getElementById('myinput');
+
+var e = document.getElementById('optionlist');
+//alert(e.value);
+
+//random sayi olusturmak icin fonksiyon
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var x;
+var y;
+var toplam;
+var skor;
+skor = 0;
+var yanlis;
+yanlis = 0;
+
+x = getRandomInt(0, 10);
+y = getRandomInt(0, 10);
+
+output.innerHTML = x + '+' + y + '??'
+sonuc.focus();
+
+
+
+var variableForTimer = 0;
+var level = e.value;
+
+
+function program(){
+
+	if (variableForTimer == 0){
+		var id = setTimeout(exit, 30000);
+		
+	}
+
+	var level = e.value;
+
+	variableForTimer++;
+	//burasi degisken olabilir bu bize bagimli tamamen
+	//level = level + 0.5;
+
+	sonuc.focus();
+	
+	toplam = x + y;
+	//alert(toplam.value);
+
+	x = getRandomInt(level-10, level);
+	y = getRandomInt(level-10, level);
+
+	output.innerHTML = x + '+' + y + '??'
+
+	if (sonuc.value == toplam){
+		
+		skor = skor + 1;
+		cevap.innerHTML = 'dogru' + ' skor: ' + skor;
+
+	}
+	else {
+		cevap.innerHTML = 'yanlis' + ' skor: ' + skor;
+		skor = skor;
+		yanlis = yanlis + 1;
+		if (yanlis == 3){
+			exit();
+		}
+	}
+	sonuc.value = '';
+
+
+
+}
+
+function exit() {
+	
+	sonuc.style.display = 'none';
+	output.style.display = 'none';
+	mybutton.style.display = 'none';
+	optiondiv.style.display = 'none';
+
+	level = level + 10;
+	
+	cevap.innerHTML = 'oyun bitti <br> oynadigin level: ' + e.value / 10 + '<br>Dogru Cevap: ' + skor + '<br>Yanlis Cevap: ' + yanlis + '<br><a href="http://tugberk.github.io/topla.html">yeni oyun</a>';
+}
+
+
+
+</script>
+<style>
+
+
+.mybutton {
+    display: inline-block;
+    margin: 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow:    0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+    -moz-box-shadow: 0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+    box-shadow: 0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+    -webkit-transition: -webkit-box-shadow .1s ease-in-out;
+    -moz-transition: -moz-box-shadow .1s ease-in-out;
+    -o-transition: -o-box-shadow .1s ease-in-out;
+    transition: box-shadow .1s ease-in-out;
+    font-size: 50px;
+    color: #fff;
+}
+
+.mybutton span {
+    display: inline-block;
+    padding: 20px 30px;
+    background-color: #ec528d;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(338, 90%, 80%, .8)), to(hsla(338, 90%, 70%, .2)));
+    background-image: -webkit-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    background-image: -moz-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    background-image: -o-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+    -moz-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+    font-family: 'Pacifico', Arial, sans-serif;
+    line-height: 1;
+    text-shadow: 0 -1px 1px rgba(175, 49, 95, .7);
+    -webkit-transition: background-color .2s ease-in-out, -webkit-transform .1s ease-in-out;
+    -moz-transition: background-color .2s ease-in-out, -moz-transform .1s ease-in-out;
+    -o-transition: background-color .2s ease-in-out, -o-transform .1s ease-in-out;
+    transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+}
+
+.mybutton:hover span {
+    background-color: #ec6a9c;
+    text-shadow: 0 -1px 1px rgba(175, 49, 95, .9), 0 0 5px rgba(255, 255, 255, .8);
+}
+
+.mybutton:active, .mybutton:focus {
+    -webkit-box-shadow:    0 8px 0 #c5376d, 0 12px 10px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 8px 0 #c5376d, 0 12px 10px rgba(0, 0, 0, .3);
+    box-shadow:    0 8px 0 #c5376d, 0 12px 10px rgba(0, 0, 0, .3);
+}
+
+.mybutton:active span {
+    -webkit-transform: translate(0, 4px);
+    -moz-transform: translate(0, 4px);
+    -o-transform: translate(0, 4px);
+    transform: translate(0, 4px);
+}
+</style>
+</html>

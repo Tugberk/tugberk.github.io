@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>sisko musun?</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+</head>
+
+
+<body align="center">
+	
+	<h2>sisko musun?</h2>
+	<form class="pure-form pure-form-aligned">
+		<fieldset>
+			<div class="pure-control-group">
+				<label for="boy">Boy (cm)</label>
+				<input id="boy" type="text">
+			</div>
+			
+			<div class="pure-control-group">
+				<label for="kg">Kilo (kg)</label>
+				<input id="kilo" type="number">
+			</div>
+			
+			<div class="pure-controls">
+			<a class="pure-button" href="#" id="erkek_buton">Erkek</a>
+			<a class="pure-button" href="#" id="kadin_buton">Kadın</a>
+			
+		</fieldset>
+	</form>
+	
+	<div id="output" align="center">
+	
+		<div id="erkektablo">
+			<h3>Boy</h3>
+			<table class="pure-table">
+			<thead>
+				<tr>
+				<th>Türkiye Ortalaması</th>
+				<th>Sen</th>
+				<th>Fark</th>
+				</tr>
+			</thead>
+				<tr>
+				<td>173.5</td>
+				<td id="e_tablo_boy"></td>
+				<td id="e_tablo_boy_fark"></td>
+				</tr>
+			</table>
+			<h3>Kilo</h3>
+			<table class="pure-table">
+			<thead>
+				<tr>
+				<th>Türkiye Ortalaması</th>
+				<th>Sen</th>
+				<th>Fark</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>68.4</td>
+				<td id="e_tablo_kilo"></td>
+				<td id="e_tablo_kilo_fark"></td>
+				</tr>
+			</table>
+		</div>
+		
+		
+		<div id="kadintablo">
+			<h3>Boy</h3>
+			<table class="pure-table">
+			<thead>
+				<tr>
+				<th>Türkiye Ortalaması</th>
+				<th>Sen</th>
+				<th>Fark</th>
+				</tr>
+			</thead>
+				<tr>
+				<td>162.8</td>
+				<td id="k_tablo_boy"></td>
+				<td id="k_tablo_boy_fark"></td>
+				</tr>
+			</table>
+			<h3>Kilo</h3>
+			<table class="pure-table">
+			<thead>
+				<tr>
+				<th>Türkiye Ortalaması</th>
+				<th>Sen</th>
+				<th>Fark</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>58.1</td>
+				<td id="k_tablo_kilo"></td>
+				<td id="k_tablo_kilo_fark"></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="bmitablo">
+			<h3>BMI</h3>
+			<table class="pure-table">
+			<thead>
+				<tr>
+				<th>Türkiye Ortalaması</th>
+				<th>Sen</th>
+				<th>Fark</th>
+				</tr>
+			</thead>
+				<tr>
+				<td id="bmiort"></td>
+				<td id="benimbmi"></td>
+				<td id="bmifark"></td>
+				</tr>
+			</table>
+		</div>
+	
+	
+	</div>
+
+
+</body>
+
+<script>
+$(document).ready(function() {
+
+	//declarations
+	var output = $('#output');
+	var buton_e = $('#erkek_buton');
+	var buton_k = $('#kadin_buton');
+	var kilo = $('#kilo');
+	var boy = $('#boy');
+	
+	var e_tablo_kilo = $('#e_tablo_kilo');
+	var e_tablo_boy = $('#e_tablo_boy');
+	
+	var e_tablo_boy_fark = $('#e_tablo_boy_fark');
+	var e_tablo_kilo_fark = $('#e_tablo_kilo_fark');
+	
+	
+	var k_tablo_kilo = $('#k_tablo_kilo');
+	var k_tablo_boy = $('#k_tablo_boy');
+	
+	var k_tablo_boy_fark = $('#k_tablo_boy_fark');
+	var k_tablo_kilo_fark = $('#k_tablo_kilo_fark');
+	
+	
+	var kadintablo = $('#kadintablo');
+	var erkektablo = $('#erkektablo');
+	
+	
+	var bmitablo = $('#bmitablo');
+	var bmiort = $('#bmiort');
+	var benimbmi = $('#benimbmi');
+	var bmifark = $('#bmifark');
+	
+	
+	
+	
+	erkektablo.hide();
+	kadintablo.hide();
+	bmitablo.hide();
+	
+	
+	var kadin_kilo_ort = 58.1;
+	var erkek_kilo_ort = 68.4;
+	
+	var kadin_boy_ort = 162.8;
+	var erkek_boy_ort = 173.5;
+	
+	
+	//clicks here
+	buton_e.click(function() {
+
+		var bmi_ort = 0;
+		var benim_bmi = 0;
+		
+		erkektablo.fadeIn();
+		bmitablo.fadeIn();
+		kadintablo.hide();
+		
+		var boy_e = $('#boy').val();
+		var kilo_e = $('#kilo').val();
+		
+				
+		e_tablo_boy.html(boy_e);
+		e_tablo_kilo.html(kilo_e);
+		
+		e_tablo_boy_fark.html((boy_e - erkek_boy_ort).toFixed(2));
+		e_tablo_kilo_fark.html((kilo_e - erkek_kilo_ort).toFixed(2));
+		
+		
+		bmi_ort = erkek_kilo_ort / ((erkek_boy_ort / 100)^2);
+		benim_bmi = kilo_e / (Math.pow((boy_e/ 100), 2));
+		
+		
+		bmiort.html(bmi_ort.toFixed(2));
+		benimbmi.html(benim_bmi.toFixed(2));
+		bmifark.html((benim_bmi - bmi_ort).toFixed(2));
+		
+
+});
+
+	buton_k.click(function() { 
+	
+				
+		kadintablo.fadeIn();
+		erkektablo.hide();
+		bmitablo.fadeIn();
+		
+		var bmi_ort = 0;
+		var benim_bmi = 0;
+		
+		var boy_k = $('#boy').val();
+		var kilo_k = $('#kilo').val();
+		
+		k_tablo_boy.html(boy_k);
+		k_tablo_kilo.html(kilo_k);
+		
+		k_tablo_boy_fark.html((boy_k - kadin_boy_ort).toFixed(2));
+		k_tablo_kilo_fark.html((kilo_k - kadin_kilo_ort).toFixed(2));
+		
+		bmi_ort = kadin_kilo_ort / ((kadin_boy_ort / 100)^2);
+		benim_bmi = kilo_k / (Math.pow((boy_k / 100), 2));
+		
+		
+		bmiort.html(bmi_ort.toFixed(2));
+		benimbmi.html(benim_bmi.toFixed(2));
+		bmifark.html((benim_bmi - bmi_ort).toFixed(2));
+		
+	
+	});
+
+});
+
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>yuzde fark hesaplayici</title>
+	<style>body{margin:40px
+auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+10px}h1,h2,h3{line-height:1.2}
+</style>
+</head>
+<body>
+
+kucuk sayi:<br>
+<input type="text" id="num1" >
+<br>
+buyuk sayi:<br>
+<input type="text" id="num2" >
+<br>
+<button onclick="hesapla()">yuzde fark hesapla</button>
+
+<div id="output"></div>
+</body>
+<script>
+
+document.getElementById("num1").focus();
+var output = document.getElementById("output");
+
+
+function hesapla() {
+
+
+var output = document.getElementById("output");
+var kucuk = document.getElementById("num1").value;
+var buyuk = document.getElementById("num2").value;
+
+//alert(num1.value);
+
+var yuzde;
+
+yuzde = ((buyuk - kucuk) * 100 / kucuk).toFixed(2);
+
+output.innerHTML = "Yuzde fark: %" + yuzde;
+}
+
+</script>
+</html>

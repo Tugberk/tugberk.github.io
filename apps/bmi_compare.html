@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+<body ng-app="bmiApp" ng-controller="bmiCtrl" align="center">
+
+<form ng-submit="bmiEkle()" class="pure-form pure-form-aligned">
+	Boy: <input type="number" ng-model="boy" required>
+	<br>
+	Kilo: <input type="number" ng-model="kilo" required>
+	<br>
+	<input type="submit" ng-click="sortBy(BMI)">	
+</form>
+
+<hr><br>
+
+<div align="center">
+<table border="1" class="pure-table">
+	<tr>
+		<th>
+			İsim
+		</th>
+		<th>
+			Boy
+		</th>
+		<th>
+			Kilo
+		</th>
+		<th>
+			BMI
+		</th>
+		
+	</tr>
+	
+	<tr ng-repeat="x in myList | orderBy:propertyName:reverse">
+		<td>{{x.name}}</td>
+		<td>{{x.boy}}</td>
+		<td>{{x.kilo}}</td>
+		<td>{{x.bmi | number:2}}</td>		<!-- number koyarak virgülden sonrasını ayarladık -->
+	</tr>
+
+
+</table>
+	</div>
+
+
+</body>
+<script>
+
+var app = angular.module('bmiApp', []);
+app.controller('bmiCtrl', function($scope){
+	
+	$scope.myList = [
+	{name: 'Kobe Bryant',   boy: 198,  kilo: 96, bmi: 24.49},
+	{name: 'Michael Jordan', boy: 198, kilo: 98, bmi:25},
+	{name: 'LeBron James', boy: 203, kilo: 113, bmi: 27.42},
+	{name: 'James Harden', boy: 196, kilo: 100, bmi: 26.03},
+	{name: 'Ben Simmons', boy: 208, kilo: 104, bmi: 24.04},
+	{name: 'Kyle Kuzma', boy: 206, kilo: 100, bmi: 23.56},
+	{name: 'Steve Nash', boy: 191, kilo: 88, bmi: 24.12},
+	{name: 'Allen Iverson', boy: 183, kilo: 75, bmi: 22.40},
+	{name: 'Dwayne Wade', boy: 193, kilo: 100, bmi: 26.85},
+	{name: 'Stephen Curry', boy: 190, kilo: 86, bmi: 23.82},
+	{name: 'Jimmy Butler', boy: 203, kilo: 100, bmi: 24.27}];
+
+
+	
+	$scope.propertyName = 'bmi';
+	$scope.reverse = false;
+	
+	$scope.sortBy = function(propertyName) {
+      $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
+      $scope.propertyName = propertyName;
+    };
+	
+	
+
+$scope.bmiEkle = function(){
+	
+	var bmi = ($scope.kilo) / (($scope.boy / 100) * ($scope.boy / 100));
+	
+	
+	$scope.myList.push({name: 'SEN', boy:$scope.boy, kilo:$scope.kilo, bmi:bmi });
+	
+	$scope.sortBy('bmi'); //boylece ekler eklemez yeniden sıralıyor
+}
+
+
+
+});
+
+</script>
+</html>

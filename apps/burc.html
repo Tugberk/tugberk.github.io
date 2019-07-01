@@ -1,0 +1,190 @@
+
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>burc</title>
+	<style>body{margin:40px
+auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+10px}h1,h2,h3{line-height:1.2}</style>
+</head>
+
+<body>
+	<br><br><br><br>
+	
+	Gün:<input type="number" id="gun" placeholder="gun">
+	<br>
+	Ay:<input type="number" id="ay" placeholder="ay">
+	<br>
+	<button onclick="fn_do()">burcu ney?</button>
+	
+	<div id="output">
+	</div>	
+</body>
+<script>
+
+
+document.getElementById("gun").focus();
+
+function fn_do() {
+
+	var gun = document.getElementById("gun").value;
+	var ay = document.getElementById("ay").value;
+	
+	var output = document.getElementById("output");
+	
+	
+	
+	if(ay == 1) {
+	
+		if(gun < 21) {
+			output.innerHTML = "<br>Oğlak Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b> Satürn<br><b>Element:</b> Toprak<br><b>Nitelik:</b> Öncü<br><b>Uğurlu Sayıları:</b> 2, 8<br><b>Gün:</b> Cumartesi<br><b>Uğurlu Taşı:</b> Grena<br><b>Renk:</b> Koyu yeşil, kahverengi<br><b>Tarot Kartı:</b> Şeytan<br><b>Hayvan:</b> Keçi ve diğer boynuzlular<br><b>Bitki:</b> Karanfil, sarmaşık, çam, kavak, karaağaç<br><b>Kıymetli Taş:</b> Karaelmas, kehribar<br><b>Kıymetli Maden:</b> Kurşun";
+			}
+		else {
+			output.innerHTML = "<br>Kova Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b> Uranüs<br><b>Element:</b> Hava<br><b>Nitelik:</b> Sabit<br><b>Uğurlu Sayıları:</b> 1, 7<br><b>Gün:</b> Çarşamba<br><b>Uğurlu Taşı:</b> Ametist<br><b>Renk:</b> Elektrik mavisi<br><b>Tarot Kartı:</b> Yıldız<br><b>Hayvan:</b> Büyük kuşlar<br><b>Bitki:</b> Meyve ağaçları ve orkide<br><b>Kıymetli Taş:</b> Cam, kalkedon<br><b>Kıymetli Maden:</b> Uranyum<br>";
+			}
+	}
+	
+	if(ay == 2) {
+	
+		if(gun < 19) {
+			output.innerHTML = "<br>Kova Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b> Uranüs<br><b>Element:</b> Hava<br><b>Nitelik:</b> Sabit<br><b>Uğurlu Sayıları:</b> 1, 7<br><b>Gün:</b> Çarşamba<br><b>Uğurlu Taşı:</b> Ametist<br><b>Renk:</b> Elektrik mavisi<br><b>Tarot Kartı:</b> Yıldız<br><b>Hayvan:</b> Büyük kuşlar<br><b>Bitki:</b> Meyve ağaçları ve orkide<br><b>Kıymetli Taş:</b> Cam, kalkedon<br><b>Kıymetli Maden:</b> Uranyum<br>";
+			}
+		else {
+			output.innerHTML = "<br>Balık Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b> Neptün<br><b>Element:</b> Su<br><b>Nitelik:</b> Değişken<br><b>Uğurlu Sayıları:</b> 2, 6<br><b>Gün:</b> Cuma<br><b>Uğurlu Taşı:</b>Akuamarin<br><b>Renk:</b> Turkuaz, nil yeşili<br><b>Tarot Kartı:</b> Ay<br><b>Hayvan:</b> Balıklar<br><b>Bitki:</b> İncir ve söğüt, nilüfer, fulya<br><b>Kıymetli Taş:</b> İnci<br><b>Kıymetli Maden:</b> Platin<br>";
+			
+			}
+	}
+	
+	if(ay == 3) {
+	
+		if(gun < 21) {
+			output.innerHTML = "<br>Balık Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b> Neptün<br><b>Element:</b> Su<br><b>Nitelik:</b> Değişken<br><b>Uğurlu Sayıları:</b> 2, 6<br><b>Gün:</b> Cuma<br><b>Uğurlu Taşı:</b>Akuamarin<br><b>Renk:</b> Turkuaz, nil yeşili<br><b>Tarot Kartı:</b> Ay<br><b>Hayvan:</b> Balıklar<br><b>Bitki:</b> İncir ve söğüt, nilüfer, fulya<br><b>Kıymetli Taş:</b> İnci<br><b>Kıymetli Maden:</b> Platin<br>";
+			}
+		else {
+			output.innerHTML = "<br>Koç Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b> Mars<br><b>Element:</b> Ateş<br><b>Nitelik:</b> Öncü<br><b>Uğurlu Sayıları:</b> 1, 9<br><b>Gün:</b> Salı<br><b>Uğurlu Taşı:</b> Yakut<br><b>Renk:</b> Kırmızı<br><b>Tarot Kartı:</b> İmparator<br><b>Hayvan:</b> Koyun<br><b>Bitki:</b> Itır, Hanımeli, Pars Zambağı<br><b>Kıymetli Taş:</b> Elmas<br><b>Kıymetli Maden:</b> Demir<br>";
+			
+			}
+	}
+	
+	if(ay == 4) {
+	
+		if(gun < 21) {
+			output.innerHTML = "<br>Koç Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b> Mars<br><b>Element:</b> Ateş<br><b>Nitelik:</b> Öncü<br><b>Uğurlu Sayıları:</b> 1, 9<br><b>Gün:</b> Salı<br><b>Uğurlu Taşı:</b> Yakut<br><b>Renk:</b> Kırmızı<br><b>Tarot Kartı:</b> İmparator<br><b>Hayvan:</b> Koyun<br><b>Bitki:</b> Itır, Hanımeli, Pars Zambağı<br><b>Kıymetli Taş:</b> Elmas<br><b>Kıymetli Maden:</b> Demir<br>";
+			}
+		else {
+			output.innerHTML = "<br>Boğa Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Venüs<br><b>Element:</b> Toprak<br><b>Nitelik:</b> Sabit<br><b>Uğurlu Sayıları:</b> 6, 4<br><b>Gün:</b> Cuma<br><b>Uğurlu Taşı:</b> Zümrüt<br><b>Renk:</b> Pastel mavi, lila<br><b>Tarot Kartı:</b> İmparatoriçe<br><b>Hayvan:</b> Boğa<br><b>Bitki:</b> Elma, selvi, menekşe, gelincik<br><b>Kıymetli Taş:</b> Topaz<br><b>Kıymetli Maden:</b> Bakır<br>";
+			}
+	}
+	
+	if(ay == 5) {
+	
+		if(gun < 21) {
+			output.innerHTML = "<br>Boğa Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Venüs<br><b>Element:</b> Toprak<br><b>Nitelik:</b> Sabit<br><b>Uğurlu Sayıları:</b> 6, 4<br><b>Gün:</b> Cuma<br><b>Uğurlu Taşı:</b> Zümrüt<br><b>Renk:</b> Pastel mavi, lila<br><b>Tarot Kartı:</b> İmparatoriçe<br><b>Hayvan:</b> Boğa<br><b>Bitki:</b> Elma, selvi, menekşe, gelincik<br><b>Kıymetli Taş:</b> Topaz<br><b>Kıymetli Maden:</b> Bakır<br>";
+			}
+		else {
+			output.innerHTML = "<br>İkizler Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Merkür<br><b>Element:</b> Hava<br><b>Nitelik:</b> Değişken<br><b>Uğurlu Sayıları:</b> 5, 9<br><b>Gün:</b> Çarşamba<br><b>Uğurlu Taşı:</b> Akik<br><b>Renk:</b> Sarı, portakal<br><b>Tarot Kartı:</b> Aşıklar<br><b>Hayvan:</b> Parlak renkli kuşlar, kelebekler<br><b>Bitki:</b> Fındık, ceviz, lavanta, inci çiçeği<br><b>Kıymetli Taş:</b> Turmalin<br><b>Kıymetli Maden:</b> Civa<br>";
+			}
+	}
+	
+	if(ay == 6) {
+	
+		if(gun < 21) {
+			output.innerHTML = "<br>İkizler Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Merkür<br><b>Element:</b> Hava<br><b>Nitelik:</b> Değişken<br><b>Uğurlu Sayıları:</b> 5, 9<br><b>Gün:</b> Çarşamba<br><b>Uğurlu Taşı:</b> Akik<br><b>Renk:</b> Sarı, portakal<br><b>Tarot Kartı:</b> Aşıklar<br><b>Hayvan:</b> Parlak renkli kuşlar, kelebekler<br><b>Bitki:</b> Fındık, ceviz, lavanta, inci çiçeği<br><b>Kıymetli Taş:</b> Turmalin<br><b>Kıymetli Maden:</b> Civa<br>";
+			}
+		else {
+			output.innerHTML = "<br>Yengeç Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Ay<br><b>Element:</b> Su<br><b>Nitelik:</b> Öncü<br><b>Uğurlu Sayıları:</b> 3, 7<br><b>Gün:</b> Pazartesi<br><b>Uğurlu Taşı:</b> İnci<br><b>Renk:</b> Beyaz, Deniz mavisi, Gümüş<br><b>Tarot Kartı:</b> Ay <br><b>Hayvan:</b> Deniz kabukları<br><b>Bitki:</b> Hezaren çiçeği, nilüfer, kenger otu<br><b>Kıymetli Taş:</b> Aytaşı, amber<br><b>Kıymetli Maden:</b> Gümüş<br>";
+			}
+	}
+	
+	if(ay == 7) {
+	
+		if(gun < 23) {
+			output.innerHTML = "<br>Yengeç Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Ay<br><b>Element:</b> Su<br><b>Nitelik:</b> Öncü<br><b>Uğurlu Sayıları:</b> 3, 7<br><b>Gün:</b> Pazartesi<br><b>Uğurlu Taşı:</b> İnci<br><b>Renk:</b> Beyaz, Deniz mavisi, Gümüş<br><b>Tarot Kartı:</b> Ay <br><b>Hayvan:</b> Deniz kabukları<br><b>Bitki:</b> Hezaren çiçeği, nilüfer, kenger otu<br><b>Kıymetli Taş:</b> Aytaşı, amber<br><b>Kıymetli Maden:</b> Gümüş<br>";
+			}
+		else {
+			output.innerHTML = "<br>Aslan Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Güneş<br><b>Element:</b> Ateş<br><b>Nitelik:</b> Sabit<br><b>Uğurlu Sayıları:</b> 5<br><b>Gün:</b> Pazar<br><b>Uğurlu Taşı:</b> Elmas<br><b>Renk:</b> Sarı, turuncu<br><b>Tarot Kartı:</b> Kader çarkı<br><b>Hayvan:</b> Aslan, kedi<br><b>Bitki:</b> Ayçiçeği, gül, krizantem, orkide<br><b>Kıymetli Taş:</b> Kedi gözü, pırlanta, sarı safir<br><b>Kıymetli Maden:</b> Altın<br>";
+			}
+	}
+	
+	if(ay == 8) {
+	
+		if(gun < 24) {
+			output.innerHTML = "<br>Aslan Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Güneş<br><b>Element:</b> Ateş<br><b>Nitelik:</b> Sabit<br><b>Uğurlu Sayıları:</b> 5<br><b>Gün:</b> Pazar<br><b>Uğurlu Taşı:</b> Elmas<br><b>Renk:</b> Sarı, turuncu<br><b>Tarot Kartı:</b> Kader çarkı<br><b>Hayvan:</b> Aslan, kedi<br><b>Bitki:</b> Ayçiçeği, gül, krizantem, orkide<br><b>Kıymetli Taş:</b> Kedi gözü, pırlanta, sarı safir<br><b>Kıymetli Maden:</b> Altın<br>";
+			}
+		else {
+			output.innerHTML = "<br>Başak Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Merkür<br><b>Element:</b> Toprak<br><b>Nitelik:</b> Değişken<br><b>Uğurlu Sayıları:</b> 6<br><b>Gün:</b> Çarşamba<br><b>Uğurlu Taşı:</b> Meryem taşı<br><b>Renk:</b> Sarı, yeşil<br><b>Tarot Kartı:</b> Ermiş<br><b>Hayvan:</b> Tüm evciller<br><b>Bitki:</b> Nergis<br><b>Kıymetli Taş:</b> Koyu safir, zebercet<br><b>Kıymetli Maden:</b> Cıva<br>";
+			}
+	}
+	
+	if(ay == 9) {
+	
+		if(gun < 24) {
+			output.innerHTML = "<br>Başak Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Merkür<br><b>Element:</b> Toprak<br><b>Nitelik:</b> Değişken<br><b>Uğurlu Sayıları:</b> 6<br><b>Gün:</b> Çarşamba<br><b>Uğurlu Taşı:</b> Meryem taşı<br><b>Renk:</b> Sarı, yeşil<br><b>Tarot Kartı:</b> Ermiş<br><b>Hayvan:</b> Tüm evciller<br><b>Bitki:</b> Nergis<br><b>Kıymetli Taş:</b> Koyu safir, zebercet<br><b>Kıymetli Maden:</b> Cıva<br>";
+			}
+		else {
+			output.innerHTML = "<br>Terazi Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Venüs<br><b>Element:</b> Hava<br><b>Nitelik:</b> Öncü<br><b>Uğurlu Sayıları:</b> 6, 9<br><b>Gün:</b> Çarşamba<br><b>Uğurlu Taşı:</b> Opal, zümrüt<br><b>Renk:</b> Mavi, lila<br><b>Tarot Kartı:</b> Aşıklar<br><b>Hayvan:</b> Yılan, kertenkele<br><b>Bitki:</b> Badem, selvi, dişbudak, gül<br><b>Kıymetli Taş:</b> Koyu safir, zebercet<br><b>Kıymetli Maden:</b> Bakır<br>";
+			}
+	}
+	
+	if(ay == 10) {
+	
+		if(gun < 24) {
+			output.innerHTML = "<br>Terazi Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Venüs<br><b>Element:</b> Hava<br><b>Nitelik:</b> Öncü<br><b>Uğurlu Sayıları:</b> 6, 9<br><b>Gün:</b> Çarşamba<br><b>Uğurlu Taşı:</b> Opal, zümrüt<br><b>Renk:</b> Mavi, lila<br><b>Tarot Kartı:</b> Aşıklar<br><b>Hayvan:</b> Yılan, kertenkele<br><b>Bitki:</b> Badem, selvi, dişbudak, gül<br><b>Kıymetli Taş:</b> Koyu safir, zebercet<br><b>Kıymetli Maden:</b> Bakır<br>";
+			}
+		else {
+			output.innerHTML = "<br>Akrep Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Pluto-Mars<br><b>Element:</b> Su<br><b>Nitelik:</b> Sabit<br><b>Uğurlu Sayıları:</b> 2, 4<br><b>Gün:</b> Çarşamba<br><b>Uğurlu Taşı:</b> Topaz<br><b>Renk:</b> Koyu kırmızı, şarap, patlıcan moru<br><b>Tarot Kartı:</b> Ölüm<br><b>Hayvan:</b> Akrep ve diğer yeraltı canlıları<br><b>Bitki:</b> Akasya, krizantam, açelya<br><b>Kıymetli Taş:</b> Turkuaz, yılantaşı<br><b>Kıymetli Maden:</b> Plütonyum<br>";
+			}
+	}
+	
+	if(ay == 11) {
+	
+		if(gun < 23) {
+			output.innerHTML = "<br>Akrep Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b>: Pluto-Mars<br><b>Element:</b> Su<br><b>Nitelik:</b> Sabit<br><b>Uğurlu Sayıları:</b> 2, 4<br><b>Gün:</b> Çarşamba<br><b>Uğurlu Taşı:</b> Topaz<br><b>Renk:</b> Koyu kırmızı, şarap, patlıcan moru<br><b>Tarot Kartı:</b> Ölüm<br><b>Hayvan:</b> Akrep ve diğer yeraltı canlıları<br><b>Bitki:</b> Akasya, krizantam, açelya<br><b>Kıymetli Taş:</b> Turkuaz, yılantaşı<br><b>Kıymetli Maden:</b> Plütonyum<br>";
+			}
+		else {
+			output.innerHTML = "<br>Yay Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b> Jüpiter<br><b>Element:</b>Ateş<br><b>Nitelik:</b> Değişken<br><b>Uğurlu Sayıları:</b> 5, 7<br><b>Gün:</b> Perşembe<br><b>Uğurlu Taşı:</b> Turkuaz<br><b>Renk:</b> Mor<br><b>Tarot Kartı:</b> Denge<br><b>Hayvan:</b> At<br><b>Bitki:</b> Nergis, karahindiba, dut, meşe, huş<br><b>Kıymetli Taş:</b> Lal<br><b>Kıymetli Maden:</b> Teneke<br>";
+			
+			}
+	}
+	
+	if(ay == 12) {
+	
+		if(gun < 22) {
+			output.innerHTML = "<br>Yay Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b> Jüpiter<br><b>Element:</b>Ateş<br><b>Nitelik:</b> Değişken<br><b>Uğurlu Sayıları:</b> 5, 7<br><b>Gün:</b> Perşembe<br><b>Uğurlu Taşı:</b> Turkuaz<br><b>Renk:</b> Mor<br><b>Tarot Kartı:</b> Denge<br><b>Hayvan:</b> At<br><b>Bitki:</b> Nergis, karahindiba, dut, meşe, huş<br><b>Kıymetli Taş:</b> Lal<br><b>Kıymetli Maden:</b> Teneke<br>";
+			}
+		else {
+			output.innerHTML = "<br>Oğlak Burcu<hr>";
+			output.innerHTML += "<b>Yönetici Gezegeni:</b> Satürn<br><b>Element:</b> Toprak<br><b>Nitelik:</b> Öncü<br><b>Uğurlu Sayıları:</b> 2, 8<br><b>Gün:</b> Cumartesi<br><b>Uğurlu Taşı:</b> Grena<br><b>Renk:</b> Koyu yeşil, kahverengi<br><b>Tarot Kartı:</b> Şeytan<br><b>Hayvan:</b> Keçi ve diğer boynuzlular<br><b>Bitki:</b> Karanfil, sarmaşık, çam, kavak, karaağaç<br><b>Kıymetli Taş:</b> Karaelmas, kehribar<br><b>Kıymetli Maden:</b> Kurşun";
+			}
+	}
+
+}
+
+</script>
+</html>

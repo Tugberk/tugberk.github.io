@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1"><title>1337 5p34k</title><style type="text/css">body{margin:40px
+auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+10px}h1,h2,h3{line-height:1.2}</style>
+	<title>l33t</title>
+	<style>
+	</style>
+	
+</head>
+<body>
+
+<input type="text" id="input">
+<button onclick="basla()">cevir</button>
+<hr>
+
+<h2><div id="output">
+</div></h2>
+
+
+</body>
+<script>
+document.getElementById("input").focus();
+function basla() {
+
+	var output = document.getElementById("output");
+	var input = document.getElementById("input").value;
+	cevir(input);
+
+}
+
+
+function cevir(cumle) {
+
+cumle = cumle.toUpperCase();
+output.innerHTML = "";
+
+var map = {'A': "4", "B": "6", "E":"3", "I":"1", "L": "1", "O":"0", "S":"5", "T":"7"};
+
+//output.innerHTML = map['A'];
+for(i=0; i < cumle.length; i++){
+	if(cumle[i] == "A" | cumle[i] == "B" | cumle[i] == "E" | cumle[i] == "I" | cumle[i] == "L" | cumle[i] == "O" | cumle[i] == "S" | cumle[i] == "T") {
+	output.innerHTML += map[cumle[i]];
+	}
+	else {
+	output.innerHTML += cumle[i];
+	}
+}
+
+}
+
+//alt taraf direk konsoldan kullanmak icin
+function toLeet(cumle) {
+
+cumle = cumle.toUpperCase();
+var map = {'A': "4", "B": "6", "E":"3", "I":"1", "L": "1", "O":"0", "S":"5", "T":"7"};
+var outputArray = [];
+
+for(i=0; i < cumle.length; i++){
+	if(cumle[i] == "A" | cumle[i] == "B" | cumle[i] == "E" | cumle[i] == "I" | cumle[i] == "L" | cumle[i] == "O" | cumle[i] == "S" | cumle[i] == "T") {
+	outputArray.push(map[cumle[i]]);
+	}
+	else {
+	//output.innerHTML += cumle[i];
+	outputArray.push(cumle[i]);
+	}
+	
+}
+
+console.log(outputArray.join(""));
+
+}
+
+</script>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<head>
+	<title>caps</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	
+</head>
+
+
+<body align="center">
+<p>
+<h3>yuklenilen fotograf hicbir sekilde kaydedilmemektedir.
+fotografin ustune sag tiklayarak kaydedebilirsiniz. <br> google chrome ve mozilla firefox ile çalışmaktadır. </h3>
+</p>
+<input type="file" id="fileinput" accept="image/*" /><br><br>
+<input type="text" id="capstext" placeholder="caps yazisi yazin"><button onclick="textekle();">ekle</button>
+
+<br>
+
+<canvas id="mycanvas">tarayicin desteklemiyor. chrome ya da firefox kullan</canvas>
+<br>Yazı yerleştirme:
+<input id="slider" type="range" min="10" max="1000" value="1" step="5" onchange="updateslider(this.value);" />
+<br>Font:
+<input id="slider_font" type="range" min="10" max="150" value="50" step="1" onchange="updateslider_font(this.value);" />
+<br>Şerit Yüksekligi:
+<input id="slider_serit" type="range" min="50" max="100" value="50" step="5" onchange="updateslider_serit(this.value);" />
+
+</body>
+
+<script>
+
+var canvas = document.getElementById("mycanvas");
+var ctx = canvas.getContext('2d');
+
+
+
+//slider kontrolleri
+var slider = document.getElementById("slider");
+var slider_font = document.getElementById("slider_font");
+var slider_serit = document.getElementById("slider_serit");
+
+
+var capstext = document.getElementById("capstext");
+
+
+
+//slider icin update fonksiyonu
+function updateslider(myValue) {
+
+	//ctx.fillText("a", myValue, canvas.height-15); yazi yazdirdigimizda digerini silmiyor update yok o yüzden burayı silmemiz gerekiyor.
+	//burayi bi daha ciziyoruz kirmizi ustune
+	var slider_serit = document.getElementById("slider_serit");
+	var slider_font = document.getElementById("slider_font");
+	
+	
+	
+	ctx.fillStyle="#FF0000";
+	ctx.fillRect(10, canvas.height - slider_serit.value, canvas.width, slider_serit.value);
+	ctx.fillStyle = "white";
+	ctx.fillText(capstext.value, myValue, canvas.height-15);
+	
+}
+
+
+function updateslider_font(my_font) {
+	var slider_serit = document.getElementById("slider_serit");
+	var capstext = document.getElementById("capstext");
+	var slider = document.getElementById("slider");
+	
+	
+	
+	
+	
+	ctx.drawImage(mytemp, 10,10);
+	ctx.fillStyle="#FF0000";
+	ctx.fillRect(10, canvas.height - slider_serit.value, canvas.width, slider_serit.value);
+	ctx.fillStyle = "white";
+	ctx.font = my_font + "px Verdana";
+	ctx.fillText(capstext.value, slider.value, canvas.height-15);
+}
+
+
+
+function updateslider_serit(deneme) {
+	
+	var capstext = document.getElementById("capstext");
+	var slider = document.getElementById("slider");
+	var slider_font = document.getElementById("slider_font");
+	
+	
+	canvas.height = mytemp.height + parseInt(slider_serit.value); //burada resmin hep altinda kalmasini sagliyoruz kirmizi seridin
+	ctx.drawImage(mytemp,10,10);
+	ctx.fillStyle="#FF0000";
+	ctx.fillRect(10, canvas.height - deneme, canvas.width, deneme);
+	ctx.fillStyle= "white";
+	ctx.fillText(capstext.value, slider.value, canvas.height-15);
+	
+	
+}
+
+
+function textekle() {
+	
+	ctx.fillText(capstext.value, 10, canvas.height-15);
+	
+}
+
+
+var uploadfiles = document.getElementById('fileinput');
+uploadfiles.addEventListener('change', my_func, true);
+var mytemp; 
+
+
+//aciklama
+//bu bolgede cok zorlandim. ozellikle slider boyutunda cunku bu asamada resmi yeniden yuklemem gerekiyordu
+//ancak resmi yeniden yukleyemiyorum cunku img diye veri, disarida tanimliydi
+//ben de disarida bi sey tanimlayip onu disari cektim
+//ondan sonra da her yere mytemp olarak tasidim boylelikle oldu.
+	
+	function my_func(en) {
+	var reader = new FileReader();
+
+	reader.onload = function(e) {
+		
+		var img = new Image();
+		
+		img.onload = function() {
+			var slider_serit = document.getElementById("slider_serit");
+			canvas.height = img.height + parseInt(slider_serit.value);
+			canvas.width = img.width + 10;
+			ctx.drawImage(img, 10,10);
+			ctx.fillStyle="#FF0000";
+			ctx.fillRect(10, canvas.height - slider_serit.value, canvas.width, slider_serit.value); //burada 10 yaptim, 0 yaptigimda kücük bir kayma oluyordu sola dogru cikinti
+			//yazi buraya
+			ctx.font = "70px Verdana";
+			ctx.fillStyle = "white";
+		}
+		img.src = e.target.result;
+		mytemp = img; //burasi disari tasimak icin
+		
+				}
+				reader.readAsDataURL(en.target.files[0]);
+				
+				
+				
+				
+				
+				
+	}
+
+</script>
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>oyun</title>
+	<style>
+		body{margin:40px
+	auto;max-width:650px;line-height:1.6;font-size:80px;color:#444;padding:0
+	10px}h1,h2,h3{line-height:1.2
+	}
+
+	table{
+		border: 5px solid black;
+		border-spacing: 100px;
+	}
+
+	th {
+	border: 2px solid black;
+	width: 200px;
+	}
+
+	td {
+	border: 2px solid black;
+	width: 200px;
+	text-align: center;
+	}
+
+		p {
+		font-size:12px;}
+		
+		
+		div {
+    width: 300px;
+    height: 600px;
+}
+
+div div {
+    width: 100px;
+    height: 100px;
+    outline: 1px solid;
+    float: left;
+}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+<center>
+<p id="zaman">0</p>
+<hr>
+
+<div>
+	<a href='#' onclick='kontrol(this.id)' id=0><div id="birebir"></div></a>
+    <a href='#' onclick='kontrol(this.id)' id=1><div id="bireiki"></div></a>
+    <a href='#' onclick='kontrol(this.id)' id=2><div id="bireuc"></div></a>
+    <a href='#' onclick='kontrol(this.id)' id=3><div id="ikiyebir"></div></a>
+    <a href='#' onclick='kontrol(this.id)' id=4><div id="ikiyeiki"></div></a>
+    <a href='#' onclick='kontrol(this.id)' id=5><div id="ikiyeuc"></div></a>
+    <a href='#' onclick='kontrol(this.id)' id=6><div id="ucebir"></div></a>
+    <a href='#' onclick='kontrol(this.id)' id=7><div id="uceiki"></div></a>
+    <a href='#' onclick='kontrol(this.id)' id=8><div id="uceuc"></div></a>
+</div>
+
+
+</center>
+</body>
+
+
+<script>
+
+var birebir = document.getElementById("birebir");
+var bireiki = document.getElementById("bireiki");
+var bireuc = document.getElementById("bireuc");
+
+var ikiyebir = document.getElementById("ikiyebir");
+var ikiyeiki = document.getElementById("ikiyeiki");
+var ikiyeuc = document.getElementById("ikiyeuc");
+
+var ucebir = document.getElementById("ucebir");
+var uceiki = document.getElementById("uceiki");
+var uceuc = document.getElementById("uceuc");
+
+
+var rsayilar = [1,2,3,4,5,6,7,8,9]; //orjinali buraya kalsin
+var ksayilar = [1,2,3,4,5,6,7,8,9];
+shuffle(ksayilar);
+
+//atamalar burada
+
+birebir.innerHTML = ksayilar[0];
+bireiki.innerHTML = ksayilar[1];
+bireuc.innerHTML = ksayilar[2];
+ikiyebir.innerHTML = ksayilar[3];
+ikiyeiki.innerHTML = ksayilar[4];
+ikiyeuc.innerHTML = ksayilar[5];
+ucebir.innerHTML = ksayilar[6];
+uceiki.innerHTML = ksayilar[7];
+uceuc.innerHTML = ksayilar[8];
+
+
+var sayac = 0;
+var liste = ["birebir","bireiki","bireuc","ikiyebir","ikiyeiki","ikiyeuc","ucebir","uceiki","uceuc"];
+
+
+var variableForTimer = 0;
+var myVar;
+
+function run() {
+
+	myVar = document.getElementById("zaman").innerHTML = setTimeout(run, 100);
+	
+}
+function kontrol(clicked_id) {
+	
+	if (sayac == 0) {
+		if (variableForTimer == 0){
+			var id = setTimeout(run, 100);		
+		}
+	}
+
+	//bitti mi diye kontrol et
+	if(sayac == rsayilar.length - 1) {
+		
+	//document.write("bitti");
+	clearTimeout(myVar);
+	document.getElementById("zaman").innerHTML = (parseInt(document.getElementById("zaman").innerHTML) / 10) + '<a href="#" onclick=location.reload()>yeniden oyna</a>';
+		
+	}
+	
+	//_ koyduk ekran goruntusunun boyutu degismesin diye
+	//sayac koyduk kontrol edebilmek icin
+	for(i=0; i < ksayilar.length; i++){
+		if( ksayilar[clicked_id] == rsayilar[sayac] ) {
+			//console.log("dogru");
+			document.getElementById(liste[clicked_id]).innerHTML = "_";
+			sayac = sayac + 1;
+		}
+		
+	}
+	
+}
+
+function shuffle(o){
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+}
+
+</script>
+
+
+
+</html>

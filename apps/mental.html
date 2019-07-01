@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mental matematik</title>
+<style type="text/css">
+body
+{
+margin:40px auto;
+max-width:650px;
+line-height:1.6;
+font-size:18px;
+color:#444;
+padding:0 10px
+}
+h1,h2,h3{
+line-height:1.2
+}
+input {
+	height: 100px;
+	font-size: 48px;
+	width: 150px;
+}
+
+</style>
+</head>
+<body>
+
+<h1>
+<div id="sayilar">
+</div>
+</h1>
+
+
+<input type="number" id="cevap" onkeydown=" if (event.keyCode == 13) document.getElementById('buton').click()">
+<button id="buton" onclick="kontrol()">yes</button>
+</body>
+
+<script>
+	
+var sayiArray = [];
+var elemanSayisi = 3;
+var maxSayi = 10;
+
+for(i=0;i<elemanSayisi;i++) {
+	sayiArray.push(randomOlustur(maxSayi));
+}	
+
+console.log(sayiArray);
+var sayilar = document.getElementById('sayilar');
+
+//ekrana yazdiralim
+for(i=0;i<sayiArray.length;i++)
+{
+	sayilar.innerHTML = sayilar.innerHTML + sayiArray[i] + " + " ;
+}
+
+
+sum = 0;
+for(j=0; j<sayiArray.length; j++) {
+	sum = sum + sayiArray[j];
+}
+
+
+var count = 0;
+document.getElementById('cevap').focus();
+
+
+
+//var timerVar = 0;
+
+var id;
+function kontrol() {
+
+	
+	//id yi disari aldim, window ekledim bir de timeout larin basina oldu.
+	
+	var cevap = document.getElementById('cevap').value;
+	console.log("Cevap:", cevap);
+	
+	if(cevap == sum) {
+		console.log("dogru");
+		count++;
+		
+		//timer icin - durduruyor timer i
+		window.clearTimeout(id);
+		
+		
+		if(count % 5 == 0){
+			console.log("5 oldu");
+			elemanSayisi = elemanSayisi + 1;
+		}
+		
+		sayiArray = [];
+		
+		for(i=0; i<elemanSayisi; i++) {
+			sayiArray.push(randomOlustur(maxSayi));
+		}
+		
+		id = window.setTimeout(exit, 5000);
+		
+		
+		
+		console.log(sayiArray);
+		sayilar.innerHTML = "";
+		
+		for(i=0; i<sayiArray.length; i++)
+		{
+			sayilar.innerHTML = sayilar.innerHTML + sayiArray[i] + " + " ;
+		}
+		
+		//var id = setTimeout(exit, 5000);
+		//console.log("timer basladi");
+		
+		sum = 0;
+		
+		for(j=0; j<sayiArray.length; j++) {
+			sum = sum + sayiArray[j];
+		}
+		
+		console.log("Count: ", count);
+		document.getElementById('cevap').value = '';
+		document.getElementById('cevap').focus();
+			
+	}
+	else {
+	console.log("yanlis");
+	document.write("bitti - dogru sayisi: " + count);
+	
+	}
+	//return sum;
+	
+}
+
+
+	function exit() {
+		document.write("sure bitti. dogru sayisi: " + count);
+		}
+
+	function exit_new() {
+		document.write("deneme");
+		}
+
+	
+	//bu fonksiyonda + 1 ekledim, cok 0 geliyordu.
+	function randomOlustur(sayi)
+	{
+
+		var rand_sayi = Math.floor(Math.random() * sayi)+ 1;
+		//alert(rand_sayi);
+		console.log(rand_sayi);
+		return rand_sayi;
+	}
+
+</script>
+</html>
