@@ -1,0 +1,153 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+	<style>
+	body {
+	font-size: 32px;}
+	</style>
+	
+</head>
+
+
+
+<body>
+
+<main role="main" class="container">
+	<div class="starter-template">
+
+		
+		<div id="soru">
+			
+		</div>
+		<button id="sonucButon">sonucu goster</button>
+
+		<br><br>
+		<div id="cevap">
+			
+		</div>
+	
+		<button id="bildimButon">bildim</button> <button id="bilemedimButon">bilemedim</button>
+
+	</div>	
+
+
+</main>
+
+</body>
+
+
+<script>
+//document.getElementById("cevap").style.visibility = "hidden";
+
+
+//sorular olacak arraylar icerisinde
+
+
+sorular = ["what are synapses",
+"What is Synaptic transmission?",
+"Presynaptic neurons?",
+"Postsynaptic neurons?",
+"Synaptic cleft (gap)?",
+"Two Different Types of Synaptic Transmission?",
+"Separation",
+"Reuptake",
+"Two main types of receptors that neurotransmitters binds:",
+"How to terminate neurotransmitter action?",
+"Where are autoreceptors located and what do they do?",
+"Recycling of the neurotransmitters?"]
+
+
+cevaplar = ["Synapses are specialized intercellular junctions betweeen neurons or between neurons and other excitable cells.",
+"The transmission of the messages from one neuron to another through a synapse. These messages are carried by neurotransmitters.",
+"send messages to postsynaptic neurons.",
+"receive messages from presynaptic neurons.",
+"The space between the presynaptic and postsynaptic neurons.",
+"Chemical Transmission (neurotransmitters) - Electrical Transmission (gap junctions)",
+"of neurotransmitters from their receptors.",
+"of neurotransmitters into the presynaptic neuron or degradation of  neurotransmitters in the synaptic cleft.",
+"Ionotropic Receptors and Metabotropic Receptors -- The various receptor subtypes for a neurotransmitter are located in different areas of the nervous system, and they typically respond to the neurotransmitter in different ways (excitation or inhibition)",
+"- Reuptake: Some neurotransmitters are drawn back into the presynaptic buttons by transporter mechanisms. and - Enzymatic degradation: Some neurotransmitters are degraded (broken apart) in the synapse by the action of enzymes.",
+"are located at the presynaptic neurons and respond to neurotransmitters.",
+"Once released, neurotransmitter molecules or their breakdown products are drawn back into the preynaptic terminals and recycled, regardless of the mechanism of their deactivation."]
+
+//var randomSayi = randomOlustur(sorular.length);
+document.getElementById("soru").innerHTML = sorular[0];
+
+document.getElementById("bildimButon").disabled = true;
+document.getElementById("bilemedimButon").disabled = true;
+
+
+
+document.getElementById("sonucButon").onclick = function() {
+	//document.getElementById("cevap").style.visibility = "visible";
+	document.getElementById("cevap").innerHTML = cevaplar[0];
+	document.getElementById("bildimButon").disabled = false;
+	document.getElementById("bilemedimButon").disabled = false;
+}
+
+var bildim = 0;
+var bilemedim = 0;
+
+document.getElementById("bildimButon").onclick = function() {
+	//bildim 
+	//burada soru ve cevap array inden o sorulari kaldiricaz.
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	bildim = bildim + 1;
+	//tekrar getir
+	check();
+	//var randomSayi = randomOlustur(sorular.length);
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+
+}
+
+document.getElementById("bilemedimButon").onclick = function() {
+	//bilemedim
+	//array den kaldirmayacagiz -- array in sonuna atacagiz
+	
+	bilemedim = bilemedim + 1;
+
+	sorular.push(sorular[0]);
+	cevaplar.push(cevaplar[0]);
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+}
+
+
+
+function check() {
+	if(sorular.length == "0"){
+		alert("sorular bitti");
+		alert("bilinen: " + bildim + "-bilinemeyen: "+  bilemedim);
+		window.reload();
+	}
+}
+
+
+//hazir fonksiyonlar
+
+function randomOlustur(sayi){
+	var rand_sayi = Math.floor(Math.random() * sayi);
+	//alert(rand_sayi);
+	console.log(rand_sayi);
+	return rand_sayi;
+}
+
+
+
+
+</script>
+</html>
