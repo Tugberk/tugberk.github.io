@@ -1,0 +1,160 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+	<style>
+	body {
+	font-size: 32px;}
+	</style>
+	
+</head>
+
+
+
+<body>
+
+<main role="main" class="container">
+	<div class="starter-template">
+
+		
+		<div id="soru">
+			
+		</div>
+		<button id="sonucButon">sonucu goster</button>
+
+		<br><br>
+		<div id="cevap">
+			
+		</div>
+	
+		<button id="bildimButon">bildim</button> <button id="bilemedimButon">bilemedim</button>
+
+	</div>	
+
+
+</main>
+
+</body>
+
+
+<script>
+//document.getElementById("cevap").style.visibility = "hidden";
+
+
+//sorular olacak arraylar icerisinde
+
+
+sorular = ["what is membrane potential?",
+"what is a polarized neuron?",
+"More concentrated ions outside the neuron?",
+"More concentrated structures in the neuron?",
+"what happens when neurotransmitter molecules bind to postsynaptic receptors?",
+"What is Excitatory postsynaptic potential (EPSP)",
+"What is Inhibitory Postsynaptic Potentials (IPSP):",
+"What is the role of inhibition?",
+"Where are postsynaptic potentials produced?",
+"What are graded responses?",
+"Phases of action potential?",
+"All-or-none electrical impulses?",
+"When does action potential occurs?",
+"What is Myelin?",
+"What is Saltatory conduction?"];
+
+cevaplar = ["difference in electrical charge between the inside and outside of the cell (hucrenin ici ve disi arasindaki potansiyel fark)",
+"when the neurons' interior and exterior are oppositely charged (ici ya da disi birbirinden farkli yuklendiyse diyoruz. biri eksi digeri artiysa)",
+"Sodyumklorur - NaCl - Sodyum + klorur -",
+"Potassium - K and some negatively charged proteins",
+"Two things can happen: 1-They may depolarize the postsynaptic membrane and an excitatory postsynaptic potential (EPSP) occurs 2- They may hyperpolarize the postsynaptic membrane and an inhibitory postsynaptic potential (IPSP) occurs",
+"Depolarizes the membrane. Negative charge decreases and inside the post-synaptic cell becomes less negative. Neuron is more likely to fire. (excitation cunku) -- aslinda negatif azaliyor ve neuron aktiflesiyor gibi basit bi dusunce kurabiliriz",
+"Hyperpolarizes the membrane. Negative charge increases and inside the post-synaptic cell becomes less positive. Neurons are less likely to fire",
+"Inhibitory signals arising from the brain can prevent the withdrawal reflex from causing the person to drop the casserol.",
+"Generated in the cell-body and dendrites",
+"weak signals elicit (ortaya cikarmak) small postsynaptic potentials, strong signals elicit large PS potentials",
+"<img src='what-is-action-potential.jpg'> 1-depolarization 2-repolarization 3-hyperpolarization",
+"If the depolarisation is not great enough to reach threshold, then an action potential is not produced.",
+"There is a threshold. Depolarization is created by the stimulus, and if this depolarization is not enough to reach the threshold, there is no action potential.",
+"A fatty tissue insulating the axons of neurons",
+"(saltare meansto skip or jump -- SALTO gibi) in a myelinated axon. An action potential at the node triggers flow of current to the next node, where the membrane regenerates the action potential."];
+
+
+
+//var randomSayi = randomOlustur(sorular.length);
+document.getElementById("soru").innerHTML = sorular[0];
+
+document.getElementById("bildimButon").disabled = true;
+document.getElementById("bilemedimButon").disabled = true;
+
+
+
+document.getElementById("sonucButon").onclick = function() {
+	//document.getElementById("cevap").style.visibility = "visible";
+	document.getElementById("cevap").innerHTML = cevaplar[0];
+	document.getElementById("bildimButon").disabled = false;
+	document.getElementById("bilemedimButon").disabled = false;
+}
+
+var bildim = 0;
+var bilemedim = 0;
+
+document.getElementById("bildimButon").onclick = function() {
+	//bildim 
+	//burada soru ve cevap array inden o sorulari kaldiricaz.
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	bildim = bildim + 1;
+	//tekrar getir
+	check();
+	//var randomSayi = randomOlustur(sorular.length);
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+
+}
+
+document.getElementById("bilemedimButon").onclick = function() {
+	//bilemedim
+	//array den kaldirmayacagiz -- array in sonuna atacagiz
+	
+	bilemedim = bilemedim + 1;
+
+	sorular.push(sorular[0]);
+	cevaplar.push(cevaplar[0]);
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+}
+
+
+
+function check() {
+	if(sorular.length == "0"){
+		alert("sorular bitti");
+		alert("bilinen: " + bildim + "-bilinemeyen: "+  bilemedim);
+		window.reload();
+	}
+}
+
+
+//hazir fonksiyonlar
+
+function randomOlustur(sayi){
+	var rand_sayi = Math.floor(Math.random() * sayi);
+	//alert(rand_sayi);
+	console.log(rand_sayi);
+	return rand_sayi;
+}
+
+
+
+
+</script>
+</html>
