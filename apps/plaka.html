@@ -1,0 +1,294 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+	<style>
+	body {
+	font-size: 32px;}
+	</style>
+	
+</head>
+
+
+
+<body>
+
+<main role="main" class="container">
+	<div class="starter-template">
+
+		
+		<div id="soru">
+			
+		</div>
+		<button id="sonucButon">sonucu goster</button>
+
+		<br><br>
+		<div id="cevap">
+			
+		</div>
+	
+		<button id="bildimButon">bildim</button> <button id="bilemedimButon">bilemedim</button>
+
+	</div>	
+
+
+</main>
+
+</body>
+
+
+<script>
+//document.getElementById("cevap").style.visibility = "hidden";
+
+
+//sorular olacak arraylar icerisinde
+
+
+sorular = ["Adana",
+"Konya",
+"Adıyaman",
+"Kütahya",
+"Afyon",
+"Malatya",
+"Ağrı",
+"Manisa",
+"Amasya",
+"K. Maraş",
+"Ankara",
+"Mardin",
+"Antalya",
+"Muğla",
+"Artvin",
+"Muş",
+"Aydın",
+"Nevşehir",
+"Balıkesir",
+"Niğde",
+"Bilecik",
+"Ordu",
+"Bingöl",
+"Rize",
+"Bitlis",
+"Sakarya",
+"Bolu",
+"Samsun",
+"Burdur",
+"Siirt",
+"Bursa",
+"Sinop",
+"Çanakkale",
+"Sivas",
+"Çankırı",
+"Tekirdağ",
+"Çorum",
+"Tokat",
+"Denizli",
+"Trabzon",
+"Diyarbakır",
+"Tunceli",
+"Edirne",
+"Şanlıurfa",
+"Elazığ",
+"Uşak",
+"Erzincan",
+"Van",
+"Erzurum",
+"Yozgat",
+"Eskişehir",
+"Zonguldak",
+"Gaziantep",
+"Aksaray",
+"Giresun",
+"Bayburt",
+"Gümüşhane",
+"Karaman",
+"Hakkari",
+"Kırıkkale",
+"Hatay",
+"Batman",
+"Isparta",
+"Şırnak",
+"Mersin",
+"Bartın",
+"İstanbul",
+"Ardahan",
+"İzmir",
+"Iğdır",
+"Kars",
+"Yalova",
+"Kastamonu",
+"Karabük",
+"Kayseri",
+"Kilis",
+"Kırklareli",
+"Osmaniye",
+"Kırşehir",
+"Düzce",
+"Kocaeli"];
+
+cevaplar = ["01",
+"42",
+"02",
+"43",
+"03",
+"44",
+"04",
+"45",
+"05",
+"46",
+"06",
+"47",
+"07",
+"48",
+"08",
+"49",
+"09",
+"50",
+"10",
+"51",
+"11",
+"52",
+"12",
+"53",
+"13",
+"54",
+"14",
+"55",
+"15",
+"56",
+"16",
+"57",
+"17",
+"58",
+"18",
+"59",
+"19",
+"60",
+"20",
+"61",
+"21",
+"62",
+"22",
+"63",
+"23",
+"64",
+"24",
+"65",
+"25",
+"66",
+"26",
+"67",
+"27",
+"68",
+"28",
+"69",
+"29",
+"70",
+"30",
+"71",
+"31",
+"72",
+"32",
+"73",
+"33",
+"74",
+"34",
+"75",
+"35",
+"76",
+"36",
+"77",
+"37",
+"78",
+"38",
+"79",
+"39",
+"80",
+"40",
+"81",
+"41"];
+
+
+
+
+
+//var randomSayi = randomOlustur(sorular.length);
+document.getElementById("soru").innerHTML = sorular[0];
+
+document.getElementById("bildimButon").disabled = true;
+document.getElementById("bilemedimButon").disabled = true;
+
+
+
+document.getElementById("sonucButon").onclick = function() {
+	//document.getElementById("cevap").style.visibility = "visible";
+	document.getElementById("cevap").innerHTML = cevaplar[0];
+	document.getElementById("bildimButon").disabled = false;
+	document.getElementById("bilemedimButon").disabled = false;
+}
+
+var bildim = 0;
+var bilemedim = 0;
+
+document.getElementById("bildimButon").onclick = function() {
+	//bildim 
+	//burada soru ve cevap array inden o sorulari kaldiricaz.
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	bildim = bildim + 1;
+	//tekrar getir
+	check();
+	//var randomSayi = randomOlustur(sorular.length);
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+
+}
+
+document.getElementById("bilemedimButon").onclick = function() {
+	//bilemedim
+	//array den kaldirmayacagiz -- array in sonuna atacagiz
+	
+	bilemedim = bilemedim + 1;
+
+	sorular.push(sorular[0]);
+	cevaplar.push(cevaplar[0]);
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+}
+
+
+
+function check() {
+	if(sorular.length == "0"){
+		alert("sorular bitti");
+		alert("bilinen: " + bildim + "-bilinemeyen: "+  bilemedim);
+		window.reload();
+	}
+}
+
+
+//hazir fonksiyonlar
+
+function randomOlustur(sayi){
+	var rand_sayi = Math.floor(Math.random() * sayi);
+	//alert(rand_sayi);
+	console.log(rand_sayi);
+	return rand_sayi;
+}
+
+
+
+
+</script>
+</html>
