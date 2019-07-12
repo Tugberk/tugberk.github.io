@@ -1,0 +1,168 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+	<style>
+	body {
+	font-size: 32px;}
+	</style>
+	
+</head>
+
+
+
+<body>
+
+<main role="main" class="container">
+	<div class="starter-template">
+
+		
+		<div id="soru">
+			
+		</div>
+		<button id="sonucButon">sonucu goster</button>
+
+		<br><br>
+		<div id="cevap">
+			
+		</div>
+	
+		<button id="bildimButon">bildim</button> <button id="bilemedimButon">bilemedim</button>
+
+	</div>	
+
+
+</main>
+
+</body>
+
+
+<script>
+//document.getElementById("cevap").style.visibility = "hidden";
+
+
+sorular = [
+"what are the types of trauma related disorders?",
+"how is ASD defined?",
+"how is PTSD defined?",
+"why does trauma related disorders happen?",
+"what are some symptoms for TRD (ASD and PTSD)",
+"examples for intrusive reexperiencing",
+"examples for avoidance",
+"examples for negative mood",
+"examples for increased arousal or activity",
+"how to be resilient to TRD?",
+"what are comorbidies (hastalikla gorulen seyler) for TRD? ",
+"Prevalence of TRD?",
+"Vulnerability?",
+"What are the three symptoms that best predict future PTSD?",
+"Treatment of PTSD",
+"bir de case var onu oku"
+];
+
+cevaplar = [
+"ASD (Acute stress disorder) and PTSD (post traumatic stress disorder). They used to be defined as anxiety disorders, but it is changed because there are people with PTSD but no anxiety.",
+"stress disorder lasting between one day and one month",
+"stress disorder lasting more than one month is defined as PTSD",
+"it happens when a person is exposed to traumatic events such as death, injury or sexual violence. One does not need to be exposed by oneself, it can happen by witnessing others or learning from them.",
+"1- intrusive reexperiencing, 2- avoidance 3- negative mood 4- increased arousal or reactivity",
+"repeated stressful images or thoughts, bad dreams, flashbacks",
+"try to avoid thoughts and feelings to a specific event. avoiding people who remind you of that event",
+"inability to feel positive, emotional anesthesia, persistent fear, anger or guilt",
+"restlessness, hypervigilance and predicting a worse prognosis",
+"sense of commitment and challenge in facing stress. political activists in jail are exposed to torture but only 30% has PTSD. Disaster and emergency workers are exposed to trauma consistently but they are less than half as likely to develop PTSD as victims. ",
+"depression, anxiety disorder, substance abuse, physical problems (headache, intestinal problems), anger and risk for suicide",
+"women are twice more likely. seen in 7-8 percent of population. 20 percent develop PTSD after being exposed to a traumatic event. However, if the event involves a human intent (such as rape) it is more likely to cause PTSD than accidents or natural disasters. ",
+"Having ASD and having a psychopathology increases the risk of PTSD. Genetics also play a role and increases the risk. Lack of purpose also increases the chance.",
+"1- numbing 2- depersonalization 3- sense of reliving the experience",
+"Antidepressants (not anti-anxiety meds), CBT for PTSD (most effective treatment), EMDR ",
+"tamam"
+
+];
+
+
+
+
+
+
+
+//var randomSayi = randomOlustur(sorular.length);
+document.getElementById("soru").innerHTML = sorular[0];
+
+document.getElementById("bildimButon").disabled = true;
+document.getElementById("bilemedimButon").disabled = true;
+
+
+
+document.getElementById("sonucButon").onclick = function() {
+	//document.getElementById("cevap").style.visibility = "visible";
+	document.getElementById("cevap").innerHTML = cevaplar[0];
+	document.getElementById("bildimButon").disabled = false;
+	document.getElementById("bilemedimButon").disabled = false;
+}
+
+var bildim = 0;
+var bilemedim = 0;
+
+document.getElementById("bildimButon").onclick = function() {
+	//bildim 
+	//burada soru ve cevap array inden o sorulari kaldiricaz.
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	bildim = bildim + 1;
+	//tekrar getir
+	check();
+	//var randomSayi = randomOlustur(sorular.length);
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+
+}
+
+document.getElementById("bilemedimButon").onclick = function() {
+	//bilemedim
+	//array den kaldirmayacagiz -- array in sonuna atacagiz
+	
+	bilemedim = bilemedim + 1;
+
+	sorular.push(sorular[0]);
+	cevaplar.push(cevaplar[0]);
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+}
+
+
+
+function check() {
+	if(sorular.length == "0"){
+		alert("sorular bitti");
+		alert("bilinen: " + bildim + "-bilinemeyen: "+  bilemedim);
+		window.reload();
+	}
+}
+
+
+//hazir fonksiyonlar
+
+function randomOlustur(sayi){
+	var rand_sayi = Math.floor(Math.random() * sayi);
+	//alert(rand_sayi);
+	console.log(rand_sayi);
+	return rand_sayi;
+}
+
+
+
+
+</script>
+</html>
