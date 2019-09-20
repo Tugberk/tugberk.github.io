@@ -1,0 +1,189 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+	<style>
+	body {
+	font-size: 32px;}
+	</style>
+	
+</head>
+
+
+
+<body>
+
+<main role="main" class="container">
+	<div class="starter-template">
+
+		
+		<div id="soru">
+			
+		</div>
+		<button id="sonucButon">sonucu goster</button>
+
+		<br><br>
+		<div id="cevap">
+			
+		</div>
+	
+		<button id="bildimButon">bildim</button> <button id="bilemedimButon">bilemedim</button>
+
+	</div>	
+
+
+</main>
+
+</body>
+
+
+<script>
+//document.getElementById("cevap").style.visibility = "hidden";
+
+
+//sorular olacak arraylar icerisinde
+
+
+sorular = [
+"What are the major divisions of NS?",
+"What are neurons?",
+"What are Glias?",
+"What are 4 types of glia cells?",
+"what do oligodendrocytes do?",
+"what do astrocytes do?",
+"what do microglia do?",
+"what do radial glias do?",
+"Why do our bodies need protein?",
+"Can neurons undergo cell division ?",
+"Name external features of a neuron?",
+"Name internal features of a neuron?",
+"Where is the DNA stored?",
+"Endop. reticulum & ribosomes?",
+"Mitocondria?",
+"Microtubules?",
+"Golgi Complex?",
+"Synaptic Vesicles?",
+"Neurotransmitters?",
+"Name 3 functional classification of neurons",
+"what do sensory neurons do?",
+"what do motor neurons do?",
+"what do interneurons do?",
+"Explain blood-brain barrier",
+"Name 3 parts that lack b-b barrier?",
+"What happens if the b-b barrier is distrupted?",
+"How do neurons use glucose?",
+"Why do our bodies need Vitamin B1?",
+"How does neurons communicate with each other?"
+];
+
+cevaplar = [
+"CNS and PNS. CNS is located within the skull and spine. PNS is located outside the skull and spine.",
+"Main cells of NS. Responsible for the transmission of nerve impulse. They process and transmit information.",
+"Non-neuronal cells. They support (protects) neurons, deliver nutritions and removes waste.",
+"oligodendrocytes, astrocytes, microglia, radial glia",
+"Produce myelin sheats that insulate certain axons in the CNS. (axon = nerve fiber)",
+"Provides structural support and help to form blood-brain barriers. Provide nutrition to neurons.",
+"Fights infection and removes toxic materials.",
+"Guides the migration of neurons during embryological development.",
+"Cell division (building and repairing), Enzyme & Hormone production. Defends the body.",
+"No, neurons do not reproduce. (Except for aferent and eferenr neurons)",
+"Cell body (metabolic center of neuron), Dendrites (short processes which receive most of the synaptic contacts from other neurons), Axon (long, narrow process), Presynaptic terminal (button - where axon releases chemicals that cross through between neurons)",
+"Cytoplasm, Nucleus, endoplasmic reticulum, ribosomes, golgi complex, mitocondria, microtubules, synaptic vesicles",
+"DNA is stored in the nucleus, which is located at the center of the cell body.",
+"Protein synthesis",
+"Supplies energy to the cell.",
+"Responsible for rapid transport of material throughout neurons",
+"System of membranes that packages molecules in vesicles",
+"Membrane packages that store neurotransmitter molecules ready for release.",
+"Molecules that are released from active neurons and influence the ability of other cells.",
+"sensory neuron, motor neuron, interneuron",
+"they receive stimuli from the external and internal environment and carry this info to the NS. They are highly sensitive to a particular type of stimulation such as light, sound or touch.",
+"they carry motor information from the NS to muscles, glands and blood vessels. (eg. from brain to hand)",
+"they interconnect motor and sensory inputs. Located only in the brain or in the spinal cord. They integrate sensory and motor activity, important for inhibition.",
+"In the brain, cells of blood vessel are tightly packed and form this barrier. It protects the brain from toxic substrances from the blood.",
+"Posterior Pituitary Gland - Pineal Gland - Area Postrema",
+"It may cause cellular damage and can be related to some neurological diseases such as MS, brain tumors and infections.",
+"Glucose is a form of sugar. Neurons need a steady supply of oxygen, and vitamin B1 (thiamine) to use glucose. ",
+"Because vitamin B1 is needed to use glucose, and neurons use glucose.",
+"They communicate via chemical and electrical synapses, a process called as synaptic transmission."
+];
+//var randomSayi = randomOlustur(sorular.length);
+document.getElementById("soru").innerHTML = sorular[0];
+
+document.getElementById("bildimButon").disabled = true;
+document.getElementById("bilemedimButon").disabled = true;
+
+
+
+document.getElementById("sonucButon").onclick = function() {
+	//document.getElementById("cevap").style.visibility = "visible";
+	document.getElementById("cevap").innerHTML = cevaplar[0];
+	document.getElementById("bildimButon").disabled = false;
+	document.getElementById("bilemedimButon").disabled = false;
+}
+
+var bildim = 0;
+var bilemedim = 0;
+
+document.getElementById("bildimButon").onclick = function() {
+	//bildim 
+	//burada soru ve cevap array inden o sorulari kaldiricaz.
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	bildim = bildim + 1;
+	//tekrar getir
+	check();
+	//var randomSayi = randomOlustur(sorular.length);
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+
+}
+
+document.getElementById("bilemedimButon").onclick = function() {
+	//bilemedim
+	//array den kaldirmayacagiz -- array in sonuna atacagiz
+	
+	bilemedim = bilemedim + 1;
+
+	sorular.push(sorular[0]);
+	cevaplar.push(cevaplar[0]);
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+}
+
+
+
+function check() {
+	if(sorular.length == "0"){
+		alert("sorular bitti");
+		alert("bilinen: " + bildim + "-bilinemeyen: "+  bilemedim);
+		window.reload();
+	}
+}
+
+
+//hazir fonksiyonlar
+
+function randomOlustur(sayi){
+	var rand_sayi = Math.floor(Math.random() * sayi);
+	//alert(rand_sayi);
+	console.log(rand_sayi);
+	return rand_sayi;
+}
+
+
+
+
+</script>
+</html>
