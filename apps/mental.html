@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -53,7 +54,18 @@ var sayilar = document.getElementById('sayilar');
 //ekrana yazdiralim
 for(i=0;i<sayiArray.length;i++)
 {
-	sayilar.innerHTML = sayilar.innerHTML + sayiArray[i] + " + " ;
+	
+	
+	if(i !== 0){
+		sayilar.innerHTML += " + ";
+	}
+	
+	
+	sayilar.innerHTML += sayiArray[i] + " ";
+	
+	if(i == sayiArray.length - 1){
+		sayilar.innerHTML += "=";
+	}
 }
 
 
@@ -107,7 +119,17 @@ function kontrol() {
 		
 		for(i=0; i<sayiArray.length; i++)
 		{
-			sayilar.innerHTML = sayilar.innerHTML + sayiArray[i] + " + " ;
+			//sayilar.innerHTML += "+" +  sayiArray[i] + " = " ;
+			if(i !== 0){
+		sayilar.innerHTML += " + ";
+	}
+	
+	
+	sayilar.innerHTML += sayiArray[i] + " ";
+	
+	if(i == sayiArray.length - 1){
+		sayilar.innerHTML += "=";
+	}
 		}
 		
 		//var id = setTimeout(exit, 5000);
