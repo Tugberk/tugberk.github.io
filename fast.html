@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+		<style type="text/css">body{margin:40px
+	auto;max-width:650px;line-height:1.6;font-size:78px;color:#444;padding:0
+	10px}h1,h2,h3{line-height:1.2}</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id='output'></div>
+
+</body>
+<script>
+
+var output = document.getElementById('output');
+
+mytext = 'In one part of the book Zen and the Art of Motorcycle Maintenance, which is neither about Zen nor motorcycle maintenance, there are two motorcycles and two riders. John Sutherland is a romanticist who appreciates the external qualities of his motorcycle: its aesthetics, and its use as a vehicle. The narrator is a classicist who appreciates the internal qualities of his motorcycle: its workings, parts, and mechanisms. When Sutherland has a problem with his bike he takes it to a mechanic. When the narrator does, he rationalises about the problem and attempts to discover a solution. The book, which as its subtitle gives away is an inquiry into values, then follows the narrator’s exploration of a third way of considering quality that marries the romantic and classical notions holistically. Now we come onto software. Software doesn’t exist. At some level, its abstractions and mathematics get translated into a sequence of states of an electronic machine that turns logic into procedure: but even that is a description that’s a few degrees abstracted from what software and computers really do. Nonetheless, software has external and internal qualities. It has aesthetics and utility, and can be assessed romantically. A decidedly pedestrian word to describe the romanticist view of software is requirements, but it’s a common word in software engineering that means the right thing.';
+
+
+
+
+mytext = mytext.split(' ');
+
+
+	var myVar = setInterval(run, 250);
+	i =0 ;
+
+
+
+function run() {
+
+	output.innerHTML = mytext[i];
+	if(i !== mytext.length - 1){
+	i++;
+	} else {
+		console.log('hey yo');
+		clearInterval(myVar);
+	}
+}
+
+
+
+
+
+
+
+</script>
+</html>
