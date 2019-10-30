@@ -1,20 +1,34 @@
-cansu'nun okumadigi kitaplar
-============================
+<!doctype html>
+<html>
+<head>
+  <title>okunmamis kitaplar</title>
+  <meta charset='utf-8'>
+</head>
+  <body>
+
+    
+    <div id='cansuDiv'></div>
+    <hr>
+    <div id='tugberkDiv'></div>
 
 
 
-
-
-
-
-tugberk'in okumadigi kitaplar
-=============================
-
-Ursula Guin - Yerdeniz Buyucusu
-Ursula Guin - Atuan Mezarları
-Ursula Guin - En Uzak Sahil
-Ursula Guin - Tehanu
-Ursula Guin - Yerdeniz Oykuleri
-Ursula Guin - Oteki Ruzgar
-Daniel Defoe - Robinson Crusoe
-
+</body>
+<script>
+  
+var cansu = [];
+var tugberk = ['Ursula Guin - Yerdeniz Buyucusu', 'Ursula Guin - Atuan Mezarları', 'Ursula Guin - En Uzak Sahil', 'Ursula Guin - Tehanu', 'Ursula Guin - Yerdeniz Oykuleri', 'Ursula Guin - Oteki Ruzgar', 'Daniel Defoe - Robinson Crusoe'];
+  
+var cansuDiv = document.getElementById('cansudiv');
+var tugberkDiv = document.getElementById('tugberkdiv');
+ 
+for(i=0;i<cansu.length;i++){
+  cansuDiv.innerHTML += '<li>' + cansu[0] + '</li>'
+}
+  
+for(i=0;i<tugberk.length;i++){
+  tugberkDiv.innerHTML += '<li>' + tugber[0] + '</li>'
+}
+  
+</script>
+</html>
