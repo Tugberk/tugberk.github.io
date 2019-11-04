@@ -5,19 +5,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <title>Kitaplarım</title>
+  <style>
+    a:visited {
+      color: blue;
+    }
+  </style>
 </head>
 <body ng-app="booksApp" ng-controller="myCtrl">
   <h2>Kitap Listesi</h2>
 
   <table border='1'>
+    <caption>{{ (myBooks | filter: {Status: 'Read' } : true).length }} okunmuş, {{ (myBooks | filter: {Status: 'To read' } : true).length }} okunmamış kitap. Toplam {{ myBooks.length }} kitap. </caption>
     <tr>
+      <th>#</th>
       <th>Yazar</th>
       <th>Kitap Adı</th>
       <th>Durum</th>
     </tr>
     <tr ng-repeat="book in myBooks | orderBy:'Status'">
-      <td>{{book.Author}}</td>
-      <td>{{book.KitapAdi}}</td>
+      <td>{{$index + 1}}</td> 
+      <td><a href="https://www.google.com/search?q={{book.Author}}">{{book.Author}}</a></td>
+      <td><a href="https://www.google.com/search?q={{book.KitapAdi}}">{{book.KitapAdi}}</a></td>
       <td>{{book.Status}}</td>
     </tr>
        
@@ -848,6 +856,8 @@ $scope.myBooks = [
   }
 ];
 });
+
+
 
 </script>
 </html>
