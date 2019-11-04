@@ -1,18 +1,852 @@
 <!doctype html>
 <html>
+<head>
+  <meta charset='utf-8'>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+</head>
+<body ng-app="booksApp" ng-controller="myCtrl">
+  <table border='1'>
+    <tr>
+      <th>Yazar</th>
+      <th>Kitap Adı</th>
+      <th>Durum</th>
+    </tr>
+    <tr ng-repeat='book in myBooks'>
+      <td>{{book.Author}}</td>
+      <td>{{book.KitapAdi}}</td>
+      <td>{{book.Status}}</td>
+    </tr>
+       
+  </table>
+
+
+
+</body>
+
+
 
 
 
 <script>
 
-var myBooks = [
-{
-"author":,
-"kitapAdi":,
-"status":,
-"tarih":	
-}
+var app = angular.module('booksApp', []);
+app.controller('myCtrl', function($scope){
+$scope.myBooks = [
+  {
+    "Author": "Marcus Aurelius",
+    "KitapAdi": "Meditations",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "George R.R. Martin",
+    "KitapAdi": "A Dance With Dragons",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "George R.R. Martin",
+    "KitapAdi": "A Feast For Crows",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "George R.R. Martin",
+    "KitapAdi": "A Storm of Swords",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "George R.R. Martin",
+    "KitapAdi": "A Clash of Kings",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "George R.R. Martin",
+    "KitapAdi": "A Game of Thrones",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Rich Roll",
+    "KitapAdi": "Finding Ultra",
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "David Goggins",
+    "KitapAdi": "Can't Hurt Me",
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "John E. Sarno",
+    "KitapAdi": "Mind-Body Prescription",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Patrick McKeown",
+    "KitapAdi": "The Oxygen Advantage",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Aldous Huxley",
+    "KitapAdi": "Cesur Yeni Dünya",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "George Orwell",
+    "KitapAdi": 1984,
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "George Orwell",
+    "KitapAdi": "Hayvan Çiftliği",
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "James Dashner",
+    "KitapAdi": "The Maze Runner",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "James Dashner",
+    "KitapAdi": "The Scorch Trials",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "James Dashner",
+    "KitapAdi": "The Death Cure",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Lois Lowry",
+    "KitapAdi": "The Giver",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Veronica Roth",
+    "KitapAdi": "Divergent",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Veronica Roth",
+    "KitapAdi": "Insurgent",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Veronica Roth",
+    "KitapAdi": "Allegiant",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Suzanne Collins",
+    "KitapAdi": "The Hunger Games",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Suzanne Collins",
+    "KitapAdi": "Catching Fire",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Suzanne Collins",
+    "KitapAdi": "Mockingjay",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Jesse Itzler",
+    "KitapAdi": "Living with the Monks",
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "Jesse Itzler",
+    "KitapAdi": "Living with a Seal",
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "Tom Brady",
+    "KitapAdi": "The TB12 Method",
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "George R.R. Martin",
+    "KitapAdi": "Fire and Blood",
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "Orson Scott Card",
+    "KitapAdi": "Ender's Game",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Orson Scott Card",
+    "KitapAdi": "Speaker for the Dead",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Ilber Ortayli",
+    "KitapAdi": "Bir Ömür Nasıl Yaşanır",
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "Tim Ferriss",
+    "KitapAdi": "4 Hour Work Week",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Satya Nadella",
+    "KitapAdi": "Hit Refresh",
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "Ernest Hemingway",
+    "KitapAdi": "The Old Man and The Sea",
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "Phil Jackson",
+    "KitapAdi": "Eleven Rings",
+    "Status": "Read",
+    "Tarih": 2018
+  },
+  {
+    "Author": "Jocko Willink",
+    "KitapAdi": "Discipline Equals Success",
+    "Status": "Read",
+    "Tarih": 2018
+  },
+  {
+    "Author": "Jeff Benedict",
+    "KitapAdi": "Tiger Woods",
+    "Status": "Read",
+    "Tarih": 2018
+  },
+  {
+    "Author": "Roland Lazenby",
+    "KitapAdi": "Showboat: The Life of Kobe Bryant",
+    "Status": "Read",
+    "Tarih": 2017
+  },
+  {
+    "Author": "Kobe Bryant",
+    "KitapAdi": "The Mamba Mentality",
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "Ridvan Akar",
+    "KitapAdi": "Bir Dünya Kurmak - Hüsnü Özyeüin in Yaşam Öyküsü",
+    "Status": "Read",
+    "Tarih": 2017
+  },
+  {
+    "Author": "Brad Stone",
+    "KitapAdi": "The Everything Store: Jeff Bezos and the Age of Amazon",
+    "Status": "Read",
+    "Tarih": 2017
+  },
+  {
+    "Author": "Sabahattin Ali",
+    "KitapAdi": "Kuyucaklı Yusuf",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Sabahattin Onkibar",
+    "KitapAdi": "İtiraflarım",
+    "Status": "Read",
+    "Tarih": 2019
+  },
+  {
+    "Author": "Sabahattin Ali",
+    "KitapAdi": "İçimizdeki Şeytan",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "William Golding",
+    "KitapAdi": "Lord of the Flies",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Stephen King",
+    "KitapAdi": "The Green Mile",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Ernest Hemingway",
+    "KitapAdi": "Silahlara Veda",
+    "Status": "Read",
+    "Tarih": 2002
+  },
+  {
+    "Author": "Marlo Morgan",
+    "KitapAdi": "Bir Çift Yürek",
+    "Status": "Read",
+    "Tarih": 2002
+  },
+  {
+    "Author": "Walter Isaacson",
+    "KitapAdi": "Steve Jobs",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Walter Isaacson",
+    "KitapAdi": "Einstein",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "J.K. Rowling",
+    "KitapAdi": "Harry Potter and the Philosopher's Stone",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "J.K. Rowling",
+    "KitapAdi": "Harry Potter and the Chamber of Secrets",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "J.K. Rowling",
+    "KitapAdi": "Harry Potter and the Prisoner of Azkaban",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "J.K. Rowling",
+    "KitapAdi": "Harry Potter and The Goblet of Fire",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "J.K. Rowling",
+    "KitapAdi": "Harry Potter and The Order of the Phoenix",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "J.K. Rowling",
+    "KitapAdi": "Harry Potter and The Half Blood Prince",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "J.K. Rowling",
+    "KitapAdi": "Harry Potter and The Deathly Hallows",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "John Tiffany",
+    "KitapAdi": "Harry Potter and The Cursed Child",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "J.R.R. Tolkien",
+    "KitapAdi": "The Hobbit",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "J.R.R. Tolkien",
+    "KitapAdi": "The Fellowship of the Ring",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "J.R.R. Tolkien",
+    "KitapAdi": "The Two Towers",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "J.R.R. Tolkien",
+    "KitapAdi": "Return of the King",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Hulki Cevizoglu",
+    "KitapAdi": "İşgal ve Direniş",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Kazuo Ishiguro",
+    "KitapAdi": "Günden Kalanlar",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Daniel Defoe",
+    "KitapAdi": "Robinson Crusoe",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Haruki Murakami",
+    "KitapAdi": "Sahilde Kafka",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Haruki Murakami",
+    "KitapAdi": "1q84",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Alan Watts",
+    "KitapAdi": "",
+    "Status": "",
+    "Tarih": ""
+  },
+  {
+    "Author": "Jordan Peterson",
+    "KitapAdi": "12 Rules for Life",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Jordan Peterson",
+    "KitapAdi": "Maps of Meaning",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Jostein Gaarder",
+    "KitapAdi": "Sofi'nin Dünyası",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Irvin D. Yalom",
+    "KitapAdi": "Nietsche Ağladığında",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Robert M. Pirsig",
+    "KitapAdi": "Zen ve Motorsiklet Bakım Sanatı",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Malcolm Gladwell",
+    "KitapAdi": "Outliers",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Malcolm Gladwell",
+    "KitapAdi": "Blink",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Sems-i Tebrizi",
+    "KitapAdi": "Makalat",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "James Clear",
+    "KitapAdi": "Atomic Habits",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Eckhart Tolle",
+    "KitapAdi": "The Power of Now",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Koichi Tohei",
+    "KitapAdi": "Ki Enerjisi",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Tara Westover",
+    "KitapAdi": "Educated",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Ray Dalio",
+    "KitapAdi": "Principles",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Amor Towles",
+    "KitapAdi": "A Gentleman in Moscow",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Roland Lazenby",
+    "KitapAdi": "Michael Jordan: The Life",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Jocko Willink",
+    "KitapAdi": "Extreme Ownership",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Takuan Soho",
+    "KitapAdi": "The Unfettered Mind",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Trevanian",
+    "KitapAdi": "Kasaba",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Trevanian",
+    "KitapAdi": "Şibumi",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Don Winslow",
+    "KitapAdi": "Satori",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Mario Puzo",
+    "KitapAdi": "Omerta",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Mario Puzo",
+    "KitapAdi": "The Godfather",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Mario Puzo",
+    "KitapAdi": "The Sicilian",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Mark Winegardner",
+    "KitapAdi": "Baba Dönüyor",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Antoine de Saint-Exupéry",
+    "KitapAdi": "Küçük Prens",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Chuang Tzu",
+    "KitapAdi": "Chuang Tzu'nun Kitabi",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Ashlee Vance",
+    "KitapAdi": "Elon Musk",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Hermann Hesse",
+    "KitapAdi": "Siddharta",
+    "Status": "Read",
+    "Tarih": 2018
+  },
+  {
+    "Author": "Paulo Coelho",
+    "KitapAdi": "Simyaci",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Dan Brown",
+    "KitapAdi": "Başlangıç",
+    "Status": "Read",
+    "Tarih": 2018
+  },
+  {
+    "Author": "Dan Brown",
+    "KitapAdi": "Melekler ve Şeytanlar",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Dan Brown",
+    "KitapAdi": "Da Vinci'nin Şifresi",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Dan Brown",
+    "KitapAdi": "Cehennem",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Dan Brown",
+    "KitapAdi": "Kayıp Sembol",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Dan Brown",
+    "KitapAdi": "Digital Fortress",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Jean-Christophe Grange",
+    "KitapAdi": "Kongo'ya Ağıt",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Jean-Christophe Grange",
+    "KitapAdi": "Lontano",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Jean-Christophe Grange",
+    "KitapAdi": "Kaiken",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Bret Easton Ellis",
+    "KitapAdi": "American Psycho",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Chuck Palacniuk",
+    "KitapAdi": "Dövüş Kulübü",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Stieg Larsson",
+    "KitapAdi": "Ejderha Dövmeli Kız",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Stieg Larsson",
+    "KitapAdi": "Ateşle Oynayan Kız",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Lars Kepler",
+    "KitapAdi": "Hipnozcu",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Thomas More",
+    "KitapAdi": "Ütopya",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Thomas Hobbes",
+    "KitapAdi": "Leviathan",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Platon",
+    "KitapAdi": "Devlet",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Platon",
+    "KitapAdi": "Gorgias",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Platon",
+    "KitapAdi": "Sokrates'in Savunması",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Platon",
+    "KitapAdi": "Şölen",
+    "Status": "Read",
+    "Tarih": "old"
+  },
+  {
+    "Author": "Albert Camus",
+    "KitapAdi": "Yabancı",
+    "Status": "Read",
+    "Tarih": 2004
+  },
+  {
+    "Author": "Samuel Beckett",
+    "KitapAdi": "Godot'yu Beklerken",
+    "Status": "Read",
+    "Tarih": 2004
+  },
+  {
+    "Author": "Franz Kafka",
+    "KitapAdi": "Dönüşüm",
+    "Status": "Read",
+    "Tarih": 2004
+  },
+  {
+    "Author": "Phil Knight",
+    "KitapAdi": "Shoe Dog",
+    "Status": "Read",
+    "Tarih": 2018
+  },
+  {
+    "Author": "Ray Kroc",
+    "KitapAdi": "Grinding it Out",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Evan Thomas",
+    "KitapAdi": "Being Nixon: A Man Divided",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Nick Hays",
+    "KitapAdi": "Elite",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Joshua Foer",
+    "KitapAdi": "Moonwalking with Einstein",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Lawrency Levy",
+    "KitapAdi": "To Pixar and Beyond",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Viktor E. Frankl",
+    "KitapAdi": "Man's Search for Meaning",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Daron Acemoglu",
+    "KitapAdi": "Why Nations Fail",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "David Wise",
+    "KitapAdi": "A headache in the Pelvis",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Simon Sinek",
+    "KitapAdi": "Start with Why",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "John Carreyyou",
+    "KitapAdi": "Bad Blood",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Andy Puddicombe",
+    "KitapAdi": "Mindfulness and Meditation",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Ryan Holiday",
+    "KitapAdi": "The Daily Stoic",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Neil deGrasse Tyson",
+    "KitapAdi": "Astrophysics for People in a Hurry",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Thich Nhat Hanh",
+    "KitapAdi": "The Art of Communicating",
+    "Status": "To read",
+    "Tarih": ""
+  },
+  {
+    "Author": "Ryan Holiday",
+    "KitapAdi": "The Obstactle is the Way",
+    "Status": "To read",
+    "Tarih": ""
+  }
 ];
+});
+
+
 
 </script>
 </html>
