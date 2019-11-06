@@ -14,7 +14,7 @@ auto;max-width:650px;line-height:1.6;font-size:22px;color:#444;padding:0
 <hr>
 <textarea id="output" rows="4" cols="50"></textarea>
 <br>
-<button onclick="rastgele()">rastgele</button> - <button onclick="copy()">Kopyala</button>
+<button onclick="rastgele()">rastgele getir ve kopyala!</button> <!-- <button onclick="copy()">Kopyala</button>-->
 
 </body>
 <script>
@@ -66,6 +66,7 @@ function rastgele() {
 
 	shuffle(liste);
 	output.innerHTML = liste[0];
+	copy();
 }
 
 </script>
