@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+	<style>
+	body{margin:40px
+auto;max-width:650px;line-height:1.6;font-size:22px;color:#444;padding:0
+10px}h1,h2,h3{line-height:1.2}
+	</style>
+</head>
+
+<body>
+<h2>kolpaçino replikleri</h2>
+<hr>
+<textarea id="output" rows="4" cols="50"></textarea>
+<br>
+<button onclick="rastgele()">rastgele</button>
+
+</body>
+<script>
+
+var output = document.getElementById('output');
+
+
+var liste = ["yürek yemiş buraya gelmiş!",
+"bak kardeşim sen güzel bir kardeşe benziyorsun. benim yaşım 50. bak götüme. bak bak bak iyi bak. donum görünüyor. donum olmasa bizzat götümün kendisi görünecek. kız arkadaşının arabası pislenmesin diye bu galoşları giydirdin yolda şıkır şıkır yürüyoruz. he. biz ağzımızı açıp şikayet etmiyoruz da sen mi şikayet ediyorsun he. bak kardeşim güzel kardeşim canım kardeşim benimle bir daha sakın polemiğe girme.",
+"hani bisiklet kiralıksa bi 5 dk binsin çocuk sevaptır",
+"tayfun allah senin belanı versin, hani bunlar istanbul'un en nezih insanlarıydı?",
+"altın kapılarımız kan oldu tayfun",
+"yok yok, ben iyiyim de, abi biz bu işten başımıza çok büyük ihale aldık abi. bak şimdi polis molis gelir, bizi kervana bi takarlar, gençliğimizi alırlar. bak bu kumardan benim bi ton infazım var. ben ilerlerim abi.",
+"mertay kardeş size bi enerji patlaması bi özgüven gelmişş yaaani kusura bakmayın bizde üç on luk delikanlıyız kimle ne zaman ne şekilde konuşcağımıza bırakta biz karar verelim aga..",
+"hayırdır ingiltere prensiyle mi konuşuyorum?",
+"ne çapası kardeşim, sen bizi bahçede gördün bahçıvan mı sandın",
+"kaymaz mısın tarçınıma?",
+"ver coşkuyu kolonlar inlesin",
+"güzel para kanka güzel para yani",
+"sabri bey, siz beni böyle bi yani ne bileyim yani garip gördünüz küpeli falan da biz fikirtepe çocuğuyuz.",
+"pardon beyler biraz sessiz olabilir misiniz eşim arıyor da.",
+"beyler hoşgeldiniz adım nedim mekanın sahibiyim",
+"hani şekilsiniz ya hıammına.",
+"elbet bir gün bizim de çiçeklerimiz açacak sabri abi.",
+"aramızda inanmayanlar var, inanmayanlarla olmaz ki bu iş.",
+"bırak kanallar açık kalsın ganyotçu böyle delikanlıya pamuk mu tıkanır",
+"ölüler de saniyorki diriler her gün helva yiyor.",
+"özgür bey bir parça ekmek var mı ?",
+"sen götü kurtar para kolay",
+"sana bi cesaret bi özgüven gelmiş",
+"pardon beyler, genetik..",
+"kime teşkilat kuruyorsunuz lan siz?"];
+
+
+
+function shuffle(o){
+	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	return o;
+}
+
+
+function rastgele() {
+
+	shuffle(liste);
+	output.innerHTML = liste[0];
+}
+
+</script>
+</html>
