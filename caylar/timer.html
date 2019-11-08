@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+	div {
+	text-align: center;
+	font-size: 60px;
+	}
+	</style>
+</head>
+<body>
+	<input type="number" id="dakika"><button onclick=run()>başla</button>
+	<div id="output"></div>
+</body>
+<script>
+
+var output = document.getElementById('output');
+document.getElementById('dakika'').value = 20;
+
+function run() {
+
+	var dakika = document.getElementById('dakika').value;
+	var saniye = dakika * 60;
+	//her saniye bunu yazdiralim
+	output.innerHTML = saniye;
+	var myVar = setInterval(timerRun, 1000);
+	function timerRun(){
+
+		saniye = saniye -1;
+		output.innerHTML = saniye;
+		if(saniye == 0){
+			var audio = new Audio('play.mp3');
+			audio.play();
+			document.write('bitti');
+		
+		}
+	
+}
+	
+}
+
+
+
+
+</script>
+</html>
