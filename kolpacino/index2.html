@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+	<style>
+	body{margin:40px
+auto;max-width:650px;line-height:1.6;font-size:22px;color:#444;padding:0
+10px}h1,h2,h3{line-height:1.2}
+	</style>
+</head>
+
+<body>
+<h2>kolpaçino replikleri</h2>
+<hr>
+<textarea id="output" rows="4" cols="50"></textarea>
+<br>
+<button onclick="rastgele()">rastgele getir ve kopyala!</button> <!-- <button onclick="copy()">Kopyala</button>-->
+
+	<div id="nextoutput"></div>
+	<img src="https://raw.githubusercontent.com/Tugberk/tugberk.github.io/master/kolpacino/images/05eef59c7dd950dcea8ed4b19b04488d.png" width="50%" height="100%">
+</body>
+<script>
+
+var output = document.getElementById('output');
+var nextoutput = document.getElementById('nextoutput');
+	
+
+
+var liste = ["yürek yemiş buraya gelmiş!",
+"bak kardeşim sen güzel bir kardeşe benziyorsun. benim yaşım 50. bak götüme. bak bak bak iyi bak. donum görünüyor. donum olmasa bizzat götümün kendisi görünecek. kız arkadaşının arabası pislenmesin diye bu galoşları giydirdin yolda şıkır şıkır yürüyoruz. he. biz ağzımızı açıp şikayet etmiyoruz da sen mi şikayet ediyorsun he. bak kardeşim güzel kardeşim canım kardeşim benimle bir daha sakın polemiğe girme.",
+"hani bisiklet kiralıksa bi 5 dk binsin çocuk sevaptır",
+"tayfun allah senin belanı versin, hani bunlar istanbul'un en nezih insanlarıydı?",
+"altın kapılarımız kan oldu tayfun",
+"yok yok, ben iyiyim de, abi biz bu işten başımıza çok büyük ihale aldık abi. bak şimdi polis molis gelir, bizi kervana bi takarlar, gençliğimizi alırlar. bak bu kumardan benim bi ton infazım var. ben ilerlerim abi.",
+"mertay kardeş size bi enerji patlaması bi özgüven gelmişş yaaani kusura bakmayın bizde üç on luk delikanlıyız kimle ne zaman ne şekilde konuşcağımıza bırakta biz karar verelim aga..",
+"hayırdır ingiltere prensiyle mi konuşuyorum?",
+"ne çapası kardeşim, sen bizi bahçede gördün bahçıvan mı sandın",
+"kaymaz mısın tarçınıma?",
+"ver coşkuyu kolonlar inlesin",
+"güzel para kanka güzel para yani",
+"sabri bey, siz beni böyle bi yani ne bileyim yani garip gördünüz küpeli falan da biz fikirtepe çocuğuyuz.",
+"pardon beyler biraz sessiz olabilir misiniz eşim arıyor da.",
+"beyler hoşgeldiniz adım nedim mekanın sahibiyim",
+"hani şekilsiniz ya hıammına.",
+"elbet bir gün bizim de çiçeklerimiz açacak sabri abi.",
+"aramızda inanmayanlar var, inanmayanlarla olmaz ki bu iş.",
+"bırak kanallar açık kalsın ganyotçu böyle delikanlıya pamuk mu tıkanır",
+"ölüler de saniyorki diriler her gün helva yiyor.",
+"özgür bey bir parça ekmek var mı ?",
+"sen götü kurtar para kolay",
+"sana bi cesaret bi özgüven gelmiş",
+"pardon beyler, genetik..",
+"kime teşkilat kuruyorsunuz lan siz?"];
+
+
+var imagesListe = [
+"https://github.com/Tugberk/tugberk.github.io/blob/master/kolpacino/images/05eef59c7dd950dcea8ed4b19b04488d.png",
+"/images/05eef59c7dd950dcea8ed4b19b04488d.png",
+"images/1525865528c910f0a4de79a126d25706.jpg",
+"images/25025884_140916753285642_6820577695781355520_n.jpg",
+"images/26070436_1422536217857188_5715083736907776000_n.jpg ",
+"images/26266018_160034347958713_7979426620328902656_n.jpg",
+"images/38926010_322113935016950_7345082529352777728_n.jpg",
+"images/DiQhlUrXUAAP3VN.jpg ",
+"images/hqdefault.jpg ",
+"images/images (1).jpg",
+"images/images.jpg",
+"images/indir (1).jpg ",
+"images/indir (2).jpg ",
+"images/indir (3).jpg ",
+"images/kolpacino-replikleri_1300060_m.jpg",
+"images/readme.md Create readme.md",
+"images/s-022abf2939a9e24c5c87d1699a55fbdac29930c5.jpg",
+"images/s-a2802101d45687fbd3445a9adb91baf2d7f0ac14.jpg",
+"images/s-d96c0cbb01ccf544271d54e56278f8b378f0ff5b.jpg",
+"images/tumblr_ou8fwodCxH1ud6iylo1_400.jpg",
+"images/zall-in-sozlugu-iyice-deli-gibi-yapmasi_1096643_m.jpg"	
+];
+
+
+
+
+function shuffle(o){
+	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	return o;
+}
+
+function copy() {
+	let textarea = document.getElementById("output");
+	textarea.select();
+	document.execCommand("copy");
+}
+
+
+function rastgele() {
+
+	shuffle(liste);
+	output.innerHTML = liste[0];
+	copy();
+	//shuffle(imagesListe);
+	nextoutput.innerHTML = "<img src=' " + imagesListe[0] + "'  width='50%' height='100%'>";
+}
+
+</script>
+</html>
