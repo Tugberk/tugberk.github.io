@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<button onclick="myfunc()">click me!</button>
+	<div id="mydiv"></div>
+	
+</body>
+<script>
+
+var mydiv = document.getElementById('mydiv');
+
+var mystr = "<img src='hug.png'>";
+var count = 0;
+
+function myfunc() {
+	    count++;
+		console.log(count);
+		for(i=0;i<count;i++){
+		mydiv.innerHTML += mystr;
+		}
+    }
+
+
+/*
+  $(document).on("click", function () {
+        count++;
+		console.log(count);
+		for(i=0;i<count;i++){
+		mydiv.innerHTML += mystr;
+		}
+    });
+	*/
+
+</script>
+
+</html>
