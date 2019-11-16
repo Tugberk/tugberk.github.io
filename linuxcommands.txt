@@ -1,0 +1,6 @@
+some useful linux commands
+==========================
+
+neofetch (default gelmiyor - sistem ozelliklerini sunuyor)
+scrot (terminalden screenshot almak icin)
+
