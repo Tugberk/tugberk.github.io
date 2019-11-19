@@ -1,0 +1,77 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+<style type="text/css">
+body{
+	margin:40px auto;
+	max-width:650px;
+	line-height:1.6;
+	font-size:18px;
+	color:#444;
+	padding:0 10px;
+	background-color: black;
+	color: #008F11;
+}
+h1,h2,h3{
+	
+	line-height:1.2
+
+}</style>
+</head>
+<body id="kinput">
+
+<div id='output'></div>
+
+</body>
+<script>
+
+
+
+
+
+var output = document.getElementById('output');
+
+mytext = ["var output = document.getElementById('output');","bu ikinci satir"];
+
+var j = 0;
+mytext[j] = mytext[j].split('');
+//mytext = mytext.split('');
+
+
+
+kinput.onkeydown = kinput.onkeyup = kinput.onkeypress = handle;
+var i = 0;
+
+//burasi hallediyor onclick i
+function handle(e) {
+	
+	if(j <= mytext.length + 1) 
+	{
+		console.log("j nin degeri:" + j);
+		output.innerHTML += mytext[j][i];
+		if(i !== mytext[j].length - 1)
+		{
+			i++;
+		} 
+		else 
+		{
+			output.innerHTML += "<br>";
+			j++;
+			mytext[j] = mytext[j].split('');
+			i = 0;
+			//kinput.onkeydown = kinput.onkeyup = kinput.onkeypress = done();
+			//console.log(mytext[j]);
+			console.log('hey yo');	
+		}
+	}
+	
+}
+
+function done() {
+	console.log("done");
+}
+
+</script>
+</html>
