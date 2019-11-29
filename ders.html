@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<title>ali abdaal</title>
+	<meta charset="utf-8">
+	
+</head>
+<body>
+
+<h3>ali abdaal ders çalışma linkleri</h3>
+<hr>
+
+<div id="output"></div>
+
+
+
+</body>
+<script>
+
+
+var linkler  = ["https://www.youtube.com/watch?v=q58SMId-_Ko",
+"https://www.youtube.com/watch?v=0VjvUUHsuYs",
+"https://www.youtube.com/watch?v=Ra1ykDUnwpM",
+"https://www.youtube.com/watch?v=wJ-suqzHP20",
+"https://www.youtube.com/watch?v=PcMVfAb9sxI",
+"https://www.youtube.com/watch?v=JZln56h2GkM",
+"https://www.youtube.com/watch?v=waR3xBDHMqw",
+"https://www.youtube.com/watch?v=EfBczKGbGwA",
+"https://www.youtube.com/watch?v=fBXnxlLR0PY",
+"https://www.youtube.com/watch?v=iIyDJK_Sajs",
+"https://www.youtube.com/watch?v=b7o09a7t4RA",
+"https://www.youtube.com/watch?v=-46Vyiwat_Y",
+"https://www.youtube.com/watch?v=W-EpiaPcgTk",
+"https://www.youtube.com/watch?v=k5A26Sc63F0"];
+
+
+var baslik = ["Last Minute Study Tips ",
+"Study With Me",
+"Study With Me",
+"Exam Study Tips",
+"More Revision Tips ",
+"How I Take Notes ",
+"How I Take Notes ",
+"Study Method & Revision Tools",
+"How to Learn New Content ",
+"How to Study for Exams with Google Sheets",
+"The Retrospective Revision ",
+"Essay Memorization Framework ",
+"Study with me - Anki Flashcard method",
+"How to Study - StiC Framework"];
+
+
+var output = document.getElementById("output");
+for(i=0;i<linkler.length;i++){
+	output.innerHTML += "<a target='_blank' href='" + linkler[i]+ "'>"+ baslik[i] +"</a><br>";
+}
+
+
+
+
+</script>
+</html>
