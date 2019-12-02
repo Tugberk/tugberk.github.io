@@ -1,0 +1,78 @@
+- basic cryptography
+
+- basic networking
+- graph theory?
+- basic logic gates
+- how to present information
+- simple algorithms and flowcharts
+- simple cli and gui commands
+
+- archive formats. how does it work?
+- sql. using simple databases such as sqlite
+- touch typing
+- db modelling
+- ML and AI
+- how to lift, move and exercise
+- useful maths
+- basic psychology (nudge theory)
+- cs 50
+- how to google (https://www.businessinsider.com/how-to-google-like-a-pro-tricks-tips-best-results-2019-11)
+- basic notetaking
+- how to study (active recall + spaced rep.)
+- double entry accounting
+- calculating interest
+- excel
+- how to model info in a spreadsheet
+- what is a cloud
+
+- how does internet work
+- how does a computer work
+
+-running a VM in ssh.
+- automating manual tasks (crop jpeg )
+- python (automate the boring stuff)
+- html css js
+- csv and json
+- financial planning
+
+-basic cyber security 
+	- good password practices
+	- 2 factor auth.
+	- https
+	
+- history of computing
+	- alan turing
+	- unix
+	- stallman 
+	- GNU - Linux
+	- windows
+	
+native apps vs 3rd party apps
+static site vs dynamic site
+servers in general (web, db)
+backup and restore
+data mining 
+	- data mining algorithms
+	- weka vs python vs matlab vs excel
+	- how & where to use (basket analysis)
+	
+organizing personal collections
+
+regexp
+how to document, store and publish info
+
+	
+	
+https://blogs.ams.org/matheducation/tag/active-learning-series-2015/
+https://www.maa.org/programs-and-communities/curriculum%20resources/instructional-practices-guide
+https://www.nand2tetris.org/
+https://en.wikipedi0.org/wiki/Institute_for_Propaganda_Analysis
+http://worrydream.com/refs/Papert%20-%20Mindstorms%201st%20ed.pdf
+https://www.csd.cs.cmu.edu/news/carnegie-mellon-launches-high-school-computer-science-curriculum
+https://notes-txt.com/curriculum.html
+http://freakonomics.com/podcast/math-curriculum/
+https://www.bootstrapworld.org/
+https://press.princeton.edu/books/hardcover/9780691176543/understanding-the-digital-world
+https://www.cs.princeton.edu/courses/archive/fall18/cos109/
+https://time.com/81355/girls-beat-boys-in-every-subject-and-they-have-for-a-century/
+https://www.nytimes.com/2019/02/07/opinion/sunday/girls-school-confidence.html
