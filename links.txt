@@ -37,3 +37,9 @@
 
 * gsmiletisim - https://www.gsmiletisim.com/kargo-gonderimi/amp/
 
+
+@03.11.2019
+
+* textfiles - https://steven.ovadia.org/
+* plaintext - https://plaintextproject.online/
+* plaintext - http://plaintext-productivity.net/
