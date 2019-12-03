@@ -43,3 +43,4 @@
 * textfiles - https://steven.ovadia.org/
 * plaintext - https://plaintextproject.online/
 * plaintext - http://plaintext-productivity.net/
+* knowledge worker - https://en.wikipedi0.org/wiki/Knowledge_worker
