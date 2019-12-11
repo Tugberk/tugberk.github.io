@@ -2,20 +2,56 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://getbootstrap.com/docs/4.4/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
+ <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	  
+	  img {
+		height: auto;
+		max-height: 700px;
+		width: 100%;
+		
+	  }
+	  
+	  h2 {
+	  text-align:center 
+	  }
+	  
+	  body {
+	  padding-top: 10px;
+	  }
+	  
+    </style>
 
 </head>
-<body>
+<body class="d-flex flex-column h-100">
 
 <div class="container">
 
+	<h2>IMDB TOP 100 Film</h2>
+	
 	<div id="output">
 	
 	</div>
 	<br>
-	<button type="button" class="btn btn-danger" id="button_one" onclick="notdone_func()">İZLEMEDİM</button> - <button type="button"  class="btn btn-success" id="button_two" onclick="done_func()">İZLEDİM</button>
+	<button type="button" class="btn btn-danger btn-lg btn-block" id="button_one" onclick="notdone_func()">İZLEMEDİM</button>        <button type="button"  class="btn btn-success btn-lg btn-block" id="button_two" onclick="done_func()">İZLEDİM</button>
 	
 	
 </div>
@@ -438,8 +474,9 @@ var notdone = [];
 
 
 
-//output.innerHTML = elements[0];
-output.innerHTML = "<img src=" + mylist[0].image +"height='400' width='210'>";
+
+//output.innerHTML = "<img src=" + mylist[0].image +"height='600' width='310'>";
+output.innerHTML = "<img src=" + mylist[0].image + "width='310' >";
 
 i = 0;
 
@@ -447,7 +484,7 @@ function done_func() {
 	
 	done.push(mylist[i].name);
 	i++;
-	output.innerHTML = "<img src=" + mylist[i].image +"height='400' width='210'>";
+	output.innerHTML = "<img src=" + mylist[i].image +"height='600' width='310'>";
 	console.log(done);
 	if(i == mylist.length){
 		
