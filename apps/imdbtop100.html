@@ -513,12 +513,12 @@ function done_func() {
 		if(i+1 == mylist.length){
 			done.push(mylist[i].name);
 			output.innerHTML = "";
-			output.innerHTML += "<h3>İzlenenler:</h3>"
+			output.innerHTML += "<h3>İzlenenler: " + done.length + "</h3>";
 			for(i=0;i<done.length;i++){
 				output.innerHTML += "<li>" + done[i] + "</li>";
 			}
 			
-			output.innerHTML += "<h3>İzlenmeyenler:</h3>";
+			output.innerHTML += "<h3>İzlenmeyenler: " + notdone.length + "</h3>";
 			for(i=0;i<notdone.length;i++){
 				output.innerHTML += "<li>" + notdone[i] + "</li>";
 			}
@@ -543,13 +543,13 @@ function notdone_func() {
 			//output.innerHTML = "<span>" + "<b>Okunan kitaplar: </b>" + done + "<br><br><b>Okunmayan kitaplar:</b>" + notdone + "</span>";
 			
 			output.innerHTML = "";
-			output.innerHTML += "<h3>İzlenenler:</h3>"
+			output.innerHTML += "<h3>İzlenenler: " + done.length + "</h3>";
 			for(i=0;i<done.length;i++)
 			{
 				output.innerHTML += "<li>" + done[i] + "</li>";
 			}
 			
-			output.innerHTML += "<h3>İzlenmeyenler:</h3>";
+			output.innerHTML += "<h3>İzlenmeyenler: " + notdone.length + "</h3>";
 			for(i=0;i<notdone.length;i++)
 			{
 				output.innerHTML += "<li>" + notdone[i] + "</li>";
