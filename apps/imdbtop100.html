@@ -31,6 +31,10 @@
 		
 	  }
 	  
+	  li {
+	  list-style:none;
+	  }
+	  
 	  h2 {
 	  text-align:center 
 	  }
@@ -84,6 +88,8 @@ var output = document.getElementById("output");
 
 var buttonOne = document.getElementById("button_one");
 var buttonTwo = document.getElementById("button_two");
+
+
 
 var mylist = [
   {
@@ -504,45 +510,64 @@ output.innerHTML = "<img src=" + mylist[0].image +">";
 i = 0;
 
 function done_func() {
-	
-	done.push(mylist[i].name);
-	i++;
-	//output.innerHTML = "<img src=" + mylist[i].image +"height='600' width='310'>";
-	output.innerHTML = "<img src=" + mylist[i].image +">";
-	console.log(done);
-	if(i == mylist.length){
-		
-		output.innerHTML = "<h2>" + "Okunan kitaplar:" + done + "<br>Okunmayan kitaplar:" + notdone + "</h2>";
-		buttonOne.style.display="none";
-		buttonTwo.style.display="none";
+		if(i+1 == mylist.length){
+			done.push(mylist[i].name);
+			output.innerHTML = "";
+			output.innerHTML += "<h3>İzlenenler:</h3>"
+			for(i=0;i<done.length;i++){
+				output.innerHTML += "<li>" + done[i] + "</li>";
+			}
+			
+			output.innerHTML += "<h3>İzlenmeyenler:</h3>";
+			for(i=0;i<notdone.length;i++){
+				output.innerHTML += "<li>" + notdone[i] + "</li>";
+			}
+			
+			buttonOne.style.display="none";
+			buttonTwo.style.display="none";
 		
 	}
-
-
+	else {
+		done.push(mylist[i].name);
+		i++;
+		output.innerHTML = "<img src=" + mylist[i].image +">";
+		console.log(done);
+	}
 
 }
 
 function notdone_func() {
 
-	notdone.push(mylist[i].name);
-	i++;
-	
-	//output.innerHTML = "<img src=" + mylist[i].image +"height='400' width='210'>";
-	output.innerHTML = "<img src=" + mylist[i].image +">";
-	console.log(notdone);
-	if(i == mylist.length){
+	if(i+1 == mylist.length){
+			notdone.push(mylist[i].name);
+			//output.innerHTML = "<span>" + "<b>Okunan kitaplar: </b>" + done + "<br><br><b>Okunmayan kitaplar:</b>" + notdone + "</span>";
+			
+			output.innerHTML = "";
+			output.innerHTML += "<h3>İzlenenler:</h3>"
+			for(i=0;i<done.length;i++)
+			{
+				output.innerHTML += "<li>" + done[i] + "</li>";
+			}
+			
+			output.innerHTML += "<h3>İzlenmeyenler:</h3>";
+			for(i=0;i<notdone.length;i++)
+			{
+				output.innerHTML += "<li>" + notdone[i] + "</li>";
+			}
+			
+			
+			buttonOne.style.display="none";
+			buttonTwo.style.display="none";
 		
-		output.innerHTML = "<h2>" + "Okunan kitaplar:" + done + "<br>Okunmayan kitaplar:" + notdone + "</h2>";
-		buttonOne.style.display="none";
-		buttonTwo.style.display="none";
-		
+	}
+	else {
+		notdone.push(mylist[i].name);
+		i++;
+		output.innerHTML = "<img src=" + mylist[i].image +">";
+		console.log(notdone);
 	}
 
 }
-
-
-
-
 
 
 
