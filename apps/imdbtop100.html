@@ -497,8 +497,9 @@ var notdone = [];
 
 
 
-//output.innerHTML = "<img src=" + mylist[0].image +"height='600' width='310'>";
-output.innerHTML = "<img src=" + mylist[0].image + "width='310' >";
+
+//output.innerHTML = "<img src=" + mylist[0].image + "width='310' >";
+output.innerHTML = "<img src=" + mylist[0].image +">";
 
 i = 0;
 
@@ -506,7 +507,8 @@ function done_func() {
 	
 	done.push(mylist[i].name);
 	i++;
-	output.innerHTML = "<img src=" + mylist[i].image +"height='600' width='310'>";
+	//output.innerHTML = "<img src=" + mylist[i].image +"height='600' width='310'>";
+	output.innerHTML = "<img src=" + mylist[i].image +">";
 	console.log(done);
 	if(i == mylist.length){
 		
@@ -524,8 +526,9 @@ function notdone_func() {
 
 	notdone.push(mylist[i].name);
 	i++;
-	//output.innerHTML = elements[i];
-	output.innerHTML = "<img src=" + mylist[i].image +"height='400' width='210'>";
+	
+	//output.innerHTML = "<img src=" + mylist[i].image +"height='400' width='210'>";
+	output.innerHTML = "<img src=" + mylist[i].image +">";
 	console.log(notdone);
 	if(i == mylist.length){
 		
@@ -535,9 +538,12 @@ function notdone_func() {
 		
 	}
 
-
-
 }
+
+
+
+
+
 
 
 </script>
