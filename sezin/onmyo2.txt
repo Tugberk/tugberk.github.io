@@ -1,0 +1,11 @@
+Onmyouji have a limited number of spells known and spells per day. onmyouji spells are separated into two categories: level and element. The level of a spell indicates how many pages of a spell book that spell occupies. The element (out of Fire, Air, Water, Metal and Wood) indicates what facet of nature the spell modifies.
+
+Every onmyouji starts knowing 3 spells. These spells do not count against the onmyouji's per day limit.
+
+One is simply "Read Magic" and may be used as many times per day as a onmyouji seems fit. It is a universal spell, and the only reason it is a spell and not ability is because when it is used, it does trigger as a spell (for all purposes). The read magic spell allows a onmyouji to read any magical note left by another onmyouji. They recognize this onmyouji's magical signature, and would be able to later go up to this onmyouji in a crowded room and go "hey, I know you...you wrote ____ on a tree outside town", but would know nothing else by use of this spell. This spell also allows the onmyouji to read their own spell book as well as the spell books of other onmyouji.
+
+"Scribe Magic" is a spell a onmyouji can use 3 times a day. It simply allows the onmyouji to write anything along with his or her own magical signature. A onmyouji may delete anything he or she has written automatically. If a onmyouji dies, all things written by the onmyouji are removed unless another onmyouji also is considered to have written whatever is written. If you read a spell and copy it using this spell, you are not only considered to have written down the copied spell, but the onmyouji you are copying the spell from is considered to have written it as well. If the onmyouji writes the spell in your book, only that onmyouji is considered to have written it.
+
+"Detect Magic" is a spell a onmyouji can use any number of times per day. It allows him to detect magic in any person, object or place. It allows him or her to hone onto specific magic signatures and recognize them much like how animals can distinguish between the scents of different animals of the same species.
+
+
