@@ -1,0 +1,44 @@
+ Web technologies improved dramatically over the recent years. This improvement started from simple HTML web pages to Web 2.0 with social networks, online applications, wikis; which became indispensable for our daily and business lives. However, a new web technology is emerging, Web 3.0. It is referred as Semantic Web, which aims to markup content in a standardized way to make it possible for machines to understand content without human interaction. When these developments come together by combining sensor networks and near field communication technologies, it leads to a new technology and area called Internet of Things (IoT) [1]. IoT not only aims to provide connection between computers and mobile phones, it aims to create a collective network combining automobiles, buildings, cities and even electrical grids.
+Berg Insight [2] claims that by 2021, there will be 73 million smart homes just in North America. It is obvious that with increasing number of IoT devices, the number of issues surrounding IoT devices needs to be decreased. Identity management is one of those issues in IoT. Since there will be a lot of IoT devices available, the security of the communication between those devices is crucial.
+
+The term IoT was first proposed in 1998 by Weber as a global Internet-based information architecture for exchanging goods and services in supply chain networks [3]. However, the definition for IoT has broadened and is now defined as “a core concept where everyday objects can be equipped with identifying, sensing, networking and processing capabilities that will allow them to communicate with one another and with other devices and services over the Internet to achieve some useful objective” [4]. The range of usage for IoT devices has increased over the years and now is also used in many areas such as healthcare, smart infrastructure and smart homes [4]. An online survey done by Intel [5] showed that among 2.500 adults in United States, 68% of them believed that smart homes will be as common as smartphones by 2025. This indicates that there is a positive attitude towards smart housing. However, it is also important to state that same survey showed that 82% of those people agreed that the integrated security is a priority. 
+
+References:
+[1]: Whitmore, A., Agarwal, A. and Da Xu, L., 2015. The Internet of Things—A survey of topics and trends. Information Systems Frontiers, 17(2), pp.261-274.
+[2]: Berg Insight (n.d.). Smart Homes and Home Automation. M2M Research Series. [online] Berg Insight. Available at: http://www.berginsight.com/ReportPDF/ProductSheet/bi-sh5-ps.pdf 
+[3]: Weber, R.H., 2010. Internet of Things–New security and privacy challenges. Computer law & security review, 26(1), pp.23-30.
+
+[4]: Whitmore, A., Agarwal, A. and Da Xu, L., 2015. The Internet of Things—A survey of topics and trends. Information Systems Frontiers, 17(2), pp.261-274.
+[5]: Intel (n.d.). Could Smart Homes Be as Commonplace as Smartphones by 2025?. [online] Available at: http://download.intel.com/newsroom/kits/iot/pdfs/IntelSmartHomeSurveyBackgrounder.pdf [Accessed 5 Jul. 2018].
+
+
+
+--
+
+
+The term IoT was first proposed in 1998 by Weber as a global Internet-based information architecture for exchanging goods and services in supply chain networks [25]. This is a good use-case for Internet, because it enables the provider to be alert in case of any lacking goods. This architecture is based on data communication, such as RFID-tagged items. Some popular industry specific proposals for IoT are physical objects with RFID tags [72]. However, the definition of IoT needs to be broadened. IoT is defined in [26] as “a core concept where everyday objects can be equipped with identifying, sensing, networking and processing capabilities that will allow them to communicate with one another and with other devices and services over the Internet to achieve some useful objective.” IoT has increased its range from supply chain networks to our everyday lives and made use-cases in areas such as healthcare, smart infrastructure, social applications, etc. [26]. 
+
+As of 2018, below are some the best IoT and smart home gadgets chosen by ZDNet [70].
+
+* Ring - A smart doorbell, alerting you even if you are away from your home via mobile application if there is someone at your door.
+* Kuri - A mobile robot which can be used as an assistant and companion around the house. It can also access the web, audiobooks and play music.
+* Wemo - A home automaton, which can control smart devices in your home such as light switches, plug outlets, etc.
+* Philips Hue - A smart home lighting device.
+* Nanoleaf - A smart light panel which are used generally as a decorative device for your walls. 
+* BenjiLock - A smart padlock. While it can be used as a traditional padlock with a key, it can also be locked and unlocked by your fingerprints.
+* Foobot air quality monitor - A smart air monitor which monitors air quality including carbon dioxide, temperature and humidity.
+* August smart lock - A smart door lock. It can be arranged to give access to certain people, track any activity arouınd it from your mobile application and can also work with traditional keys. 
+* U by Moen - A smart shower system which can control temperature and water usage.
+* Rachio 3 - A smart sprinkler system for gardens.
+* Amazon Echo - A smart speaker connected to a voice assistant Alexa, is a good hub for a smart home. It can answer simple questions as well as communicate with other devices which are compatible with it.
+* Google Home - A smart speaker similar to Amazon Echo. 
+* Nest Thermostat - A learning thermostat, used to regulate the temperature. It can learn your preferences and act accordingly. 
+* Nest Cam - A smart indoor security system. 
+* RoboVac - A robot vacuum system. Uses infrared sensors to map the environment and cleans the house.
+
+By the examples given above, it can be said that using IoT as personal assistants is useful and has a great potential on different markets. However, it would be very hard to compete against technological giants, such as Amazon, Alphabet (Google) and Bing (Microsoft), which make their devices use their own specific services. You can control compatible smart devices in your home if you have any, you can learn the weather, you can play music and much more. However, there may be a downside to using IoT devices of different vendors. They all work best with networks consisting of their own brands. A Google product will best interact with other Google products, while a Samsung product will interact better with other Samsung products.
+
+
+
+
+
