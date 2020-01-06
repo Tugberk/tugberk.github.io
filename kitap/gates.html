@@ -1,0 +1,955 @@
+
+<!doctype html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	<title>Bill Gates in Kitap Listesi</title>
+</head>
+<body>
+<div id="output"></diV>
+	
+</body>
+
+<script>
+
+var output = document.getElementById("output");
+
+var mylist =
+[
+  {
+    "Name": "A Full Life: Reflections at Ninety",
+    "Authors": "Jimmy Carter",
+    "Genre": "Political history and biography"
+  },
+  {
+    "Name": "Being Nixon: A Man Divided",
+    "Authors": "Evan Thomas",
+    "Genre": "Political history and biography"
+  },
+  {
+    "Name": "The Bully Pulpit: Theodore Roosevelt and the Golden Age of Journalism",
+    "Authors": "Doris Kearns Goodwin",
+    "Genre": "Political history and biography"
+  },
+  {
+    "Name": "Deng Xiaoping and the Transformation of China",
+    "Authors": "Ezra Vogel",
+    "Genre": "Political history and biography"
+  },
+  {
+    "Name": "A Nation of Wusses: How America’s Leaders Lost the Guts to Make Us Great",
+    "Authors": "Ed Rendell",
+    "Genre": "Political history and biography"
+  },
+  {
+    "Name": "Titan II: A History of a Cold War Missile Program",
+    "Authors": "David K. Stumpf",
+    "Genre": "Political history and biography"
+  },
+  {
+    "Name": "Homo Deus: A Brief History of Tomorrow",
+    "Authors": "Yuval Noah Harari",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "Sapiens: A Brief History of Humankind",
+    "Authors": "Yuval Noah Harari",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "The Vital Question: Energy, Evolution and the Origins of Complex Life",
+    "Authors": "Nick Lane",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "Enlightenment Now: The Case for Reason",
+    "Authors": "Steven Pinker",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "The Better Angels of Our Nature",
+    "Authors": "Steven Pinker",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "The Sixth Extinction: An Unnatural History",
+    "Authors": "Elizabeth Kolbert",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "The World Until Yesterday: What Can We Learn from Traditional Societies?",
+    "Authors": "Jared Diamond",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "Collapse: How Societies Choose to Fail or Succeed",
+    "Authors": "Jared Diamond",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "Guns, Germs, and Steel",
+    "Authors": "Jared Diamond",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "Abundance: The Future Is Better Than You Think",
+    "Authors": "Peter Diamandis and Steven Kotler",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "Big History: From the Big Bang to the Present",
+    "Authors": "Cynthia Brown",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "Origin Story: A Big History of Everything",
+    "Authors": "David Christian",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "Limits to Growth: The 30-Year Update",
+    "Authors": "Donella Meadows, Jorgen Randers and Dennis Meadows",
+    "Genre": "Human evolution and civilization"
+  },
+  {
+    "Name": "The Grid: The Fraying Wires Between Americans and our Energy Future",
+    "Authors": "Gretchen Bakke",
+    "Genre": "Big technology and invention"
+  },
+  {
+    "Name": "Sustainable Materials with both Eyes Open",
+    "Authors": "Julian M. Allwood and Jonathan M. Cullen",
+    "Genre": "Big technology and invention"
+  },
+  {
+    "Name": "The Most Powerful Idea in the World: A Story of Steam, Industry and Invention",
+    "Authors": "William Rosen",
+    "Genre": "Big technology and invention"
+  },
+  {
+    "Name": "The Grid: A Journey Through the Heart of our Electrified World",
+    "Authors": "Phillip F. Schewe",
+    "Genre": "Big technology and invention"
+  },
+  {
+    "Name": "The Path Between the Seas: The Creation of the Panama Canal, 1870-1914",
+    "Authors": "David McCullough",
+    "Genre": "Big technology and invention"
+  },
+  {
+    "Name": "The Box: How the Shipping Container Made the World Smaller and the World Economy Bigger",
+    "Authors": "Marc Levinson",
+    "Genre": "Big technology and invention"
+  },
+  {
+    "Name": "How Not to Be Wrong: The Power of Mathematical Thinking",
+    "Authors": "Jordan Ellenberg",
+    "Genre": "Math and science thinking"
+  },
+  {
+    "Name": "The Magic of Reality: How We Know What’s really True",
+    "Authors": "Richard Dawkins",
+    "Genre": "Math and science thinking"
+  },
+  {
+    "Name": "What If? Serious Scientific Answers to Absurd Hypothetical Questions",
+    "Authors": "Randall Munroe",
+    "Genre": "Math and science thinking"
+  },
+  {
+    "Name": "How to Lie With Statistics",
+    "Authors": "Darrell Huff",
+    "Genre": "Math and science thinking"
+  },
+  {
+    "Name": "Thing Explainer: Complicated Stuff in Simple Words",
+    "Authors": "Randall Munroe",
+    "Genre": "Math and science thinking"
+  },
+  {
+    "Name": "Factfulness: Ten Reasons We’re Wrong About the World—and Why Things Are Better than You Think",
+    "Authors": "Hans Rosling, Anna Rosling Rönnlund, and Ola Rosling",
+    "Genre": "Math and science thinking"
+  },
+  {
+    "Name": "The Signal and the Noise: Why So Many Predictions Fail—but Some Don’t",
+    "Authors": "Nate Silver",
+    "Genre": "Math and science thinking"
+  },
+  {
+    "Name": "Business Adventures: Twelve Classic Tales from the World of Wall Street",
+    "Authors": "John Brooks",
+    "Genre": "Business"
+  },
+  {
+    "Name": "Shoe Dog: A Memoir  the Creator of Nike",
+    "Authors": "Phil Knight",
+    "Genre": "Business"
+  },
+  {
+    "Name": "Tap Dancing to Work: Warren Buffett on Practically Everything",
+    "Authors": "Carol J. Loomis",
+    "Genre": "Business"
+  },
+  {
+    "Name": "Poor Charlie’s Almanack",
+    "Authors": "Peter D. Kaufman and Ed Wexler",
+    "Genre": "Business"
+  },
+  {
+    "Name": "Hit Refresh: The Quest to Rediscover Microsoft’s Soul and Imagine a Better Future for Everyone",
+    "Authors": "Satya Nadella",
+    "Genre": "Business"
+  },
+  {
+    "Name": "Science Business: The Promise, the Reality, and the Future of Biotech",
+    "Authors": "Gary P. Pisano",
+    "Genre": "Business"
+  },
+  {
+    "Name": "Einstein",
+    "Authors": "Walter Isaacson",
+    "Genre": "Biography"
+  },
+  {
+    "Name": "Broken Genius",
+    "Authors": "Joel Shurkin",
+    "Genre": "Biography"
+  },
+  {
+    "Name": "Leonardo da Vinci",
+    "Authors": "Walter Isaacson",
+    "Genre": "Biography"
+  },
+  {
+    "Name": "Steve Jobs",
+    "Authors": "Walter Isaacson",
+    "Genre": "Biography"
+  },
+  {
+    "Name": "Born a Crime",
+    "Authors": "Trevor Noah",
+    "Genre": "Memoir"
+  },
+  {
+    "Name": "The Best We Could Do",
+    "Authors": "Thi Bui",
+    "Genre": "Memoir"
+  },
+  {
+    "Name": "Believe Me",
+    "Authors": "Eddie Izzard",
+    "Genre": "Memoir"
+  },
+  {
+    "Name": "Hyperbole and a Half",
+    "Authors": "Allie Brosh",
+    "Genre": "Memoir"
+  },
+  {
+    "Name": "On Immunity: An Inoculation",
+    "Authors": "Eula Biss",
+    "Genre": "Memoir"
+  },
+  {
+    "Name": "When Breath Becomes Air",
+    "Authors": "Paul Kalanithi",
+    "Genre": "Memoir"
+  },
+  {
+    "Name": "Everything Happens for a Reason and other Lies I’ve Loved",
+    "Authors": "Kate Bowler",
+    "Genre": "Memoir"
+  },
+  {
+    "Name": "The Cost of Hope",
+    "Authors": "Amanda Bennett",
+    "Genre": "Memoir"
+  },
+  {
+    "Name": "The Heart",
+    "Authors": "Maylis de Kerangal",
+    "Genre": "Fiction"
+  },
+  {
+    "Name": "The Sympathizer",
+    "Authors": "Viet Thanh Nguyen",
+    "Genre": "Fiction"
+  },
+  {
+    "Name": "Seveneves",
+    "Authors": "Neal Stephenson",
+    "Genre": "Fiction"
+  },
+  {
+    "Name": "The Rosie Effect",
+    "Authors": "Graeme Simsion",
+    "Genre": "Fiction"
+  },
+  {
+    "Name": "The Rosie Project",
+    "Authors": "Graeme Simsion",
+    "Genre": "Fiction"
+  },
+  {
+    "Name": "Patriot and Assassin",
+    "Authors": "Robert Cook",
+    "Genre": "Fiction"
+  },
+  {
+    "Name": "Turtles All the Way Down",
+    "Authors": "John Green",
+    "Genre": "Fiction"
+  },
+  {
+    "Name": "The Hunger Games",
+    "Authors": "Suzanne Collins",
+    "Genre": "Fiction"
+  },
+  {
+    "Name": "The Cat’s Table",
+    "Authors": "Michael Ondaatje",
+    "Genre": "Fiction"
+  },
+  {
+    "Name": "The Catcher in the Rye",
+    "Authors": "J. D. Salinger",
+    "Genre": "Fiction"
+  },
+  {
+    "Name": "A Separate Peace",
+    "Authors": "John Knowles",
+    "Genre": "Fiction"
+  },
+  {
+    "Name": "Lincoln in the Bardo",
+    "Authors": "George Saunders",
+    "Genre": "Fiction"
+  },
+  {
+    "Name": "Energy and Civilization: A History",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Should We Eat Meat?",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Making the Modern World: Materials and Dematerialization",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Harvesting the Biosphere",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Energy Myths and Realities",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Japan’s Dietary Transition and Its Impacts",
+    "Authors": "Vaclav Smil and Kazuhiko Kobayashi",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Made in the USA: The Rise and Retreat of American Manufacturing",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Prime Movers of Globalization",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "The Earth’s Biosphere",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Energy at the Crossroads",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Energies: An Illustrated Guide to the Biosphere and Civilization",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Global Catastrophes and Trends",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Enriching the Earth",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Why America is Not a New Rome",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Transforming the Twentieth Century",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Energy Transitions: History, Requirements, Prospects",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Creating the Twentieth Century",
+    "Authors": "Vaclav Smil",
+    "Genre": "Books by Vaclav Smil"
+  },
+  {
+    "Name": "Poor Numbers: How We are Misled  African Development Statistics and What to Do About it",
+    "Authors": "Morten Jerven",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "Getting Better: Why Global Development is Succeeding—and How We Can Improve the World Even More",
+    "Authors": "Charles Kenny",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "Behind the Beautiful Forevers: Life, Death and Hope in a Mumbai Undercity",
+    "Authors": "Katherine Boo",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "The Man Who Fed the World: Nobel Peace Prize Laureate Norman Borlaug and His Battle to End World Hunger",
+    "Authors": "Leon Hesser",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "The Last Hunger Season: A Year in an African Farm Community on the Brink of Change",
+    "Authors": "Roger Thurow",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "However Long the Night: Molly Melching’s Journey to Help Millions of African Women and Girls Triumph",
+    "Authors": "Aimee Molloy",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "In the Company of the Poor",
+    "Authors": "Paul Farmer and Gustavo Gutierrez",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "Mighty be Our Powers: How Sisterhood, Prayer and Sex Changed a Nation at War",
+    "Authors": "Leymah Gbowee",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "One Billion Hungry: Can We Feed the World?",
+    "Authors": "Gordon Conway",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "Poor Economics: A Radical Rethinking of the Way to Fight Global Poverty",
+    "Authors": "Abhijit Vinayak Banerjee and Esther Duflo",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "How to Spend $50 Billion to Make the World a Better Place",
+    "Authors": "Bjørn Lomborg",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "The Foundation: How Private Wealth Is Changing the World",
+    "Authors": "Joel L. Fleishman",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "Give Smart: Philanthropy that Gets Results",
+    "Authors": "Thomas J. Tierney and Joel L. Fleishman",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "Jim Grant—UNICEF Visionary",
+    "Authors": "Richard Jolly (Ed.)",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "Tomorrow’s Table: Organic Farming, Genetics and the Future of Food",
+    "Authors": "Pamela Ronald and Raoul Adamchak",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "The Great Escape: Health, Wealth and the Origins of Inequality",
+    "Authors": "Angus Deaton",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "The Idealist: Jeffrey Sachs and the Quest to End Poverty",
+    "Authors": "Nina Munk",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "Interventions: A Life in War and Peace",
+    "Authors": "Kofi Annan",
+    "Genre": "Development and foreign aid"
+  },
+  {
+    "Name": "Why Does College Cost So Much?",
+    "Authors": "Robert B. Archibald and David H. Feldman",
+    "Genre": "Education"
+  },
+  {
+    "Name": "A World-Class Education: Learning from International Models of Excellence and Innovation",
+    "Authors": "Vivien Stewart",
+    "Genre": "Education"
+  },
+  {
+    "Name": "Academically Adrift: Limited Learning on College Campuses",
+    "Authors": "Richard Arum and Joshipa Roksa",
+    "Genre": "Education"
+  },
+  {
+    "Name": "Why Don’t Students Like School? A Cognitive Scientist Answers Questions about how the Mind Works and What It Means for the Classroom",
+    "Authors": "Dan T. Willingham",
+    "Genre": "Education"
+  },
+  {
+    "Name": "Change.edu: Rebooting for the New Talent Economy",
+    "Authors": "Andrew Rosen",
+    "Genre": "Education"
+  },
+  {
+    "Name": "Unlocking the Gates",
+    "Authors": "Taylor Walsh",
+    "Genre": "Education"
+  },
+  {
+    "Name": "Class Warfare: Inside the Fight to Fix America’s Schools",
+    "Authors": "Steven Brill",
+    "Genre": "Education"
+  },
+  {
+    "Name": "Who’s Teaching your Children?",
+    "Authors": "Vivian Troen and Katherine C. Boles",
+    "Genre": "Education"
+  },
+  {
+    "Name": "Stretching the School Dollar: How Schools and Districts Can Save Money while Serving Students Best",
+    "Authors": "Frederick M. Hess and Eric Osberg (Eds.)",
+    "Genre": "Education"
+  },
+  {
+    "Name": "Where Do School Funds Go?",
+    "Authors": "Marguerite Roza",
+    "Genre": "Education"
+  },
+  {
+    "Name": "Liberating Learning: Technology, Politics, and the Future of American Education",
+    "Authors": "Terry M. Moe and John E. Chubb",
+    "Genre": "Education"
+  },
+  {
+    "Name": "Work Hard. Be Nice: How Two Inspired Teachers Created the Most Promising Schools in America",
+    "Authors": "Jay Mathews",
+    "Genre": "Education"
+  },
+  {
+    "Name": "Value-Added Measures in Education: What Every Educator Needs to Know",
+    "Authors": "Douglas N. Harris",
+    "Genre": "Education"
+  },
+  {
+    "Name": "The Gene: An Intimate History",
+    "Authors": "Siddhartha Mukherjee",
+    "Genre": "Science"
+  },
+  {
+    "Name": "For the Love of Physics: From the End of the Rainbow to the Edge of Time, A journey through the Wonders of Physics",
+    "Authors": "Walter Lewin",
+    "Genre": "Science"
+  },
+  {
+    "Name": "Feynman Lectures on Physics, Vol. 1: Mainly Mechanics, Radiation and Heat",
+    "Authors": "Richard P. Feynman, Robert B. Leighton, and Matthew Sands",
+    "Genre": "Science"
+  },
+  {
+    "Name": "Feynman Lectures on Physics, Vol 2: Mainly Electromagnetism and Matter",
+    "Authors": "Richard P. Feynman, Robert B. Leighton, and Matthew Sands",
+    "Genre": "Science"
+  },
+  {
+    "Name": "Feynman Lectures on Physics, Vol 3: Quantum Mechanics",
+    "Authors": "Richard P. Feynman, Robert B. Leighton, and Matthew Sands",
+    "Genre": "Science"
+  },
+  {
+    "Name": "The New Science of Strong Materials",
+    "Authors": "J.E. Gordon",
+    "Genre": "Science"
+  },
+  {
+    "Name": "The Hair of the Dog and Other Scientific Surprises",
+    "Authors": "Karl Sabbagh",
+    "Genre": "Science"
+  },
+  {
+    "Name": "13 Things that Don’t Make Sense: The Most Baffling Scientific Mysteries of our Time",
+    "Authors": "Michael Brooks",
+    "Genre": "Science"
+  },
+  {
+    "Name": "Modernist Cuisine: The Art and Science of Cooking",
+    "Authors": "Nathan Myhrvold",
+    "Genre": "Science"
+  },
+  {
+    "Name": "The Emperor of All Maladies: A Biography of Cancer",
+    "Authors": "Siddhartha Mukherjee",
+    "Genre": "Science"
+  },
+  {
+    "Name": "I Contain Multitudes: The Microbes within Us and a Grander View of Life",
+    "Authors": "Ed Yong",
+    "Genre": "Science"
+  },
+  {
+    "Name": "Stuff Matters: Exploring the Marvelous Materials that Shape our Man-Made World",
+    "Authors": "Mark Miodownik",
+    "Genre": "Science"
+  },
+  {
+    "Name": "The Quest: Energy, Security and the Remaking of the Modern World",
+    "Authors": "Daniel Yergin",
+    "Genre": "Climate change and energy"
+  },
+  {
+    "Name": "Sustainable Energy—without the Hot Air",
+    "Authors": "David J.C. MacKay",
+    "Genre": "Climate change and energy"
+  },
+  {
+    "Name": "Unlocking Energy Innovation",
+    "Authors": "Richard K. Lester and David M. Hart",
+    "Genre": "Climate change and energy"
+  },
+  {
+    "Name": "World on the Edge: How to Prevent Environmental and Economic Collapse",
+    "Authors": "Lester R. Brown",
+    "Genre": "Climate change and energy"
+  },
+  {
+    "Name": "Global Warming: The Complete Briefing",
+    "Authors": "John Houghton",
+    "Genre": "Climate change and energy"
+  },
+  {
+    "Name": "Beyond Smoke and Mirrors: Climate Change and Energy in the 21st Century",
+    "Authors": "Burton Richter",
+    "Genre": "Climate change and energy"
+  },
+  {
+    "Name": "Hot, Flat, and Crowded: Why We Need a Green Revolution - and How it Can Renew America",
+    "Authors": "Thomas Friedman",
+    "Genre": "Climate change and energy"
+  },
+  {
+    "Name": "Reinventing Fire: Bold Business Solutions for the New Energy Era",
+    "Authors": "Amory B. Lovins and Rocky Mountain Institute",
+    "Genre": "Climate change and energy"
+  },
+  {
+    "Name": "Hillbilly Elegy: A Memoir of a Family and Culture in Crisis",
+    "Authors": "J.D. Vance",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "Evicted: Poverty and Profit in the American City",
+    "Authors": "Matthew Desmond",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "The Power to Compete: An Economist and an Entrepreneur on Revitalizing Japan in the Global Economy",
+    "Authors": "Hiroshi Mikitani and Ryoichi Mikitani",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "The Rise and Fall of American Growth: The U.S. Standard of Living since the Civil War",
+    "Authors": "Robert Gordon",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "How Asia Works: Success and Failure in the World’s Most Dynamic Region",
+    "Authors": "Joe Studwell",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "Capital in the Twenty-First Century",
+    "Authors": "Thomas Piketty",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "Stress Test: Reflections on Financial Crises",
+    "Authors": "Timothy F. Geithner",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "The Bet: Paul Ehrlich, Julian Simon and our Gamble over Earth's Future",
+    "Authors": "Paul Sabin",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "The Price of Inequality: How Today’s Divided Society Endangers our Future",
+    "Authors": "Joseph E. Stiglitz",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "Why Nations Fail",
+    "Authors": "Daron Acemoglu and James A. Robinson",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "This Time Is Different: Eight Centuries of Financial Folly",
+    "Authors": "Carmen Reinhart and Kenneth Rogoff",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "Beyond the Crash: Overcoming the First Crisis of Globalization",
+    "Authors": "Gordon Brown",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "Too Big to Fail",
+    "Authors": "Andrew Ross Sorkin",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "The World Is Flat: A Brief History of the Twenty-first Century",
+    "Authors": "Thomas Friedman",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "That Used to Be Us: How America Fell Behind in the World it Invented and How We Can Come Back",
+    "Authors": "Thomas Friedman and Michael Mandelbaum",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "The End of Poverty",
+    "Authors": "Jeffrey Sachs",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "In Fed We Trust: Ben Bernanke’s War on the Great Panic",
+    "Authors": "David Wessel",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "SuperFreakonomics: Global Cooling, Patriotic Prostitutes and Why Suicide Bombers Should Buy Life Insurance",
+    "Authors": "Steven Levitt and Stephen Dubner",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "The Rational Optimist: How Prosperity Evolves",
+    "Authors": "Matt Ridley",
+    "Genre": "Economics and wealth inequality"
+  },
+  {
+    "Name": "Eradication: Ridding the World of Diseases Forever?",
+    "Authors": "Nancy Leys Stepan",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "The Fever: How Malaria Has Ruled Humankind for 500000 Years",
+    "Authors": "Sonia Shah",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "House on Fire: The Fight to Eradicate Smallpox",
+    "Authors": "William H. Foege",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "Smallpox: The Death of a Disease",
+    "Authors": "D.A. Henderson",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "Infections and Inequalities: The Modern Plagues",
+    "Authors": "Paul Farmer",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "Reinventing American Health Care: How the Affordable Care Act Will Improve our Terribly Complex, Blatantly Unjust, Outrageously Expensive, Grossly Inefficient, Error Prone System",
+    "Authors": "Ezekiel Emanuel",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "The Checklist Manifesto: How to Get Things Right",
+    "Authors": "Atul Gawande",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "Global Health: An Introductory Textbook",
+    "Authors": "A. Lindstrand et al.",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "Health Care Will Not Reform Itself",
+    "Authors": "George Halvorson",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "Dirt and Disease: Polio before FDR",
+    "Authors": "Naomi Rogers",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "The Making of a Tropical Disease: A Short History of Malaria",
+    "Authors": "Randall M. Packard",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "Priorities in Health",
+    "Authors": "Dean T. Jamison and Joel G. Breman",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "Vaccine: The Controversial Story of Medicine’s Greatest Lifesaver",
+    "Authors": "Arthur Allen",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "Tropical Infectious Diseases",
+    "Authors": "Richard L. Guerrant and David H. Walker",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "Mountains Beyond Mountains: The Quest of Dr. Paul Farmer, a Man who Would Cure the World",
+    "Authors": "Tracy Kidder",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "Polio: An American Story",
+    "Authors": "David Oshinsky",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "Epic Measures: One Doctor. Seven Billion Patients",
+    "Authors": "Jeremy Smith",
+    "Genre": "Disease and public health"
+  },
+  {
+    "Name": "The Myth of the Strong Leader",
+    "Authors": "Archie Brown",
+    "Genre": "Leadership and management"
+  },
+  {
+    "Name": "Mindset: The New Psychology of Success",
+    "Authors": "Carol Dweck",
+    "Genre": "Leadership and management"
+  },
+  {
+    "Name": "How Children Succeed: Grit, Curiosity and the Hidden Power of Character",
+    "Authors": "Paul Tough",
+    "Genre": "Leadership and management"
+  },
+  {
+    "Name": "The Art of Being Unreasonable: Lessons in Unconventional Thinking",
+    "Authors": "Eli Broad",
+    "Genre": "Leadership and management"
+  },
+  {
+    "Name": "Measure What Matters: How Google, Bono and the Gates Foundation Rock the World With OKRs",
+    "Authors": "John Doerr",
+    "Genre": "Leadership and management"
+  },
+  {
+    "Name": "Change  Design: How Design Thinking Transforms Organizations and Inspires Innovation",
+    "Authors": "Tim Brown",
+    "Genre": "Leadership and management"
+  },
+  {
+    "Name": "The Road to Character",
+    "Authors": "David Brooks",
+    "Genre": "Happiness, psychology, and purpose"
+  },
+  {
+    "Name": "Where Good Ideas Come from",
+    "Authors": "Steven Johnson",
+    "Genre": "Happiness, psychology, and purpose"
+  },
+  {
+    "Name": "Awakening Joy",
+    "Authors": "James Baraz and Shoshana Alexander",
+    "Genre": "Happiness, psychology, and purpose"
+  },
+  {
+    "Name": "Whistling Vivaldi: How Stereotypes Affect Us and What We Can Do",
+    "Authors": "Claude Steele",
+    "Genre": "Happiness, psychology, and purpose"
+  },
+  {
+    "Name": "Outliers",
+    "Authors": "Malcolm Gladwell",
+    "Genre": "Happiness, psychology, and purpose"
+  },
+  {
+    "Name": "Showing up for Life",
+    "Authors": "Bill Gates Sr.",
+    "Genre": "Happiness, psychology, and purpose"
+  },
+  {
+    "Name": "Life Is What You Make It",
+    "Authors": "Peter Buffett",
+    "Genre": "Happiness, psychology, and purpose"
+  },
+  {
+    "Name": "String Theory",
+    "Authors": "David Foster Wallace",
+    "Genre": "Tennis"
+  },
+  {
+    "Name": "A Champion’s Mind",
+    "Authors": "Pete Sampras",
+    "Genre": "Tennis"
+  },
+  {
+    "Name": "Open",
+    "Authors": "Andre Agassi",
+    "Genre": "Tennis"
+  },
+  {
+    "Name": "Moonwalking with Einstein: The Art and Science of Remembering Everything",
+    "Authors": "Joshua Foer",
+    "Genre": "Misc"
+  },
+  {
+    "Name": "The City that Became Safe: New York’s Lessons for Urban Crime and Its Control",
+    "Authors": "Franklin Zimring",
+    "Genre": "Misc"
+  },
+  {
+    "Name": "Frank Stewart’s Bridge Club",
+    "Authors": "Frank Stewart",
+    "Genre": "Misc"
+  }
+];
+
+output.innerHTML = "Bill Gates in okunmasını önerdiği 185 kitap<br><hr><br>"
+for(i=0;i<mylist.length;i++){
+
+	output.innerHTML += i+1 +". "+ mylist[i].Authors + " - " + "<a href='https://duckduckgo.com/?q=" + mylist[i].Name + "'>" + mylist[i].Name +"</a><br>";
+}
+
+
+</script>
+</html>
