@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h1>Cardio İdmanları</h2><a href="index.html">go back</a>
+<hr>
+<div id="output">
+</div>
+
+
+
+</body>
+<script>
+
+var ext = "cardio/";
+var sonext = ".png";
+
+var images = ["Apollon", "Atlas", "Dione", "Gaia", "Hera", "Iris","Metis"];
+
+var myDiv = document.getElementById("output");
+
+for(i=0;i<images.length;i++) {
+
+	myDiv.innerHTML += "<h3>" + images[i] + "</h3>";
+	myDiv.innerHTML += "<img src='" + ext + images[i] + sonext + "'>";
+
+}
+
+
+
+</script>
+</html>
