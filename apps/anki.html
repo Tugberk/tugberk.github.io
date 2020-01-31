@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>anki</title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+
+var sorular = [{
+"id" : "1",
+"soru" : "dog",
+"cevap":"köpek"
+},
+{
+"id":"2",
+"soru":"cat",
+"cevap":"kedi"
+},
+{
+"id":"3",
+"soru":"me",
+"cevap":"ben"
+},
+{
+"id":"4",
+"soru":"phone",
+"cevap":"telefon"
+},
+{
+"id":"5",
+"soru":"color",
+"cevap":"renk"
+}];
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>
