@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<textarea id="mytext" rows="20" cols="50"></textarea>
+<br>
+<button onclick="work()">olu$tur</button>
+</body>
+<script>
+
+var input = document.getElementById("mytext");
+
+function work() {
+	
+    var myArray = input.value.split("\n");
+    console.log(myArray);
+    
+    for(j=0;j<myArray.length;j++){
+        document.write('<img src="' + myArray[j] + '">');
+        document.write('<br>');
+        if(myArray[j] == "") {
+            myArray.splice(j,1);
+        }
+    }
+}
+
+</script>
+</html>
