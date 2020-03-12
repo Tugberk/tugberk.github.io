@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>searcher</title>
+
+</head>
+<body>
+<h2>İsimleri listeleyin</h2>
+<textarea id="mytext" rows="20" cols="50"></textarea>
+<hr>
+<label for="cars">Seçin:</label>
+
+<select id="site">
+  <option value="google">Google</option>
+  <option value="images">Google Images</option>
+  <option value="facebook">Facebook</option>
+  </select>
+
+<button onclick="work()"> Link Oluştur </button>
+<div id="output"></div>
+
+
+</body>
+
+
+<script>
+	
+	var output = document.getElementById("output");
+	
+
+	
+	
+	var images = "https://www.google.com/search?tbm=isch&source=hp&biw=1920&bih=976&ei=u__XXYWyLYOVmwXG0IbwCQ&q=";
+	var google = "https://www.google.com/search?q=";
+	var facebook = "https://www.facebook.com/search/top/?q=";
+	
+
+	
+	function work() {
+		
+		output.innerHTML = "";
+		var mytext = document.getElementById('mytext').value;
+		var secenek = document.getElementById("site").value;
+		
+				
+		//birden fazla satir varsa eger bunlari bi array e yazmak lazim
+			var myArray = [];
+			myArray = mytext.split('\n');
+			console.log(myArray);
+			
+		//ama bu dizide bos karakterler var mi? yanlislikla bos enter i almis olabilir
+		//o yuzden bos deger varsa silecegiz
+		for(j=0;j<myArray.length;j++){
+			if(myArray[j] == "") {
+				myArray.splice(j,1);
+			}
+		}
+		
+		//------------------------------------------
+		
+	
+	
+		for(i=0;i<myArray.length;i++){
+		
+			if (secenek == "images"){
+				output.innerHTML += "<a target='_blank' href='" + images + myArray[i] + "'>"+ myArray[i] +"</a><br>";
+			}
+			else if(secenek == "google"){
+				output.innerHTML += "<a target='_blank' href='" + google + myArray[i] + "'>"+ myArray[i] +"</a><br>";
+			}
+			else if(secenek == "facebook") {
+				output.innerHTML += "<a target='_blank' href='" + facebook + myArray[i] + "'>"+ myArray[i] +"</a><br>";
+			}
+			else{
+				alert("..");
+
+			}		
+		
+		}
+			
+		
+
+}
+
+
+
+</script>
+</html>
