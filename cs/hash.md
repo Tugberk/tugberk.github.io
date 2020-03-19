@@ -2,11 +2,16 @@
 - girdinin kaç karakter olduğundan bağımsız olarak, belirli sayıda karakter içeren bir çıktı verir.
 
 örneğin md5 hashing algoritmasına bakalım:
+
 girdi: 123456
+
 çıktı: e10adc3949ba59abbe56e057f20f883e
 
+
 girdi: 123456ekleme
+
 çıktı: 639bf53b247a53059a6e9ee03f4c3347
+
 
 Görüldüğü gibi, girdiler birbirine benzese bile, çıktıların birbirine hiçbir benzerliği yok. Bununla birlikte, girdilerin uzunluğu değişse bile, çıktıların uzunluğu sabit kalıyor. Bu 5-10 karakterlik bir girdi değil, bir kitap bile olsa, aynı sayıda çıktı olacaktı.
 
