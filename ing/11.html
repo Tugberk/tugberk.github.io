@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>ingilizce kelimeler - 1</title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "official",
+    "cevap": "resmi"
+  },
+  {
+    "id": 2,
+    "soru": "matter",
+    "cevap": "konu"
+  },
+  {
+    "id": 3,
+    "soru": "everyone",
+    "cevap": "herkes"
+  },
+  {
+    "id": 4,
+    "soru": "center",
+    "cevap": "merkez"
+  },
+  {
+    "id": 5,
+    "soru": "couple",
+    "cevap": "çift"
+  },
+  {
+    "id": 6,
+    "soru": "star",
+    "cevap": "yıldız"
+  },
+  {
+    "id": 7,
+    "soru": "table",
+    "cevap": "masa"
+  },
+  {
+    "id": 8,
+    "soru": "court",
+    "cevap": "mahkeme"
+  },
+  {
+    "id": 9,
+    "soru": "produce",
+    "cevap": "üretmek"
+  },
+  {
+    "id": 10,
+    "soru": "oil",
+    "cevap": "yağ"
+  },
+  {
+    "id": 11,
+    "soru": "half",
+    "cevap": "yarım"
+  },
+  {
+    "id": 12,
+    "soru": "situation",
+    "cevap": "durum"
+  },
+  {
+    "id": 13,
+    "soru": "easy",
+    "cevap": "kolay"
+  },
+  {
+    "id": 14,
+    "soru": "cost",
+    "cevap": "masraf"
+  },
+  {
+    "id": 15,
+    "soru": "street",
+    "cevap": "sokak"
+  },
+  {
+    "id": 16,
+    "soru": "image",
+    "cevap": "resim"
+  },
+  {
+    "id": 17,
+    "soru": "phone",
+    "cevap": "telefon"
+  },
+  {
+    "id": 18,
+    "soru": "either",
+    "cevap": "ya o ya bu"
+  },
+  {
+    "id": 19,
+    "soru": "data",
+    "cevap": "veri"
+  },
+  {
+    "id": 20,
+    "soru": "cover",
+    "cevap": "örtü"
+  },
+  {
+    "id": 21,
+    "soru": "picture",
+    "cevap": "resim"
+  },
+  {
+    "id": 22,
+    "soru": "clear",
+    "cevap": "temiz"
+  },
+  {
+    "id": 23,
+    "soru": "practice",
+    "cevap": "idman"
+  },
+  {
+    "id": 24,
+    "soru": "piece",
+    "cevap": "parça"
+  },
+  {
+    "id": 25,
+    "soru": "land",
+    "cevap": "toprak parçası"
+  },
+  {
+    "id": 26,
+    "soru": "recent",
+    "cevap": "yakın"
+  },
+  {
+    "id": 27,
+    "soru": "describe",
+    "cevap": "açıklamak"
+  },
+  {
+    "id": 28,
+    "soru": "product",
+    "cevap": "ürün"
+  },
+  {
+    "id": 29,
+    "soru": "wall",
+    "cevap": "duvar"
+  },
+  {
+    "id": 30,
+    "soru": "patient",
+    "cevap": "hasta"
+  },
+  {
+    "id": 31,
+    "soru": "worker",
+    "cevap": "işçi"
+  },
+  {
+    "id": 32,
+    "soru": "news",
+    "cevap": "haberler"
+  },
+  {
+    "id": 33,
+    "soru": "movie",
+    "cevap": "sinema filmi"
+  },
+  {
+    "id": 34,
+    "soru": "certain",
+    "cevap": "kesin"
+  },
+  {
+    "id": 35,
+    "soru": "north",
+    "cevap": "kuzey"
+  },
+  {
+    "id": 36,
+    "soru": "personal",
+    "cevap": "kişisel"
+  },
+  {
+    "id": 37,
+    "soru": "simply",
+    "cevap": "basitçe"
+  },
+  {
+    "id": 38,
+    "soru": "third",
+    "cevap": "üçüncü"
+  },
+  {
+    "id": 39,
+    "soru": "catch",
+    "cevap": "yakalamak"
+  },
+  {
+    "id": 40,
+    "soru": "step",
+    "cevap": "adım"
+  },
+  {
+    "id": 41,
+    "soru": "type",
+    "cevap": "yazmak"
+  },
+  {
+    "id": 42,
+    "soru": "attention",
+    "cevap": "dikkat"
+  },
+  {
+    "id": 43,
+    "soru": "draw",
+    "cevap": "çizmek"
+  },
+  {
+    "id": 44,
+    "soru": "Republican",
+    "cevap": "cumhuriyetçi"
+  },
+  {
+    "id": 45,
+    "soru": "tree",
+    "cevap": "ağaç"
+  },
+  {
+    "id": 46,
+    "soru": "source",
+    "cevap": "kaynak"
+  },
+  {
+    "id": 47,
+    "soru": "red",
+    "cevap": "kırmızı"
+  },
+  {
+    "id": 48,
+    "soru": "nearly",
+    "cevap": "neredeyse"
+  },
+  {
+    "id": 49,
+    "soru": "choose",
+    "cevap": "seçmek"
+  },
+  {
+    "id": 50,
+    "soru": "cause",
+    "cevap": "neden"
+  }
+];
+
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

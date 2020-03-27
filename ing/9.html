@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>ingilizce kelimeler - 1</title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "human",
+    "cevap": "insan"
+  },
+  {
+    "id": 2,
+    "soru": "wait",
+    "cevap": "beklemek"
+  },
+  {
+    "id": 3,
+    "soru": "serve",
+    "cevap": "sunmak / hizmet etmek"
+  },
+  {
+    "id": 4,
+    "soru": "market",
+    "cevap": "Pazar / market"
+  },
+  {
+    "id": 5,
+    "soru": "die",
+    "cevap": "ölmek"
+  },
+  {
+    "id": 6,
+    "soru": "send",
+    "cevap": "göndermek"
+  },
+  {
+    "id": 7,
+    "soru": "expect",
+    "cevap": "beklemek"
+  },
+  {
+    "id": 8,
+    "soru": "home",
+    "cevap": "ev"
+  },
+  {
+    "id": 9,
+    "soru": "sense",
+    "cevap": "his"
+  },
+  {
+    "id": 10,
+    "soru": "build",
+    "cevap": "inşa etmek"
+  },
+  {
+    "id": 11,
+    "soru": "stay",
+    "cevap": "kalmak"
+  },
+  {
+    "id": 12,
+    "soru": "fall",
+    "cevap": "sonbahar / düşmek"
+  },
+  {
+    "id": 13,
+    "soru": "nation",
+    "cevap": "ulus"
+  },
+  {
+    "id": 14,
+    "soru": "cut",
+    "cevap": "kesmek"
+  },
+  {
+    "id": 15,
+    "soru": "interest",
+    "cevap": "ilgi"
+  },
+  {
+    "id": 16,
+    "soru": "death",
+    "cevap": "ölüm"
+  },
+  {
+    "id": 17,
+    "soru": "course",
+    "cevap": "ders / yol"
+  },
+  {
+    "id": 18,
+    "soru": "someone",
+    "cevap": "herhangi biri"
+  },
+  {
+    "id": 19,
+    "soru": "experience",
+    "cevap": "deneyim"
+  },
+  {
+    "id": 20,
+    "soru": "behind",
+    "cevap": "arka"
+  },
+  {
+    "id": 21,
+    "soru": "reach",
+    "cevap": "uzanmak"
+  },
+  {
+    "id": 22,
+    "soru": "local",
+    "cevap": "lokal / yerel"
+  },
+  {
+    "id": 23,
+    "soru": "kill",
+    "cevap": "öldürmek"
+  },
+  {
+    "id": 24,
+    "soru": "effect",
+    "cevap": "efekt"
+  },
+  {
+    "id": 25,
+    "soru": "use",
+    "cevap": "kullanmak"
+  },
+  {
+    "id": 26,
+    "soru": "suggest",
+    "cevap": "önermek"
+  },
+  {
+    "id": 27,
+    "soru": "class",
+    "cevap": "sınıf"
+  },
+  {
+    "id": 28,
+    "soru": "raise",
+    "cevap": "yükseltmek"
+  },
+  {
+    "id": 29,
+    "soru": "care",
+    "cevap": "önem"
+  },
+  {
+    "id": 30,
+    "soru": "perhaps",
+    "cevap": "belki"
+  },
+  {
+    "id": 31,
+    "soru": "little",
+    "cevap": "küçük"
+  },
+  {
+    "id": 32,
+    "soru": "late",
+    "cevap": "geç"
+  },
+  {
+    "id": 33,
+    "soru": "hard",
+    "cevap": "zor"
+  },
+  {
+    "id": 34,
+    "soru": "field",
+    "cevap": "alan"
+  },
+  {
+    "id": 35,
+    "soru": "pass",
+    "cevap": "geçiş kartı / izni"
+  },
+  {
+    "id": 36,
+    "soru": "former",
+    "cevap": "eski"
+  },
+  {
+    "id": 37,
+    "soru": "sell",
+    "cevap": "satmak"
+  },
+  {
+    "id": 38,
+    "soru": "major",
+    "cevap": "büyük"
+  },
+  {
+    "id": 39,
+    "soru": "sometimes",
+    "cevap": "bazen"
+  },
+  {
+    "id": 40,
+    "soru": "require",
+    "cevap": "gerek duymak"
+  },
+  {
+    "id": 41,
+    "soru": "along",
+    "cevap": "boyunca"
+  },
+  {
+    "id": 42,
+    "soru": "development",
+    "cevap": "gelişme"
+  },
+  {
+    "id": 43,
+    "soru": "report",
+    "cevap": "rapor"
+  },
+  {
+    "id": 44,
+    "soru": "role",
+    "cevap": "rol"
+  },
+  {
+    "id": 45,
+    "soru": "better",
+    "cevap": "daha iyi"
+  },
+  {
+    "id": 46,
+    "soru": "decide",
+    "cevap": "karar vermek"
+  },
+  {
+    "id": 47,
+    "soru": "rate",
+    "cevap": "oran"
+  },
+  {
+    "id": 48,
+    "soru": "strong",
+    "cevap": "güçlü"
+  },
+  {
+    "id": 49,
+    "soru": "possible",
+    "cevap": "olası"
+  },
+  {
+    "id": 50,
+    "soru": "heart",
+    "cevap": "kalp"
+  }
+];
+
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>
