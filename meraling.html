@@ -1,0 +1,232 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+	<style>
+	body {
+	font-size: 32px;}
+	</style>
+	
+</head>
+
+
+
+<body>
+
+<main role="main" class="container">
+	<div class="starter-template">
+
+		
+		<div id="soru">
+			
+		</div>
+		<button id="sonucButon">sonucu goster</button>
+
+		<br><br>
+		<div id="cevap">
+			
+		</div>
+	
+		<button id="bildimButon">bildim</button> <button id="bilemedimButon">bilemedim</button>
+
+	</div>	
+
+
+</main>
+
+</body>
+
+
+<script>
+//document.getElementById("cevap").style.visibility = "hidden";
+
+
+//sorular olacak arraylar icerisinde
+
+
+
+
+
+sorular = ["All",
+"And",
+"Boy",
+"Book",
+"Call",
+"Car",
+"Chair",
+"Children",
+"City",
+"Dog ",
+"Door",
+"Enemy ",
+"End",
+"Enough",
+"Eat",
+"Friend",
+"Father",
+"Go",
+"Good",
+"Girl",
+"Food",
+"Hear",
+"House",
+"Inside",
+"Laugh",
+"Listen",
+"Man",
+"Name",
+"Never",
+"Next",
+"New",
+"Noise",
+"Often",
+"Pair",
+"Pick",
+"Play",
+"Room",
+"See",
+"Sell",
+"Sit",
+"Speak",
+"Smile",
+"Sister",
+"Think",
+"Walk",
+"Water",
+"Work",
+"Write",
+"Woman"];
+
+
+
+cevaplar = ["hepsi",
+"ve",
+"erkek çocuk",
+"kitap",
+"aramak",
+"araba",
+"sandalye",
+"çocuklar",
+"şehir",
+"köpek",
+"kapı",
+"düşman",
+"son",
+"yeter",
+"yemek",
+"arkadaş",
+"baba",
+"gitmek",
+"iyi",
+"kız",
+"yemek",
+"duymak",
+"ev",
+"içeride",
+"gülmek",
+"dinlemek",
+"adam",
+"isim",
+"asla",
+"bir sonraki",
+"yeni",
+"gürültü",
+"ara sıra",
+"çift",
+"seçmek",
+"oynamak",
+"oda",
+"görmek",
+"satmak",
+"oturmak",
+"konuşmak",
+"gülmek",
+"kız kardeş",
+"düşünmek",
+"yürümek",
+"su",
+"çalışmak",
+"yazmak",
+"kadın"];
+
+
+//var randomSayi = randomOlustur(sorular.length);
+document.getElementById("soru").innerHTML = sorular[0];
+
+document.getElementById("bildimButon").disabled = true;
+document.getElementById("bilemedimButon").disabled = true;
+
+
+
+document.getElementById("sonucButon").onclick = function() {
+	//document.getElementById("cevap").style.visibility = "visible";
+	document.getElementById("cevap").innerHTML = cevaplar[0];
+	document.getElementById("bildimButon").disabled = false;
+	document.getElementById("bilemedimButon").disabled = false;
+}
+
+var bildim = 0;
+var bilemedim = 0;
+
+document.getElementById("bildimButon").onclick = function() {
+	//bildim 
+	//burada soru ve cevap array inden o sorulari kaldiricaz.
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	bildim = bildim + 1;
+	//tekrar getir
+	check();
+	//var randomSayi = randomOlustur(sorular.length);
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+
+}
+
+document.getElementById("bilemedimButon").onclick = function() {
+	//bilemedim
+	//array den kaldirmayacagiz -- array in sonuna atacagiz
+	
+	bilemedim = bilemedim + 1;
+
+	sorular.push(sorular[0]);
+	cevaplar.push(cevaplar[0]);
+	sorular.splice(0, 1);
+	cevaplar.splice(0, 1);
+
+	document.getElementById("soru").innerHTML = sorular[0];
+	document.getElementById("cevap").innerHTML = "";
+	document.getElementById("bildimButon").disabled = true;
+	document.getElementById("bilemedimButon").disabled = true;
+
+}
+
+
+
+function check() {
+	if(sorular.length == "0"){
+		alert("sorular bitti");
+		alert("bilinen: " + bildim + "-bilinemeyen: "+  bilemedim);
+		window.reload();
+	}
+}
+
+
+//hazir fonksiyonlar
+
+function randomOlustur(sayi){
+	var rand_sayi = Math.floor(Math.random() * sayi);
+	//alert(rand_sayi);
+	console.log(rand_sayi);
+	return rand_sayi;
+}
+
+
+
+
+</script>
+</html>
