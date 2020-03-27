@@ -1,0 +1,355 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>ispanyolca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "energía",
+    "cevap": "energy"
+  },
+  {
+    "id": 2,
+    "soru": "caza",
+    "cevap": "hunt"
+  },
+  {
+    "id": 3,
+    "soru": "probable",
+    "cevap": "probable"
+  },
+  {
+    "id": 4,
+    "soru": "cama",
+    "cevap": "bed"
+  },
+  {
+    "id": 5,
+    "soru": "hermano",
+    "cevap": "brother"
+  },
+  {
+    "id": 6,
+    "soru": "huevo",
+    "cevap": "egg"
+  },
+  {
+    "id": 7,
+    "soru": "paseo",
+    "cevap": "ride"
+  },
+  {
+    "id": 8,
+    "soru": "celular",
+    "cevap": "cell"
+  },
+  {
+    "id": 9,
+    "soru": "creer",
+    "cevap": "believe"
+  },
+  {
+    "id": 10,
+    "soru": "quizás",
+    "cevap": "perhaps"
+  },
+  {
+    "id": 11,
+    "soru": "recoger",
+    "cevap": "pick"
+  },
+  {
+    "id": 12,
+    "soru": "repentina",
+    "cevap": "sudden"
+  },
+  {
+    "id": 13,
+    "soru": "contar",
+    "cevap": "count"
+  },
+  {
+    "id": 14,
+    "soru": "plaza",
+    "cevap": "square"
+  },
+  {
+    "id": 15,
+    "soru": "razón",
+    "cevap": "reason"
+  },
+  {
+    "id": 16,
+    "soru": "longitud",
+    "cevap": "length"
+  },
+  {
+    "id": 17,
+    "soru": "representar",
+    "cevap": "represent"
+  },
+  {
+    "id": 18,
+    "soru": "arte",
+    "cevap": "art"
+  },
+  {
+    "id": 19,
+    "soru": "sujeto",
+    "cevap": "subject"
+  },
+  {
+    "id": 20,
+    "soru": "región",
+    "cevap": "region"
+  },
+  {
+    "id": 21,
+    "soru": "tamaño",
+    "cevap": "size"
+  },
+  {
+    "id": 22,
+    "soru": "variar",
+    "cevap": "vary"
+  },
+  {
+    "id": 23,
+    "soru": "resolver",
+    "cevap": "settle"
+  },
+  {
+    "id": 24,
+    "soru": "hablar",
+    "cevap": "speak"
+  },
+  {
+    "id": 25,
+    "soru": "peso",
+    "cevap": "weight"
+  },
+  {
+    "id": 26,
+    "soru": "general",
+    "cevap": "general"
+  },
+  {
+    "id": 27,
+    "soru": "hielo",
+    "cevap": "ice"
+  },
+  {
+    "id": 28,
+    "soru": "materia",
+    "cevap": "matter"
+  },
+  {
+    "id": 29,
+    "soru": "círculo",
+    "cevap": "circle"
+  },
+  {
+    "id": 30,
+    "soru": "par",
+    "cevap": "pair"
+  },
+  {
+    "id": 31,
+    "soru": "incluir",
+    "cevap": "include"
+  },
+  {
+    "id": 32,
+    "soru": "brecha",
+    "cevap": "divide"
+  },
+  {
+    "id": 33,
+    "soru": "sílaba",
+    "cevap": "syllable"
+  },
+  {
+    "id": 34,
+    "soru": "sentido",
+    "cevap": "felt"
+  },
+  {
+    "id": 35,
+    "soru": "gran",
+    "cevap": "grand"
+  },
+  {
+    "id": 36,
+    "soru": "bola",
+    "cevap": "ball"
+  },
+  {
+    "id": 37,
+    "soru": "aún",
+    "cevap": "yet"
+  },
+  {
+    "id": 38,
+    "soru": "ola",
+    "cevap": "wave"
+  },
+  {
+    "id": 39,
+    "soru": "caer",
+    "cevap": "drop"
+  },
+  {
+    "id": 40,
+    "soru": "corazón",
+    "cevap": "heart"
+  },
+  {
+    "id": 41,
+    "soru": "am",
+    "cevap": "am"
+  },
+  {
+    "id": 42,
+    "soru": "presente",
+    "cevap": "present"
+  },
+  {
+    "id": 43,
+    "soru": "pesada",
+    "cevap": "heavy"
+  },
+  {
+    "id": 44,
+    "soru": "danza",
+    "cevap": "dance"
+  },
+  {
+    "id": 45,
+    "soru": "motor",
+    "cevap": "engine"
+  },
+  {
+    "id": 46,
+    "soru": "posición",
+    "cevap": "position"
+  },
+  {
+    "id": 47,
+    "soru": "brazo",
+    "cevap": "arm"
+  },
+  {
+    "id": 48,
+    "soru": "amplio",
+    "cevap": "wide"
+  },
+  {
+    "id": 49,
+    "soru": "vela",
+    "cevap": "sail"
+  },
+  {
+    "id": 50,
+    "soru": "materiales",
+    "cevap": "material"
+  }
+];var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

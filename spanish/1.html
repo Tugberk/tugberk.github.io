@@ -1,0 +1,357 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>ispanyolca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "como",
+    "cevap": "as"
+  },
+  {
+    "id": 2,
+    "soru": "I",
+    "cevap": "I"
+  },
+  {
+    "id": 3,
+    "soru": "su",
+    "cevap": "his"
+  },
+  {
+    "id": 4,
+    "soru": "que",
+    "cevap": "that"
+  },
+  {
+    "id": 5,
+    "soru": "él",
+    "cevap": "he"
+  },
+  {
+    "id": 6,
+    "soru": "era",
+    "cevap": "was"
+  },
+  {
+    "id": 7,
+    "soru": "para",
+    "cevap": "for"
+  },
+  {
+    "id": 8,
+    "soru": "en",
+    "cevap": "on"
+  },
+  {
+    "id": 9,
+    "soru": "son",
+    "cevap": "are"
+  },
+  {
+    "id": 10,
+    "soru": "con",
+    "cevap": "with"
+  },
+  {
+    "id": 11,
+    "soru": "ellos",
+    "cevap": "they"
+  },
+  {
+    "id": 12,
+    "soru": "ser",
+    "cevap": "be"
+  },
+  {
+    "id": 13,
+    "soru": "en",
+    "cevap": "at"
+  },
+  {
+    "id": 14,
+    "soru": "uno",
+    "cevap": "one"
+  },
+  {
+    "id": 15,
+    "soru": "tener",
+    "cevap": "have"
+  },
+  {
+    "id": 16,
+    "soru": "este",
+    "cevap": "this"
+  },
+  {
+    "id": 17,
+    "soru": "desde",
+    "cevap": "from"
+  },
+  {
+    "id": 18,
+    "soru": "por",
+    "cevap": "by"
+  },
+  {
+    "id": 19,
+    "soru": "caliente",
+    "cevap": "hot"
+  },
+  {
+    "id": 20,
+    "soru": "palabra",
+    "cevap": "word"
+  },
+  {
+    "id": 21,
+    "soru": "pero",
+    "cevap": "but"
+  },
+  {
+    "id": 22,
+    "soru": "qué",
+    "cevap": "what"
+  },
+  {
+    "id": 23,
+    "soru": "algunos",
+    "cevap": "some"
+  },
+  {
+    "id": 24,
+    "soru": "es",
+    "cevap": "is"
+  },
+  {
+    "id": 25,
+    "soru": "lo",
+    "cevap": "it"
+  },
+  {
+    "id": 26,
+    "soru": "usted",
+    "cevap": "you"
+  },
+  {
+    "id": 27,
+    "soru": "o",
+    "cevap": "or"
+  },
+  {
+    "id": 28,
+    "soru": "tenido",
+    "cevap": "had"
+  },
+  {
+    "id": 29,
+    "soru": "la",
+    "cevap": "the"
+  },
+  {
+    "id": 30,
+    "soru": "de",
+    "cevap": "of"
+  },
+  {
+    "id": 31,
+    "soru": "a",
+    "cevap": "to"
+  },
+  {
+    "id": 32,
+    "soru": "y",
+    "cevap": "and"
+  },
+  {
+    "id": 33,
+    "soru": "un",
+    "cevap": "a"
+  },
+  {
+    "id": 34,
+    "soru": "en",
+    "cevap": "in"
+  },
+  {
+    "id": 35,
+    "soru": "nos",
+    "cevap": "we"
+  },
+  {
+    "id": 36,
+    "soru": "lata",
+    "cevap": "can"
+  },
+  {
+    "id": 37,
+    "soru": "fuera",
+    "cevap": "out"
+  },
+  {
+    "id": 38,
+    "soru": "otros",
+    "cevap": "other"
+  },
+  {
+    "id": 39,
+    "soru": "eran",
+    "cevap": "were"
+  },
+  {
+    "id": 40,
+    "soru": "que",
+    "cevap": "which"
+  },
+  {
+    "id": 41,
+    "soru": "hacer",
+    "cevap": "do"
+  },
+  {
+    "id": 42,
+    "soru": "su",
+    "cevap": "their"
+  },
+  {
+    "id": 43,
+    "soru": "tiempo",
+    "cevap": "time"
+  },
+  {
+    "id": 44,
+    "soru": "si",
+    "cevap": "if"
+  },
+  {
+    "id": 45,
+    "soru": "lo hará",
+    "cevap": "will"
+  },
+  {
+    "id": 46,
+    "soru": "cómo",
+    "cevap": "how"
+  },
+  {
+    "id": 47,
+    "soru": "dicho",
+    "cevap": "said"
+  },
+  {
+    "id": 48,
+    "soru": "un",
+    "cevap": "an"
+  },
+  {
+    "id": 49,
+    "soru": "cada",
+    "cevap": "each"
+  },
+  {
+    "id": 50,
+    "soru": "decir",
+    "cevap": "tell"
+  }
+];
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

@@ -1,0 +1,355 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>ispanyolca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "bloque",
+    "cevap": "block"
+  },
+  {
+    "id": 2,
+    "soru": "tabla",
+    "cevap": "chart"
+  },
+  {
+    "id": 3,
+    "soru": "sombrero",
+    "cevap": "hat"
+  },
+  {
+    "id": 4,
+    "soru": "vender",
+    "cevap": "sell"
+  },
+  {
+    "id": 5,
+    "soru": "éxito",
+    "cevap": "success"
+  },
+  {
+    "id": 6,
+    "soru": "empresa",
+    "cevap": "company"
+  },
+  {
+    "id": 7,
+    "soru": "restar",
+    "cevap": "subtract"
+  },
+  {
+    "id": 8,
+    "soru": "evento",
+    "cevap": "event"
+  },
+  {
+    "id": 9,
+    "soru": "particular,",
+    "cevap": "particular"
+  },
+  {
+    "id": 10,
+    "soru": "acuerdo",
+    "cevap": "deal"
+  },
+  {
+    "id": 11,
+    "soru": "nadar",
+    "cevap": "swim"
+  },
+  {
+    "id": 12,
+    "soru": "plazo",
+    "cevap": "term"
+  },
+  {
+    "id": 13,
+    "soru": "opuesta",
+    "cevap": "opposite"
+  },
+  {
+    "id": 14,
+    "soru": "esposa",
+    "cevap": "wife"
+  },
+  {
+    "id": 15,
+    "soru": "zapato",
+    "cevap": "shoe"
+  },
+  {
+    "id": 16,
+    "soru": "hombro",
+    "cevap": "shoulder"
+  },
+  {
+    "id": 17,
+    "soru": "propagación",
+    "cevap": "spread"
+  },
+  {
+    "id": 18,
+    "soru": "organizar",
+    "cevap": "arrange"
+  },
+  {
+    "id": 19,
+    "soru": "campamento",
+    "cevap": "camp"
+  },
+  {
+    "id": 20,
+    "soru": "inventar",
+    "cevap": "invent"
+  },
+  {
+    "id": 21,
+    "soru": "algodón",
+    "cevap": "cotton"
+  },
+  {
+    "id": 22,
+    "soru": "nacido",
+    "cevap": "born"
+  },
+  {
+    "id": 23,
+    "soru": "determinar",
+    "cevap": "determine"
+  },
+  {
+    "id": 24,
+    "soru": "cuarto de galón",
+    "cevap": "quart"
+  },
+  {
+    "id": 25,
+    "soru": "nueve",
+    "cevap": "nine"
+  },
+  {
+    "id": 26,
+    "soru": "camión",
+    "cevap": "truck"
+  },
+  {
+    "id": 27,
+    "soru": "ruido",
+    "cevap": "noise"
+  },
+  {
+    "id": 28,
+    "soru": "nivel",
+    "cevap": "level"
+  },
+  {
+    "id": 29,
+    "soru": "oportunidad",
+    "cevap": "chance"
+  },
+  {
+    "id": 30,
+    "soru": "reunir",
+    "cevap": "gather"
+  },
+  {
+    "id": 31,
+    "soru": "tienda",
+    "cevap": "shop"
+  },
+  {
+    "id": 32,
+    "soru": "tramo",
+    "cevap": "stretch"
+  },
+  {
+    "id": 33,
+    "soru": "lanzar",
+    "cevap": "throw"
+  },
+  {
+    "id": 34,
+    "soru": "brillo",
+    "cevap": "shine"
+  },
+  {
+    "id": 35,
+    "soru": "propiedad",
+    "cevap": "property"
+  },
+  {
+    "id": 36,
+    "soru": "columna",
+    "cevap": "column"
+  },
+  {
+    "id": 37,
+    "soru": "molécula",
+    "cevap": "molecule"
+  },
+  {
+    "id": 38,
+    "soru": "seleccionar",
+    "cevap": "select"
+  },
+  {
+    "id": 39,
+    "soru": "mal",
+    "cevap": "wrong"
+  },
+  {
+    "id": 40,
+    "soru": "gris",
+    "cevap": "gray"
+  },
+  {
+    "id": 41,
+    "soru": "repita",
+    "cevap": "repeat"
+  },
+  {
+    "id": 42,
+    "soru": "exigir",
+    "cevap": "require"
+  },
+  {
+    "id": 43,
+    "soru": "amplio",
+    "cevap": "broad"
+  },
+  {
+    "id": 44,
+    "soru": "preparar",
+    "cevap": "prepare"
+  },
+  {
+    "id": 45,
+    "soru": "sal",
+    "cevap": "salt"
+  },
+  {
+    "id": 46,
+    "soru": "nariz",
+    "cevap": "nose"
+  },
+  {
+    "id": 47,
+    "soru": "plurales",
+    "cevap": "plural"
+  },
+  {
+    "id": 48,
+    "soru": "cólera",
+    "cevap": "anger"
+  },
+  {
+    "id": 49,
+    "soru": "reclamación",
+    "cevap": "claim"
+  },
+  {
+    "id": 50,
+    "soru": "continente",
+    "cevap": "continent"
+  }
+];var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

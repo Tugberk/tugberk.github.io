@@ -1,0 +1,355 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>ispanyolca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "de capital",
+    "cevap": "capital"
+  },
+  {
+    "id": 2,
+    "soru": "no lo hará",
+    "cevap": "won’t"
+  },
+  {
+    "id": 3,
+    "soru": "silla",
+    "cevap": "chair"
+  },
+  {
+    "id": 4,
+    "soru": "peligro",
+    "cevap": "danger"
+  },
+  {
+    "id": 5,
+    "soru": "fruta",
+    "cevap": "fruit"
+  },
+  {
+    "id": 6,
+    "soru": "rica",
+    "cevap": "rich"
+  },
+  {
+    "id": 7,
+    "soru": "de espesor",
+    "cevap": "thick"
+  },
+  {
+    "id": 8,
+    "soru": "soldado",
+    "cevap": "soldier"
+  },
+  {
+    "id": 9,
+    "soru": "proceso",
+    "cevap": "process"
+  },
+  {
+    "id": 10,
+    "soru": "operar",
+    "cevap": "operate"
+  },
+  {
+    "id": 11,
+    "soru": "práctica",
+    "cevap": "practice"
+  },
+  {
+    "id": 12,
+    "soru": "separada",
+    "cevap": "separate"
+  },
+  {
+    "id": 13,
+    "soru": "difícil",
+    "cevap": "difficult"
+  },
+  {
+    "id": 14,
+    "soru": "médico",
+    "cevap": "doctor"
+  },
+  {
+    "id": 15,
+    "soru": "por favor",
+    "cevap": "please"
+  },
+  {
+    "id": 16,
+    "soru": "proteger",
+    "cevap": "protect"
+  },
+  {
+    "id": 17,
+    "soru": "mediodía",
+    "cevap": "noon"
+  },
+  {
+    "id": 18,
+    "soru": "de cultivos",
+    "cevap": "crop"
+  },
+  {
+    "id": 19,
+    "soru": "moderno",
+    "cevap": "modern"
+  },
+  {
+    "id": 20,
+    "soru": "elemento",
+    "cevap": "element"
+  },
+  {
+    "id": 21,
+    "soru": "golpear",
+    "cevap": "hit"
+  },
+  {
+    "id": 22,
+    "soru": "estudiante",
+    "cevap": "student"
+  },
+  {
+    "id": 23,
+    "soru": "esquina",
+    "cevap": "corner"
+  },
+  {
+    "id": 24,
+    "soru": "partido",
+    "cevap": "party"
+  },
+  {
+    "id": 25,
+    "soru": "suministro",
+    "cevap": "supply"
+  },
+  {
+    "id": 26,
+    "soru": "cuya",
+    "cevap": "whose"
+  },
+  {
+    "id": 27,
+    "soru": "localizar",
+    "cevap": "locate"
+  },
+  {
+    "id": 28,
+    "soru": "anillo",
+    "cevap": "ring"
+  },
+  {
+    "id": 29,
+    "soru": "carácter",
+    "cevap": "character"
+  },
+  {
+    "id": 30,
+    "soru": "insecto",
+    "cevap": "insect"
+  },
+  {
+    "id": 31,
+    "soru": "capturado",
+    "cevap": "caught"
+  },
+  {
+    "id": 32,
+    "soru": "período",
+    "cevap": "period"
+  },
+  {
+    "id": 33,
+    "soru": "indicar",
+    "cevap": "indicate"
+  },
+  {
+    "id": 34,
+    "soru": "Radio",
+    "cevap": "radio"
+  },
+  {
+    "id": 35,
+    "soru": "habló",
+    "cevap": "spoke"
+  },
+  {
+    "id": 36,
+    "soru": "átomo",
+    "cevap": "atom"
+  },
+  {
+    "id": 37,
+    "soru": "humana",
+    "cevap": "human"
+  },
+  {
+    "id": 38,
+    "soru": "historia",
+    "cevap": "history"
+  },
+  {
+    "id": 39,
+    "soru": "efecto",
+    "cevap": "effect"
+  },
+  {
+    "id": 40,
+    "soru": "eléctrica",
+    "cevap": "electric"
+  },
+  {
+    "id": 41,
+    "soru": "esperar",
+    "cevap": "expect"
+  },
+  {
+    "id": 42,
+    "soru": "hueso",
+    "cevap": "bone"
+  },
+  {
+    "id": 43,
+    "soru": "ferrocarril",
+    "cevap": "rail"
+  },
+  {
+    "id": 44,
+    "soru": "imaginar",
+    "cevap": "imagine"
+  },
+  {
+    "id": 45,
+    "soru": "proporcionar",
+    "cevap": "provide"
+  },
+  {
+    "id": 46,
+    "soru": "acuerdo",
+    "cevap": "agree"
+  },
+  {
+    "id": 47,
+    "soru": "por tanto,",
+    "cevap": "thus"
+  },
+  {
+    "id": 48,
+    "soru": "suave",
+    "cevap": "gentle"
+  },
+  {
+    "id": 49,
+    "soru": "mujer",
+    "cevap": "woman"
+  },
+  {
+    "id": 50,
+    "soru": "capitán",
+    "cevap": "captain"
+  }
+];var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

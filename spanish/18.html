@@ -1,0 +1,355 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>ispanyolca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "oxígeno",
+    "cevap": "oxygen"
+  },
+  {
+    "id": 2,
+    "soru": "azúcar",
+    "cevap": "sugar"
+  },
+  {
+    "id": 3,
+    "soru": "muerte",
+    "cevap": "death"
+  },
+  {
+    "id": 4,
+    "soru": "bastante",
+    "cevap": "pretty"
+  },
+  {
+    "id": 5,
+    "soru": "habilidad",
+    "cevap": "skill"
+  },
+  {
+    "id": 6,
+    "soru": "mujeres",
+    "cevap": "women"
+  },
+  {
+    "id": 7,
+    "soru": "temporada",
+    "cevap": "season"
+  },
+  {
+    "id": 8,
+    "soru": "solución",
+    "cevap": "solution"
+  },
+  {
+    "id": 9,
+    "soru": "imán",
+    "cevap": "magnet"
+  },
+  {
+    "id": 10,
+    "soru": "plata",
+    "cevap": "silver"
+  },
+  {
+    "id": 11,
+    "soru": "gracias",
+    "cevap": "thank"
+  },
+  {
+    "id": 12,
+    "soru": "rama",
+    "cevap": "branch"
+  },
+  {
+    "id": 13,
+    "soru": "partido",
+    "cevap": "match"
+  },
+  {
+    "id": 14,
+    "soru": "sufijo",
+    "cevap": "suffix"
+  },
+  {
+    "id": 15,
+    "soru": "especialmente",
+    "cevap": "especially"
+  },
+  {
+    "id": 16,
+    "soru": "higo",
+    "cevap": "fig"
+  },
+  {
+    "id": 17,
+    "soru": "miedo",
+    "cevap": "afraid"
+  },
+  {
+    "id": 18,
+    "soru": "enorme",
+    "cevap": "huge"
+  },
+  {
+    "id": 19,
+    "soru": "hermana",
+    "cevap": "sister"
+  },
+  {
+    "id": 20,
+    "soru": "acero",
+    "cevap": "steel"
+  },
+  {
+    "id": 21,
+    "soru": "discutir",
+    "cevap": "discuss"
+  },
+  {
+    "id": 22,
+    "soru": "adelante",
+    "cevap": "forward"
+  },
+  {
+    "id": 23,
+    "soru": "similar",
+    "cevap": "similar"
+  },
+  {
+    "id": 24,
+    "soru": "guiar",
+    "cevap": "guide"
+  },
+  {
+    "id": 25,
+    "soru": "experiencia",
+    "cevap": "experience"
+  },
+  {
+    "id": 26,
+    "soru": "puntuación",
+    "cevap": "score"
+  },
+  {
+    "id": 27,
+    "soru": "manzana",
+    "cevap": "apple"
+  },
+  {
+    "id": 28,
+    "soru": "comprado",
+    "cevap": "bought"
+  },
+  {
+    "id": 29,
+    "soru": "llevado",
+    "cevap": "led"
+  },
+  {
+    "id": 30,
+    "soru": "pitch",
+    "cevap": "pitch"
+  },
+  {
+    "id": 31,
+    "soru": "abrigo",
+    "cevap": "coat"
+  },
+  {
+    "id": 32,
+    "soru": "masa",
+    "cevap": "mass"
+  },
+  {
+    "id": 33,
+    "soru": "tarjeta",
+    "cevap": "card"
+  },
+  {
+    "id": 34,
+    "soru": "banda",
+    "cevap": "band"
+  },
+  {
+    "id": 35,
+    "soru": "cuerda",
+    "cevap": "rope"
+  },
+  {
+    "id": 36,
+    "soru": "deslizamiento",
+    "cevap": "slip"
+  },
+  {
+    "id": 37,
+    "soru": "ganar",
+    "cevap": "win"
+  },
+  {
+    "id": 38,
+    "soru": "soñar",
+    "cevap": "dream"
+  },
+  {
+    "id": 39,
+    "soru": "noche",
+    "cevap": "evening"
+  },
+  {
+    "id": 40,
+    "soru": "condición",
+    "cevap": "condition"
+  },
+  {
+    "id": 41,
+    "soru": "pienso",
+    "cevap": "feed"
+  },
+  {
+    "id": 42,
+    "soru": "herramienta",
+    "cevap": "tool"
+  },
+  {
+    "id": 43,
+    "soru": "totales",
+    "cevap": "total"
+  },
+  {
+    "id": 44,
+    "soru": "básico",
+    "cevap": "basic"
+  },
+  {
+    "id": 45,
+    "soru": "olor",
+    "cevap": "smell"
+  },
+  {
+    "id": 46,
+    "soru": "valle",
+    "cevap": "valley"
+  },
+  {
+    "id": 47,
+    "soru": "ni",
+    "cevap": "nor"
+  },
+  {
+    "id": 48,
+    "soru": "doble",
+    "cevap": "double"
+  },
+  {
+    "id": 49,
+    "soru": "asiento",
+    "cevap": "seat"
+  },
+  {
+    "id": 50,
+    "soru": "continuar",
+    "cevap": "continue"
+  }
+];var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

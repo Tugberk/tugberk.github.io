@@ -1,0 +1,610 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>ispanyolca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "suficiente",
+    "cevap": "enough"
+  },
+  {
+    "id": 2,
+    "soru": "llano",
+    "cevap": "plain"
+  },
+  {
+    "id": 3,
+    "soru": "chica",
+    "cevap": "girl"
+  },
+  {
+    "id": 4,
+    "soru": "habitual",
+    "cevap": "usual"
+  },
+  {
+    "id": 5,
+    "soru": "joven",
+    "cevap": "young"
+  },
+  {
+    "id": 6,
+    "soru": "listo",
+    "cevap": "ready"
+  },
+  {
+    "id": 7,
+    "soru": "por encima de",
+    "cevap": "above"
+  },
+  {
+    "id": 8,
+    "soru": "nunca",
+    "cevap": "ever"
+  },
+  {
+    "id": 9,
+    "soru": "rojo",
+    "cevap": "red"
+  },
+  {
+    "id": 10,
+    "soru": "lista",
+    "cevap": "list"
+  },
+  {
+    "id": 11,
+    "soru": "aunque",
+    "cevap": "though"
+  },
+  {
+    "id": 12,
+    "soru": "sentir",
+    "cevap": "feel"
+  },
+  {
+    "id": 13,
+    "soru": "charla",
+    "cevap": "talk"
+  },
+  {
+    "id": 14,
+    "soru": "pájaro",
+    "cevap": "bird"
+  },
+  {
+    "id": 15,
+    "soru": "pronto",
+    "cevap": "soon"
+  },
+  {
+    "id": 16,
+    "soru": "cuerpo",
+    "cevap": "body"
+  },
+  {
+    "id": 17,
+    "soru": "perro",
+    "cevap": "dog"
+  },
+  {
+    "id": 18,
+    "soru": "familia",
+    "cevap": "family"
+  },
+  {
+    "id": 19,
+    "soru": "directa",
+    "cevap": "direct"
+  },
+  {
+    "id": 20,
+    "soru": "plantear",
+    "cevap": "pose"
+  },
+  {
+    "id": 21,
+    "soru": "dejar",
+    "cevap": "leave"
+  },
+  {
+    "id": 22,
+    "soru": "canción",
+    "cevap": "song"
+  },
+  {
+    "id": 23,
+    "soru": "medir",
+    "cevap": "measure"
+  },
+  {
+    "id": 24,
+    "soru": "puerta",
+    "cevap": "door"
+  },
+  {
+    "id": 25,
+    "soru": "producto",
+    "cevap": "product"
+  },
+  {
+    "id": 26,
+    "soru": "negro",
+    "cevap": "black"
+  },
+  {
+    "id": 27,
+    "soru": "corto",
+    "cevap": "short"
+  },
+  {
+    "id": 28,
+    "soru": "numeral",
+    "cevap": "numeral"
+  },
+  {
+    "id": 29,
+    "soru": "clase",
+    "cevap": "class"
+  },
+  {
+    "id": 30,
+    "soru": "viento",
+    "cevap": "wind"
+  },
+  {
+    "id": 31,
+    "soru": "pregunta",
+    "cevap": "question"
+  },
+  {
+    "id": 32,
+    "soru": "suceder",
+    "cevap": "happen"
+  },
+  {
+    "id": 33,
+    "soru": "completo",
+    "cevap": "complete"
+  },
+  {
+    "id": 34,
+    "soru": "buque",
+    "cevap": "ship"
+  },
+  {
+    "id": 35,
+    "soru": "zona",
+    "cevap": "area"
+  },
+  {
+    "id": 36,
+    "soru": "medio",
+    "cevap": "half"
+  },
+  {
+    "id": 37,
+    "soru": "roca",
+    "cevap": "rock"
+  },
+  {
+    "id": 38,
+    "soru": "orden",
+    "cevap": "order"
+  },
+  {
+    "id": 39,
+    "soru": "fuego",
+    "cevap": "fire"
+  },
+  {
+    "id": 40,
+    "soru": "sur",
+    "cevap": "south"
+  },
+  {
+    "id": 41,
+    "soru": "problema",
+    "cevap": "problem"
+  },
+  {
+    "id": 42,
+    "soru": "pieza",
+    "cevap": "piece"
+  },
+  {
+    "id": 43,
+    "soru": "dicho",
+    "cevap": "told"
+  },
+  {
+    "id": 44,
+    "soru": "sabía",
+    "cevap": "knew"
+  },
+  {
+    "id": 45,
+    "soru": "pasar",
+    "cevap": "pass"
+  },
+  {
+    "id": 46,
+    "soru": "desde",
+    "cevap": "since"
+  },
+  {
+    "id": 47,
+    "soru": "cima",
+    "cevap": "top"
+  },
+  {
+    "id": 48,
+    "soru": "todo",
+    "cevap": "whole"
+  },
+  {
+    "id": 49,
+    "soru": "rey",
+    "cevap": "king"
+  },
+  {
+    "id": 50,
+    "soru": "calle",
+    "cevap": "street"
+  },
+  {
+    "id": "id",
+    "soru": "soru",
+    "cevap": "cevap"
+  },
+  {
+    "id": 1,
+    "soru": "pulgadas",
+    "cevap": "inch"
+  },
+  {
+    "id": 2,
+    "soru": "multiplicar",
+    "cevap": "multiply"
+  },
+  {
+    "id": 3,
+    "soru": "nada",
+    "cevap": "nothing"
+  },
+  {
+    "id": 4,
+    "soru": "curso",
+    "cevap": "course"
+  },
+  {
+    "id": 5,
+    "soru": "quedarse",
+    "cevap": "stay"
+  },
+  {
+    "id": 6,
+    "soru": "rueda",
+    "cevap": "wheel"
+  },
+  {
+    "id": 7,
+    "soru": "completo",
+    "cevap": "full"
+  },
+  {
+    "id": 8,
+    "soru": "fuerza",
+    "cevap": "force"
+  },
+  {
+    "id": 9,
+    "soru": "azul",
+    "cevap": "blue"
+  },
+  {
+    "id": 10,
+    "soru": "objeto",
+    "cevap": "object"
+  },
+  {
+    "id": 11,
+    "soru": "decidir",
+    "cevap": "decide"
+  },
+  {
+    "id": 12,
+    "soru": "superficie",
+    "cevap": "surface"
+  },
+  {
+    "id": 13,
+    "soru": "profunda",
+    "cevap": "deep"
+  },
+  {
+    "id": 14,
+    "soru": "luna",
+    "cevap": "moon"
+  },
+  {
+    "id": 15,
+    "soru": "isla",
+    "cevap": "island"
+  },
+  {
+    "id": 16,
+    "soru": "pie",
+    "cevap": "foot"
+  },
+  {
+    "id": 17,
+    "soru": "sistema",
+    "cevap": "system"
+  },
+  {
+    "id": 18,
+    "soru": "ocupado",
+    "cevap": "busy"
+  },
+  {
+    "id": 19,
+    "soru": "prueba",
+    "cevap": "test"
+  },
+  {
+    "id": 20,
+    "soru": "registro",
+    "cevap": "record"
+  },
+  {
+    "id": 21,
+    "soru": "barco",
+    "cevap": "boat"
+  },
+  {
+    "id": 22,
+    "soru": "común",
+    "cevap": "common"
+  },
+  {
+    "id": 23,
+    "soru": "oro",
+    "cevap": "gold"
+  },
+  {
+    "id": 24,
+    "soru": "posible",
+    "cevap": "possible"
+  },
+  {
+    "id": 25,
+    "soru": "plano",
+    "cevap": "plane"
+  },
+  {
+    "id": 26,
+    "soru": "lugar",
+    "cevap": "stead"
+  },
+  {
+    "id": 27,
+    "soru": "seco",
+    "cevap": "dry"
+  },
+  {
+    "id": 28,
+    "soru": "maravilla",
+    "cevap": "wonder"
+  },
+  {
+    "id": 29,
+    "soru": "risa",
+    "cevap": "laugh"
+  },
+  {
+    "id": 30,
+    "soru": "mil",
+    "cevap": "thousand"
+  },
+  {
+    "id": 31,
+    "soru": "hace",
+    "cevap": "ago"
+  },
+  {
+    "id": 32,
+    "soru": "corrió",
+    "cevap": "ran"
+  },
+  {
+    "id": 33,
+    "soru": "comprobar",
+    "cevap": "check"
+  },
+  {
+    "id": 34,
+    "soru": "juego",
+    "cevap": "game"
+  },
+  {
+    "id": 35,
+    "soru": "forma",
+    "cevap": "shape"
+  },
+  {
+    "id": 36,
+    "soru": "equiparar",
+    "cevap": "equate"
+  },
+  {
+    "id": 37,
+    "soru": "caliente",
+    "cevap": "hot"
+  },
+  {
+    "id": 38,
+    "soru": "señorita",
+    "cevap": "miss"
+  },
+  {
+    "id": 39,
+    "soru": "traído",
+    "cevap": "brought"
+  },
+  {
+    "id": 40,
+    "soru": "calor",
+    "cevap": "heat"
+  },
+  {
+    "id": 41,
+    "soru": "nieve",
+    "cevap": "snow"
+  },
+  {
+    "id": 42,
+    "soru": "neumáticos",
+    "cevap": "tire"
+  },
+  {
+    "id": 43,
+    "soru": "traer",
+    "cevap": "bring"
+  },
+  {
+    "id": 44,
+    "soru": "sí",
+    "cevap": "yes"
+  },
+  {
+    "id": 45,
+    "soru": "distante",
+    "cevap": "distant"
+  },
+  {
+    "id": 46,
+    "soru": "llenar",
+    "cevap": "fill"
+  },
+  {
+    "id": 47,
+    "soru": "al este",
+    "cevap": "east"
+  },
+  {
+    "id": 48,
+    "soru": "pintar",
+    "cevap": "paint"
+  },
+  {
+    "id": 49,
+    "soru": "idioma",
+    "cevap": "language"
+  },
+  {
+    "id": 50,
+    "soru": "entre",
+    "cevap": "among"
+  }
+];var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

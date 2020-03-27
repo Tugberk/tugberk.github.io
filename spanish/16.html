@@ -1,0 +1,355 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>ispanyolca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "adivinar",
+    "cevap": "guess"
+  },
+  {
+    "id": 2,
+    "soru": "necesario",
+    "cevap": "necessary"
+  },
+  {
+    "id": 3,
+    "soru": "agudo",
+    "cevap": "sharp"
+  },
+  {
+    "id": 4,
+    "soru": "ala",
+    "cevap": "wing"
+  },
+  {
+    "id": 5,
+    "soru": "crear",
+    "cevap": "create"
+  },
+  {
+    "id": 6,
+    "soru": "vecino",
+    "cevap": "neighbor"
+  },
+  {
+    "id": 7,
+    "soru": "lavado",
+    "cevap": "wash"
+  },
+  {
+    "id": 8,
+    "soru": "bate",
+    "cevap": "bat"
+  },
+  {
+    "id": 9,
+    "soru": "más bien",
+    "cevap": "rather"
+  },
+  {
+    "id": 10,
+    "soru": "multitud",
+    "cevap": "crowd"
+  },
+  {
+    "id": 11,
+    "soru": "maíz",
+    "cevap": "corn"
+  },
+  {
+    "id": 12,
+    "soru": "comparar",
+    "cevap": "compare"
+  },
+  {
+    "id": 13,
+    "soru": "poema",
+    "cevap": "poem"
+  },
+  {
+    "id": 14,
+    "soru": "cadena",
+    "cevap": "string"
+  },
+  {
+    "id": 15,
+    "soru": "campana",
+    "cevap": "bell"
+  },
+  {
+    "id": 16,
+    "soru": "dependerá",
+    "cevap": "depend"
+  },
+  {
+    "id": 17,
+    "soru": "carne",
+    "cevap": "meat"
+  },
+  {
+    "id": 18,
+    "soru": "frotar",
+    "cevap": "rub"
+  },
+  {
+    "id": 19,
+    "soru": "tubo",
+    "cevap": "tube"
+  },
+  {
+    "id": 20,
+    "soru": "famoso",
+    "cevap": "famous"
+  },
+  {
+    "id": 21,
+    "soru": "dólar",
+    "cevap": "dollar"
+  },
+  {
+    "id": 22,
+    "soru": "corriente",
+    "cevap": "stream"
+  },
+  {
+    "id": 23,
+    "soru": "miedo",
+    "cevap": "fear"
+  },
+  {
+    "id": 24,
+    "soru": "vista",
+    "cevap": "sight"
+  },
+  {
+    "id": 25,
+    "soru": "delgado",
+    "cevap": "thin"
+  },
+  {
+    "id": 26,
+    "soru": "triángulo",
+    "cevap": "triangle"
+  },
+  {
+    "id": 27,
+    "soru": "planeta",
+    "cevap": "planet"
+  },
+  {
+    "id": 28,
+    "soru": "prisa",
+    "cevap": "hurry"
+  },
+  {
+    "id": 29,
+    "soru": "jefe",
+    "cevap": "chief"
+  },
+  {
+    "id": 30,
+    "soru": "colonia",
+    "cevap": "colony"
+  },
+  {
+    "id": 31,
+    "soru": "reloj",
+    "cevap": "clock"
+  },
+  {
+    "id": 32,
+    "soru": "mina",
+    "cevap": "mine"
+  },
+  {
+    "id": 33,
+    "soru": "empate",
+    "cevap": "tie"
+  },
+  {
+    "id": 34,
+    "soru": "entrar",
+    "cevap": "enter"
+  },
+  {
+    "id": 35,
+    "soru": "importante",
+    "cevap": "major"
+  },
+  {
+    "id": 36,
+    "soru": "fresco",
+    "cevap": "fresh"
+  },
+  {
+    "id": 37,
+    "soru": "búsqueda",
+    "cevap": "search"
+  },
+  {
+    "id": 38,
+    "soru": "enviar",
+    "cevap": "send"
+  },
+  {
+    "id": 39,
+    "soru": "amarillo",
+    "cevap": "yellow"
+  },
+  {
+    "id": 40,
+    "soru": "pistola",
+    "cevap": "gun"
+  },
+  {
+    "id": 41,
+    "soru": "permitir",
+    "cevap": "allow"
+  },
+  {
+    "id": 42,
+    "soru": "print",
+    "cevap": "print"
+  },
+  {
+    "id": 43,
+    "soru": "muerto",
+    "cevap": "dead"
+  },
+  {
+    "id": 44,
+    "soru": "lugar",
+    "cevap": "spot"
+  },
+  {
+    "id": 45,
+    "soru": "desierto",
+    "cevap": "desert"
+  },
+  {
+    "id": 46,
+    "soru": "traje",
+    "cevap": "suit"
+  },
+  {
+    "id": 47,
+    "soru": "actual",
+    "cevap": "current"
+  },
+  {
+    "id": 48,
+    "soru": "ascensor",
+    "cevap": "lift"
+  },
+  {
+    "id": 49,
+    "soru": "rosa",
+    "cevap": "rose"
+  },
+  {
+    "id": 50,
+    "soru": "llegar",
+    "cevap": "arrive"
+  }
+];var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>
