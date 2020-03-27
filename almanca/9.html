@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>almanca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "Stamm",
+    "cevap": "master"
+  },
+  {
+    "id": 2,
+    "soru": "Spur",
+    "cevap": "track"
+  },
+  {
+    "id": 3,
+    "soru": "Elternteil",
+    "cevap": "parent"
+  },
+  {
+    "id": 4,
+    "soru": "Ufer",
+    "cevap": "shore"
+  },
+  {
+    "id": 5,
+    "soru": "Teilung",
+    "cevap": "division"
+  },
+  {
+    "id": 6,
+    "soru": "Blatt",
+    "cevap": "sheet"
+  },
+  {
+    "id": 7,
+    "soru": "Substanz",
+    "cevap": "substance"
+  },
+  {
+    "id": 8,
+    "soru": "begünstigen",
+    "cevap": "favor"
+  },
+  {
+    "id": 9,
+    "soru": "verbinden",
+    "cevap": "connect"
+  },
+  {
+    "id": 10,
+    "soru": "nach",
+    "cevap": "post"
+  },
+  {
+    "id": 11,
+    "soru": "verbringen",
+    "cevap": "spend"
+  },
+  {
+    "id": 12,
+    "soru": "Akkord",
+    "cevap": "chord"
+  },
+  {
+    "id": 13,
+    "soru": "Fett",
+    "cevap": "fat"
+  },
+  {
+    "id": 14,
+    "soru": "froh",
+    "cevap": "glad"
+  },
+  {
+    "id": 15,
+    "soru": "Original",
+    "cevap": "original"
+  },
+  {
+    "id": 16,
+    "soru": "Aktie",
+    "cevap": "share"
+  },
+  {
+    "id": 17,
+    "soru": "Station",
+    "cevap": "station"
+  },
+  {
+    "id": 18,
+    "soru": "Papa",
+    "cevap": "dad"
+  },
+  {
+    "id": 19,
+    "soru": "Brot",
+    "cevap": "bread"
+  },
+  {
+    "id": 20,
+    "soru": "aufladen",
+    "cevap": "charge"
+  },
+  {
+    "id": 21,
+    "soru": "richtig",
+    "cevap": "proper"
+  },
+  {
+    "id": 22,
+    "soru": "Leiste",
+    "cevap": "bar"
+  },
+  {
+    "id": 23,
+    "soru": "Angebot",
+    "cevap": "offer"
+  },
+  {
+    "id": 24,
+    "soru": "Segment",
+    "cevap": "segment"
+  },
+  {
+    "id": 25,
+    "soru": "Sklave",
+    "cevap": "slave"
+  },
+  {
+    "id": 26,
+    "soru": "ente",
+    "cevap": "duck"
+  },
+  {
+    "id": 27,
+    "soru": "Augenblick",
+    "cevap": "instant"
+  },
+  {
+    "id": 28,
+    "soru": "Markt",
+    "cevap": "market"
+  },
+  {
+    "id": 29,
+    "soru": "Grad",
+    "cevap": "degree"
+  },
+  {
+    "id": 30,
+    "soru": "besiedeln",
+    "cevap": "populate"
+  },
+  {
+    "id": 31,
+    "soru": "küken",
+    "cevap": "chick"
+  },
+  {
+    "id": 32,
+    "soru": "liebe",
+    "cevap": "dear"
+  },
+  {
+    "id": 33,
+    "soru": "Feind",
+    "cevap": "enemy"
+  },
+  {
+    "id": 34,
+    "soru": "antworten",
+    "cevap": "reply"
+  },
+  {
+    "id": 35,
+    "soru": "Getränk",
+    "cevap": "drink"
+  },
+  {
+    "id": 36,
+    "soru": "auftreten",
+    "cevap": "occur"
+  },
+  {
+    "id": 37,
+    "soru": "Unterstützung",
+    "cevap": "support"
+  },
+  {
+    "id": 38,
+    "soru": "Rede",
+    "cevap": "speech"
+  },
+  {
+    "id": 39,
+    "soru": "Natur",
+    "cevap": "nature"
+  },
+  {
+    "id": 40,
+    "soru": "Angebot",
+    "cevap": "range"
+  },
+  {
+    "id": 41,
+    "soru": "Dampf",
+    "cevap": "steam"
+  },
+  {
+    "id": 42,
+    "soru": "Bewegung",
+    "cevap": "motion"
+  },
+  {
+    "id": 43,
+    "soru": "Weg",
+    "cevap": "path"
+  },
+  {
+    "id": 44,
+    "soru": "Flüssigkeit",
+    "cevap": "liquid"
+  },
+  {
+    "id": 45,
+    "soru": "protokollieren",
+    "cevap": "log"
+  },
+  {
+    "id": 46,
+    "soru": "gemeint",
+    "cevap": "meant"
+  },
+  {
+    "id": 47,
+    "soru": "Quotient",
+    "cevap": "quotient"
+  },
+  {
+    "id": 48,
+    "soru": "Gebiss",
+    "cevap": "teeth"
+  },
+  {
+    "id": 49,
+    "soru": "Schale",
+    "cevap": "shell"
+  },
+  {
+    "id": 50,
+    "soru": "Hals",
+    "cevap": "neck"
+  }
+];
+
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

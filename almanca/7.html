@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>almanca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "Block",
+    "cevap": "block"
+  },
+  {
+    "id": 2,
+    "soru": "Tabelle",
+    "cevap": "chart"
+  },
+  {
+    "id": 3,
+    "soru": "Hut",
+    "cevap": "hat"
+  },
+  {
+    "id": 4,
+    "soru": "verkaufen",
+    "cevap": "sell"
+  },
+  {
+    "id": 5,
+    "soru": "Erfolg",
+    "cevap": "success"
+  },
+  {
+    "id": 6,
+    "soru": "Firma",
+    "cevap": "company"
+  },
+  {
+    "id": 7,
+    "soru": "subtrahieren",
+    "cevap": "subtract"
+  },
+  {
+    "id": 8,
+    "soru": "Veranstaltung",
+    "cevap": "event"
+  },
+  {
+    "id": 9,
+    "soru": "besondere",
+    "cevap": "particular"
+  },
+  {
+    "id": 10,
+    "soru": "viel",
+    "cevap": "deal"
+  },
+  {
+    "id": 11,
+    "soru": "schwimmen",
+    "cevap": "swim"
+  },
+  {
+    "id": 12,
+    "soru": "Begriff",
+    "cevap": "term"
+  },
+  {
+    "id": 13,
+    "soru": "Gegenteil",
+    "cevap": "opposite"
+  },
+  {
+    "id": 14,
+    "soru": "Frau",
+    "cevap": "wife"
+  },
+  {
+    "id": 15,
+    "soru": "Schuh",
+    "cevap": "shoe"
+  },
+  {
+    "id": 16,
+    "soru": "Schulter",
+    "cevap": "shoulder"
+  },
+  {
+    "id": 17,
+    "soru": "Verbreitung",
+    "cevap": "spread"
+  },
+  {
+    "id": 18,
+    "soru": "arrangieren",
+    "cevap": "arrange"
+  },
+  {
+    "id": 19,
+    "soru": "Lager",
+    "cevap": "camp"
+  },
+  {
+    "id": 20,
+    "soru": "erfinden",
+    "cevap": "invent"
+  },
+  {
+    "id": 21,
+    "soru": "Baumwolle",
+    "cevap": "cotton"
+  },
+  {
+    "id": 22,
+    "soru": "geboren",
+    "cevap": "born"
+  },
+  {
+    "id": 23,
+    "soru": "bestimmen",
+    "cevap": "determine"
+  },
+  {
+    "id": 24,
+    "soru": "Quart",
+    "cevap": "quart"
+  },
+  {
+    "id": 25,
+    "soru": "neun",
+    "cevap": "nine"
+  },
+  {
+    "id": 26,
+    "soru": "Lastwagen",
+    "cevap": "truck"
+  },
+  {
+    "id": 27,
+    "soru": "Lärm",
+    "cevap": "noise"
+  },
+  {
+    "id": 28,
+    "soru": "Ebene",
+    "cevap": "level"
+  },
+  {
+    "id": 29,
+    "soru": "Chance",
+    "cevap": "chance"
+  },
+  {
+    "id": 30,
+    "soru": "sammeln",
+    "cevap": "gather"
+  },
+  {
+    "id": 31,
+    "soru": "Geschäft",
+    "cevap": "shop"
+  },
+  {
+    "id": 32,
+    "soru": "Stretch",
+    "cevap": "stretch"
+  },
+  {
+    "id": 33,
+    "soru": "werfen",
+    "cevap": "throw"
+  },
+  {
+    "id": 34,
+    "soru": "Glanz",
+    "cevap": "shine"
+  },
+  {
+    "id": 35,
+    "soru": "Immobilien",
+    "cevap": "property"
+  },
+  {
+    "id": 36,
+    "soru": "Spalte",
+    "cevap": "column"
+  },
+  {
+    "id": 37,
+    "soru": "Molekül",
+    "cevap": "molecule"
+  },
+  {
+    "id": 38,
+    "soru": "wählen",
+    "cevap": "select"
+  },
+  {
+    "id": 39,
+    "soru": "falsch",
+    "cevap": "wrong"
+  },
+  {
+    "id": 40,
+    "soru": "grau",
+    "cevap": "gray"
+  },
+  {
+    "id": 41,
+    "soru": "Wiederholung",
+    "cevap": "repeat"
+  },
+  {
+    "id": 42,
+    "soru": "erfordern",
+    "cevap": "require"
+  },
+  {
+    "id": 43,
+    "soru": "breit",
+    "cevap": "broad"
+  },
+  {
+    "id": 44,
+    "soru": "vorbereiten",
+    "cevap": "prepare"
+  },
+  {
+    "id": 45,
+    "soru": "Salz",
+    "cevap": "salt"
+  },
+  {
+    "id": 46,
+    "soru": "Nase",
+    "cevap": "nose"
+  },
+  {
+    "id": 47,
+    "soru": "mehreren",
+    "cevap": "plural"
+  },
+  {
+    "id": 48,
+    "soru": "Zorn",
+    "cevap": "anger"
+  },
+  {
+    "id": 49,
+    "soru": "Anspruch",
+    "cevap": "claim"
+  },
+  {
+    "id": 50,
+    "soru": "Kontinent",
+    "cevap": "continent"
+  }
+];
+
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

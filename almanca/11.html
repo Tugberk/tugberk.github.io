@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>almanca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "Hauptstadt",
+    "cevap": "capital"
+  },
+  {
+    "id": 2,
+    "soru": "wird nicht",
+    "cevap": "won’t"
+  },
+  {
+    "id": 3,
+    "soru": "Stuhl",
+    "cevap": "chair"
+  },
+  {
+    "id": 4,
+    "soru": "Achtung",
+    "cevap": "danger"
+  },
+  {
+    "id": 5,
+    "soru": "Obst",
+    "cevap": "fruit"
+  },
+  {
+    "id": 6,
+    "soru": "reich",
+    "cevap": "rich"
+  },
+  {
+    "id": 7,
+    "soru": "dick",
+    "cevap": "thick"
+  },
+  {
+    "id": 8,
+    "soru": "Soldat",
+    "cevap": "soldier"
+  },
+  {
+    "id": 9,
+    "soru": "Prozess",
+    "cevap": "process"
+  },
+  {
+    "id": 10,
+    "soru": "betreiben",
+    "cevap": "operate"
+  },
+  {
+    "id": 11,
+    "soru": "Praxis",
+    "cevap": "practice"
+  },
+  {
+    "id": 12,
+    "soru": "trennen",
+    "cevap": "separate"
+  },
+  {
+    "id": 13,
+    "soru": "schwierig",
+    "cevap": "difficult"
+  },
+  {
+    "id": 14,
+    "soru": "Arzt",
+    "cevap": "doctor"
+  },
+  {
+    "id": 15,
+    "soru": "Bitte",
+    "cevap": "please"
+  },
+  {
+    "id": 16,
+    "soru": "schützen",
+    "cevap": "protect"
+  },
+  {
+    "id": 17,
+    "soru": "Mittag",
+    "cevap": "noon"
+  },
+  {
+    "id": 18,
+    "soru": "Ernte",
+    "cevap": "crop"
+  },
+  {
+    "id": 19,
+    "soru": "modernen",
+    "cevap": "modern"
+  },
+  {
+    "id": 20,
+    "soru": "Elementes",
+    "cevap": "element"
+  },
+  {
+    "id": 21,
+    "soru": "treffen",
+    "cevap": "hit"
+  },
+  {
+    "id": 22,
+    "soru": "Schüler",
+    "cevap": "student"
+  },
+  {
+    "id": 23,
+    "soru": "Ecke",
+    "cevap": "corner"
+  },
+  {
+    "id": 24,
+    "soru": "Partei",
+    "cevap": "party"
+  },
+  {
+    "id": 25,
+    "soru": "Versorgung",
+    "cevap": "supply"
+  },
+  {
+    "id": 26,
+    "soru": "deren",
+    "cevap": "whose"
+  },
+  {
+    "id": 27,
+    "soru": "lokalisieren",
+    "cevap": "locate"
+  },
+  {
+    "id": 28,
+    "soru": "Rings",
+    "cevap": "ring"
+  },
+  {
+    "id": 29,
+    "soru": "Charakter",
+    "cevap": "character"
+  },
+  {
+    "id": 30,
+    "soru": "insekt",
+    "cevap": "insect"
+  },
+  {
+    "id": 31,
+    "soru": "gefangen",
+    "cevap": "caught"
+  },
+  {
+    "id": 32,
+    "soru": "Zeit",
+    "cevap": "period"
+  },
+  {
+    "id": 33,
+    "soru": "zeigen",
+    "cevap": "indicate"
+  },
+  {
+    "id": 34,
+    "soru": "Funk",
+    "cevap": "radio"
+  },
+  {
+    "id": 35,
+    "soru": "Speiche",
+    "cevap": "spoke"
+  },
+  {
+    "id": 36,
+    "soru": "Atom",
+    "cevap": "atom"
+  },
+  {
+    "id": 37,
+    "soru": "Mensch",
+    "cevap": "human"
+  },
+  {
+    "id": 38,
+    "soru": "Geschichte",
+    "cevap": "history"
+  },
+  {
+    "id": 39,
+    "soru": "Wirkung",
+    "cevap": "effect"
+  },
+  {
+    "id": 40,
+    "soru": "elektrisch",
+    "cevap": "electric"
+  },
+  {
+    "id": 41,
+    "soru": "erwarten",
+    "cevap": "expect"
+  },
+  {
+    "id": 42,
+    "soru": "Knochen",
+    "cevap": "bone"
+  },
+  {
+    "id": 43,
+    "soru": "Schiene",
+    "cevap": "rail"
+  },
+  {
+    "id": 44,
+    "soru": "vorstellen",
+    "cevap": "imagine"
+  },
+  {
+    "id": 45,
+    "soru": "bieten",
+    "cevap": "provide"
+  },
+  {
+    "id": 46,
+    "soru": "zustimmen",
+    "cevap": "agree"
+  },
+  {
+    "id": 47,
+    "soru": "so",
+    "cevap": "thus"
+  },
+  {
+    "id": 48,
+    "soru": "sanft",
+    "cevap": "gentle"
+  },
+  {
+    "id": 49,
+    "soru": "Frau",
+    "cevap": "woman"
+  },
+  {
+    "id": 50,
+    "soru": "Kapitän",
+    "cevap": "captain"
+  }
+];
+
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

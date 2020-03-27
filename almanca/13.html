@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>almanca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "Ohr",
+    "cevap": "ear"
+  },
+  {
+    "id": 2,
+    "soru": "sonst",
+    "cevap": "else"
+  },
+  {
+    "id": 3,
+    "soru": "ganz",
+    "cevap": "quite"
+  },
+  {
+    "id": 4,
+    "soru": "pleite",
+    "cevap": "broke"
+  },
+  {
+    "id": 5,
+    "soru": "Fall",
+    "cevap": "case"
+  },
+  {
+    "id": 6,
+    "soru": "Mitte",
+    "cevap": "middle"
+  },
+  {
+    "id": 7,
+    "soru": "töten",
+    "cevap": "kill"
+  },
+  {
+    "id": 8,
+    "soru": "Sohn",
+    "cevap": "son"
+  },
+  {
+    "id": 9,
+    "soru": "See",
+    "cevap": "lake"
+  },
+  {
+    "id": 10,
+    "soru": "Moment",
+    "cevap": "moment"
+  },
+  {
+    "id": 11,
+    "soru": "Maßstab",
+    "cevap": "scale"
+  },
+  {
+    "id": 12,
+    "soru": "laut",
+    "cevap": "loud"
+  },
+  {
+    "id": 13,
+    "soru": "Frühling",
+    "cevap": "spring"
+  },
+  {
+    "id": 14,
+    "soru": "beobachten",
+    "cevap": "observe"
+  },
+  {
+    "id": 15,
+    "soru": "Kind",
+    "cevap": "child"
+  },
+  {
+    "id": 16,
+    "soru": "gerade",
+    "cevap": "straight"
+  },
+  {
+    "id": 17,
+    "soru": "Konsonant",
+    "cevap": "consonant"
+  },
+  {
+    "id": 18,
+    "soru": "Nation",
+    "cevap": "nation"
+  },
+  {
+    "id": 19,
+    "soru": "Wörterbuch",
+    "cevap": "dictionary"
+  },
+  {
+    "id": 20,
+    "soru": "milch",
+    "cevap": "milk"
+  },
+  {
+    "id": 21,
+    "soru": "Geschwindigkeit",
+    "cevap": "speed"
+  },
+  {
+    "id": 22,
+    "soru": "Verfahren",
+    "cevap": "method"
+  },
+  {
+    "id": 23,
+    "soru": "Orgel",
+    "cevap": "organ"
+  },
+  {
+    "id": 24,
+    "soru": "zahlen",
+    "cevap": "pay"
+  },
+  {
+    "id": 25,
+    "soru": "Alter",
+    "cevap": "age"
+  },
+  {
+    "id": 26,
+    "soru": "Abschnitt",
+    "cevap": "section"
+  },
+  {
+    "id": 27,
+    "soru": "Kleid",
+    "cevap": "dress"
+  },
+  {
+    "id": 28,
+    "soru": "Wolke",
+    "cevap": "cloud"
+  },
+  {
+    "id": 29,
+    "soru": "Überraschung",
+    "cevap": "surprise"
+  },
+  {
+    "id": 30,
+    "soru": "ruhig",
+    "cevap": "quiet"
+  },
+  {
+    "id": 31,
+    "soru": "Stein",
+    "cevap": "stone"
+  },
+  {
+    "id": 32,
+    "soru": "winzig",
+    "cevap": "tiny"
+  },
+  {
+    "id": 33,
+    "soru": "Aufstieg",
+    "cevap": "climb"
+  },
+  {
+    "id": 34,
+    "soru": "kühlen",
+    "cevap": "cool"
+  },
+  {
+    "id": 35,
+    "soru": "Entwurf",
+    "cevap": "design"
+  },
+  {
+    "id": 36,
+    "soru": "arm",
+    "cevap": "poor"
+  },
+  {
+    "id": 37,
+    "soru": "Menge",
+    "cevap": "lot"
+  },
+  {
+    "id": 38,
+    "soru": "Versuch",
+    "cevap": "experiment"
+  },
+  {
+    "id": 39,
+    "soru": "Boden",
+    "cevap": "bottom"
+  },
+  {
+    "id": 40,
+    "soru": "Schlüssel",
+    "cevap": "key"
+  },
+  {
+    "id": 41,
+    "soru": "Eisen",
+    "cevap": "iron"
+  },
+  {
+    "id": 42,
+    "soru": "Einzel",
+    "cevap": "single"
+  },
+  {
+    "id": 43,
+    "soru": "Stick",
+    "cevap": "stick"
+  },
+  {
+    "id": 44,
+    "soru": "Wohnung",
+    "cevap": "flat"
+  },
+  {
+    "id": 45,
+    "soru": "zwanzig",
+    "cevap": "twenty"
+  },
+  {
+    "id": 46,
+    "soru": "Haut",
+    "cevap": "skin"
+  },
+  {
+    "id": 47,
+    "soru": "Lächeln",
+    "cevap": "smile"
+  },
+  {
+    "id": 48,
+    "soru": "Falte",
+    "cevap": "crease"
+  },
+  {
+    "id": 49,
+    "soru": "Loch",
+    "cevap": "hole"
+  },
+  {
+    "id": 50,
+    "soru": "springen",
+    "cevap": "jump"
+  }
+];
+
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

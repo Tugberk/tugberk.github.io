@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>almanca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "Buch",
+    "cevap": "book"
+  },
+  {
+    "id": 2,
+    "soru": "tragen",
+    "cevap": "carry"
+  },
+  {
+    "id": 3,
+    "soru": "nahm",
+    "cevap": "took"
+  },
+  {
+    "id": 4,
+    "soru": "Wissenschaft",
+    "cevap": "science"
+  },
+  {
+    "id": 5,
+    "soru": "essen",
+    "cevap": "eat"
+  },
+  {
+    "id": 6,
+    "soru": "Zimmer",
+    "cevap": "room"
+  },
+  {
+    "id": 7,
+    "soru": "Freund",
+    "cevap": "friend"
+  },
+  {
+    "id": 8,
+    "soru": "begann",
+    "cevap": "began"
+  },
+  {
+    "id": 9,
+    "soru": "Idee",
+    "cevap": "idea"
+  },
+  {
+    "id": 10,
+    "soru": "Fisch",
+    "cevap": "fish"
+  },
+  {
+    "id": 11,
+    "soru": "berg",
+    "cevap": "mountain"
+  },
+  {
+    "id": 12,
+    "soru": "Stopp",
+    "cevap": "stop"
+  },
+  {
+    "id": 13,
+    "soru": "einmal",
+    "cevap": "once"
+  },
+  {
+    "id": 14,
+    "soru": "Basis",
+    "cevap": "base"
+  },
+  {
+    "id": 15,
+    "soru": "hören",
+    "cevap": "hear"
+  },
+  {
+    "id": 16,
+    "soru": "Pferd",
+    "cevap": "horse"
+  },
+  {
+    "id": 17,
+    "soru": "Schnitt",
+    "cevap": "cut"
+  },
+  {
+    "id": 18,
+    "soru": "sicher",
+    "cevap": "sure"
+  },
+  {
+    "id": 19,
+    "soru": "beobachten",
+    "cevap": "watch"
+  },
+  {
+    "id": 20,
+    "soru": "Farbe",
+    "cevap": "color"
+  },
+  {
+    "id": 21,
+    "soru": "Gesicht",
+    "cevap": "face"
+  },
+  {
+    "id": 22,
+    "soru": "Holz",
+    "cevap": "wood"
+  },
+  {
+    "id": 23,
+    "soru": "Haupt-",
+    "cevap": "main"
+  },
+  {
+    "id": 24,
+    "soru": "geöffnet",
+    "cevap": "open"
+  },
+  {
+    "id": 25,
+    "soru": "scheinen",
+    "cevap": "seem"
+  },
+  {
+    "id": 26,
+    "soru": "zusammen",
+    "cevap": "together"
+  },
+  {
+    "id": 27,
+    "soru": "nächste",
+    "cevap": "next"
+  },
+  {
+    "id": 28,
+    "soru": "weiß",
+    "cevap": "white"
+  },
+  {
+    "id": 29,
+    "soru": "Kinder",
+    "cevap": "children"
+  },
+  {
+    "id": 30,
+    "soru": "Start",
+    "cevap": "begin"
+  },
+  {
+    "id": 31,
+    "soru": "bekam",
+    "cevap": "got"
+  },
+  {
+    "id": 32,
+    "soru": "gehen",
+    "cevap": "walk"
+  },
+  {
+    "id": 33,
+    "soru": "Beispiel",
+    "cevap": "example"
+  },
+  {
+    "id": 34,
+    "soru": "erleichtern",
+    "cevap": "ease"
+  },
+  {
+    "id": 35,
+    "soru": "Papier",
+    "cevap": "paper"
+  },
+  {
+    "id": 36,
+    "soru": "Gruppe",
+    "cevap": "group"
+  },
+  {
+    "id": 37,
+    "soru": "immer",
+    "cevap": "always"
+  },
+  {
+    "id": 38,
+    "soru": "Musik",
+    "cevap": "music"
+  },
+  {
+    "id": 39,
+    "soru": "diejenigen",
+    "cevap": "those"
+  },
+  {
+    "id": 40,
+    "soru": "beide",
+    "cevap": "both"
+  },
+  {
+    "id": 41,
+    "soru": "Marke",
+    "cevap": "mark"
+  },
+  {
+    "id": 42,
+    "soru": "oft",
+    "cevap": "often"
+  },
+  {
+    "id": 43,
+    "soru": "Schreiben",
+    "cevap": "letter"
+  },
+  {
+    "id": 44,
+    "soru": "bis",
+    "cevap": "until"
+  },
+  {
+    "id": 45,
+    "soru": "Meile",
+    "cevap": "mile"
+  },
+  {
+    "id": 46,
+    "soru": "Fluss",
+    "cevap": "river"
+  },
+  {
+    "id": 47,
+    "soru": "Auto",
+    "cevap": "car"
+  },
+  {
+    "id": 48,
+    "soru": "Füße",
+    "cevap": "feet"
+  },
+  {
+    "id": 49,
+    "soru": "Pflege",
+    "cevap": "care"
+  },
+  {
+    "id": 50,
+    "soru": "zweite",
+    "cevap": "second"
+  }
+];
+
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

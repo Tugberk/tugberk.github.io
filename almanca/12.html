@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>almanca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "Kind",
+    "cevap": "baby"
+  },
+  {
+    "id": 2,
+    "soru": "acht",
+    "cevap": "eight"
+  },
+  {
+    "id": 3,
+    "soru": "Dorf",
+    "cevap": "village"
+  },
+  {
+    "id": 4,
+    "soru": "treffen",
+    "cevap": "meet"
+  },
+  {
+    "id": 5,
+    "soru": "Wurzel",
+    "cevap": "root"
+  },
+  {
+    "id": 6,
+    "soru": "kaufen",
+    "cevap": "buy"
+  },
+  {
+    "id": 7,
+    "soru": "erhöhen",
+    "cevap": "raise"
+  },
+  {
+    "id": 8,
+    "soru": "lösen",
+    "cevap": "solve"
+  },
+  {
+    "id": 9,
+    "soru": "Metall",
+    "cevap": "metal"
+  },
+  {
+    "id": 10,
+    "soru": "ob",
+    "cevap": "whether"
+  },
+  {
+    "id": 11,
+    "soru": "drücken",
+    "cevap": "push"
+  },
+  {
+    "id": 12,
+    "soru": "sieben",
+    "cevap": "seven"
+  },
+  {
+    "id": 13,
+    "soru": "Absatz",
+    "cevap": "paragraph"
+  },
+  {
+    "id": 14,
+    "soru": "dritte",
+    "cevap": "third"
+  },
+  {
+    "id": 15,
+    "soru": "wird",
+    "cevap": "shall"
+  },
+  {
+    "id": 16,
+    "soru": "Hand",
+    "cevap": "held"
+  },
+  {
+    "id": 17,
+    "soru": "Haar",
+    "cevap": "hair"
+  },
+  {
+    "id": 18,
+    "soru": "beschreiben",
+    "cevap": "describe"
+  },
+  {
+    "id": 19,
+    "soru": "Koch",
+    "cevap": "cook"
+  },
+  {
+    "id": 20,
+    "soru": "Boden",
+    "cevap": "floor"
+  },
+  {
+    "id": 21,
+    "soru": "entweder",
+    "cevap": "either"
+  },
+  {
+    "id": 22,
+    "soru": "Ergebnis",
+    "cevap": "result"
+  },
+  {
+    "id": 23,
+    "soru": "brennen",
+    "cevap": "burn"
+  },
+  {
+    "id": 24,
+    "soru": "Hügel",
+    "cevap": "hill"
+  },
+  {
+    "id": 25,
+    "soru": "sicher",
+    "cevap": "safe"
+  },
+  {
+    "id": 26,
+    "soru": "Katze",
+    "cevap": "cat"
+  },
+  {
+    "id": 27,
+    "soru": "Jahrhundert",
+    "cevap": "century"
+  },
+  {
+    "id": 28,
+    "soru": "betrachten",
+    "cevap": "consider"
+  },
+  {
+    "id": 29,
+    "soru": "Typ",
+    "cevap": "type"
+  },
+  {
+    "id": 30,
+    "soru": "Gesetz",
+    "cevap": "law"
+  },
+  {
+    "id": 31,
+    "soru": "Bit",
+    "cevap": "bit"
+  },
+  {
+    "id": 32,
+    "soru": "Küste",
+    "cevap": "coast"
+  },
+  {
+    "id": 33,
+    "soru": "Kopie",
+    "cevap": "copy"
+  },
+  {
+    "id": 34,
+    "soru": "Ausdruck",
+    "cevap": "phrase"
+  },
+  {
+    "id": 35,
+    "soru": "still",
+    "cevap": "silent"
+  },
+  {
+    "id": 36,
+    "soru": "hoch",
+    "cevap": "tall"
+  },
+  {
+    "id": 37,
+    "soru": "Sand",
+    "cevap": "sand"
+  },
+  {
+    "id": 38,
+    "soru": "Boden",
+    "cevap": "soil"
+  },
+  {
+    "id": 39,
+    "soru": "Rolle",
+    "cevap": "roll"
+  },
+  {
+    "id": 40,
+    "soru": "Temperatur",
+    "cevap": "temperature"
+  },
+  {
+    "id": 41,
+    "soru": "Finger",
+    "cevap": "finger"
+  },
+  {
+    "id": 42,
+    "soru": "Industrie",
+    "cevap": "industry"
+  },
+  {
+    "id": 43,
+    "soru": "Wert",
+    "cevap": "value"
+  },
+  {
+    "id": 44,
+    "soru": "Kampf",
+    "cevap": "fight"
+  },
+  {
+    "id": 45,
+    "soru": "Lüge",
+    "cevap": "lie"
+  },
+  {
+    "id": 46,
+    "soru": "schlagen",
+    "cevap": "beat"
+  },
+  {
+    "id": 47,
+    "soru": "begeistern",
+    "cevap": "excite"
+  },
+  {
+    "id": 48,
+    "soru": "natürlich",
+    "cevap": "natural"
+  },
+  {
+    "id": 49,
+    "soru": "Blick",
+    "cevap": "view"
+  },
+  {
+    "id": 50,
+    "soru": "Sinn",
+    "cevap": "sense"
+  }
+];
+
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

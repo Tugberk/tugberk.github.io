@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>almanca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "Fraktion",
+    "cevap": "fraction"
+  },
+  {
+    "id": 2,
+    "soru": "Wald",
+    "cevap": "forest"
+  },
+  {
+    "id": 3,
+    "soru": "sitzen",
+    "cevap": "sit"
+  },
+  {
+    "id": 4,
+    "soru": "Rennen",
+    "cevap": "race"
+  },
+  {
+    "id": 5,
+    "soru": "Fenster",
+    "cevap": "window"
+  },
+  {
+    "id": 6,
+    "soru": "Speicher",
+    "cevap": "store"
+  },
+  {
+    "id": 7,
+    "soru": "Sommer",
+    "cevap": "summer"
+  },
+  {
+    "id": 8,
+    "soru": "Zug",
+    "cevap": "train"
+  },
+  {
+    "id": 9,
+    "soru": "Schlaf",
+    "cevap": "sleep"
+  },
+  {
+    "id": 10,
+    "soru": "beweisen",
+    "cevap": "prove"
+  },
+  {
+    "id": 11,
+    "soru": "einsam",
+    "cevap": "lone"
+  },
+  {
+    "id": 12,
+    "soru": "Bein",
+    "cevap": "leg"
+  },
+  {
+    "id": 13,
+    "soru": "Übung",
+    "cevap": "exercise"
+  },
+  {
+    "id": 14,
+    "soru": "Wand",
+    "cevap": "wall"
+  },
+  {
+    "id": 15,
+    "soru": "Fang",
+    "cevap": "catch"
+  },
+  {
+    "id": 16,
+    "soru": "Berg",
+    "cevap": "mount"
+  },
+  {
+    "id": 17,
+    "soru": "wünschen",
+    "cevap": "wish"
+  },
+  {
+    "id": 18,
+    "soru": "Himmel",
+    "cevap": "sky"
+  },
+  {
+    "id": 19,
+    "soru": "Board",
+    "cevap": "board"
+  },
+  {
+    "id": 20,
+    "soru": "Freude",
+    "cevap": "joy"
+  },
+  {
+    "id": 21,
+    "soru": "Winter",
+    "cevap": "winter"
+  },
+  {
+    "id": 22,
+    "soru": "sa",
+    "cevap": "sat"
+  },
+  {
+    "id": 23,
+    "soru": "geschrieben",
+    "cevap": "written"
+  },
+  {
+    "id": 24,
+    "soru": "wilden",
+    "cevap": "wild"
+  },
+  {
+    "id": 25,
+    "soru": "Instrument",
+    "cevap": "instrument"
+  },
+  {
+    "id": 26,
+    "soru": "gehalten",
+    "cevap": "kept"
+  },
+  {
+    "id": 27,
+    "soru": "Glas",
+    "cevap": "glass"
+  },
+  {
+    "id": 28,
+    "soru": "Gras",
+    "cevap": "grass"
+  },
+  {
+    "id": 29,
+    "soru": "Kuh",
+    "cevap": "cow"
+  },
+  {
+    "id": 30,
+    "soru": "Arbeit",
+    "cevap": "job"
+  },
+  {
+    "id": 31,
+    "soru": "Rand",
+    "cevap": "edge"
+  },
+  {
+    "id": 32,
+    "soru": "Zeichen",
+    "cevap": "sign"
+  },
+  {
+    "id": 33,
+    "soru": "Besuch",
+    "cevap": "visit"
+  },
+  {
+    "id": 34,
+    "soru": "Vergangenheit",
+    "cevap": "past"
+  },
+  {
+    "id": 35,
+    "soru": "weich",
+    "cevap": "soft"
+  },
+  {
+    "id": 36,
+    "soru": "Spaß",
+    "cevap": "fun"
+  },
+  {
+    "id": 37,
+    "soru": "hell",
+    "cevap": "bright"
+  },
+  {
+    "id": 38,
+    "soru": "Gases",
+    "cevap": "gas"
+  },
+  {
+    "id": 39,
+    "soru": "Wetter",
+    "cevap": "weather"
+  },
+  {
+    "id": 40,
+    "soru": "Monat",
+    "cevap": "month"
+  },
+  {
+    "id": 41,
+    "soru": "Million",
+    "cevap": "million"
+  },
+  {
+    "id": 42,
+    "soru": "tragen",
+    "cevap": "bear"
+  },
+  {
+    "id": 43,
+    "soru": "Finish",
+    "cevap": "finish"
+  },
+  {
+    "id": 44,
+    "soru": "glücklich",
+    "cevap": "happy"
+  },
+  {
+    "id": 45,
+    "soru": "hoffen",
+    "cevap": "hope"
+  },
+  {
+    "id": 46,
+    "soru": "blume",
+    "cevap": "flower"
+  },
+  {
+    "id": 47,
+    "soru": "kleiden",
+    "cevap": "clothe"
+  },
+  {
+    "id": 48,
+    "soru": "seltsam",
+    "cevap": "strange"
+  },
+  {
+    "id": 49,
+    "soru": "Vorbei",
+    "cevap": "gone"
+  },
+  {
+    "id": 50,
+    "soru": "Handel",
+    "cevap": "trade"
+  }
+];
+
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

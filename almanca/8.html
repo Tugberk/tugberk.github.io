@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>almanca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "Sauerstoff",
+    "cevap": "oxygen"
+  },
+  {
+    "id": 2,
+    "soru": "Zucker",
+    "cevap": "sugar"
+  },
+  {
+    "id": 3,
+    "soru": "Tod",
+    "cevap": "death"
+  },
+  {
+    "id": 4,
+    "soru": "ziemlich",
+    "cevap": "pretty"
+  },
+  {
+    "id": 5,
+    "soru": "Geschicklichkeit",
+    "cevap": "skill"
+  },
+  {
+    "id": 6,
+    "soru": "Frauen",
+    "cevap": "women"
+  },
+  {
+    "id": 7,
+    "soru": "Saison",
+    "cevap": "season"
+  },
+  {
+    "id": 8,
+    "soru": "Lösung",
+    "cevap": "solution"
+  },
+  {
+    "id": 9,
+    "soru": "Magnet",
+    "cevap": "magnet"
+  },
+  {
+    "id": 10,
+    "soru": "Silber",
+    "cevap": "silver"
+  },
+  {
+    "id": 11,
+    "soru": "danken",
+    "cevap": "thank"
+  },
+  {
+    "id": 12,
+    "soru": "Zweig",
+    "cevap": "branch"
+  },
+  {
+    "id": 13,
+    "soru": "Spiel",
+    "cevap": "match"
+  },
+  {
+    "id": 14,
+    "soru": "Suffix",
+    "cevap": "suffix"
+  },
+  {
+    "id": 15,
+    "soru": "insbesondere",
+    "cevap": "especially"
+  },
+  {
+    "id": 16,
+    "soru": "Feige",
+    "cevap": "fig"
+  },
+  {
+    "id": 17,
+    "soru": "ängstlich",
+    "cevap": "afraid"
+  },
+  {
+    "id": 18,
+    "soru": "riesig",
+    "cevap": "huge"
+  },
+  {
+    "id": 19,
+    "soru": "Schwester",
+    "cevap": "sister"
+  },
+  {
+    "id": 20,
+    "soru": "Stahl",
+    "cevap": "steel"
+  },
+  {
+    "id": 21,
+    "soru": "diskutieren",
+    "cevap": "discuss"
+  },
+  {
+    "id": 22,
+    "soru": "vorwärts",
+    "cevap": "forward"
+  },
+  {
+    "id": 23,
+    "soru": "ähnlich",
+    "cevap": "similar"
+  },
+  {
+    "id": 24,
+    "soru": "führen",
+    "cevap": "guide"
+  },
+  {
+    "id": 25,
+    "soru": "Erfahrung",
+    "cevap": "experience"
+  },
+  {
+    "id": 26,
+    "soru": "Partitur",
+    "cevap": "score"
+  },
+  {
+    "id": 27,
+    "soru": "apfel",
+    "cevap": "apple"
+  },
+  {
+    "id": 28,
+    "soru": "gekauft",
+    "cevap": "bought"
+  },
+  {
+    "id": 29,
+    "soru": "geführt",
+    "cevap": "led"
+  },
+  {
+    "id": 30,
+    "soru": "Tonhöhe",
+    "cevap": "pitch"
+  },
+  {
+    "id": 31,
+    "soru": "Mantel",
+    "cevap": "coat"
+  },
+  {
+    "id": 32,
+    "soru": "Masse",
+    "cevap": "mass"
+  },
+  {
+    "id": 33,
+    "soru": "Karte",
+    "cevap": "card"
+  },
+  {
+    "id": 34,
+    "soru": "Band",
+    "cevap": "band"
+  },
+  {
+    "id": 35,
+    "soru": "Seil",
+    "cevap": "rope"
+  },
+  {
+    "id": 36,
+    "soru": "Rutsch",
+    "cevap": "slip"
+  },
+  {
+    "id": 37,
+    "soru": "gewinnen",
+    "cevap": "win"
+  },
+  {
+    "id": 38,
+    "soru": "träumen",
+    "cevap": "dream"
+  },
+  {
+    "id": 39,
+    "soru": "Abend",
+    "cevap": "evening"
+  },
+  {
+    "id": 40,
+    "soru": "Zustand",
+    "cevap": "condition"
+  },
+  {
+    "id": 41,
+    "soru": "Futtermittel",
+    "cevap": "feed"
+  },
+  {
+    "id": 42,
+    "soru": "Werkzeug",
+    "cevap": "tool"
+  },
+  {
+    "id": 43,
+    "soru": "gesamt",
+    "cevap": "total"
+  },
+  {
+    "id": 44,
+    "soru": "Basis",
+    "cevap": "basic"
+  },
+  {
+    "id": 45,
+    "soru": "Geruch",
+    "cevap": "smell"
+  },
+  {
+    "id": 46,
+    "soru": "Tal",
+    "cevap": "valley"
+  },
+  {
+    "id": 47,
+    "soru": "noch",
+    "cevap": "nor"
+  },
+  {
+    "id": 48,
+    "soru": "doppelt",
+    "cevap": "double"
+  },
+  {
+    "id": 49,
+    "soru": "Sitz",
+    "cevap": "seat"
+  },
+  {
+    "id": 50,
+    "soru": "fortsetzen",
+    "cevap": "continue"
+  }
+];
+
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>almanca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "gehört",
+    "cevap": "heard"
+  },
+  {
+    "id": 2,
+    "soru": "beste",
+    "cevap": "best"
+  },
+  {
+    "id": 3,
+    "soru": "Stunde",
+    "cevap": "hour"
+  },
+  {
+    "id": 4,
+    "soru": "besser",
+    "cevap": "better"
+  },
+  {
+    "id": 5,
+    "soru": "wahr",
+    "cevap": true
+  },
+  {
+    "id": 6,
+    "soru": "während",
+    "cevap": "during"
+  },
+  {
+    "id": 7,
+    "soru": "hundert",
+    "cevap": "hundred"
+  },
+  {
+    "id": 8,
+    "soru": "fünf",
+    "cevap": "five"
+  },
+  {
+    "id": 9,
+    "soru": "merken",
+    "cevap": "remember"
+  },
+  {
+    "id": 10,
+    "soru": "Schritt",
+    "cevap": "step"
+  },
+  {
+    "id": 11,
+    "soru": "früh",
+    "cevap": "early"
+  },
+  {
+    "id": 12,
+    "soru": "halten",
+    "cevap": "hold"
+  },
+  {
+    "id": 13,
+    "soru": "Westen",
+    "cevap": "west"
+  },
+  {
+    "id": 14,
+    "soru": "Boden",
+    "cevap": "ground"
+  },
+  {
+    "id": 15,
+    "soru": "Interesse",
+    "cevap": "interest"
+  },
+  {
+    "id": 16,
+    "soru": "erreichen",
+    "cevap": "reach"
+  },
+  {
+    "id": 17,
+    "soru": "schnell",
+    "cevap": "fast"
+  },
+  {
+    "id": 18,
+    "soru": "Verbum",
+    "cevap": "verb"
+  },
+  {
+    "id": 19,
+    "soru": "singen",
+    "cevap": "sing"
+  },
+  {
+    "id": 20,
+    "soru": "hören",
+    "cevap": "listen"
+  },
+  {
+    "id": 21,
+    "soru": "sechs",
+    "cevap": "six"
+  },
+  {
+    "id": 22,
+    "soru": "Tabelle",
+    "cevap": "table"
+  },
+  {
+    "id": 23,
+    "soru": "Reise",
+    "cevap": "travel"
+  },
+  {
+    "id": 24,
+    "soru": "weniger",
+    "cevap": "less"
+  },
+  {
+    "id": 25,
+    "soru": "Morgen",
+    "cevap": "morning"
+  },
+  {
+    "id": 26,
+    "soru": "zehn",
+    "cevap": "ten"
+  },
+  {
+    "id": 27,
+    "soru": "einfach",
+    "cevap": "simple"
+  },
+  {
+    "id": 28,
+    "soru": "mehrere",
+    "cevap": "several"
+  },
+  {
+    "id": 29,
+    "soru": "Vokal",
+    "cevap": "vowel"
+  },
+  {
+    "id": 30,
+    "soru": "auf",
+    "cevap": "toward"
+  },
+  {
+    "id": 31,
+    "soru": "Krieg",
+    "cevap": "war"
+  },
+  {
+    "id": 32,
+    "soru": "legen",
+    "cevap": "lay"
+  },
+  {
+    "id": 33,
+    "soru": "gegen",
+    "cevap": "against"
+  },
+  {
+    "id": 34,
+    "soru": "Muster",
+    "cevap": "pattern"
+  },
+  {
+    "id": 35,
+    "soru": "schleppend",
+    "cevap": "slow"
+  },
+  {
+    "id": 36,
+    "soru": "Zentrum",
+    "cevap": "center"
+  },
+  {
+    "id": 37,
+    "soru": "Liebe",
+    "cevap": "love"
+  },
+  {
+    "id": 38,
+    "soru": "Person",
+    "cevap": "person"
+  },
+  {
+    "id": 39,
+    "soru": "Geld",
+    "cevap": "money"
+  },
+  {
+    "id": 40,
+    "soru": "dienen",
+    "cevap": "serve"
+  },
+  {
+    "id": 41,
+    "soru": "erscheinen",
+    "cevap": "appear"
+  },
+  {
+    "id": 42,
+    "soru": "Straße",
+    "cevap": "road"
+  },
+  {
+    "id": 43,
+    "soru": "Karte",
+    "cevap": "map"
+  },
+  {
+    "id": 44,
+    "soru": "regen",
+    "cevap": "rain"
+  },
+  {
+    "id": 45,
+    "soru": "Regel",
+    "cevap": "rule"
+  },
+  {
+    "id": 46,
+    "soru": "regieren",
+    "cevap": "govern"
+  },
+  {
+    "id": 47,
+    "soru": "ziehen",
+    "cevap": "pull"
+  },
+  {
+    "id": 48,
+    "soru": "Kälte",
+    "cevap": "cold"
+  },
+  {
+    "id": 49,
+    "soru": "Hinweis",
+    "cevap": "notice"
+  },
+  {
+    "id": 50,
+    "soru": "Stimme",
+    "cevap": "voice"
+  }
+];
+
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>

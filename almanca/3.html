@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>almanca kelimeler </title>
+	<style>
+body {
+		font-family: arial;
+		font-size: 24px;
+		text-align: center;
+		line-height: 100px;
+}
+		
+button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+	</style>
+	
+</head>
+<body>
+
+<div id = "soru">
+</div>
+<button onclick = "goster()">cevabı goster</button>
+<div id = "cevapDiv">
+	<span id="cevap"></span>
+	<div id = "tuslar">
+		<button onclick="bildim()">bildim</button> - <button onclick="bilemedim()">bilemedim</button>
+	</div>
+</div>
+
+</body>
+<script>
+
+var showDiv  = document.getElementById('soru');
+var cevapDiv = document.getElementById('cevap');
+
+
+var x = document.getElementById("tuslar");
+x.style.display = "none";
+
+function goster(){
+	
+	//show the answer
+	cevapDiv.innerHTML = sorular[i].cevap;
+	x.style.display = "block";
+	
+}
+
+function bildim() {
+	
+	console.log('bildim');
+	sorular.splice(0, 1);
+	console.log("sorular" , sorular.length)
+	
+	if(sorular.length !== 0) {
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = "";
+		x.style.display = "none";
+	}
+	else {
+		document.write('bitti');
+	}
+}
+	
+
+function bilemedim() {
+	
+	console.log('bilemedim');
+
+	if((i+1) == sorular.length) {
+		i = 0;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	else {
+		i = i+1;
+		showDiv.innerHTML = sorular[i].soru;
+		cevap.innerHTML = '';
+		x.style.display = "none";
+	}
+	
+}
+
+
+//json object here
+//sorular
+
+sorular = [
+  {
+    "id": 1,
+    "soru": "alle",
+    "cevap": "all"
+  },
+  {
+    "id": 2,
+    "soru": "da",
+    "cevap": "there"
+  },
+  {
+    "id": 3,
+    "soru": "wenn",
+    "cevap": "when"
+  },
+  {
+    "id": 4,
+    "soru": "nach oben",
+    "cevap": "up"
+  },
+  {
+    "id": 5,
+    "soru": "Verwendung",
+    "cevap": "use"
+  },
+  {
+    "id": 6,
+    "soru": "Ihre",
+    "cevap": "your"
+  },
+  {
+    "id": 7,
+    "soru": "Weg",
+    "cevap": "way"
+  },
+  {
+    "id": 8,
+    "soru": "über",
+    "cevap": "about"
+  },
+  {
+    "id": 9,
+    "soru": "viele",
+    "cevap": "many"
+  },
+  {
+    "id": 10,
+    "soru": "dann",
+    "cevap": "then"
+  },
+  {
+    "id": 11,
+    "soru": "sie",
+    "cevap": "them"
+  },
+  {
+    "id": 12,
+    "soru": "schreiben",
+    "cevap": "write"
+  },
+  {
+    "id": 13,
+    "soru": "würde",
+    "cevap": "would"
+  },
+  {
+    "id": 14,
+    "soru": "wie",
+    "cevap": "like"
+  },
+  {
+    "id": 15,
+    "soru": "so",
+    "cevap": "so"
+  },
+  {
+    "id": 16,
+    "soru": "diese",
+    "cevap": "these"
+  },
+  {
+    "id": 17,
+    "soru": "sie",
+    "cevap": "her"
+  },
+  {
+    "id": 18,
+    "soru": "lange",
+    "cevap": "long"
+  },
+  {
+    "id": 19,
+    "soru": "machen",
+    "cevap": "make"
+  },
+  {
+    "id": 20,
+    "soru": "Sache",
+    "cevap": "thing"
+  },
+  {
+    "id": 21,
+    "soru": "sehen",
+    "cevap": "see"
+  },
+  {
+    "id": 22,
+    "soru": "ihm",
+    "cevap": "him"
+  },
+  {
+    "id": 23,
+    "soru": "zwei",
+    "cevap": "two"
+  },
+  {
+    "id": 24,
+    "soru": "hat",
+    "cevap": "has"
+  },
+  {
+    "id": 25,
+    "soru": "suchen",
+    "cevap": "look"
+  },
+  {
+    "id": 26,
+    "soru": "mehr",
+    "cevap": "more"
+  },
+  {
+    "id": 27,
+    "soru": "Tag",
+    "cevap": "day"
+  },
+  {
+    "id": 28,
+    "soru": "könnte",
+    "cevap": "could"
+  },
+  {
+    "id": 29,
+    "soru": "gehen",
+    "cevap": "go"
+  },
+  {
+    "id": 30,
+    "soru": "kommen",
+    "cevap": "come"
+  },
+  {
+    "id": 31,
+    "soru": "tat",
+    "cevap": "did"
+  },
+  {
+    "id": 32,
+    "soru": "Anzahl",
+    "cevap": "number"
+  },
+  {
+    "id": 33,
+    "soru": "klingen",
+    "cevap": "sound"
+  },
+  {
+    "id": 34,
+    "soru": "nicht",
+    "cevap": "no"
+  },
+  {
+    "id": 35,
+    "soru": "am meisten",
+    "cevap": "most"
+  },
+  {
+    "id": 36,
+    "soru": "Menschen",
+    "cevap": "people"
+  },
+  {
+    "id": 37,
+    "soru": "meine",
+    "cevap": "my"
+  },
+  {
+    "id": 38,
+    "soru": "über",
+    "cevap": "over"
+  },
+  {
+    "id": 39,
+    "soru": "wissen",
+    "cevap": "know"
+  },
+  {
+    "id": 40,
+    "soru": "Wasser",
+    "cevap": "water"
+  },
+  {
+    "id": 41,
+    "soru": "als",
+    "cevap": "than"
+  },
+  {
+    "id": 42,
+    "soru": "Anruf",
+    "cevap": "call"
+  },
+  {
+    "id": 43,
+    "soru": "erste",
+    "cevap": "first"
+  },
+  {
+    "id": 44,
+    "soru": "die",
+    "cevap": "who"
+  },
+  {
+    "id": 45,
+    "soru": "können",
+    "cevap": "may"
+  },
+  {
+    "id": 46,
+    "soru": "nach unten",
+    "cevap": "down"
+  },
+  {
+    "id": 47,
+    "soru": "Seite",
+    "cevap": "side"
+  },
+  {
+    "id": 48,
+    "soru": "gewesen",
+    "cevap": "been"
+  },
+  {
+    "id": 49,
+    "soru": "jetzt",
+    "cevap": "now"
+  },
+  {
+    "id": 50,
+    "soru": "finden",
+    "cevap": "find"
+  }
+];
+
+
+var i = 0;
+showDiv.innerHTML = sorular[i].soru;
+
+
+</script>
+</html>
