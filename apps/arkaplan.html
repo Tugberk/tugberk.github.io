@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>samsung random wallpaper</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+
+        body {
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+<h3>random arkaplan oluşturucu</h3>
+Genişlik:<input type="number" id="genislik" value="10">
+<br>
+Renk Skalası seç: 
+<select id="skala">
+	  <option value="tumu">Tüm Renklerin Skalası</option>
+	  <option value="kahverengi">Kahverengi Skalası</option>
+	  <option value="gri">Gri (Siyah / Beyaz) Skalası</option>
+	  <option value="beyaz">Beyaz Skalası</option>
+	  <option value="pink">Pembe Skalası</option>
+	  <option value="mor">Mor Skalası</option>
+	  <option value="mavi">Mavi Skalası</option>
+	  <option value="cyan">Cyan Skalası</option>
+	  <option value="yesil">Yesil Skalası</option>
+	  <option value="sari">Sarı Skalası</option>
+	  <option value="turuncu">Turuncu Skalası</option>
+	  <option value="kirmizi">Kırmızı Skalası</option>
+</select>
+<br>
+<button onclick="run()">calistir</button>
+<br><br><br><br><br><br><br>
+<hr>
+
+<canvas id="myCanvas" width="1242" height="2688"></canvas>
+
+</body>
+<script>
+
+
+function run() {
+
+	var kahverengi = ["cornsilk","blanchedalmond","bisque","navajowhite","wheat","burlywood","tan","rosybrown","sandybrown","goldenrod","peru","chocolate","saddlebrown","sienna","brown","maroon"];
+	var gri = ["gainsboro","lightgray","silver","darkgray","gray","dimgray","lightslategray","slategray","darkslategray","black"];
+	var beyaz = ["white","snow","honeydew","mintcream","azure","aliceblue","ghostwhite","whitesmoke","seashell","beige","oldlace","floralwhite","ivory","antiquewhite","linen","lavenderblush","mistyrose"];
+	var pink = ["pink","lightpink","hotpink","deeppink","palevioletred","mediumvioletred"];
+	var mor = ["lavender","thistle","plum","violet","orchid","fuchsia","magenta","mediumorchid","mediumpurple","blueviolet","darkviolet","darkorchid","darkmagenta","purple","indigo"];
+	var mavi = ["powderblue","lightblue","lightskyblue","skyblue","deepskyblue","lightsteelblue","dodgerblue","cornflowerblue","steelblue","royalblue","blue","mediumblue","darkblue","navy","midnightblue","mediumslateblue","slateblue","darkslateblue"];
+	var cyan = ["lightcyan","cyan","aqua","aquamarine","mediumaquamarine","paleturquoise","turquoise","mediumturquoise","darkturquoise","lightseagreen","cadetblue","darkcyan","teal"];
+	var yesil = ["lawngreen","chartreuse","limegreen","lime","forestgreen","green","darkgreen","greenyellow","yellowgreen","springgreen","mediumspringgreen","lightgreen","palegreen","darkseagreen","mediumseagreen","seagreen","olive","darkolivegreen","olivedrab"];
+	var sari = ["lightyellow","lemonchiffon","lightgoldenrodyellow","papayawhip","moccasin","peachpuff","palegoldenrod","khaki","darkkhaki","yellow"];  
+	var turuncu = ["coral","tomato","orangered","gold","orange","darkorange"];
+	var kirmizi = ["lightsalmon", "salmon","darksalmon","lightcoral","indianred","crimson","firebrick","red","darkred"];
+
+	
+		
+		
+	var genislik = document.getElementById('genislik');
+	var skala = document.getElementById("skala");
+	skala = skala.value;
+	
+	var renk = [];
+	
+	if(skala == "kahverengi") {
+		renk = kahverengi.slice();
+	}
+	else if(skala == "gri"){
+		renk = gri.slice();
+	}
+	else if(skala == "beyaz"){
+		renk = beyaz.slice();
+	}
+	else if(skala == "pink"){
+		renk = pink.slice();
+	}
+	else if(skala == "mor"){
+		renk = mor.slice();
+	}
+	else if(skala == "mavi"){
+		renk = mavi.slice();
+	}
+	else if(skala == "cyan"){
+		renk = cyan.slice();
+	}
+	else if(skala == "yesil"){
+		renk = yesil.slice();
+	}
+	else if(skala == "sari"){
+		renk = sari.slice();
+	}
+	else if(skala == "turuncu"){
+		renk = turuncu.slice();
+	}
+	else if(skala == "kirmizi"){
+		renk = kirmizi.slice();
+	}
+	else {
+		alert("wtf");
+	}
+
+
+
+
+
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+
+
+//define upper limits
+var x_upper = myCanvas.width;
+var y_upper = myCanvas.height;
+
+var x = 0;
+var y = 0;
+
+/*
+//a pixel here - do not delete
+
+for(y=0;y<y_upper;y++){
+
+	for(x=0;x<x_upper;x++){
+	ctx.beginPath();
+		ctx.rect(x,y,1,1);
+		shuffle(colors);
+		ctx.fillStyle = colors[0];
+		ctx.fill();
+		
+	}
+}
+
+*/
+
+
+
+
+
+//genislik tamam
+genislik = genislik.value;
+console.log(genislik);
+genislik = parseInt(genislik);
+
+
+
+for(y=0;y<y_upper;y+=genislik){
+
+	for(x=0;x<x_upper;x+=genislik)
+	{
+		ctx.beginPath();
+		ctx.rect(x,y,genislik,genislik);
+		shuffle(renk);
+		ctx.fillStyle = renk[0];
+		ctx.fill();
+		
+	}
+}
+
+}
+
+//shuffle algorithm
+function shuffle(o){
+	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	return o;
+}
+
+
+
+
+</script>
+</html>
