@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+<title>dj khaled quotes</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style>
+
+body {
+background: url("https://wallsdesk.com/wp-content/uploads/2016/10/DJ-Khaled-full-HD.jpeg");
+background-repeat: no-repeat;
+background-size: no-size;
+align: center;
+padding-left: 50px;
+
+
+}
+
+div#output {
+
+padding-top: 250px;
+font-family: helvetica;
+font-size: 48px;
+color: white;
+width: 800px;
+
+}
+
+
+div#button {
+
+padding-top: 50px;
+size: 100px	
+
+
+}
+
+button {
+	box-shadow: 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+button:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
+</style>
+
+</head>
+<body>
+
+
+
+<div id="output">
+	
+
+</div>
+
+
+<div id="button">
+
+<button onclick="run()">ANOTHER ONE</button>
+
+</div>
+
+</body>
+
+
+
+
+
+<script>
+
+
+function run() {
+
+var quotes = [
+"I’m gonna go hard no matter what because I gotta feed my family, and I gotta feed myself",
+"God is the greatest. So at the end of the day and beginning of the day, I thank God.",
+"It’s going to work out, stay positive.",
+"Embrace your blessings, embrace peace.",
+"Stay positive but stay focused. Sometimes things can distract you and you don’t want to be distracted on the journey to that mountain top.",
+"'They' are the people that don’t believe in you, that says that you won’t succeed. We stay away from 'They'.",
+"I'm all about peace. I'm all about unity. I'm all about love.",
+"I know that I've been put on this Earth to make people happy, to inspire people, and to uplift people. That's a beautiful thing.",
+"Don't fall for the trap. Stay focused. It's about staying focused but at the same time God is the greatest, pray it up.",
+"At the end of the day, I understand that life has roadblocks, and life is like school – you'll be tested; we gotta pass it.",
+"There will be roadblocks but we will overcome it.",
+"Love is the most powerful thing in the world, and you know, what love brings is joy.",
+"Life is amazing, always give thanks no matter what.",
+"When you stop making excuses and you work hard and go hard you will be very successful.",
+"I wake up every day inspiring myself because God gave me life.",
+"They will try to close the door on you, just open it."
+
+];
+
+
+var output = document.getElementById("output");
+
+//shuffle and get first elem
+shuffle(quotes);
+output.innerHTML = quotes[0];
+
+
+
+}
+
+function shuffle(o){
+	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	return o;
+}
+
+
+run();
+
+</script>
+</html>
