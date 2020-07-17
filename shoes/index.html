@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>My Shoes</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/thumbnail-gallery.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">My Shoes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <!--
+		  <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li> 
+          </ul> -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row text-center text-lg-left" id="output">
+	  
+  <script>
+  
+var output = document.getElementById("output");
+  
+  
+var myList = [
+{
+foto:"images/bmw.jpg",
+name:"Puma BMW"
+},
+{
+foto:"images/campus.jpg",
+name:"Adidas Campus"
+},
+{
+foto:"images/ds8.jpg",
+name:"Nike Downshifter 8"
+},
+{
+foto:"images/eqt.png",
+name:"Adidas EQT"
+},
+{
+foto:"images/jordan1.webp",
+name:"Air Jordan 1"
+},
+{
+foto:"images/jordangreen.jpg",
+name:"Air Jordan 1 Sequoia"
+},
+{
+foto:"images/jordanlow.jpg",
+name:"Air Jordan 1 Low"
+},
+{
+foto:"images/kobe11.jpg",
+name:"Nike Kobe 11"
+},
+{
+foto:"images/kyrie3.jpg",
+name:"Nike Kyrie 3"
+},
+{
+foto:"images/pegasus.png",
+name:"Nike Pegasus 36"
+},
+{
+foto:"images/pumabmw.jpg",
+name:"Puma RX3 BMW"
+},
+{
+foto:"images/redbull.jpg",
+name:"Puma Redbull"
+},
+{
+foto:"images/rx3.jpg",
+name:"Puma RX3 Puzzle"
+},
+{
+foto:"images/rx3limestone.webp",
+name:"Puma RX3 Limestone"
+},
+{
+foto:"images/rx3red.jpg",
+name:"Puma RX3 Super"
+},
+{
+foto:"images/silenthunter.jpg",
+name:"New Balance 1500v2 Silent Hunter"
+},
+{
+foto:"images/stan.jpg",
+name:"Adidas Stan Smith Signature"
+},
+{
+foto:"images/stanblack.jpg",
+name:"Adidas Stan Smith Black"
+},
+{
+foto:"images/stangreen.jpg",
+name:"Adidas Stan Smith Green"
+},
+{
+foto:"images/stanwhite.jpg",
+name:"Adidas Stan Smith White"
+}
+
+
+
+
+];
+
+  
+  for(i=0; i<myList.length;i++) {
+	var x  = '<div class="col-lg-3 col-md-4 col-xs-6"><img class="img-fluid img-thumbnail" src="'+ myList[i].foto + '">'+myList[i].name+'</div>';
+	output.innerHTML = output.innerHTML + x;
+	
+	}
+  
+  </script>
+  
+	  </div>
+
+    </div>
+    <!-- /.container -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
