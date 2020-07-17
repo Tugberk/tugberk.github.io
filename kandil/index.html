@@ -25,7 +25,8 @@ textarea {
 <hr>
 <textarea id="output" rows="4" cols="50"></textarea>
 <br>
-<button onclick="rastgele()">rastgele getir ve kopyala!</button> <!-- <button onclick="copy()">Kopyala</button>-->
+<button onclick="kandil()">kandil mesajı getir</button>
+<button onclick="cuma()">cuma mesaji getir</button>
 
 </body>
 <script>
@@ -40,6 +41,17 @@ var liste = [
 ];
 
 
+	
+var cuma = [
+"Allah’ım sen kalbimizden geçenleri hakkımızda hayırlı eyle… Hayırlı cumalar",
+"Her derde deva Rabbim, senin için imkansız yoktur. Bu mübarek cuma gününde bizi mucizelerinden mahrum etme",
+"İnsanoğlu, kainatı ve Rabbin yarattıklarını korumayı kendine bir görev bilmeli. Hayırlı cumalar",
+"Dilinizden doğru, gönlünüzden merhamet, aklınızdan adalet eksik olmasın. Hayırlı cumalar",
+"Kalp kırmayı bıraktığımız, birlik olduğumuz bir cuma günü olması dileğiyle",
+"Bugün aklımızı ve kalbimizi arındırma günü. Hayvanlara eziyet etmediğimiz, kul hakkı yemediğimiz ve doğayı koruduğumuz bir gün olsun. Hayırlı cumalar."];
+
+
+	
 
 function shuffle(o){
 	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
@@ -53,12 +65,19 @@ function copy() {
 }
 
 
-function rastgele() {
+function kandil() {
 
 	shuffle(liste);
 	output.innerHTML = liste[0];
 	copy();
 }
+	
+function cuma() {
+
+	shuffle(liste);
+	output.innerHTML = cuma[0];
+	copy();
+}	
 
 </script>
 </html>
