@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<title>heart rate zones</title>
+</head>
+<body>
+
+
+<div id="input">
+yaş girin:<input type="text" id="yasdegeri" placeholder="yasinizi girin">
+
+<button onclick="run()">Give me everything you got</button> 
+</div> 
+
+
+<div id="output">
+
+<h3>MAF Metod</h3>
+<span id="mafMetod"></span>
+
+
+<h3>Zone Degerleri</h3>
+<span id="hrmaxSpan"></span>
+<hr>
+
+<span id="zoneOne"></span>
+<br>
+<span id="zoneTwo"></span>
+<br><span id="zoneThree"></span>
+<br><span id="zoneFour"></span>
+<br><span id="zoneFive"></span>
+
+</div>
+
+
+
+</body>
+<script>
+
+function run() {
+
+var hrmaxSpan = document.getElementById("hrmaxSpan");
+var mafMetod = document.getElementById("mafMetod");
+
+var zoneOne = document.getElementById("zoneOne");
+var zoneTwo = document.getElementById("zoneTwo");
+var zoneThree = document.getElementById("zoneThree");
+var zoneFour = document.getElementById("zoneFour");
+var zoneFive = document.getElementById("zoneFive");
+
+var yas = document.getElementById("yasdegeri").value;
+console.log(yas);
+
+var maf = 180 - yas;
+console.log("maf:" + maf);
+
+mafMetod.innerHTML = "MAF METHOD MAX: " + maf;
+
+var hrmax = 220 - yas;
+console.log("HRMax:" + hrmax);
+hrmaxSpan.innerHTML = "HRMAX:" + hrmax;
+
+
+var yuzdeler = [50, 60, 70, 80, 90, 100];
+
+zoneOne.innerHTML = "Zone 1:" + hrmax * yuzdeler[0] / 100 + "-" + hrmax * yuzdeler[1] / 100;
+zoneTwo.innerHTML = "Zone 2:" + hrmax * yuzdeler[1] / 100 + "-" + hrmax * yuzdeler[2] / 100;
+zoneThree.innerHTML = "Zone 3:" + hrmax * yuzdeler[2] / 100 + "-" + hrmax * yuzdeler[3] / 100;
+zoneFour.innerHTML = "Zone 4:" + hrmax * yuzdeler[3] / 100 + "-" + hrmax * yuzdeler[4] / 100;
+zoneFive.innerHTML = "Zone 5:" + hrmax * yuzdeler[4] / 100 + "-" + hrmax * yuzdeler[5] / 100;
+
+
+
+
+}
+
+</script>
+</html>
