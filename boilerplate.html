@@ -11,13 +11,17 @@
 
 </head>
 
+
 <body>
+
 
 <h3>Input</h3>
 <div id="input">
 	<input type="text" id="mytext"><br>
 	<button onclick="run()">run</button>
 </div>
+
+
 
 <!-- span
 <span id="myspan"></span>
@@ -27,6 +31,10 @@
 <textarea id="myTextarea" rows="4" cols="50">
 </textarea>
 -->
+
+
+
+
 
 
 <hr>
@@ -44,14 +52,12 @@
 
 function run(){
 
-var input = document.getElementById("mytext");
+var input = document.getElementById("mytext").value;
 var output = document.getElementById("output");
 
-output.innerHTML = "all systems go";
+output.innerHTML = input;
 
 //make calculations here
-
-
 
 }
 
