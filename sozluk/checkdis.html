@@ -1,0 +1,81 @@
+<!doctype html>
+<html ng-app>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+
+<style>
+h2 {
+color: red;
+}
+
+body {
+font-family: Helvetica;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<div ng-init="sozluk = [{
+        
+        'baslik': 'powerlifting',
+        'icerik': 'Ciddi bir spordur. 3 büyük liftten oluşur; \r\n(bkz: bench press)\r\n(bkz: squat)\r\n(bkz: deadlift)\r\n\r\nAmaç, bu ağırlıklarda 1 tekrarda en fazla ağırlığı kaldırmaktır.',
+        'tarih': '2019-04-17'
+    },
+    {
+        
+        'baslik': 'ip atlamak',
+        'icerik': 'ingilizcede skipping olarak da geçebilen, ritm çalışmasının yanında omuz ve kalf endurance ını da arttıran bir egzersizdir. iyi yağ yaktığı için cardio yerine olmasa da cardio ile birlikte yapılabilir. ya da cardio çok sıkıyorsa sizi, o durumlarda da seçilebilir.\r\n\r\n[crossfit] de bunu repertuarına almıştır, ancak düz ip atlamak kolay olduğu için [double under] denilen versiyonu uygulamaktadırlar.',
+        'tarih': '2019-04-17'
+    },
+	{
+        
+        'baslik': 'ip atlamak',
+        'icerik': 'ikinci entry',
+        'tarih': '2019-04-17'
+    }
+	]"
+						 </div>
+
+Genel: <input ng-model="searchText">
+<br>
+baslik: <input ng-model="search.baslik">
+<span ng-repeat="veri in sozluk | filter:search:strict"> 
+<hr>
+{{ veri.icerik }}
+
+
+</body>
+
+<script>
+
+
+
+function MyController($scope, $http) {
+   // ... your code
+
+$http.get('data.json').then(function(data) {
+   $scope.icerik = data;
+	console.log(data);
+});
+
+
+}
+
+
+/*
+ $.getJSON( "data.json", function(obj) {
+  $.each(obj, function(key, value) {
+         $("#output").append("<p><h2>"+value.baslik+"</h2>"+value.icerik+"</p>");
+  });
+ });
+*/
+
+
+</script>
+</html>
