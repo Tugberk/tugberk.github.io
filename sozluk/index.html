@@ -1,35 +1,39 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 <body>
-<div id="demo"></div>
+<div id="output"></div>
+<!-- 
+<button id="buton">bas</buton>
+-->
 </body>
 
 <script>
 //read json here
 
-// Assign handlers immediately after making the request,
-// and remember the jqxhr object for this request
-var jqxhr = $.getJSON( "data.json", function() {
-  console.log( "success" );
-})/*
-  .done(function() {
-    console.log( "second success" );
-  })
-  .fail(function() {
-    console.log( "error" );
-  })
-  .always(function() {
-    console.log( "complete" );
+
+/*
+$("#buton").click( function() {
+ $.getJSON( "data.json", function(obj) {
+  $.each(obj, function(key, value) {
+         $("#output").append("<p><h2>"+value.baslik+"</h2>"+value.icerik+"</p>");
   });
- */
-// Perform other work here ...
- 
+ });
+});
+*/
+
+ $.getJSON( "data.json", function(obj) {
+  $.each(obj, function(key, value) {
+         $("#output").append("<p><h2>"+value.baslik+"</h2>"+value.icerik+"</p>");
+  });
+ });
+
 
 
 </script>
