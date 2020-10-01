@@ -1,47 +1,95 @@
 <!doctype html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-
-  
+<meta charset="utf-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
 <style>
+h2 {
+color: red;
+}
+
 body {
-  font-family: Helvetica
-  }
-  
- h2{
-   color:red
-  }
-  
+font-family: Helvetica;
+}
 </style>
+
 </head>
+
+
 <body>
+<br>
+baslik: <input onclick='restart()' type="text" id='arama' placeholder="baslik gir"><button onclick="run()">ara</button>
+
+
+
+<hr>
 <div id="output"></div>
-<!-- 
-<button id="buton">bas</buton>
--->
+<div id='newDiv'></div>
+
 </body>
 
 <script>
-//read json here
 
-
-/*
-$("#buton").click( function() {
- $.getJSON( "data.json", function(obj) {
-  $.each(obj, function(key, value) {
-         $("#output").append("<p><h2>"+value.baslik+"</h2>"+value.icerik+"</p>");
-  });
- });
-});
-*/
+var myArray = [];
 
  $.getJSON( "data.json", function(obj) {
   $.each(obj, function(key, value) {
-         $("#output").append("<p><h2>"+value.baslik+"</h2>"+value.icerik+"</p>");
+         $("#output").append("<div class='"+value.baslik+"'><h2>"+value.baslik+"</h2>"+value.icerik+"</div>");
+		 
+		 
   });
+  
+  
  });
+ 
+
+
+ 
+
+ function run() {
+
+ 	
+ 	var newDiv = document.getElementById('newDiv'); //yeni bir div yaratmak zorunda kaldim
+ 	var output = document.getElementById('output');
+ 	newDiv.innerHTML = '';
+
+
+ 	var aranan = document.getElementById('arama').value;
+ 	
+ 	var icerik = document.getElementsByClassName(aranan);
+ 	
+
+ 	for(j=0;j<icerik.length;j++){
+ 		//console.log(icerik[j].innerText)
+ 		newDiv.innerHTML += icerik[j].innerHTML;
+ 		
+ 	}
+ 	output.innerHTML = ''; //bunu temizliyorum ki ortada yazdirabilelim
+
+ }
+
+
+ function restart() {
+
+ $.getJSON( "data.json", function(obj) {
+  $.each(obj, function(key, value) {
+         $("#output").append("<div class='"+value.baslik+"'><h2>"+value.baslik+"</h2>"+value.icerik+"</div>");
+		 
+		 
+  });
+  
+  
+ });
+
+
+ }
+
+
+
+
 
 
 
