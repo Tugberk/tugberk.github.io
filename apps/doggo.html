@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<title>random doggos!</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style type="text/css"></style>
+</head>
+<body>
+<h3>henlo frend</h3>
+<!-- <button onclick="bringMe()">bring me another random doggo</button> -->
+<div id="output"></div>
+
+
+<!--
+
+<canvas id="myCanvas" width="600" height="600">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+-->
+
+</body>
+<script>
+
+
+
+//get text
+var x = window.location;
+x = x.search;
+x = x.replace("?text=","");
+
+//tek replace hepsini yapmadi kafama gore 5 loop attim
+
+for(i=0;i<5;i++)
+x = x.replace('%20',' ');
+console.log(x);
+
+//vars
+
+//random bul
+
+var randNum = Math.floor(Math.random() * 600) + 300;
+var myLink = 'https://placedog.net/' + randNum;
+console.log(myLink);
+
+var img = new Image();   // Create new img element
+img.addEventListener('load', function() {
+  // execute drawImage statements here
+  
+  var canvas = document.createElement('canvas');
+  canvas.width = img.width;
+  canvas.height = img.height;
+  var body = document.getElementsByTagName("body")[0];
+  body.appendChild(canvas); //ekledik
+  var context = canvas.getContext("2d");
+  
+
+  context.drawImage(img,0,0);
+  
+  
+  context.font = "40px helvetica";
+  context.fillStyle = "white";
+  context.fillText(x,100, canvas.height - 100);
+  
+  
+}, false);
+//img.src = 'https://random.dog/fba53ab0-75df-4136-8212-1319e4524881.jpg';
+img.src = myLink;
+
+</script>
+
+
+
+</html>
