@@ -9,10 +9,20 @@
 <h2>Yazılar</h2>
 <hr>
 
-  <li><a href=''>Unix ve Windows</a></li>
-  <li><a href=''>Basit cmd (command line) komutları</a></li>
-  <li><a href=''>poweruser nedir</a></li>
+  <div id="output"></div>
 
 
 </body>
+  <script>
+    
+    var output = document.getElementById("output");
+    var links = ["https://tugberk.github.io/blog/mindfulness_tr.html"];
+    var headings = ["five mindfulness training"];
+    
+    for(i=0;i<headings.length;i++)
+    {
+    output.innerHTML += "<ol><a href='"+links[i]+"'>" + headings[i]+ "</a></ol>";
+    }
+    
+  </script>
 </html>
