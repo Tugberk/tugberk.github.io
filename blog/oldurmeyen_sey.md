@@ -1,3 +1,5 @@
+bizi öldürmeyen şey güçlendirir
+
 Bu cümlenin hem doğru hem de doğru olmadığı anlardan bahsedebiliriz. Öncelikle mental bir sıkıntıdan mı yoksa fiziksel bir sıkıntıdan mı bahsettiğimiz netleşmeli. Örneğin ölmemişsek ve bir işaretini taşıyorsak bu bizim güçsüzlüğümüzü ya da güçlülüğümüzü tanımlar mı? Ya da güçlendiğimizi nasıl anlayabiliriz, nasıl tanımlayabiliriz? Ya da yaşanan bir olayın sonrasında değişeceğimiz kesin olmasına rağmen bir güçlenme ya da güçsüzlenme olmak zorunda mıdır?
 
 Örneğin şiddet uygulayan birinin bu şiddeti uygulamasının altında şüphesiz ki nedenler vardır. Bu nedenleri biz onaylamıyor olsak bile, bir neden olduğu gerçeği değişmez. Ancak bir insan düşüncelerini çok rahat bir şekilde kontrol edemese bile, davranışlarını edebilir. Yaşadığı bir kötü tecrübe ise bu durumda onun düşüncelerini belki "hemen" değiştiremese bile, davranışlarını değiştirebilir. Bunun da bir güçlenme olduğunu düşünüyorum. Yani bir insanın güçlendiğini söylemek için hem "davranış" hem de "düşünceleri" değişmeli dememeliyiz. Küçük bir gelişim dahi gelişimdir.
