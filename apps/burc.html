@@ -6,32 +6,138 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>burc</title>
-	<style>body{margin:40px
+	<style>body{margin:0px
 auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
-10px}h1,h2,h3{line-height:1.2}</style>
+10px;
+
+
+}
+
+
+h1,h2,h3{line-height:1.2}
+
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
 <body>
 	<br><br><br><br>
 	
-	Gün:<input type="number" id="gun" placeholder="gun">
-	<br>
-	Ay:<input type="number" id="ay" placeholder="ay">
-	<br>
-	<button onclick="fn_do()">burcu ney?</button>
+	<div id="intro">
+<h2>Divination is a serious matter.. Do you agree?</h2>
+<button id="yes">Yes</button> - <button id="hayir">No</button>
+	</div>
 	
+	
+	<div id="noDiv">You know, my dear, the moment I looked into your eyes I knew that you did not have the mind for the noble art of Divination.</div>
+	<br><div id="noDivTwo">See? Right here. You may be young in years but the heart that beats beneath your bosom is as shriveled as an old maid's, your soul as dry as the pages of the books to which you so desperately cleave.</div>
+	<br><div id="noDivThree">GO AWAY</div>
+	
+	
+	
+	<div id="yesDiv">"He will return tonight! He who betrayed his friends - whose heart rots with murder! Innocent blood shall be shed and servant and master shall be reunited once moooooooore!"</div>
+	
+	<br>
+	<div id='yesDivTwo'>Oh, I'm sorry, dear. Did I say something? Never mind..</div><br>
+	<div id='yesDivTri'>Here in this room, you will discover if you possess the Sight!</div><br>
+	<div id='yesDivFour'>Tell me dear.. Tell me your date of birth.</div><br>
+	
+	<div id='question'>
+	
+	<!--Day:<input type="number" id="gun" placeholder="gun">
+	<br>
+	Month:<input type="number" id="ay" placeholder="ay">
+	<br>
+	-->
+	<input type="date" id="tarih">
+	
+	<button onclick="fn_do()">Tell me what you see</button>
+	
+	</div>
+
 	<div id="output">
 	</div>	
 </body>
+
+
+
+
+
 <script>
 
 
-document.getElementById("gun").focus();
+
+
+$('#intro').hide();
+$('#intro').fadeIn("slow");
+$('#question').hide();
+$('#noDiv').hide();
+$('#noDivTwo').hide();
+$('#noDivThree').hide();
+$('#yesDiv').hide();
+$('#yesDivTwo').hide();
+$('#yesDivTri').hide();
+$('#yesDivFour').hide();
+
+
+$('#delayDiv').hide();
+
+$('#yes').click(function(){
+
+$('#intro').hide(); 
+$('#yesDiv').delay(300).fadeIn(400);
+$('#yesDivTwo').delay(2900).fadeIn(400);
+$('#yesDivTri').delay(4500).fadeIn(400);
+$('#yesDivFour').delay(6300).fadeIn(400);
+$('#question').delay(7000).fadeIn(400);
+
+
+});
+
+
+$('#hayir').click(function(){
+$('#intro').hide(); $('#noDiv').slideUp( 300 ).fadeIn( 400 );; $('#noDivTwo').slideUp( 300 ).delay( 1200 ).fadeIn( 400 ); 
+$('#noDivThree').delay(3000).fadeIn(400);
+
+
+}
+
+
+
+
+);
+
+
+
+
 
 function fn_do() {
 
-	var gun = document.getElementById("gun").value;
-	var ay = document.getElementById("ay").value;
+
+	console.log($('#tarih'));
+
+	var myDate = document.getElementById("tarih").value;
+	console.log(myDate);
+	var xe = myDate;
+	var ay = xe.slice(5,7);
+	var gun = xe.slice(8, 10);
+	console.log("ay: ", ay);
+	console.log("gun: ", gun);
+	ay = parseInt(ay);
+	gun = parseInt(gun);
+	
+	
+	
+	$('#yesDiv').hide();
+	$('#yesDivTwo').hide();
+	$('#yesDivTri').hide();
+	$('#yesDivFour').hide();
+	$('#question').hide();
+	
+	
 	
 	var output = document.getElementById("output");
 	
