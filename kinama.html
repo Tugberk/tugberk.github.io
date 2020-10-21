@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TUĞBERK TARAFINDAN KINANDINIZ</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta property="og:image" content="https://pics.me.me/thumb_shame-memegenerator-net-shame-game-of-thrones-shame-meme-52533871.png">
 
 <style type="text/css">
@@ -28,5 +29,41 @@ Bu kınama mesajının yerine ulaşmasını diler, gelecek hayatınızda başar�
 <h3>Tuğberk</h3>
 
 
+<button id="accept">Hatamı kabul ediyorum</button>
+<button id="reject">Hayır, kabul etmiyorum ve sana saldırıyorum!</button>
 
-</body></html>
+
+<div id="acceptdiv">
+Doğru bir karar. Bu kabullenişiniz sayesinde kınamanızı geri alıyorum. Lütfen daha dikkatli olun.
+
+
+</div>
+<div id="rejectdiv">
+<img src='https://media1.tenor.com/images/601b1328f451a92c43ac46f2d8389ca7/tenor.gif?itemid=17015170'>
+</div>
+
+</body>
+<script>
+
+$('#acceptdiv').hide();
+$('#rejectdiv').hide();
+
+
+
+$('#accept').click(function() {
+
+$('#acceptdiv').fadeIn();
+
+});
+
+$('#reject').click(function() {
+$('#rejectdiv').fadeIn();
+});
+
+
+
+
+</script>
+
+
+</html>
