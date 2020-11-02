@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta
+charset="utf-8"><meta
+name="viewport" content="width=device-width, initial-scale=1"><title>math problem creator</title><style type="text/css">body{margin:40px
+auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+10px}h1,h2,h3{line-height:1.2}</style></head>
+<body>
+<h2>let there be problems</h2>
+<hr>
+kaç adet:<input type="number" id="sayi" placeholder="30">
+<button onclick="run()">xx</button>
+<br><br>
+
+
+<div id="output">
+</div>
+
+
+
+</body>
+
+<script>
+
+
+var output = document.getElementById("output");
+
+var toplam = [];
+
+
+
+function run() {
+var sayi = document.getElementById("sayi").value;
+
+
+
+
+for(i=0;i<sayi;i++){
+
+
+	var x = randomOlustur(100) + "+" + randomOlustur(100);
+
+	//x bu toplam formunda var mi? -- burayi duzenlemek lazim
+
+	for(j=0;j<toplam.length;j++)
+	{
+		if(x == toplam[j]){
+			console.log("esit");
+			x = randomOlustur(100) + "+" + randomOlustur(100);
+		}
+		else {
+		//toplam.push(x)
+		}
+	}
+
+	toplam.push(x);
+	output.innerHTML += "" + (i+1) + ") " +  x + " = ? <br><br>";
+
+}
+
+console.log(toplam);
+
+
+}
+function randomOlustur(sayi)
+	{
+
+		var rand_sayi = Math.floor(Math.random() * sayi)+ 1;
+		//console.log(rand_sayi);
+		return rand_sayi;
+	}
+
+
+
+
+</script>
+</html>
