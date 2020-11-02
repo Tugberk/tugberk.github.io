@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta
+charset="utf-8"><meta
+name="viewport" content="width=device-width, initial-scale=1"><title>harry potter name scramble game</title><style type="text/css">body{margin:40px
+auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+10px}h1,h2,h3{line-height:1.2}</style></head>
+<body>
+<h2>Guess the name!</h2>
+
+
+<p id="output"></p>
+
+<input type="text" id="name">
+<button id="myBtn" onclick="run()">found it</button>
+<br>
+correct: <span id="correct">0</span>
+</body>
+<script>
+
+
+var input = document.getElementById("name");
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});
+
+
+
+//hp name scrabmle
+var names = ["hermione","harry","ron","mcgonagall","snape","dumbledore","hagrid","trelawney","expelliarmus","sectumsempra","malfoy","draco","potter","granger"];
+
+
+//shuffle and output
+document.getElementById("output").innerHTML = shuffleWord(names[0]);
+i = 0;
+correct = 0;
+
+function run()
+{
+
+var input = document.getElementById("name").value;
+var output = document.getElementById("output");
+var correctSpan = document.getElementById("correct");
+
+if(input == names[i]){
+	//alert("yes");
+	correct++;
+	correctSpan.innerHTML = correct;
+	i++;
+	if(i == names.length){
+		document.write("the game has ended with " + correct +" correct answers");
+	}
+
+	output.innerHTML = shuffleWord(names[i]);
+	document.getElementById("name").value = "";
+	document.getElementById("name").focus();
+}
+else {
+	//alert("WRONG");
+	document.getElementById("name").value = "";
+	document.getElementById("name").focus();
+	correct--;
+	correctSpan.innerHTML = correct;
+	i++;
+	if(i == names.length){
+		document.write("the game has ended with " + correct +" correct answers");
+	}
+	output.innerHTML = shuffleWord(names[i]);
+
+}
+
+
+}
+
+
+
+
+function shuffleWord (word){
+    var shuffledWord = '';
+    word = word.split('');
+    while (word.length > 0) {
+      shuffledWord +=  word.splice(word.length * Math.random() << 0, 1);
+    }
+    return shuffledWord;
+}
+
+
+</script>
+</html>
