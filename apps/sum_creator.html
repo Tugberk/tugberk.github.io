@@ -9,15 +9,19 @@ auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
 <body>
 <h2>let there be problems</h2>
 <hr>
+
+
+<div id="soru">
+
+
 kaç adet:<input type="number" id="sayi" placeholder="30">
-<button onclick="run()">xx</button>
+<button onclick="run()">toplama</button>-<button onclick="carp()">Carpma</button>-<button onclick="cikart()">cikartma</button>
+</div>
 <br><br>
 
 
 <div id="output">
 </div>
-
-
 
 </body>
 
@@ -29,40 +33,103 @@ var output = document.getElementById("output");
 var toplam = [];
 
 
+//toplama
+function run() 
+{
 
-function run() {
-var sayi = document.getElementById("sayi").value;
+	output.innerHTML = "";
+	toplam = [];
+	
+	var sayi = document.getElementById("sayi").value;
 
+	for(i=0;i<sayi;i++){
+		var x = randomOlustur(100) + "+" + randomOlustur(100);
 
+		//x bu toplam formunda var mi? -- burayi duzenlemek lazim
 
-
-for(i=0;i<sayi;i++){
-
-
-	var x = randomOlustur(100) + "+" + randomOlustur(100);
-
-	//x bu toplam formunda var mi? -- burayi duzenlemek lazim
-
-	for(j=0;j<toplam.length;j++)
-	{
-		if(x == toplam[j]){
-			console.log("esit");
-			x = randomOlustur(100) + "+" + randomOlustur(100);
+		for(j=0;j<toplam.length;j++)
+		{
+			if(x == toplam[j]){
+				console.log("esit");
+				x = randomOlustur(100) + "+" + randomOlustur(100);
+			}
+			else {
+			//toplam.push(x)
+			}
 		}
-		else {
-		//toplam.push(x)
-		}
+		toplam.push(x);
+		output.innerHTML += "" + (i+1) + ") " +  x + " = ? <br><br>";
 	}
 
-	toplam.push(x);
-	output.innerHTML += "" + (i+1) + ") " +  x + " = ? <br><br>";
+}
+
+//cikarma
+function cikart() 
+{
+
+	output.innerHTML = "";
+	toplam = [];
+	
+	var sayi = document.getElementById("sayi").value;
+
+	for(i=0;i<sayi;i++){
+		
+		
+		var first = randomOlustur(100);
+		var second = randomOlustur(first-1);
+		
+		var x = first + "-" + second;
+		
+		if(!toplam.includes(x))
+		{
+			console.log("tekrar yok");
+			toplam.push(x);
+		}
+		else {
+			console.log("tekrar var: " + x);
+			cikart();
+		}
+		
+	
+		
+		output.innerHTML += "" + (i+1) + ") " +  x + " = ? <br><br>";
+	}
+	//burada check edebiliriz eger uzunluk eksikse yeni seyler ekleyebiliriz burada ust tarafta kontrolu abartmak yerine
 
 }
 
-console.log(toplam);
 
+//carpma
+function carp() 
+{
+
+	output.innerHTML = "";
+	toplam = [];
+	
+	var sayi = document.getElementById("sayi").value;
+
+	for(i=0;i<sayi;i++){
+		var x = randomOlustur(100) + "x" + randomOlustur(10);
+
+		//x bu toplam formunda var mi? -- burayi duzenlemek lazim
+
+		for(j=0;j<toplam.length;j++)
+		{
+			if(x == toplam[j]){
+				console.log("esit");
+				x = randomOlustur(100) + "x" + randomOlustur(10);
+			}
+			else {
+			//toplam.push(x)
+			}
+		}
+		toplam.push(x);
+		output.innerHTML += "" + (i+1) + ") " +  x + " = ? <br><br>";
+	}
 
 }
+
+
 function randomOlustur(sayi)
 	{
 
@@ -70,8 +137,6 @@ function randomOlustur(sayi)
 		//console.log(rand_sayi);
 		return rand_sayi;
 	}
-
-
 
 
 </script>
