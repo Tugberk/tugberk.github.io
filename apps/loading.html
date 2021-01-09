@@ -1,0 +1,83 @@
+
+<!doctype html>
+<html>
+<head>
+<title>Loading</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+	#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
+}
+		</style>
+</head>
+<body>
+<br><br><br><br><br>
+<h1>
+<span id="output"></span> loading...
+</h1>
+
+<div id="myProgress">
+  <div id="myBar">%10</div>
+</div>
+
+
+
+
+
+</body>
+<script>
+
+
+
+//get text
+var x = window.location;
+x = x.search;
+x = x.replace("?text=","");
+
+
+
+//tek replace hepsini yapmadi kafama gore 5 loop attim
+
+for(i=0;i<5;i++)
+x = x.replace('%20',' ');
+console.log(x);
+
+document.getElementById('output').innerHTML = x;
+
+
+
+var i = 0;
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 10;
+    var id = setInterval(frame, 50);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width + "%";
+      }
+    }
+  }
+}
+
+move();
+
+
+</script>
+
+
+
+</html>
