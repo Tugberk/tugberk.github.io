@@ -1,0 +1,77 @@
+
+<!doctype html>
+<html>
+<head>
+<title>random doggos!</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style type="text/css"></style>
+</head>
+<body>
+<!-- <button onclick="bringMe()">bring me another random doggo</button> -->
+<!-- <input type="text" id="mytext" placeholder="enter text here"><a href="">send me</a> -->
+<div id="output"></div>
+
+
+
+
+</body>
+<script>
+
+var myLink = "";
+
+
+new URL(location.href).searchParams.get('text');
+const params = new URL(location.href).searchParams;
+const x = params.get("text");
+const adres = params.get("adres");
+const tip = params.get("tip"); //twitter - red line - yellow subtitle
+
+console.log(x);
+console.log(adres);
+console.log(tip);
+
+myLink = adres;
+
+
+
+
+
+
+
+
+
+console.log(myLink);
+
+var img = new Image();   // Create new img element
+img.addEventListener('load', function() {
+  // execute drawImage statements here
+  
+  var canvas = document.createElement('canvas');
+  canvas.width = img.width;
+  canvas.height = img.height;
+  var body = document.getElementsByTagName("body")[0];
+  body.appendChild(canvas); //ekledik
+  var context = canvas.getContext("2d");
+  
+
+  context.drawImage(img,0,0);
+  
+  
+  context.font = "32px helvetica";
+  context.fillStyle = "yellow";
+  context.fillText(x,50, canvas.height - 50); //burayi linkten input verebilir miyiz? ya da buna slider?
+  
+  
+}, false);
+//img.src = 'https://random.dog/fba53ab0-75df-4136-8212-1319e4524881.jpg';
+img.src = myLink;
+
+
+//reload ettirmeden yeniden yazdirmasi lazim bu ustten olabilir
+
+</script>
+
+
+
+</html>
