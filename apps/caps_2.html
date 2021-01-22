@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+
+
+</head>
+<body>
+
+text:<input type="text" id="text">
+<br>
+url:<input type="text" id="myurl">
+<br>
+<button onclick="run()">create</button> <button onclick="red()">red</button> <button onclick="twitter()">twitter</button>
+
+</body>
+<script>
+
+function run() {
+
+	var yazi = document.getElementById("text").value;
+	var adres = document.getElementById("myurl").value;
+	var tip = "";
+
+	window.location.href= "file:///C:/Users/tugberk/Desktop/capsolustur.html?text="+ yazi + "&adres=" + adres + "&tip=" + tip;
+
+
+
+}
+</script>
+</html>
