@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -8,8 +7,7 @@
 	<style type="text/css"></style>
 </head>
 <body>
-<!-- <button onclick="bringMe()">bring me another random doggo</button> -->
-<!-- <input type="text" id="mytext" placeholder="enter text here"><a href="">send me</a> -->
+
 <div id="output"></div>
 
 
@@ -25,21 +23,16 @@ new URL(location.href).searchParams.get('text');
 const params = new URL(location.href).searchParams;
 const x = params.get("text");
 const adres = params.get("adres");
-const tip = params.get("tip"); //twitter - red line - yellow subtitle
+const fontsize = params.get("fontsize");
+const fontcolor = params.get("fontcolor");
+const xcoord = params.get("x");
 
 console.log(x);
 console.log(adres);
-console.log(tip);
+console.log(fontsize);
+console.log(fontcolor);
 
 myLink = adres;
-
-
-
-
-
-
-
-
 
 console.log(myLink);
 
@@ -58,9 +51,10 @@ img.addEventListener('load', function() {
   context.drawImage(img,0,0);
   
   
-  context.font = "32px helvetica";
-  context.fillStyle = "yellow";
-  context.fillText(x,50, canvas.height - 50); //burayi linkten input verebilir miyiz? ya da buna slider?
+  //context.font = "32px helvetica";
+  context.font = fontsize;
+  context.fillStyle = fontcolor;
+  context.fillText(x,xcoord, canvas.height - xcoord); //burayi linkten input verebilir miyiz? ya da buna slider?
   
   
 }, false);
