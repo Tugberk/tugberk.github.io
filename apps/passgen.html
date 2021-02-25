@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+<title>random password generator</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<style>
+.slidecontainer {
+  width: 50%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+
+<div class="container">
+<h2>Random Şifre Üreteci</h2>
+<hr>
+
+
+
+<label for="customRange1" class="form-label">Karakter uzunluğu (6-20)</label><h2 id="sliderAmount">12</h2>
+<input id="slide" class="slider" type="range" min="6" max="20" step="1" value="12"> 
+
+
+
+
+<br>
+
+
+<textarea class="form-control form-control-lg" id="output" rows="3" style="font-size: 32pt"></textarea>
+
+<br><button onclick="copy()" type="button" class="btn btn-success btn-block">Kopyala</button>
+<h3 id="cikti"></h3>
+
+
+
+</div>
+</body>
+
+
+
+
+<script>
+
+run(12);
+
+var slide = document.getElementById('slide'),
+    sliderDiv = document.getElementById("sliderAmount");
+
+slide.onchange = function() {
+    sliderDiv.innerHTML = this.value;
+	run(this.value);
+}
+
+
+function run(a) {
+
+var length = a;
+var line = "abcdefghijklmnopqrstuvyzxwABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@^~%&=";
+
+var myArray = line.split("\n");
+var sifre = "";
+
+
+
+
+for(var i=0;i<length;i++){
+	
+	var rand = Math.floor(Math.random() * line.length);
+	sifre = sifre + line[rand];
+
+}
+
+//console.log(sifre);
+document.getElementById("output").value = sifre;
+copy();
+
+}
+function copy() {
+	let textarea = document.getElementById("output");
+	textarea.select();
+	document.execCommand("copy");
+	var cikti = document.getElementById("cikti");
+	cikti.innerHTML = "sifre kopyalandi";
+}
+
+</script>
+</html>
