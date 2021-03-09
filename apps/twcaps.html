@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="container">
+<h2>Caps oluşturucu</h2>
+<hr>
+<br><br>
+<form>
+<div class="form-group">
+    <label for="exampleInputEmail1">Yazılacak şey</label>
+    <input type="text" class="form-control"class="form-control" id="text">
+  </div>
+
+<div class="form-group">
+    <label for="exampleInputEmail1">URL adresi</label>
+    <input type="text" class="form-control" id="myurl">
+  </div>
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Yazının boyutu</label>
+    <input type="text" class="form-control" id="fontsize" value="16">
+  </div>
+  
+ <div class="form-group">
+    <label for="exampleInputEmail1">Yazının rengi (blue, #000000)</label>
+    <input type="text" class="form-control" id="fontcolor" value="black">
+  </div>
+  
+
+ 
+  
+</form>
+<button onclick="run()">create</button>
+
+<hr>
+
+
+<script>
+
+
+function run() {
+
+
+var mytext = document.getElementById("text").value;
+var myurl = document.getElementById("myurl").value;
+var boyut = document.getElementById("fontsize").value;
+var renk = document.getElementById("fontcolor").value;
+ 
+
+  
+  
+var img = new Image();   // Create new img element
+img.addEventListener('load', function() {
+  // execute drawImage statements here
+  
+  var canvas = document.createElement('canvas');
+  canvas.width = img.width;
+  canvas.height = img.height;
+  var body = document.getElementsByTagName("body")[0];
+  body.appendChild(canvas); //ekledik
+  var context = canvas.getContext("2d");
+  
+
+  context.drawImage(img,5,70);
+    
+  context.font = boyut + "px verdana";
+  context.fillStyle = renk;
+  context.fillText(mytext,5,50); //burayi linkten input verebilir miyiz? ya da buna slider?
+  
+  
+}, false);
+//img.src = 'https://random.dog/fba53ab0-75df-4136-8212-1319e4524881.jpg';
+img.src = myurl;
+
+  
+}
+
+</script>
+
+</body>
+</html>
