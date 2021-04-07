@@ -1,0 +1,66 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	input {
+		width: 300px;
+	}
+	
+	</style>
+</head>
+<body>
+
+<div id='output'></div>
+<BR><BR><BR><BR><BR><BR>
+<input type="text" id="myinput" value="">
+<button id="mybutton" onclick="runn()">enter</button>
+
+</body>
+<script>
+
+var output = document.getElementById('output');
+var exd = document.getElementById('myinput');
+
+
+//mytext = 'bir bahar akşamı rastladım size... keyifli bir telaş içindeydiniz';
+new URL(location.href).searchParams.get('text');
+const params = new URL(location.href).searchParams;
+const mytexte = params.get("text");
+
+console.log(mytext);
+
+var mytext = mytexte;
+
+//mytext = 'bir bahar akşamı rastladım size... keyifli bir telaş içindeydiniz';
+mytext = mytext.split('');
+
+	var myVar = setInterval(run, 100);
+	i = 0 ;
+	
+
+
+function run() {
+	exd.value += mytext[i];
+	if(i !== mytext.length - 1){
+	i++;
+	} else {
+		console.log('hey yo');
+		document.getElementById("mybutton").click();
+		clearInterval(myVar);
+	}
+	
+	
+
+}
+//document.getElementById("mybutton").click();
+
+function runn() {
+
+window.location.href = "matrix.html";
+}
+
+</script>
+</html>
