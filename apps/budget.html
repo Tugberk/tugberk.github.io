@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<body>
+
+
+aylik maas: <input type="text" id="maas">
+<br><br>
+urunun fiyati: <input type="text" id="urunfiyati">
+<button onclick="run()">hesapla</button>
+<hr>
+
+
+<div id="output"></div>
+
+</body>
+<script>
+
+function run() {
+
+
+var output = document.getElementById("output");
+var maas = document.getElementById("maas").value;
+var urunfiyati = document.getElementById("urunfiyati").value;
+
+
+//ayda kac saat calisiyoruz? 225 saat = 225 * 60 dakika 
+var calismasuresi = 225;
+var saat = maas / calismasuresi;
+
+var saat = saat.toFixed(2);
+
+output.innerHTML += "Saatte kazanilan para: " + saat + " TL";
+
+var kacsaat = urunfiyati / saat;
+kacsaat = kacsaat.toFixed(2);
+
+output.innerHTML += "<br>İstenilen ürün için: <br><li>" +  kacsaat + " saat</li>";
+
+//gun
+output.innerHTML += "<li>" + (kacsaat / 24).toFixed(2) + " gün</li>";
+
+//dakika
+output.innerHTML += "<li>" + (kacsaat * 60).toFixed(2) + " dakika</li><br>çalışmak gerekiyor.";
+
+}
+
+
+</script>
+</html>
