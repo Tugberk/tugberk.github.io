@@ -1,17 +1,49 @@
 <!doctype html>
 <html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+</head>
 <body>
+<div class="container">
+<h2>Bu ürün için kaç saat çalışmak gerekli?</h2>
+<hr>
+
+<form>
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Aylık Maaş:</label>
+    <input type="number" class="form-control" class="form-control" id="maas" placeholder="5000" required>
+  </div>
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Ürün Fiyatı</label>
+    <input type="number" class="form-control" class="form-control" id="urunfiyati" placeholder="500" required>
+  </div>
 
 
-aylik maas: <input type="text" id="maas">
-<br><br>
-urunun fiyati: <input type="text" id="urunfiyati">
-<button onclick="run()">hesapla</button>
+
+</form>
+<button onclick="run()">Hesapla</button>
 <hr>
 
 
-<div id="output"></div>
+<div class="container" id="output"></div>
 
+
+</div>
 </body>
 <script>
 
@@ -29,11 +61,13 @@ var saat = maas / calismasuresi;
 
 var saat = saat.toFixed(2);
 
-output.innerHTML += "Saatte kazanilan para: " + saat + " TL";
+
+output.innerHTML += "Saatte " + saat + " TL kazanıyorsun. Bu ürünü almak için çalışman gereken saat:";
 
 var kacsaat = urunfiyati / saat;
 kacsaat = kacsaat.toFixed(2);
 
+/*
 output.innerHTML += "<br>İstenilen ürün için: <br><li>" +  kacsaat + " saat</li>";
 
 //gun
@@ -41,6 +75,11 @@ output.innerHTML += "<li>" + (kacsaat / 24).toFixed(2) + " gün</li>";
 
 //dakika
 output.innerHTML += "<li>" + (kacsaat * 60).toFixed(2) + " dakika</li><br>çalışmak gerekiyor.";
+
+
+*/
+
+output.innerHTML += "<h2>" + kacsaat + " saat</h2>";
 
 }
 
