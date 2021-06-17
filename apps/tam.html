@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>ANALIZER</title>
+		<style type="text/css">body{margin:40px
+		auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+		10px}h1,h2,h3{line-height:1.2}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div id="intro">
+Analiz yapılıyor...&#9989;
+</div>
+
+<div id="divtwo">
+Sosyal medya hesapları kontrol ediliyor...&#9989;
+</div>
+
+<div id="divthree">
+Özel mesajlar inceleniyor...&#9989;
+</div>
+
+<div id="divfour">
+Hesaplanıyor.....&#9989;
+</div>
+
+
+
+<div id="output">
+<h1 id="myoutput"></h1>
+</div>
+
+
+</body>
+<script>
+
+
+$('#output').hide();
+
+$('#intro').hide();
+$('#divtwo').hide();
+$('#divthree').hide();
+$('#divfour').hide();
+
+//var myLink = "";
+new URL(location.href).searchParams.get('text');
+const params = new URL(location.href).searchParams;
+const isim = params.get("isim");
+const neci = params.get("neci");
+
+console.log(isim);
+console.log(neci);
+
+$('#intro').fadeIn(400); 
+$('#divtwo').delay(1000).fadeIn(400);
+$('#divthree').delay(2900).fadeIn(400);
+$('#divfour').delay(4500).fadeIn(400);
+
+//$('#intro').fadeOut();
+//$('#divtwo').fadeOut();
+$('#divthree').hide();
+$('#divfour').hide();
+
+$('#output').delay(6300).fadeIn(400);
+
+
+
+var myoutput = document.getElementById("myoutput");
+myoutput.innerHTML = "SONUÇ:<br>" + isim + " sen tam bir " + neci;
+
+
+</script>
+</html>
