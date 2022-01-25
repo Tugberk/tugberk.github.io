@@ -84,14 +84,16 @@
 
     var second = []; //eger baska yerde yesilse
     var third = []; //baska sariysa
+    var words = ["ÇANTA","TAHTA","RADYO","SEHPA","DOLAP","KALEM","KAŞIK","BIÇAK","TABAK","TABLO","HIRKA","FULAR","PALTO","YILAN","KÖPEK","DOMUZ","KUMRU","AKREP","SERÇE","SADIK","ZAYIF","YAKIN","KOLAY","HELVA","GAZOZ","HURMA","CEVİZ","BADEM","MARUL","SOĞAN","BAMYA","SUSAM","TAHİN","REÇEL","AYRAN","GURUR","NAMUS","KANIT","ANLAM","HİTAP","AHLAK","DEFİN","MEZAR","MEZAT","BAHÇE","HOTEL","ANTRE","SALON","BETON","BANYO","SONRA","KAYIT","SATIR","SÜTUN","ROMAN"];
+    shuffle(words); 
+
 
     function run() {
         
         trial++;
-        var word = "HANDE";    
-
-
         
+        var word = words[0];
+        console.log(word);
 
         var inp = document.getElementById("mytext").value.toUpperCase(); //i harfinde patliyor direkt büyük harf almak lazım input
        
@@ -137,13 +139,14 @@
             //alert("congrats");
             document.getElementById("headerr").innerHTML = "TEBRİKLER!!<br>" + trial + ". denemede bildin!";
             //buton disable and put new button next game -- just refresh the page
+            out.innerHTML += "<br><button class='btn btn-danger' onclick='window.location.reload();'>YENİ OYUN</button>";
         }
         document.getElementById("mytext").value = "";
         document.getElementById("mytext").focus();
 
         }
         else {
-            alert("dogru gir lan");
+            alert("dogru giriniz lütfen");
             document.getElementById("mytext").value = "";
             document.getElementById("mytext").focus();
 
@@ -152,5 +155,11 @@
 
 
     }
+
+
+    function shuffle(o){
+	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	return o;
+}
   </script> 
 </html>
