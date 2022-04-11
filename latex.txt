@@ -13,3 +13,9 @@ texstudio da commands - bibtex. bundan sonra 2 kere run etmek gerekebiliyor.
 shortcuts
 =========
 ctrl-t comment atıyor. (%)
+
+
+tikz
+====
+
+https://www.baeldung.com/cs/latex-drawing-graphs
