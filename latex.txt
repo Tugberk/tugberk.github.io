@@ -16,6 +16,8 @@ _ isareti ile & isareti vb. sorun cikarabiliyor. onune \ koymak lazim.
 shortcuts
 =========
 ctrl-t comment atıyor. (%)
+ctrl-b bold
+ctrl-i italik (emph degil) -- emph ile italic ayni sey degil.
 
 
 tikz
