@@ -1,0 +1,15 @@
+tex to docx
+pandoc -s dosya.tex -o dosya.docx
+
+
+baslangic dersi:
+https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+
+
+bibtex
+=======
+texstudio da commands - bibtex. bundan sonra 2 kere run etmek gerekebiliyor.
+
+shortcuts
+=========
+ctrl-t comment atıyor. (%)
