@@ -10,6 +10,8 @@ bibtex
 =======
 texstudio da commands - bibtex. bundan sonra 2 kere run etmek gerekebiliyor.
 refler icin : https://verbosus.com/bibtex-style-examples.html
+_ isareti ile & isareti vb. sorun cikarabiliyor. onune \ koymak lazim.
+
 
 shortcuts
 =========
