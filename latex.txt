@@ -22,8 +22,15 @@ ctrl-t comment atıyor. (%)
 ctrl-b bold
 ctrl-i italik (emph degil) -- emph ile italic ayni sey degil.
 
+ayarlardan kisayollar texstudio da ayarlanabiliyor.
+ctrl-d mesela burada duplicate lines olarak degil. ama oraya ayarlanabiliyor
+
 
 tikz
 ====
 
 https://www.baeldung.com/cs/latex-drawing-graphs
+
+
+-----
+
