@@ -1,6 +1,9 @@
 tex to docx
 pandoc -s dosya.tex -o dosya.docx
 
+latex master:
+https://tex.stackexchange.com/users/7615/uwe-ziegenhagen
+
 
 baslangic dersi:
 https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
