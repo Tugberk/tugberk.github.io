@@ -25,6 +25,8 @@ ctrl-i italik (emph degil) -- emph ile italic ayni sey degil.
 ayarlardan kisayollar texstudio da ayarlanabiliyor.
 ctrl-d mesela burada duplicate lines olarak degil. ama oraya ayarlanabiliyor
 
+creating tables easily:
+https://www.tablesgenerator.com/
 
 tikz
 ====
