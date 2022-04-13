@@ -2,6 +2,9 @@ preamble'a sunu ekleyerek duzeni degistirebiliyoruz:
 \usepackage[letterpaper, top=1in, bottom=1in, left=1.20in, right=1.20in, heightrounded]{geometry}
 
 
+line height:
+\renewcommand{\baselinestretch}{1.5} -- satir araligi
+
 tex to docx
 pandoc -s dosya.tex -o dosya.docx
 
