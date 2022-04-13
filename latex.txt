@@ -1,3 +1,7 @@
+preamble'a sunu ekleyerek duzeni degistirebiliyoruz:
+\usepackage[letterpaper, top=1in, bottom=1in, left=1.20in, right=1.20in, heightrounded]{geometry}
+
+
 tex to docx
 pandoc -s dosya.tex -o dosya.docx
 
@@ -5,8 +9,12 @@ latex master:
 https://tex.stackexchange.com/users/7615/uwe-ziegenhagen
 
 
-baslangic dersi:
-https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+lessons
+=======
+baslangic: https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+baslangic_: https://www.youtube.com/watch?v=lgiCpA4zzGU 
+
+
 
 
 bibtex
@@ -35,4 +43,5 @@ https://www.baeldung.com/cs/latex-drawing-graphs
 
 
 -----
+
 
