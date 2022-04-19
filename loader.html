@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<textarea id="myid" rows="50" cols="50"></textarea>
+<br>
+<button onclick="run()">images google</button>
+
+<div id="output"></div>
+</body>
+<script>
+	function run(){
+		var myarr = [];
+		var outp = document.getElementById("output");
+		var myarr = document.getElementById("myid").value.split('\n');
+		//inp = inp.replace(/(?:\r\n|\r|\n)/g, '<br />');
+		console.log(myarr);
+		var mylink = "https://www.google.com/search?tbm=isch&q=";
+		for(i=0;i<myarr.length;i++){
+			outp.innerHTML += "<li>"+"<a href='"+mylink+myarr[i]+"'>"+myarr[i]+"</a>"+"</li>";
+		}
+	}
+</script>
+</html>
