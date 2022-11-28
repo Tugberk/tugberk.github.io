@@ -10,13 +10,33 @@
   </head>
 <body>
 <div class="content"><h1 id="blog"><a class="header-link" href="#blog"></a>BLOG</h1>
-<h2 id="making-websites-out-of-markdown-files--28112022"><a class="header-link" href="#making-websites-out-of-markdown-files--28112022"></a>Making websites out of markdown files @ 28.11.2022</h2>
-<p>There are several ways to do it. One of the good ways is using <strong>pandoc</strong>. I use pandoc almost for everything I do. I should write something about markdown, it would be useful how to use it! Alas, at this point let&#39;s forget about it.</p>
-<p>There are several ways to turn a markdown file into an HTML file. As I stated before, Pandoc is a way for it. However, I don&#39;t find code and syntax highlighting good enough. So I looked for a solution. I saw that you can do <strong>curl</strong> to Github and they can turn your markdown file into html. But I don&#39;t want to write a <strong>css</strong> solution for it! </p>
+<h2 id="making-websites-out-of-markdown-files--28112022"><a class="header-link" href="#making-websites-out-of-markdown-files--28112022"></a><a href="#making-websites-out-of-markdown-files">Making websites out of markdown files</a> @ 28.11.2022</h2>
+<h2 id="generating-a-random-filename--23112022"><a class="header-link" href="#generating-a-random-filename--23112022"></a><a href="#generating-a-random-filename">Generating a random filename</a> @ 23.11.2022</h2>
+<h2 id="bash-script-solution-for-a-simple-task--25112022"><a class="header-link" href="#bash-script-solution-for-a-simple-task--25112022"></a><a href="#bash-script-solution-for-a-simple-task">Bash script solution for a simple task</a> @ 25.11.2022</h2>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+<h2 id="making-websites-out-of-markdown-files"><a class="header-link" href="#making-websites-out-of-markdown-files"></a>Making websites out of markdown files</h2>
+<p>There are several ways to do it. One of the good ways is using <strong>pandoc</strong>. I use pandoc almost for everything I do writing-wise. I should write something about markdown, it would be useful how to use it! Alas, at this point let&#39;s forget about it.</p>
+<p>There are several ways to turn a markdown file into an HTML file. As I stated before, Pandoc is one way for it. However, I don&#39;t find code and syntax highlighting good enough. So I looked for a solution. I saw that you can do <strong>curl</strong> to Github and they can turn your markdown file into html. But I don&#39;t want to write a <strong>css</strong> solution for it.</p>
 <p>Okay, so there is actually a solution for that. <a href="https://github.com/mixu/markdown-styles">This repo</a> here gives you the repo and the necessary information to download and use it. It can be downloaded via <strong>npm</strong>. Npm is the package manager for javascript. You can install <strong>node</strong> first and later use npm to download markdown-styles.</p>
 <p>After downloading it, you can use <strong>generate-md</strong> command and a layout to get your HTML file. There are several styles you can find in the repo website. This page is actually converted to HTML by using this service! Let me remind you that this is an online service.</p>
 <pre class="hljs"><code>generate-md --layout github --input inputfile.md --output outputfile.html</code></pre><p>That is it!</p>
-<h1 id="random-number--23112022"><a class="header-link" href="#random-number--23112022"></a>Random number @ 23.11.2022</h1>
+<hr>
+
+<h2 id="generating-a-random-filename"><a class="header-link" href="#generating-a-random-filename"></a>Generating a random filename</h2>
 <p>I have a Bash function called <strong>Beamer</strong> and it works as such: <code>beamer filename</code>. Of course, I am using <strong>markdown</strong> and <strong>beamer</strong> together, that is why I dont need to give the <em>md</em> extension. I use it in the function. Well, here is the full function. Lets write it first and later talk about it.</p>
 <pre class="hljs"><code><span class="hljs-function"><span class="hljs-title">beamer</span></span>() {
     FOO=$(uuidgen | tr -d <span class="hljs-string">&quot;-&quot;</span>)
@@ -24,7 +44,9 @@
     }</code></pre><p>As you can see, I dont want to double click the PDF file, so I open it by using <em>xdg-open</em>. However, when the file is already open, pandoc will give you an error saying that it cannot create the <strong>pdf</strong> file. Therefore, I thought that if I could create a random string, I can always use that! Well, of course this uses the physical memory because pdf files created before are not deleted. But this has a very easy solution, I can always delete them afterwards!</p>
 <p>However, this now helps me because whenever I change or add something to my markdown file, I can just say <code>beamer filename</code> and just wait a little before the PDF opens up. </p>
 <p>Here, there are lots of ways to create a random string, I found this solution online and it solves my problem perfecltly. It is also very short and it creates a random string!</p>
-<h1 id="bash-script--25112022"><a class="header-link" href="#bash-script--25112022"></a>Bash Script @ 25.11.2022</h1>
+<hr>
+
+<h2 id="bash-script-solution-for-a-simple-task"><a class="header-link" href="#bash-script-solution-for-a-simple-task"></a>Bash script solution for a simple task</h2>
 <p>I usually try to automate my stuff regularly. I use a lot of bash scripting for that and I believe it is very useful in that sense. </p>
 <p>I created a <em>create</em> command which lets me copy some template for <em>beamer</em> and <em>eisvogel</em> documents. Then I have additional commands to turn them into Pdf. </p>
 <p>So, I had one such file and tried to do it. However, in the YAML header I had a <em>logo.png</em> which I did not have in the current directory. I tried <strong>cp</strong> command but it turned out that I cannot use it if I want to copy a file to multiple directories.</p>
@@ -35,6 +57,7 @@ Well, I copy the file to the parent directory and tried to see if I can just <em
     cp logo.png <span class="hljs-variable">$x</span>
 <span class="hljs-keyword">done</span></code></pre><p>Voila! It just copied itself to every folder in the parent directory! I also tried to do some Bash stuff such as <code>cp logo.png week{1..14}</code> but was not successful at that. This is a good example for bash scripting.</p>
 <p>Lastly, there is probably a better solution than awk $9, maybe there is something to indicate the <em>last</em> column but one can always learn more. Also, you can do <em>cut</em> instead of AWK as well.</p>
+<hr>
 </div>
 </body>
 </html>
