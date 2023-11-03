@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Loader</title>
+		<style type="text/css">
+		body{margin:40px
+			auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+			10px}h1,h2,h3{line-height:1.2}
+			img{
+				width: 100%;
+				height: auto
+			}
+			</style>
+		</head>
+<body>
+	<div id="wrapper">
+		<textarea id="myid" rows="20" cols="50"></textarea>
+		<br>
+		<button onclick="run()">LOAD</button>
+	</div>
+
+<span id="loading"></span>
+<a onclick="run()"><div id="output"></div></a>
+</body>
+<script>
+	function run(){
+		let myarr = [];
+		let outp = document.getElementById("output");
+		myarr = document.getElementById("myid").value.split('\n');
+		let hdr = "https://www.reddit.com/r/";
+		let ftr = ".json?limit=50";
+		let newarr = [];
+
+		//for reddit
+		for(let i=0;i<myarr.length;i++){
+			newarr.push(hdr + myarr[i] + ftr);
+		}
+			
+		getapi(newarr[Math.floor(Math.random() * newarr.length)]); //choose sth in random
+		document.getElementById("wrapper").style.display = "none"; //lose the textarea
+	}
+
+	function hideloader() {
+    	document.getElementById('wrapper').style.display = 'none';
+	}
+
+function show(data) {
+    
+    let tab = "";
+	var myRand = Math.floor(Math.random() * 24);
+
+//here we need to check if it is an image
+
+	let somedata = data.data.children[myRand].data.url;
+	console.log(somedata);
+	document.getElementById("loading").innerHTML = somedata;
+	let charArr = [".gif",".png",".jpg",".jpeg"]; //get images
+	if(charArr.some(char => somedata.includes(char))) {
+		if(somedata.substr(somedata.length - 4) === "gifv")  {
+			document.getElementById("loading").innerHTML = `<a href='${somedata}'>${somedata}</a>`;
+	}
+		tab += `<img src='${somedata}'><br>`;
+	}
+	else {
+		run();
+	}
+    document.getElementById("output").innerHTML = tab;
+}
+
+async function getapi(url) {
+    
+    // Storing response
+    const response = await fetch(url);
+    
+    // Storing data in form of JSON
+    var data = await response.json();
+    console.log(data);
+    if (response) {
+        //hideloader();
+    }
+    show(data);
+}
+
+
+</script>
+</html>
