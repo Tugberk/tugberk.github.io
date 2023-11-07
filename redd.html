@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 	<head>
@@ -28,6 +29,7 @@
 <a onclick="run()"><div id="output"></div></a>
 </body>
 <script>
+	var visited = [];
 	function run(){
 		let myarr = [];
 		let outp = document.getElementById("output");
@@ -57,19 +59,35 @@ function show(data) {
 //here we need to check if it is an image
 
 	let somedata = data.data.children[myRand].data.url;
-	console.log(somedata);
-	document.getElementById("loading").innerHTML = somedata;
-	let charArr = [".gif",".png",".jpg",".jpeg"]; //get images
-	if(charArr.some(char => somedata.includes(char))) {
-		if(somedata.substr(somedata.length - 4) === "gifv")  {
+	//console.log(somedata);
+
+	const charArr = [".gif",".png",".jpg",".jpeg"]; //get images
+	if(charArr.some(char => somedata.includes(char))) 
+	{
+		document.getElementById("loading").innerHTML = somedata;
+		
+		if(somedata.substr(somedata.length - 4) === "gifv")  
+		{
 			document.getElementById("loading").innerHTML = `<a href='${somedata}'>${somedata}</a>`;
+		}
+		if(visited.includes(somedata)){
+			
+			console.log("visited before");
+			
+			run();
+		}
+		else {
+			visited.push(somedata);
+			tab += `<img src='${somedata}'><br>`;
+		}
+	
 	}
-		tab += `<img src='${somedata}'><br>`;
-	}
-	else {
+	else 
+	{ //if it is not an image, reload.
 		run();
 	}
-    document.getElementById("output").innerHTML = tab;
+	document.getElementById("output").innerHTML = tab; //load the image
+	
 }
 
 async function getapi(url) {
@@ -79,13 +97,25 @@ async function getapi(url) {
     
     // Storing data in form of JSON
     var data = await response.json();
-    console.log(data);
+    //console.log(data);
     if (response) {
         //hideloader();
     }
     show(data);
 }
 
+document.addEventListener("keydown", function(event) {
+	if (event.key === "h") {
+		let output = document.getElementById("output");
+		
+		if(output.style.display === "block"){
+			output.style.display = "none";
+		}
+		else {
+			output.style.display = "block";
+		}
+}
+})
 
 </script>
 </html>
