@@ -30,6 +30,8 @@
 </body>
 <script>
 	var visited = [];
+	
+
 	function run(){
 		let myarr = [];
 		let outp = document.getElementById("output");
@@ -56,7 +58,7 @@ function show(data) {
     let tab = "";
 	var myRand = Math.floor(Math.random() * 24);
 
-//here we need to check if it is an image
+	//here we need to check if it is an image
 
 	let somedata = data.data.children[myRand].data.url;
 	//console.log(somedata);
@@ -64,11 +66,11 @@ function show(data) {
 	const charArr = [".gif",".png",".jpg",".jpeg"]; //get images
 	if(charArr.some(char => somedata.includes(char))) 
 	{
-		document.getElementById("loading").innerHTML = somedata;
+		document.getElementById("loading").innerHTML = somedata + "<br>" + data.data.children[0].data.subreddit ;
 		
 		if(somedata.substr(somedata.length - 4) === "gifv")  
 		{
-			document.getElementById("loading").innerHTML = `<a href='${somedata}'>${somedata}</a>`;
+			document.getElementById("loading").innerHTML = `<a target="_blank" href='${somedata}'>${somedata}</a>`;
 		}
 		if(visited.includes(somedata)){
 			
@@ -92,11 +94,28 @@ function show(data) {
 
 async function getapi(url) {
     
-    // Storing response
-    const response = await fetch(url);
+    let response;
+    try {
+    	response = await fetch(url); 
+    	//here only try catch doesnt work bc there is no real error
+    	//it gives a response but not the one we want
+    	if( !response.ok) {
+    		console.log("cant find it. reloading again.");
+    		return run(); //if not return it doesnt work
+    	}
+
+    	
+    }
+    catch(err) {
+    	
+    	console.log(`There is an error ${err}`)
+    	
+    }
     
     // Storing data in form of JSON
     var data = await response.json();
+    
+     
     //console.log(data);
     if (response) {
         //hideloader();
