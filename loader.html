@@ -1,24 +1,48 @@
 <!doctype html>
 <html>
 <head>
+	<title>Loader</title>
+	<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0"/>
+        <style type="text/css">
+        	body{margin:40px
+	auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+	10px}h1,h2,h3{line-height:1.2}
+</style>
 </head>
 <body>
-<textarea id="myid" rows="50" cols="50"></textarea>
-<br>
-<button onclick="run()">images google</button>
-
-<div id="output"></div>
+	<h1>Loader</h1>
+	Ek:<br><input type="text" id="ek"><br>
+	<textarea id="myid" rows="50" cols="50"></textarea>
+	<br>
+	<button onclick="run()">images google</button>
+	
+	<div id="output"></div>
 </body>
 <script>
 	function run(){
-		var myarr = [];
-		var outp = document.getElementById("output");
-		var myarr = document.getElementById("myid").value.split('\n');
-		//inp = inp.replace(/(?:\r\n|\r|\n)/g, '<br />');
-		console.log(myarr);
-		var mylink = "https://www.google.com/search?tbm=isch&q=";
-		for(i=0;i<myarr.length;i++){
-			outp.innerHTML += "<li>"+"<a href='"+mylink+myarr[i]+"'>"+myarr[i]+"</a>"+"</li>";
+
+		let ek = document.getElementById("ek").value;
+		let myarr = [];
+		let outp = document.getElementById("output");
+		outp.innerHTML = "";
+		myarr = document.getElementById("myid").value.split('\n');
+		
+		
+		//this can be turned into an object and go through it while creating links
+		//we can also select them by hand
+		let googleImagesLink = "https://www.google.com/search?tbm=isch&q=";
+		let googleSearchLink = "https://www.google.com/search?q=";
+		let redditSearchLink = "https://www.reddit.com/search/?q=";
+
+		for(let i=0; i < myarr.length; i++){		
+			outp.innerHTML += `<li>
+				${myarr[i]}
+				<a href="${googleImagesLink}+${myarr[i]}+${ek}">(g. images)</a> |
+				<a href="${googleSearchLink}+${myarr[i]}+${ek}">(google)</a> |
+				<a href="${redditSearchLink}+${myarr[i]}+${ek}">(reddit)</a> |
+			</li>
+			`
 		}
 	}
 </script>
