@@ -1,0 +1,114 @@
+
+<!doctype html>
+<html>
+    <head>
+        <!-- <script src="run.js"></script> -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Reddit Loader</title>
+        <style type="text/css">
+            body{margin:40px
+                auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+                10px}h1,h2,h3{line-height:1.2}
+                img{
+                    width: 100%;
+                    height: auto
+                }
+                #loading {
+                    font-size: 10px;
+                }
+                </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <textarea id="myid" rows="20" cols="50"></textarea>
+            <br>
+            <button onclick="run()">LOAD</button>
+        </div>
+        <span id="myspan"></span>
+        <div id="output" onclick="run()""></div>
+    </body>
+  <script>
+    
+//lets define an array first to see whether we went to that list
+var visitedLinks =[];
+let world = {};
+var shownImages = [];
+var deleted =[];
+
+async function fetchURL(word) {
+    if(visitedLinks.includes(word)) {
+        console.log("Loading from the cache");
+        show(world[word], word);
+        return; //we need this. show comes back here
+    }
+    else {
+        if(deleted.includes(word)) {
+            return;
+        }
+        visitedLinks.push(word);
+    }
+
+    let url = "https://www.reddit.com/r/" + word + "/.json?limit=50";
+    //TODO: if the subreddit is invalid, just dont care about it
+    try {
+        console.log("i am fetching something. beware!")
+        const response = await fetch(url);
+        const res = await response.json();
+        let myArr = [];
+        const formats = [".gif",".png",".jpg",".jpeg"];
+        //all images are loaded into myArr arr
+        for(let i=0;i<res.data.children.length;i++){
+            let imageLink = res.data.children[i].data.url;
+            if(formats.some(char => imageLink.includes(char) )) {
+                myArr.push(imageLink);
+            }
+        }
+        //add array as value for a key
+        world[word] = myArr;      
+        //console.log(world["watches"]); //works
+        show(world[word], word);   
+    }
+    catch (error) {
+        console.error(`error fetching data ${error}`);   
+    }
+  }
+
+function show(arr, word) {
+    if(world[word].length == 0) {
+     //means that all images for this is done
+     console.log("all data is shown. empty list");
+     console.log("checking for others...");
+     //TRY
+     delete world[word];
+     //remove from links and add to deleted
+    visitedLinks.splice(word,1);
+    deleted.push(word);
+     return;
+    }
+    let rnd = getRand(arr.length);
+    let output = document.getElementById("output");
+    document.getElementById("myspan").innerHTML = `Subreddit: <b>${word}</b> <br><a target="_blank" href=${arr[rnd]}>${arr[rnd]}</a>`;
+    output.innerHTML = `<img src='${arr[rnd]}'>`;
+    //remove from list
+    world[word].splice(rnd,1);
+}
+
+
+function getRand(y) {
+    return Math.floor(Math.random() * (y));
+}
+
+
+function run() {
+    let subs = [];
+    subs = document.getElementById("myid").value.split('\n');
+    document.getElementById("wrapper").style.display = 'none';
+    let idx = getRand(subs.length);
+    fetchURL(subs[idx]);
+}
+
+    
+  </script>
+
+</html>
