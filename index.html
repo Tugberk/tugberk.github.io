@@ -1,13 +1,23 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8">
-    <title>Blog</title>
+    <title>Apps</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="personal blog">
-    <link rel="stylesheet" href="css/style.css">
+    <style type="text/css">
+        	body{margin:40px
+  	auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+  	10px}h1,h2,h3{line-height:1.2}
+  </style>
+    
   </head>
   <body>
-    hell0 w0rld
-    <li><a href="latex.txt">LateX notes</a></li>
+    
   </body>
+  <script>
+    let headers = ["Loader", "Reddit"];
+    let links = ["loader.html","redd.html"];
+    for(let i=0;i<headers.length;i++){
+      output.innerHTML += `<li><a href="${links[i]}">${headers[i]}</a></li>`;
+    }
+  </script>
 </html>
