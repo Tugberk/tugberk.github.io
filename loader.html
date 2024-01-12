@@ -34,6 +34,7 @@
 		let googleImagesLink = "https://www.google.com/search?tbm=isch&q=";
 		let googleSearchLink = "https://www.google.com/search?q=";
 		let redditSearchLink = "https://www.reddit.com/search/?q=";
+		let duckduckgoSearchLink = "https://duckduckgo.com/?q=";
 
 		for(let i=0; i < myarr.length; i++){		
 			outp.innerHTML += `<li>
@@ -41,6 +42,8 @@
 				<a target="_blank" href="${googleImagesLink}+${myarr[i]}+${ek}">(g. images)</a> |
 				<a target="_blank" href="${googleSearchLink}+${myarr[i]}+${ek}">(google)</a> |
 				<a target="_blank" href="${redditSearchLink}+${myarr[i]}+${ek}">(reddit)</a> |
+    				<a target="_blank" href="${duckduckgoSearchLink}+${myarr[i]}+${ek}">(duckduckgo)</a>
+    				
 			</li>
 			`
 		}
