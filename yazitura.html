@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<body>
+</body>
+<script>
+
+function run() {
+	
+	let sonuc = Math.random() < 0.5 ? "Yazı" : "Tura";
+	let result = {
+		"sonuc": `${sonuc}` 
+	};
+	let jsonString = JSON.stringify(result);
+	document.write(jsonString);	
+}
+run();
+
+</script>
+</html>
