@@ -27,6 +27,9 @@
     <div id="wrapper">
         <textarea id="myid" rows="50" cols="50"></textarea>
         <br>
+        <input type="checkbox" id="duckduck" value="yes">
+        <label for="duckduck">enable duck duck go</label><br>
+        <br>
         <button onclick="run()">make a grid out of image links</button>
     </div>
     <hr>
@@ -37,13 +40,21 @@
     </body>
     <script>
         function run(){
+            let mycheck = document.getElementById("duckduck");
+            console.log(mycheck);
             let myArr = document.getElementById("myid").value.split("\n");
+
             for(let i=0;i<myArr.length;i++){
-                document.getElementById("mygrid").innerHTML += `<div class='grid-item'><img src='${myArr[i]}'></div>`;
+                if (mycheck.checked == true) {
+                       document.getElementById("mygrid").innerHTML += `<div class='grid-item'><img src='https://external-content.duckduckgo.com/iu/?u=${myArr[i]}'></div>`; 
+                }
+                else {
+                    document.getElementById("mygrid").innerHTML += `<div class='grid-item'><img src='${myArr[i]}'></div>`;
             }
 
             document.getElementById("wrapper").style.display = "none";
         }
+    }
 
     </script>
     </html>
