@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0"/>
+    <style>
+        .grid-container {
+        display: grid;
+        row-gap: 10px;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+        }
+    
+        .grid-item {
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        }
+    
+        img {
+        max-width: 500px
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <textarea id="myid" rows="50" cols="50"></textarea>
+        <br>
+        <button onclick="run()">make a grid out of image links</button>
+    </div>
+    <hr>
+    <div class="grid-container" id="mygrid">
+        
+
+    </div>
+    </body>
+    <script>
+        function run(){
+            let myArr = document.getElementById("myid").value.split("\n");
+            for(let i=0;i<myArr.length;i++){
+                document.getElementById("mygrid").innerHTML += `<div class='grid-item'><img src='${myArr[i]}'></div>`;
+            }
+
+            document.getElementById("wrapper").style.display = "none";
+        }
+
+    </script>
+    </html>
+    
