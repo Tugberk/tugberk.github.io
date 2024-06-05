@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+
+<head><meta
+    charset="utf-8"><meta
+    name="viewport" content="width=device-width, initial-scale=1"><title>text editor</title><style type="text/css">body{margin:40px
+    auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+    10px}h1,h2,h3{line-height:1.2}</style></head>
+<body>
+    <div>
+        <textarea id="mytext" cols="80" rows="50">
+</textarea>
+<br><br>
+        <button onclick="clean()">clear</button>
+        <button onclick="run()">remove whitespace</button>
+        <br>
+        <button onclick="rep()">replace</button>
+        <button onclick="trim()">trim</button>
+        <button onclick="uniq()">uniq</button>
+        <hr>
+        <br>
+        <input type="text" id="filter"><button onclick="grepv()">grep -v</button>
+        <br>
+        <input type="text" id="filter2"><button onclick="grep()">grep</button>
+        <hr>
+        <input type="text" id="filename" placeholder="file"><input type="text" id="uzanti" value=".txt"><button onclick="save()">save</button>
+        
+    </div>
+    <div id="output"></div>
+</body>
+<script>
+
+    function clean() {
+        document.getElementById('mytext').value = "";
+        document.getElementById('mytext').focus();
+
+    }
+
+    function save() {
+        var textToWrite = document.getElementById('mytext').value;
+        let rnd = Math.floor(Math.random() * 101);
+        let uzanti = document.getElementById("uzanti").value;
+        var textFileAsBlob = new Blob([ textToWrite ], { type: 'text/plain' });
+        let fname = document.getElementById("filename").value;
+        
+        var fileNameToSaveAs = fname.replace(" ","-") + "_" + rnd.toString() + uzanti;
+        
+
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        if (window.webkitURL != null) {
+            // Chrome allows the link to be clicked without actually adding it to the DOM.
+            downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+        } else {
+            // Firefox requires the link to be added to the DOM before it can be clicked.
+            downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+            downloadLink.onclick = destroyClickedElement;
+            downloadLink.style.display = "none";
+            document.body.appendChild(downloadLink);
+        }
+
+        downloadLink.click();
+        document.getElementById("output").innerHTML = `${fname} indirildi`;
+
+}
+
+    function uniq() {
+        let mytext = document.getElementById("mytext").value.split("\n");
+        let newlist = [];
+        for(let i=0;i<mytext.length;i++){
+            if(!newlist.includes(mytext[i])) {
+                newlist.push(mytext[i]);
+            }
+        }
+        document.getElementById("mytext").value = "";
+        for(let i=0;i<newlist.length;i++){
+            document.getElementById("mytext").value += newlist[i] + "\n";
+        }
+
+
+    }
+
+    function rep() 
+    {
+        let mytext = document.getElementById("mytext").value.split(",");
+        document.getElementById("mytext").value = "";
+        for(let i=0;i<mytext.length;i++){
+            document.getElementById("mytext").value += mytext[i] + "\n";
+        }
+       
+
+    }
+
+
+/*
+    function grepv() {
+        
+        let mytext = document.getElementById("mytext").value.split("\n");
+        let filterText = document.getElementById("filter").value;
+        let newlist = [];
+
+        for(let i=0;i<mytext.length;i++){
+            if(mytext[i] != "") {
+                
+                if(!mytext[i].includes(filterText)) {
+                    newlist.push(mytext[i]);
+                }
+            }
+        }
+
+        document.getElementById("mytext").value = "";
+        for(let i=0;i<newlist.length;i++){
+            document.getElementById("mytext").value += newlist[i] + "\n";
+        }
+      
+    }
+*/
+
+function grepv() {
+        
+        let mytext = document.getElementById("mytext").value.split("\n");
+        let filterText = document.getElementById("filter").value.split(",");
+        console.log(filterText);
+        let newlist = [];
+
+        //multiple filter.. some func works great.
+        for(let i=0;i<mytext.length;i++){
+            if(filterText.some(word => mytext[i].includes(word))) {
+                console.log(`${mytext[i]} includes a filterword`)
+            } else {
+                newlist.push(mytext[i])
+            }
+        }
+        console.log(newlist)
+
+
+
+        document.getElementById("mytext").value = "";
+        for(let i=0;i<newlist.length;i++){
+            document.getElementById("mytext").value += newlist[i] + "\n";
+        }
+      
+    }
+
+
+    function grep() {
+
+        let mytext = document.getElementById("mytext").value.split("\n");
+        let filterText = document.getElementById("filter2").value;
+        let newlist = [];
+
+        for(let i=0;i<mytext.length;i++){
+            if(mytext[i] != "") {
+                if(mytext[i].includes(filterText)) {
+                    newlist.push(mytext[i]);
+                }
+            }
+        }
+
+        document.getElementById("mytext").value = "";
+        for(let i=0;i<newlist.length;i++){
+            document.getElementById("mytext").value += newlist[i] + "\n";
+        }
+
+    }
+
+    function trim() {
+        let mytext = document.getElementById("mytext").value.split("\n");
+        let newlist = [];
+
+        for(let i=0;i<mytext.length;i++){
+            if(mytext[i] != "") {
+                let to_add = mytext[i].trim();
+                newlist.push(to_add);
+            }
+        }
+        document.getElementById("mytext").value = "";
+        for(let i=0;i<newlist.length;i++){
+            document.getElementById("mytext").value += newlist[i] + "\n";
+
+        }
+    }
+
+ 
+    function run() { 
+        let mytext = document.getElementById("mytext").value.split("\n");
+        let newlist =[];
+
+        for(let i=0;i<mytext.length;i++){
+            if(mytext[i] != "") {
+                let to_add = mytext[i].trim().replace('",',"").replace('"','');
+                if (!newlist.includes(to_add)) {
+                    newlist.push(to_add);
+                }
+        }
+       
+    }
+    console.log(newlist);
+    document.getElementById("mytext").value = "";
+    for(let i=0;i<newlist.length;i++) {
+        document.getElementById("mytext").value += newlist[i] + "\n";
+    }
+    
+    }
+   
+</script>
+
+</html>
