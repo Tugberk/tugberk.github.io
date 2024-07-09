@@ -31,6 +31,7 @@
         <label for="duckduck">enable duck duck go</label><br>
         <br>
         <button onclick="run()">make a grid out of image links</button>
+        <button onclick="cleanup()">temizle</button>
     </div>
     <hr>
     <div class="grid-container" id="mygrid">
@@ -39,6 +40,9 @@
     </div>
     </body>
     <script>
+        function cleanup() {
+            document.getElementById("myid").value = "";
+        }
         function run(){
             let mycheck = document.getElementById("duckduck");
             console.log(mycheck);
