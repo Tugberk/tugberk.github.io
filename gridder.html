@@ -32,6 +32,7 @@
         <br>
         <button onclick="run()">make a grid out of image links</button>
         <button onclick="cleanup()">temizle</button>
+        <button onclick="rep()">replace</button>
     </div>
     <hr>
     <div class="grid-container" id="mygrid">
@@ -60,6 +61,17 @@
 
             document.getElementById("wrapper").style.display = "none";
         }
+    }
+
+        function rep() 
+    {
+        let mytext = document.getElementById("mytext").value.split(",");
+        document.getElementById("mytext").value = "";
+        for(let i=0;i<mytext.length;i++){
+            document.getElementById("mytext").value += mytext[i] + "\n";
+        }
+       
+
     }
 
     </script>
