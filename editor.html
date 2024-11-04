@@ -78,6 +78,8 @@
         <button onclick="rep()">Replace</button>
         <button onclick="trim()">Trim</button>
         <button onclick="uniq()">Unique Lines</button>
+        <button onclick="copy()">Copy Area</button>
+        <button onclick="shuffle()">Shuffle</button>
         <hr>
         <input type="text" id="filter" placeholder="Filter Text">
         <button onclick="grepv()">Grep -v</button>
@@ -91,6 +93,20 @@
     </div>
     <div id="output"></div>
     <script>
+
+        //todo
+        function shuffle(params) {
+            console.log("under construction");
+            //get values and put in an array
+            //later put the array back in
+            
+            
+        }
+
+        function copyText() {
+            navigator.clipboard.writeText(document.getElementById("mytext").value;
+        }
+        
         function clean() {
             document.getElementById('mytext').value = "";
             document.getElementById('mytext').focus();
