@@ -94,11 +94,13 @@
     <div id="output"></div>
     <script>
 
-        //todo
-        function shuffle(params) {
+         function shuffle() {
             console.log("under construction");
             //get values and put in an array
             //later put the array back in
+			let mytext = document.getElementById("mytext").value.split("\n");
+			mytext = mytext.sort(() => Math.random() - 0.5);
+			document.getElementById("mytext").value = mytext.join("\n");
             
             
         }
