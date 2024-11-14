@@ -75,11 +75,13 @@
         <br><br>
         <button onclick="clean()">Clear</button>
         <button onclick="run()">Remove Whitespace</button>
+		<button onclick="deleteEmptyLines()">Delete Empty Lines</button>
         <button onclick="rep()">Replace</button>
         <button onclick="trim()">Trim</button>
         <button onclick="uniq()">Unique Lines</button>
         <button onclick="copy()">Copy Area</button>
         <button onclick="shuffle()">Shuffle</button>
+		
         <hr>
         <input type="text" id="filter" placeholder="Filter Text">
         <button onclick="grepv()">Grep -v</button>
@@ -104,6 +106,20 @@
             
             
         }
+		
+		
+		function deleteEmptyLines() {
+			let mytext = document.getElementById("mytext").value.split("\n");
+			let temp = [];
+			for(let i = 0; i < mytext.length; i++){
+				if(mytext[i] != "") {
+					temp.push(mytext[i]);
+				}
+			}
+			console.log(temp);
+			document.getElementById("mytext").value = temp.join("\n");
+		
+		}
 
         function copyText() {
             navigator.clipboard.writeText(document.getElementById("mytext").value);
