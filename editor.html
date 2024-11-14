@@ -65,6 +65,11 @@
             border-top: 2px solid #ddd;
             margin: 20px 0;
         }
+		span {
+			font-size: 12px;
+			
+				
+		}
     </style>
 </head>
 
@@ -72,6 +77,7 @@
     <div>
         <h1>Text Editor</h1>
         <textarea id="mytext"></textarea>
+		<span id="myspan">0 satır</span>
         <br><br>
         <button onclick="clean()">Clear</button>
         <button onclick="run()">Remove Whitespace</button>
@@ -81,6 +87,7 @@
         <button onclick="uniq()">Unique Lines</button>
         <button onclick="copy()">Copy Area</button>
         <button onclick="shuffle()">Shuffle</button>
+		<button onclick="sortText()">Sort</button>
 		
         <hr>
         <input type="text" id="filter" placeholder="Filter Text">
@@ -95,6 +102,27 @@
     </div>
     <div id="output"></div>
     <script>
+	
+	
+		document.getElementById("mytext").addEventListener("input",getAnalytics);
+	
+		//get line count and char and word count
+		function getAnalytics() {
+			let mytext = document.getElementById("mytext").value.split("\n");
+			let numOfElements = mytext.length;
+			document.getElementById("myspan").innerText = `${numOfElements} satır`;
+		}
+		
+		
+		
+		
+	
+		//sort function
+		function sortText() {
+			let mytext = document.getElementById("mytext").value.split("\n");
+			mytext.sort();
+			document.getElementById("mytext").value = mytext.join("\n");
+		}
 
          function shuffle() {
             console.log("under construction");
