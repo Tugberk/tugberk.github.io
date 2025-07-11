@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      position: relative; /* Needed for absolute positioning */
+    }
+
+    .tag {
+         position: absolute;
+         top: 12px;
+         left: 12px;
+         background: rgba(221, 29, 29, 0.7); /* Semi-transparent black */
+         color: #fff;
+         font-size: 0.5rem;
+         padding: 4px 8px;
+         border-radius: 4px;
+         text-transform: uppercase;
+         font-weight: bold;
+      }
+
+      .tagsc {
+         position: absolute;
+         top: 12px;
+         
+         right: 10px;
+         background: rgba(221, 29, 29, 0.7); /* Semi-transparent black */
+         color: #fff;
+         font-size: 0.8rem;
+         padding: 4px 8px;
+         border-radius: 4px;
+         text-transform: uppercase;
+         font-weight: bold;
+      }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 0 0 8px;
+      color: #333;
+    }
+
+    .author {
+      font-size: 0.85rem;
+      color: #777;
+      margin: 0 0 4px;
+    }
+
+    .subreddit {
+      font-size: 0.9rem;
+      color: #555;
+      font-weight: 500;
+    }
+  </style>
+     <title>my reddit</title>
+     <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+
+      Subreddit:<input type="text" id="myinput">
+      <button onclick="getSubreddit()">get()</button> <span id="myspan"></span>
+      <hr>
+
+      <div class="grid" id="mygrid">
+         <!-- 
+         <div class="card">
+            <img src="https://placekitten.com/400/250" alt="Example Image">
+            <div class="card-content">
+            <div class="title">Cute Kitten Picture</div>
+            <div class="author">by catlover123</div>
+            <div class="subreddit">r/aww</div>
+            </div>
+         </div>
+         -->
+
+  </div>
+      
+
+   </body>
+
+
+
+<script>
+
+function getSubreddit() {
+   const subredditName = document.getElementById("myinput").value;
+   let myurl = `https://www.reddit.com/r/${subredditName}.json`;
+
+   //console.log("got it, fetching it...")
+   document.getElementById("myspan").innerText = "Loading...";
+   document.getElementById('mygrid').innerHTML = "";
+
+   fetchURL(myurl);
+   
+}
+
+
+async function fetchURL(myurl) {
+   const response = await fetch(myurl);
+   const res = await response.json();
+   //console.log(res);
+   run(res);
+
+}
+
+function run(data) {
+
+   console.log("running function is on!");
+   console.log(data);
+   console.log(data.data);
+   const children = data.data.children;
+   console.log(children);
+
+
+
+   for(let i=0;i<children.length;i++){
+      
+      //const children = data.data.children;
+            
+
+
+      for(let j=0;j<children.length;j++){
+         
+         const title = children[j].data.title;
+         const thumbnail = children[j].data.thumbnail;
+         const author = children[j].data.author;
+         const subreddit = children[j].data.subreddit;
+         const post_hint = children[j].data.post_hint;
+         const score = children[j].data.score;
+         let the_url = "";
+         
+         if(children[j].data.preview !== undefined && children[j].data.preview !== null) {
+            if(children[j].data.preview.reddit_video_preview !== undefined && children[j].data.preview.reddit_video_preview !== null) {
+               the_url = children[j].data.preview.reddit_video_preview.fallback_url;
+            }
+            else {
+               the_url = children[j].data.url;
+            }
+            
+         }
+         else {
+            the_url = children[j].data.url;
+         }
+
+         document.getElementById('mygrid').innerHTML += `
+            <div class="card">
+                  <div class="tag">${post_hint}</div>
+                  <div class="tagsc">${score}</div>
+                  <a target="_blank" href='${the_url}'><img src="${thumbnail}" alt="Example Image"></a>
+                  <div class="card-content">
+                  <div class="title">${title}</div>
+                  <a href='https://www.reddit.com/u/${author}'><div class="author">${author}</div></a>
+                  <div class="subreddit"><a href='https://www.reddit.com/r/${subreddit}' target="_blank">r/${subreddit}</a></div>
+               </div>
+            </div>
+         `;
+         document.getElementById("myspan").innerText = "";
+         
+      }
+   }
+
+}
+
+
+</script>
+
+
+
+</html>
