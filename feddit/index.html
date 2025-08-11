@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      position: relative; /* Needed for absolute positioning */
+    }
+
+    .tag {
+         position: absolute;
+         top: 12px;
+         left: 12px;
+         background: rgba(221, 29, 29, 0.7); /* Semi-transparent black */
+         color: #fff;
+         font-size: 0.5rem;
+         padding: 4px 8px;
+         border-radius: 4px;
+         text-transform: uppercase;
+         font-weight: bold;
+      }
+
+      .tagsc {
+         position: absolute;
+         top: 12px;
+         
+         right: 10px;
+         background: rgba(221, 29, 29, 0.7); /* Semi-transparent black */
+         color: #fff;
+         font-size: 0.8rem;
+         padding: 4px 8px;
+         border-radius: 4px;
+         text-transform: uppercase;
+         font-weight: bold;
+      }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 0 0 8px;
+      color: #333;
+    }
+
+    .author {
+      font-size: 0.85rem;
+      color: #777;
+      margin: 0 0 4px;
+    }
+
+    .subreddit {
+      font-size: 0.9rem;
+      color: #555;
+      font-weight: 500;
+    }
+  </style>
+   </head>
+   <body>
+      Subreddit:<input type="text" id="myinput">
+       <select name='type' id='typeSelect'>
+        <option value="" selected>none</option>
+		<option value="hot">hot</option>
+        <option value="new">new</option>
+        <option value="top">top</option>
+      </select>
+      <button onclick="getSubredditX()">accio</button> <span id="myspan"></span>
+      <hr>
+
+      <div class="grid" id="mygrid">
+         <!-- 
+         <div class="card">
+            <img src="https://placekitten.com/400/250" alt="Example Image">
+            <div class="card-content">
+            <div class="title">Cute Kitten Picture</div>
+            <div class="author">by catlover123</div>
+            <div class="subreddit">r/aww</div>
+            </div>
+         </div>
+         -->
+
+  </div>
+
+
+  <div id="scientist">
+
+      <div class="grid" id="mygrid">
+         
+         <div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/en/4/42/Richard_Feynman_Nobel.jpg" alt="Richard Feynman">
+  <div class="card-content">
+    <div class="title">The Pleasure of Finding Things Out</div>
+    <div class="author">Richard Feynman</div>
+    <div class="subreddit">r/Physics</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg" alt="Albert Einstein">
+  <div class="card-content">
+    <div class="title">General Theory of Relativity Explained</div>
+    <div class="author">Albert Einstein</div>
+    <div class="subreddit">r/Physics</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/N.Tesla.JPG" alt="Nikola Tesla">
+  <div class="card-content">
+    <div class="title">Tesla's Wireless Power Vision</div>
+    <div class="author">Nikola Tesla</div>
+    <div class="subreddit">r/Engineering</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRYwmMPKbVz10n1M3npNB61qCZsTZVRQtY8A&s" alt="J. Robert Oppenheimer">
+  <div class="card-content">
+    <div class="title">Inside the Manhattan Project</div>
+    <div class="author">J. Robert Oppenheimer</div>
+    <div class="subreddit">r/History</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Marie_Curie_c1920.jpg" alt="Marie Curie">
+  <div class="card-content">
+    <div class="title">Radioactivity Pioneer</div>
+    <div class="author">Marie Curie</div>
+    <div class="subreddit">r/Science</div>
+  </div>
+</div>
+ </div>
+  </div>
+   </body>
+
+
+
+<script>
+
+const urlParams = new URLSearchParams(window.location.search);
+
+if (urlParams.has('subreddit')) {
+  const name = urlParams.get('subreddit');
+  document.getElementById("myinput").value = name;
+  console.log(name);
+  getSubreddit(name);
+}
+
+
+document.getElementById("scientist").style.display = "none";
+
+
+
+
+function getSubredditX() {
+  const subredditName = document.getElementById("myinput").value;
+  getSubreddit(subredditName);
+}
+
+function getSubreddit(name) {
+   const mytype = document.getElementById('typeSelect').value;
+   //const subredditName = document.getElementById("myinput").value;
+   let myurl = `https://www.reddit.com/r/${name}/${mytype}.json?limit=100`;
+
+   
+   document.getElementById("myspan").innerText = "Loading...";
+   document.getElementById('mygrid').innerHTML = "";
+
+   fetchURL(myurl);
+   //console.log("fetched");
+   
+}
+
+
+async function fetchURL(myurl) {
+   const response = await fetch(myurl);
+   const res = await response.json();
+   //console.log("calling run function");
+   run(res);
+
+}
+
+function run(data) {
+
+   console.log("running function is on!");
+   console.log(data);
+   console.log(data.data);
+   const children = data.data.children;
+   console.log(children);
+
+
+
+   for(let j=0;j<children.length;j++){
+      
+
+         const title = children[j].data.title;
+         const thumbnail = children[j].data.thumbnail;
+         const author = children[j].data.author;
+         const subreddit = children[j].data.subreddit;
+         const post_hint = children[j].data.post_hint;
+         const score = children[j].data.score;
+         let the_url = "";
+         
+         if(children[j].data.preview !== undefined && children[j].data.preview !== null) {
+            console.log("i am here");
+            if(children[j].data.preview.reddit_video_preview !== undefined && children[j].data.preview.reddit_video_preview !== null) {
+               the_url = children[j].data.preview.reddit_video_preview.fallback_url;
+            }
+            else {
+               the_url = children[j].data.url;
+
+            }
+            
+         }
+         else {
+            the_url = children[j].data.url;
+         }
+
+         document.getElementById('mygrid').innerHTML += `
+            <div class="card">
+                  <div class="tag">${post_hint}</div>
+                  <div class="tagsc">${score}</div>
+                  <a target="_blank" href='${the_url}'><img src="${thumbnail}" alt="Example Image"></a>
+                  <div class="card-content">
+                    <div class="title">${title}</div>
+                    <a href='users.html?name=${author}'><div class="author">by ${author}</div></a>
+                    <div class="subreddit"><a href='?subreddit=${subreddit}' target="_blank">r/${subreddit}</a></div>
+                    
+                  </div>
+            </div>
+         `;
+         document.getElementById("myspan").innerText = "";
+         
+      }
+   }
+
+
+
+document.addEventListener('keydown', function(event) {
+    // For debugging, you can console.log(event.key)
+    
+    if (event.key === 'q') {
+      
+      if(document.getElementById("mygrid").style.display === "none") {
+         document.getElementById("mygrid").style.display = "grid";
+         document.getElementById("scientist").style.display = "none";
+      }
+      else {
+         document.getElementById("mygrid").style.display = "none";
+      document.getElementById("scientist").style.display = "block";
+      }
+
+      
+    }
+  });
+
+</script>
+
+
+
+</html>
