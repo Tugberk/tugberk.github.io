@@ -154,9 +154,7 @@
         <div class="tile"><div class="num" id="s">0</div><div class="label">Seconds</div></div>
       </section>
 
-      <div class="message" id="message">
-        No matter how far you are, you’re always with me — in my thoughts, my prayers, and my heart.
-      </div>
+      <div class="message" id="message"></div>
 
       <section class="done" id="done">
         <h2>You’re Home ❤️</h2>
@@ -178,6 +176,25 @@
     const sEl = el('s');
     const done = el('done');
     const grid = document.querySelector('.grid');
+    const messageEl = el('message');
+
+    const messages = [
+      "No matter how far you go, my heart knows exactly where you are.",
+      "Every mile between us is filled with my love for you.",
+      "I count the days, but my heart has never stopped waiting for you.",
+      "Home is not a place — it’s you.",
+      "Until you’re back, I carry you with me in every breath.",
+      "The distance is only proof of how strong our love is.",
+      "Every sunrise brings you closer to my arms.",
+      "I saved all my hugs for when you come home.",
+      "My favorite moment will always be the one where I see you again.",
+      "No journey is too long when love is waiting at the end."
+    ];
+
+    function pickMessage(){
+      const i = Math.floor(Math.random() * messages.length);
+      messageEl.textContent = messages[i];
+    }
 
     function computeTarget(now){
       const year = now.getFullYear();
@@ -210,6 +227,7 @@
       sEl.textContent = seconds;
     }
 
+    pickMessage();
     update();
     setInterval(update, 1000);
   </script>
